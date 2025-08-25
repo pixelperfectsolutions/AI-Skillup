@@ -1,0 +1,39 @@
+.partners {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+.partners-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.partners-slider {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partner-logo-container {
+  display: flex !important; /* Override slick display */
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  padding: 0 1rem;
+}
+
+.partner-logo {
+  max-width: 150px;
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}

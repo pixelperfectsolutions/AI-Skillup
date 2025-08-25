@@ -1,0 +1,22 @@
+.top-bar {
+  background-color: #f8f9fa;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 0.9rem;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contact-info span, .contact-info a {
+  margin-left: 1.5rem;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #007bff;
+}

@@ -1,0 +1,80 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 2.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #343a40;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #0d6efd;
+}
+
+.actions button {
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  nav ul {
+    display: none; /* Hide nav links for a real implementation, you'd add a hamburger menu */
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .actions button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
