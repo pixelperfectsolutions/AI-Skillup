@@ -1,0 +1,28 @@
+.top-bar {
+  background-color: #0d2c54;
+  color: white;
+  padding: 0.5rem 2rem;
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.top-bar p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.top-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}

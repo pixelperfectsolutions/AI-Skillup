@@ -35,8 +35,9 @@ const Footer = () => {
         </div>
         <div className="footer-section contact" id="contact-section">
           <h3>Contact Info</h3>
-          <p>123, Gandhipuram, Coimbatore, Tamil Nadu 641012</p>
-          <p>Phone: +91 98765 43210</p>
+          <p>45, Gokhale Street, Ram Nagar, Near MK Residency, Coimbatore, Tamil Nadu 641009.</p>
+          <p>Phone: <a href="tel:+919655422511">+91 96554 22511</a></p>
+          <p>Whatsapp: <a href="https://wa.me/919655422511" target="_blank" rel="noopener noreferrer">96554 22511</a></p>
         </div>
       </div>
       <div className="footer-bottom">

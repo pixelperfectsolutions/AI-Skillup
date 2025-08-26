@@ -59,7 +59,7 @@ const courses = [
 ];
 
 function NextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div
       className={`${className} custom-arrow next-arrow`}
@@ -69,7 +69,7 @@ function NextArrow(props) {
 }
 
 function PrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div
       className={`${className} custom-arrow prev-arrow`}
@@ -105,26 +105,26 @@ const Courses = () => {
 
   return (
     <>
-      <section className="courses">
-        <div className="courses-header">
-          <h2>Our Courses</h2>
-          <p>Choose the right way to upgrade your career.</p>
-        </div>
-        <div className="slider-container">
-          <Slider {...settings}>
-            {courses.map((course, index) => (
-              <div className="course-card-wrapper" key={index}>
-                <div className="course-card">
-                  <img src={course.image} alt={course.title} className="course-image" />
+      <section className="courses" id="courses">
+        <div className="courses-container">
+          <div className="courses-intro">
+            <p>"At AI SKILL UP, our cutting-edge labs are dedicated to honing practical skills and combatting unemployment. Guided by industry veterans with over 20 years of experience and driven by young innovators, our tech campus is continuously evolving to embrace the latest in-demand technologies and trends."</p>
+            <h2>Choose the right way to upgrade your career.</h2>
+          </div>
+          <div className="courses-slider-container">
+            <Slider {...settings} className="courses-slider">
+              {courses.map((course, index) => (
+                <div key={index} className="course-card">
+                  <img src={course.image} alt={course.title} />
                   <div className="course-info">
                     <h3>{course.title}</h3>
                     <p>{course.description}</p>
-                    <a href="#" className="view-course-btn">Apply Course &rarr;</a>
+                    <button className="view-course-btn">View Course &rarr;</button>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
       </section>
       <section className="placement" id="placement">

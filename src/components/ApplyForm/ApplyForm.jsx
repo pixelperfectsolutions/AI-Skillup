@@ -33,54 +33,64 @@ const ApplyForm = () => {
   return (
     <section className="apply-form-section">
       <div className="apply-form-container">
-        <h2>Apply Now</h2>
-        <p>Fill out the form below to enroll in a course.</p>
-        <form onSubmit={handleSubmit} className="apply-form">
-          <div className="form-group">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+        <div className="apply-form-content">
+          <div className="discount-info">
+            <h2>Wait! <br/><span>Before you go,</span> <br/>Here is a 20% <br/>Discount.</h2>
+            <hr/>
+            <p>in your Course Fee</p>
           </div>
-          <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+          <div className="form-image-container">
+            <form onSubmit={handleSubmit} className="apply-form">
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter Mobile Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter Your Email Id"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <select
+                  name="course"
+                  value={formData.course}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="" disabled>Enter your Interested Course</option>
+                  {courses.map((course, index) => (
+                    <option key={index} value={course}>{course}</option>
+                  ))}
+                </select>
+              </div>
+              <button type="submit" className="submit-btn">Submit</button>
+            </form>
+            <div className="apply-form-image">
+              <img src="/images/apply form-1.png" alt="Student with books" />
+            </div>
           </div>
-          <div className="form-group">
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Your Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <select
-              name="course"
-              value={formData.course}
-              onChange={handleChange}
-              required
-            >
-              <option value="" disabled>Select a Course</option>
-              {courses.map((course, index) => (
-                <option key={index} value={course}>{course}</option>
-              ))}
-            </select>
-          </div>
-          <button type="submit" className="submit-btn">Submit Application</button>
-        </form>
+        </div>
       </div>
     </section>
   );

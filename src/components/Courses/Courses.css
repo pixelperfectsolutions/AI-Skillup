@@ -1,121 +1,178 @@
 .courses {
   padding: 4rem 2rem;
-  background-color: #fffacd; /* Lemon Chiffon */
+  background-color: #ffc107;
 }
 
-.courses-header {
-  max-width: 1200px;
-  margin: 0 auto 3rem auto;
-}
-
-.courses h2 {
-  text-align: left;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.courses-header p {
-  text-align: left;
-  font-size: 1.1rem;
-  color: #333;
-  max-width: 600px;
-}
-
-.slider-container {
-  max-width: 1200px;
+.courses-container {
+  max-width: 1400px;
   margin: 0 auto;
-  position: relative;
+  display: flex;
+  gap: 3rem;
+  align-items: stretch; /* Stretch items to be equal height */
 }
 
-.course-card-wrapper {
-  padding: 0 1rem;
+.courses-intro {
+  flex: 1;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  text-align: left;
+}
+
+.courses-slider-container {
+  flex: 2;
+  min-width: 0; /* Important for flexbox and sliders */
+  position: relative; /* Establishes positioning context for arrows */
+}
+
+.courses-intro p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.courses-intro h2 {
+  font-size: 2.8rem;
+  color: #0d2c54;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .course-card {
-  background-color: #fff;
+  position: relative;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 0.5rem;
+  height: 350px;
+  color: #fff;
+  border: 2px solid #ffc107;
 }
 
-.course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.course-image {
+.course-card img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover img {
+  transform: scale(1.05);
 }
 
 .course-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 1.5rem;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, transparent);
 }
 
 .course-info h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .course-info p {
   font-size: 0.9rem;
-  color: #6c757d;
   margin-bottom: 1rem;
+  color: #eee;
 }
 
 .view-course-btn {
-  color: #f39c12;
-  text-decoration: none;
-  font-weight: 600;
+  background-color: #ffc107;
+  color: #0d2c54;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Custom Arrows */
+.view-course-btn:hover {
+  background-color: #fff;
+}
+
 .custom-arrow {
   position: absolute;
-  top: -80px; /* Adjust position to accommodate paragraph */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+  background: white;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
-  background-color: #fff;
-  border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  cursor: pointer;
-  z-index: 1;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
-.prev-arrow {
-  right: 60px;
+.slick-arrow.slick-disabled {
+    display: none !important;
 }
 
-.next-arrow {
-  right: 10px;
+.custom-arrow:hover {
+  background-color: #f0f0f0;
 }
 
 .custom-arrow::before {
   content: '';
-  border: solid #f39c12;
+  border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
 }
 
+.prev-arrow {
+  left: -20px;
+}
+
 .prev-arrow::before {
   transform: rotate(135deg);
-  margin-left: 4px;
+}
+
+.next-arrow {
+  right: -20px;
 }
 
 .next-arrow::before {
   transform: rotate(-45deg);
-  margin-right: 4px;
 }
 
-.slick-disabled {
-  opacity: 0.5;
-  cursor: default;
+@media (max-width: 1200px) {
+  .prev-arrow {
+    left: 10px;
+  }
+  .next-arrow {
+    right: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .courses-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .courses-intro {
+    margin-bottom: 2rem;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .courses {
+    padding: 3rem 1rem;
+  }
+  .courses-intro h2 {
+    font-size: 2.2rem;
+  }
 }

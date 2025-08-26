@@ -29,6 +29,17 @@
   color: #ccc;
 }
 
+.footer-section.contact a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section.contact a:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
 .footer-section.links ul {
   list-style: none;
   padding: 0;

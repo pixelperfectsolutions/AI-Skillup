@@ -8,6 +8,7 @@ import Courses from './components/Courses/Courses';
 import Features from './components/Features/Features';
 import ApplyForm from './components/ApplyForm/ApplyForm';
 import Footer from './components/Footer/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp/FloatingWhatsApp';
 import './App.css';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             </>
           } />
         </Routes>
+        <FloatingWhatsApp />
       </div>
     </Router>
   );
