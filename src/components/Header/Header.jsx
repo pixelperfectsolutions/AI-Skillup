@@ -20,7 +20,9 @@ const Header = () => {
     <>
       <TopBar />
       <header className="header">
-        <div className="logo">AI SKILL UP</div>
+        <div className="logo" aria-label="AI SKILL UP">
+          <img src="/images/AI logo.png" alt="AI SKILL UP" />
+        </div>
         <nav>
           <ul>
             <li><Link to="/" onClick={() => scrollToSection('home')}>Home</Link></li>

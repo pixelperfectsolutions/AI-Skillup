@@ -10,6 +10,18 @@ const courses = [
 ];
 
 const ApplyForm = () => {
+  const WHATSAPP_NUMBER = '919655422511'; // target number in international format without '+'
+
+  const buildWhatsAppMessage = ({ name, phone, email, course }) => {
+    return (
+      `New course enquiry from AI SKILL UP website:%0A` +
+      `%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Phone: ${encodeURIComponent(phone)}%0A` +
+      `Email: ${encodeURIComponent(email)}%0A` +
+      `Interested Course: ${encodeURIComponent(course)}`
+    );
+  };
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,7 +38,18 @@ const ApplyForm = () => {
     e.preventDefault();
     // Handle form submission logic here
     console.log('Form submitted:', formData);
-    alert('Thank you for applying! We will get back to you soon.');
+
+    // Open WhatsApp with prefilled message
+    const text = buildWhatsAppMessage(formData);
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+    // Attempt to open in a new tab; fallback to same tab
+    const newWin = window.open(waUrl, '_blank');
+    if (!newWin) {
+      window.location.href = waUrl;
+    }
+
+    alert('Thank you for applying! We will contact you shortly on WhatsApp or Email.');
     setFormData({ name: '', email: '', phone: '', course: '' });
   };
 
