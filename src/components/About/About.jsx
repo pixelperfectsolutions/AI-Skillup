@@ -6,7 +6,7 @@ const About = () => {
     <section className="about">
       <div className="about-container">
         <div className="about-image-container">
-          <img src="https://www.thediamante.com/wp-content/uploads/2022/07/Industrial-Robotic-Arm-1.png" alt="Robotic Arm" className="about-image" />
+          <img src="/images/about-1.png" alt="AI Technology" className="about-image" />
         </div>
         <div className="about-content">
           <h2>We create <span className="highlight">Industry Ready</span> Engineers</h2>

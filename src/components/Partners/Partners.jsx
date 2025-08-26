@@ -3,12 +3,13 @@ import Slider from 'react-slick';
 import './Partners.css';
 
 const logos = [
-  'https://www.logo.wine/a/logo/IAS_Accreditation/IAS_Accreditation-Logo.wine.svg',
-  'https://www.logo.wine/a/logo/Autodesk/Autodesk-Logo.wine.svg',
-  'https://www.nsdcindia.org/sites/default/files/logo_0.png',
-  'https://www.ncs.gov.in/Style%20Library/images/NCS-logo-Eng.png',
-  'https://www.startupindia.gov.in/content/dam/invest-india/new-assets/images/logo.png',
-  'https://upload.wikimedia.org/wikipedia/commons/d/d3/Dubai_logo.svg'
+  '/images/partner logo-1.png',
+  '/images/partner logo-2.png',
+  '/images/partner logo-3.png',
+  '/images/partner logo-4.png',
+  '/images/partner logo-5.png',
+  '/images/partner logo-6.png',
+  '/images/partner logo-7.png'
 ];
 
 const Partners = () => {

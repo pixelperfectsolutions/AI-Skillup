@@ -6,7 +6,7 @@ const TopBar = () => {
     <div className="top-bar">
       <div className="contact-info">
         <span>India</span>
-        <a href="tel:9597916888">[9597916888]</a>
+        <a href="tel:6379645990">[6379645990]</a>
       </div>
     </div>
   );

@@ -4,19 +4,24 @@ import './Hero.css';
 
 const slides = [
   {
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop',
-    title: 'Master the Future of Technology',
-    description: 'Explore our cutting-edge courses in AI, Machine Learning, and Data Science.'
+    image: '/images/slider-1.png',
+    title: 'AI & Machine Learning Masterclass',
+    description: 'Master cutting-edge AI technologies with hands-on projects and real-world applications at AI SKILL UP.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop',
-    title: 'Become an Industry-Ready Engineer',
-    description: 'Gain practical skills with hands-on projects and real-world applications.'
+    image: '/images/slider-2.png',
+    title: 'Data Science Professional Certification',
+    description: 'Transform data into insights with our comprehensive Data Science program at AI SKILL UP.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-    title: 'Unlock Your Career Potential',
-    description: 'Join a community of learners and innovators at AI SKILL UP.'
+    image: '/images/slider-3.png',
+    title: 'Cloud Computing & DevOps',
+    description: 'Deploy scalable solutions in the cloud with our industry-recognized Cloud Computing course at AI SKILL UP.'
+  },
+  {
+    image: '/images/slider-4.png',
+    title: 'Unlock Your Tech Career Potential',
+    description: 'Join thousands of successful learners at AI SKILL UP and accelerate your career in technology.'
   }
 ];
 
