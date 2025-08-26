@@ -26,3 +26,33 @@
 .top-bar a:hover {
   text-decoration: underline;
 }
+
+/* Icons hidden by default (desktop) */
+.top-bar-icons { display: none; }
+.top-bar-icons .icon-link {
+  color: #fff;
+  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.top-bar-icons .icon-link:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+
+@media (max-width: 768px) {
+  .top-bar { padding: 0.5rem 1rem; }
+  /* Hide text on mobile */
+  .top-bar-text { display: none; }
+  /* Show icons on mobile */
+  .top-bar-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}

@@ -92,7 +92,7 @@
 
 @media (min-width: 768px) {
   .apply-form-content {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2.2fr; /* give more space to image side */
     align-items: center;
   }
 
@@ -102,7 +102,7 @@
 
   .apply-form-image {
     display: block;
-    flex: 1;
+    flex: 2; /* larger image */
   }
 
   .apply-form-image img {
@@ -116,4 +116,8 @@
   .discount-info h2 {
     font-size: 3.5rem;
   }
+  /* On larger screens, increase image column more and narrow form slightly */
+  .apply-form-content { grid-template-columns: 0.9fr 2.6fr; }
+  .apply-form { max-width: 360px; }
+  .apply-form-image { flex: 2.2; }
 }

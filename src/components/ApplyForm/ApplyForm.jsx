@@ -7,6 +7,11 @@ const courses = [
   'Data Science Course',
   'Automotive Design',
   'Industrial Design',
+  'Cybersecurity Specialist',
+  'UI/UX Design Fundamentals',
+  'Blockchain Development',
+  'Digital Marketing & SEO',
+  'Game Development with Unity',
 ];
 
 const ApplyForm = () => {
@@ -54,7 +59,7 @@ const ApplyForm = () => {
   };
 
   return (
-    <section className="apply-form-section">
+    <section className="apply-form-section" id="apply-form">
       <div className="apply-form-container">
         <div className="apply-form-content">
           <div className="discount-info">

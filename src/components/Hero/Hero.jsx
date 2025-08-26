@@ -26,6 +26,12 @@ const slides = [
 ];
 
 const Hero = () => {
+  const scrollToCourses = () => {
+    const el = document.getElementById('courses');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -50,7 +56,7 @@ const Hero = () => {
             <div className="hero-content">
               <h1>{slide.title}</h1>
               <p>{slide.description}</p>
-              <button>Explore Courses</button>
+              <button onClick={scrollToCourses}>Explore Course</button>
             </div>
           </div>
         </div>

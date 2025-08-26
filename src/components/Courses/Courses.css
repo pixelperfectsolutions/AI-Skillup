@@ -45,7 +45,7 @@
   border-radius: 8px;
   overflow: hidden;
   margin: 0 0.5rem;
-  height: 350px;
+  height: 440px; /* increased height for larger images */
   color: #fff;
   border: 2px solid #ffc107;
 }
@@ -166,6 +166,8 @@
     margin-bottom: 2rem;
     padding-right: 0;
   }
+  /* Slightly reduce card height on tablets */
+  .course-card { height: 400px; }
 }
 
 @media (max-width: 768px) {
@@ -175,4 +177,6 @@
   .courses-intro h2 {
     font-size: 2.2rem;
   }
+  /* Mobile card height */
+  .course-card { height: 360px; }
 }

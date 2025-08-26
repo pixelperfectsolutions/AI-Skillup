@@ -79,6 +79,13 @@ function PrevArrow(props) {
 }
 
 const Courses = () => {
+  const scrollToApply = () => {
+    const el = document.getElementById('apply-form');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -119,7 +126,7 @@ const Courses = () => {
                   <div className="course-info">
                     <h3>{course.title}</h3>
                     <p>{course.description}</p>
-                    <button className="view-course-btn">View Course &rarr;</button>
+                    <button className="view-course-btn" onClick={scrollToApply}>Apply Course &rarr;</button>
                   </div>
                 </div>
               ))}

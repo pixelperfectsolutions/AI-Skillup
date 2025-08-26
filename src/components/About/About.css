@@ -11,7 +11,7 @@
 }
 
 .about-image-container {
-  flex: 1;
+  flex: 1.4;
 }
 
 .about-image {
@@ -20,7 +20,7 @@
 }
 
 .about-content {
-  flex: 1.5;
+  flex: 1.2;
 }
 
 .about-content h2 {

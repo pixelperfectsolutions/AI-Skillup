@@ -2,6 +2,12 @@ import React from 'react';
 import './About.css';
 
 const About = () => {
+  const scrollToApply = () => {
+    const el = document.getElementById('apply-form');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="about">
       <div className="about-container">
@@ -17,7 +23,7 @@ const About = () => {
           <p>
             We are India's largest turnkey solution provider in Manufacturing of Fracture Connecting Rods. Developing new conceptual products for Automotive sectors like Hyundai Motors, Supporting hardware automation and software development we have wide range of diversified tech verticals and also owning a Skill development campus collaborated with World's leading companies.
           </p>
-          <a href="#" className="about-btn">About AI SKILL UP &rarr;</a>
+          <a href="#apply-form" className="about-btn" onClick={(e) => { e.preventDefault(); scrollToApply(); }}>About AI SKILL UP &rarr;</a>
         </div>
       </div>
     </section>

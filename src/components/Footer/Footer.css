@@ -165,7 +165,11 @@
 }
 
 @media (max-width: 767.98px) {
-  .footer-content { text-align: center; }
+  .footer-content { text-align: left; }
+  .footer-bottom {
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 
 @media (min-width: 992px) {

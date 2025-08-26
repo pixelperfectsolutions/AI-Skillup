@@ -58,12 +58,24 @@ nav ul li a:hover {
   background-color: #0b5ed7;
 }
 
+/* Hamburger (hidden by default, shown on mobile) */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #343a40;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+/* Mobile dropdown menu */
+.mobile-menu {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
-  nav ul {
-    display: none; /* Hide nav links for a real implementation, you'd add a hamburger menu */
-  }
-
   .header {
     justify-content: space-between;
   }
@@ -74,10 +86,31 @@ nav ul li a:hover {
     padding: 1rem;
   }
 
-  .logo img { height: 32px; }
+  /* Make logo bigger on mobile */
+  .logo img { height: 56px; }
 
   .actions button {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
+
+  /* Mobile-only nav behavior */
+  .nav-desktop ul { display: none; }
+  .actions { display: none; } /* Hide Explore button on mobile */
+  .hamburger-btn { display: inline-flex; }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 0.75rem 1rem 1rem;
+  }
+  .mobile-menu a {
+    color: #343a40;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.25rem 0;
+  }
+  .mobile-menu a:hover { color: #0d6efd; }
 }

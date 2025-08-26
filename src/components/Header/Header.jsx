@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from './TopBar';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
@@ -16,6 +17,11 @@ const Header = () => {
     }
   };
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const toggleMobileMenu = () => setMobileOpen((v) => !v);
+  const closeMobileMenu = () => setMobileOpen(false);
+
   return (
     <>
       <TopBar />
@@ -23,7 +29,7 @@ const Header = () => {
         <div className="logo" aria-label="AI SKILL UP">
           <img src="/images/AI logo.png" alt="AI SKILL UP" />
         </div>
-        <nav>
+        <nav className="nav-desktop">
           <ul>
             <li><Link to="/" onClick={() => scrollToSection('home')}>Home</Link></li>
             <li><Link to="/" onClick={() => scrollToSection('about')}>About</Link></li>
@@ -35,7 +41,28 @@ const Header = () => {
         <div className="actions">
           <button onClick={() => scrollToSection('courses')}>Explore Course</button>
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="hamburger-btn"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          onClick={toggleMobileMenu}
+        >
+          {mobileOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </header>
+
+      {/* Mobile dropdown menu */}
+      {mobileOpen && (
+        <div className="mobile-menu" role="menu">
+          <Link to="/" role="menuitem" onClick={() => { scrollToSection('home'); closeMobileMenu(); }}>Home</Link>
+          <Link to="/" role="menuitem" onClick={() => { scrollToSection('about'); closeMobileMenu(); }}>About</Link>
+          <Link to="/" role="menuitem" onClick={() => { scrollToSection('courses'); closeMobileMenu(); }}>Courses</Link>
+          <Link to="/" role="menuitem" onClick={() => { scrollToSection('placement'); closeMobileMenu(); }}>Placement</Link>
+          <Link to="/" role="menuitem" onClick={() => { scrollToSection('contact'); closeMobileMenu(); }}>Contact Us</Link>
+        </div>
+      )}
     </>
   );
 };
