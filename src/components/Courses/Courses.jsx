@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaUserTie, FaFileAlt, FaComments, FaBuilding, FaHandshake, FaChartLine, FaUsers, FaLinkedin, FaInfinity, FaBriefcase, FaTasks, FaNetworkWired } from 'react-icons/fa';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -184,27 +185,31 @@ const Courses = () => {
           <div className="placement-images reveal">
             <img src="/images/placement-1.png" alt="Placement Highlight 1" />
             <img src="/images/placement-2.png" alt="Placement Highlight 2" />
-            <img src="/images/placement-3.jpg" alt="Placement Highlight 3" />
           </div>
 
           <div className="placement-stats">
             <div className="stat reveal">
+              <div className="stat-icon"><FaChartLine /></div>
               <h3>95%</h3>
               <p>Placement Rate</p>
             </div>
             <div className="stat reveal">
+              <div className="stat-icon"><FaBuilding /></div>
               <h3>500+</h3>
               <p>Companies Visited</p>
             </div>
             <div className="stat reveal">
+              <div className="stat-icon"><FaUsers /></div>
               <h3>1000+</h3>
               <p>Students Placed</p>
             </div>
             <div className="stat reveal">
+              <div className="stat-icon"><FaHandshake /></div>
               <h3>200+</h3>
               <p>Hiring Partners</p>
             </div>
             <div className="stat reveal">
+              <div className="stat-icon"><FaComments /></div>
               <h3>50+</h3>
               <p>Mock Interviews</p>
             </div>
@@ -213,23 +218,32 @@ const Courses = () => {
           <div className="placement-process reveal">
             <h3>Our Placement Process</h3>
             <ol>
-              <li>Career Counseling & Assessment</li>
-              <li>Resume Building & Interview Preparation</li>
-              <li>Mock Interviews & Skill Assessment</li>
-              <li>Job Fairs & Company Visits</li>
-              <li>Placement Offers & Alumni Network</li>
+              <li><FaUserTie className="li-icon" /> Career Counseling & Assessment</li>
+              <li><FaFileAlt className="li-icon" /> Resume Building & Interview Preparation</li>
+              <li><FaComments className="li-icon" /> Mock Interviews & Skill Assessment</li>
+              <li><FaBuilding className="li-icon" /> Job Fairs & Company Visits</li>
+              <li><FaHandshake className="li-icon" /> Placement Offers & Alumni Network</li>
             </ol>
+          </div>
+
+          {/* Illustration moved below the process list and enlarged via CSS */}
+          <div className="placement-illustration reveal">
+            <img src="/images/placement-3.jpg" alt="Our Placement Process Illustration" />
           </div>
 
           <div className="placement-benefits reveal">
             <h3>What You Get</h3>
             <ul className="benefits-list">
-              <li>1:1 Career Mentorship</li>
-              <li>Personalized Resume & LinkedIn Review</li>
-              <li>Unlimited Interview Practice</li>
-              <li>Company-Specific Preparation</li>
-              <li>Real JD-based Assignments</li>
-              <li>Alumni Networking & Referrals</li>
+              <li><FaUsers className="li-icon" /> 1:1 Career Mentorship</li>
+              <li><FaLinkedin className="li-icon" /> Personalized Resume & LinkedIn Review</li>
+              <li><FaInfinity className="li-icon" /> Unlimited Interview Practice</li>
+              <li><FaBriefcase className="li-icon" /> Company-Specific Preparation</li>
+              <li><FaTasks className="li-icon" /> Real JD-based Assignments</li>
+              <li><FaNetworkWired className="li-icon" /> Alumni Networking & Referrals</li>
+              <li><FaUserTie className="li-icon" /> Placement Guidance & Career Roadmap</li>
+              <li><FaTasks className="li-icon" /> Portfolio & Project Review</li>
+              <li><FaComments className="li-icon" /> Soft Skills & Communication Training</li>
+              <li><FaHandshake className="li-icon" /> Post-Placement Support</li>
             </ul>
             <div className="placement-cta">
               <button className="placement-btn" onClick={scrollToApply}>Apply Now →</button>

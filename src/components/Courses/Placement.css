@@ -44,6 +44,13 @@
   overflow: hidden; /* for shine effect */
 }
 
+/* Icon inside stat cards */
+.stat-icon {
+  font-size: 1.75rem;
+  color: #f39c12;
+  margin-bottom: 0.5rem;
+}
+
 .stat h3 {
   font-size: 2.5rem;
   color: #f39c12;
@@ -147,7 +154,7 @@
 
 /* Benefits list */
 .placement-benefits {
-  max-width: 1000px;
+  max-width: 1400px; /* match global section width */
   margin: 2rem auto 0;
 }
 .placement-benefits h3 {
@@ -160,7 +167,7 @@
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1400px; /* expand to full section width */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 0.75rem 1.25rem;
@@ -172,6 +179,8 @@
   padding: 0.75rem 1rem;
   color: #495057;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
 }
 
 /* CTA buttons */
@@ -180,6 +189,9 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  max-width: 1400px; /* keep CTA within standard section width */
+  margin-left: auto;
+  margin-right: auto;
 }
 .placement-btn {
   background: #f39c12;
@@ -218,7 +230,10 @@
 }
 
 .placement-process ol {
-  padding-left: 1.5rem;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: process-step;
 }
 
 .placement-process li {
@@ -228,13 +243,65 @@
   line-height: 1.6;
   transition: transform 220ms ease, color 220ms ease, background-color 220ms ease;
   border-radius: 8px;
-  padding: 0.25rem 0.5rem;
+  padding: 0.75rem 0.75rem 0.75rem 3.25rem; /* space for number badge */
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+  opacity: 0;
+  transform: translateY(12px);
 }
+
+.li-icon {
+  color: #f39c12;
+  margin-right: 0.5rem;
+  flex: 0 0 auto;
+}
+
+/* Numbered badge */
+.placement-process li::before {
+  counter-increment: process-step;
+  content: counter(process-step);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f39c12, #ffc107);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(243, 156, 18, 0.35);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+/* Vertical connector line */
+.placement-process li::after {
+  content: '';
+  position: absolute;
+  left: 1.1rem;
+  top: calc(50% + 1.2rem);
+  width: 2px;
+  height: calc(100% + 0.8rem);
+  background: linear-gradient(#f39c12, rgba(243,156,18,0.15));
+  opacity: 0.4;
+}
+.placement-process li:last-child::after { display: none; }
 
 .placement-process li:hover {
   transform: translateX(4px);
   color: #495057;
   background-color: #fff8e1; /* soft amber highlight */
+}
+
+.placement-process li:hover::before {
+  transform: translateY(-50%) scale(1.02);
+  box-shadow: 0 10px 22px rgba(243, 156, 18, 0.45);
 }
 
 /* Stagger effect when hovering process container */
@@ -243,6 +310,32 @@
 .placement-process:hover li:nth-child(3) { transform: translateX(6px); }
 .placement-process:hover li:nth-child(4) { transform: translateX(8px); }
 .placement-process:hover li:nth-child(5) { transform: translateX(10px); }
+
+/* Stagger reveal animation when in view */
+.placement-process.reveal.in-view li { opacity: 1; transform: translateY(0); transition: opacity 520ms ease, transform 520ms ease; }
+.placement-process.reveal.in-view li:nth-child(1) { transition-delay: 80ms; }
+.placement-process.reveal.in-view li:nth-child(2) { transition-delay: 160ms; }
+.placement-process.reveal.in-view li:nth-child(3) { transition-delay: 240ms; }
+.placement-process.reveal.in-view li:nth-child(4) { transition-delay: 320ms; }
+.placement-process.reveal.in-view li:nth-child(5) { transition-delay: 400ms; }
+.placement-process.reveal.in-view li:nth-child(6) { transition-delay: 480ms; }
+.placement-process.reveal.in-view li:nth-child(7) { transition-delay: 560ms; }
+.placement-process.reveal.in-view li:nth-child(8) { transition-delay: 640ms; }
+.placement-process.reveal.in-view li:nth-child(9) { transition-delay: 720ms; }
+.placement-process.reveal.in-view li:nth-child(10) { transition-delay: 800ms; }
+
+/* subtle pop for numbers when container is revealed */
+@keyframes badge-pop {
+  0% { transform: translateY(-50%) scale(0.6); opacity: 0; }
+  60% { transform: translateY(-50%) scale(1.08); opacity: 1; }
+  100% { transform: translateY(-50%) scale(1); opacity: 1; }
+}
+.placement-process.reveal.in-view li::before { animation: badge-pop 420ms ease forwards; }
+.placement-process.reveal.in-view li:nth-child(1)::before { animation-delay: 80ms; }
+.placement-process.reveal.in-view li:nth-child(2)::before { animation-delay: 160ms; }
+.placement-process.reveal.in-view li:nth-child(3)::before { animation-delay: 240ms; }
+.placement-process.reveal.in-view li:nth-child(4)::before { animation-delay: 320ms; }
+.placement-process.reveal.in-view li:nth-child(5)::before { animation-delay: 400ms; }
 
 .placement-images {
   display: flex;
@@ -258,6 +351,17 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   object-fit: contain;
+}
+
+/* Large illustration placed below the process list */
+.placement-illustration {
+  margin: 2rem auto 0;
+}
+.placement-illustration img {
+  width: 100%;
+  max-width: 980px; /* make image bigger */
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 768px) {
