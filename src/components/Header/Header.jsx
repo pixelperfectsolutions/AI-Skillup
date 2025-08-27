@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import TopBar from './TopBar';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaPhoneAlt } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
@@ -24,7 +23,6 @@ const Header = () => {
 
   return (
     <>
-      <TopBar />
       <header className="header">
         <div className="header-container">
           <div className="logo" aria-label="AI SKILL UP">
@@ -40,7 +38,10 @@ const Header = () => {
             </ul>
           </nav>
           <div className="actions">
-            <button onClick={() => scrollToSection('courses')}>Explore Course</button>
+            <a href="tel:9655422511" className="contact-button">
+              <FaPhoneAlt style={{ marginRight: '8px' }} />
+              CONTACT US
+            </a>
           </div>
 
           {/* Mobile hamburger */}
