@@ -95,31 +95,38 @@ const Courses = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1024, // Tablet and below
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: true,
+          arrows: true
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 768, // Mobile landscape and below
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 1,
-          arrows: false,
-          dots: true
+          initialSlide: 0,
+          arrows: true,
+          dots: true,
+          centerMode: true,
+          centerPadding: '20px',
+          swipeToSlide: true
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 480, // Small mobile devices
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
-          dots: true
+          arrows: true,
+          dots: true,
+          centerMode: true,
+          centerPadding: '30px',
+          swipeToSlide: true
         }
       }
     ]

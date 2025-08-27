@@ -40,7 +40,7 @@ const Header = () => {
           <div className="actions">
             <a href="tel:9655422511" className="contact-button">
               <FaPhoneAlt style={{ marginRight: '8px' }} />
-              CONTACT US
+              CALL NOW
             </a>
           </div>
 
