@@ -5,23 +5,23 @@ import './Hero.css';
 const slides = [
   {
     image: '/images/slider-1.png',
-    title: 'AI & Machine Learning Masterclass',
-    description: 'Master cutting-edge AI technologies with hands-on projects and real-world applications at AI SKILL UP.'
+    title: 'Full-Stack Web Development Using AI',
+    description: 'Build modern web apps faster using AI-assisted coding, automation, and real-world projects.'
   },
   {
     image: '/images/slider-2.png',
-    title: 'Data Science Professional Certification',
-    description: 'Transform data into insights with our comprehensive Data Science program at AI SKILL UP.'
+    title: 'AI-Based Mobile App Development',
+    description: 'Create cross-platform apps with AI-generated code, smart features, and automated testing.'
   },
   {
     image: '/images/slider-3.png',
-    title: 'Cloud Computing & DevOps',
-    description: 'Deploy scalable solutions in the cloud with our industry-recognized Cloud Computing course at AI SKILL UP.'
+    title: 'UI/UX Design with AI',
+    description: 'Design smarter with Figma AI and Midjourney—rapid prototyping, user research, and systemized design.'
   },
   {
     image: '/images/slider-4.png',
-    title: 'Unlock Your Tech Career Potential',
-    description: 'Join thousands of successful learners at AI SKILL UP and accelerate your career in technology.'
+    title: 'Digital Marketing Using AI',
+    description: 'Scale growth with AI-driven SEO, ads, social, and analytics—hands-on campaigns using top tools.'
   }
 ];
 

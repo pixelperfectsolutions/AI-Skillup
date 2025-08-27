@@ -1,18 +1,6 @@
 import React, { useState } from 'react';
 import './ApplyForm.css';
-
-const courses = [
-  'Embedded & IOT Development',
-  'Full Stack Development',
-  'Data Science Course',
-  'Automotive Design',
-  'Industrial Design',
-  'Cybersecurity Specialist',
-  'UI/UX Design Fundamentals',
-  'Blockchain Development',
-  'Digital Marketing & SEO',
-  'Game Development with Unity',
-];
+import { courseTitles } from '../../data/courses';
 
 const ApplyForm = () => {
   const WHATSAPP_NUMBER = '919655422511'; // target number in international format without '+'
@@ -118,9 +106,9 @@ const ApplyForm = () => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="" disabled>Enter your Interested Course</option>
-                  {courses.map((course, index) => (
-                    <option key={index} value={course}>{course}</option>
+                  <option value="" disabled>Your Interested Course</option>
+                  {courseTitles.map((title, index) => (
+                    <option key={index} value={title}>{title}</option>
                   ))}
                 </select>
               </div>

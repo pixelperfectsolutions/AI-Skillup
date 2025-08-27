@@ -5,7 +5,7 @@
 }
 
 .placement-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -127,6 +127,76 @@
   position: relative;
 }
 
+/* Reveal-on-scroll utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger helpers inside groups */
+.placement-stats .stat { transition-delay: 80ms; }
+.placement-stats .stat:nth-child(2) { transition-delay: 160ms; }
+.placement-stats .stat:nth-child(3) { transition-delay: 240ms; }
+.placement-stats .stat:nth-child(4) { transition-delay: 320ms; }
+.placement-stats .stat:nth-child(5) { transition-delay: 400ms; }
+
+/* Benefits list */
+.placement-benefits {
+  max-width: 1000px;
+  margin: 2rem auto 0;
+}
+.placement-benefits h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem 1.25rem;
+}
+.benefits-list li {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: #495057;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* CTA buttons */
+.placement-cta {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.placement-btn {
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+.placement-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(243, 156, 18, 0.25);
+  background: #e68a00;
+}
+
 .placement-process h3 {
   text-align: center;
   font-size: 1.8rem;
@@ -191,6 +261,8 @@
 }
 
 @media (max-width: 768px) {
+  .placement-benefits h3 { font-size: 1.5rem; }
+  .placement-cta { flex-direction: column; align-items: center; }
   .placement-images {
     gap: 1rem;
   }

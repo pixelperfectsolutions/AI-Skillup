@@ -26,31 +26,33 @@ const Header = () => {
     <>
       <TopBar />
       <header className="header">
-        <div className="logo" aria-label="AI SKILL UP">
-          <img src="/images/AI logo.png" alt="AI SKILL UP" />
-        </div>
-        <nav className="nav-desktop">
-          <ul>
-            <li><Link to="/" onClick={() => scrollToSection('home')}>Home</Link></li>
-            <li><Link to="/" onClick={() => scrollToSection('about')}>About</Link></li>
-            <li><Link to="/" onClick={() => scrollToSection('courses')}>Courses</Link></li>
-            <li><Link to="/" onClick={() => scrollToSection('placement')}>Placement</Link></li>
-            <li><Link to="/" onClick={() => scrollToSection('contact')}>Contact Us</Link></li>
-          </ul>
-        </nav>
-        <div className="actions">
-          <button onClick={() => scrollToSection('courses')}>Explore Course</button>
-        </div>
+        <div className="header-container">
+          <div className="logo" aria-label="AI SKILL UP">
+            <img src="/images/AI logo.png" alt="AI SKILL UP" />
+          </div>
+          <nav className="nav-desktop">
+            <ul>
+              <li><Link to="/" onClick={() => scrollToSection('home')}>Home</Link></li>
+              <li><Link to="/" onClick={() => scrollToSection('about')}>About</Link></li>
+              <li><Link to="/" onClick={() => scrollToSection('courses')}>Courses</Link></li>
+              <li><Link to="/" onClick={() => scrollToSection('placement')}>Placement</Link></li>
+              <li><Link to="/" onClick={() => scrollToSection('contact')}>Contact Us</Link></li>
+            </ul>
+          </nav>
+          <div className="actions">
+            <button onClick={() => scrollToSection('courses')}>Explore Course</button>
+          </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="hamburger-btn"
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={mobileOpen}
-          onClick={toggleMobileMenu}
-        >
-          {mobileOpen ? <FaTimes /> : <FaBars />}
-        </button>
+          {/* Mobile hamburger */}
+          <button
+            className="hamburger-btn"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            onClick={toggleMobileMenu}
+          >
+            {mobileOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </header>
 
       {/* Mobile dropdown menu */}
