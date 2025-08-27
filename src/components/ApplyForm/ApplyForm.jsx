@@ -17,14 +17,15 @@ const courses = [
 const ApplyForm = () => {
   const WHATSAPP_NUMBER = '919655422511'; // target number in international format without '+'
 
-  const buildWhatsAppMessage = ({ name, phone, email, course }) => {
+  const buildWhatsAppMessage = ({ name, phone, email, course, message }) => {
     return (
       `New course enquiry from AI SKILL UP website:%0A` +
       `%0A` +
       `Name: ${encodeURIComponent(name)}%0A` +
       `Phone: ${encodeURIComponent(phone)}%0A` +
       `Email: ${encodeURIComponent(email)}%0A` +
-      `Interested Course: ${encodeURIComponent(course)}`
+      `Interested Course: ${encodeURIComponent(course)}%0A` +
+      `Message: ${encodeURIComponent(message || '')}`
     );
   };
   const [formData, setFormData] = useState({
@@ -32,6 +33,7 @@ const ApplyForm = () => {
     email: '',
     phone: '',
     course: '',
+    message: '',
   });
 
   const handleChange = (e) => {
@@ -55,7 +57,7 @@ const ApplyForm = () => {
     }
 
     alert('Thank you for applying! We will contact you shortly on WhatsApp or Email.');
-    setFormData({ name: '', email: '', phone: '', course: '' });
+    setFormData({ name: '', email: '', phone: '', course: '', message: '' });
   };
 
   return (
@@ -73,7 +75,7 @@ const ApplyForm = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Enter Your Name"
+                  placeholder="Full Name"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -83,7 +85,7 @@ const ApplyForm = () => {
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Enter Mobile Number"
+                  placeholder="Mobile Number"
                   value={formData.phone}
                   onChange={handleChange}
                   required
@@ -93,9 +95,19 @@ const ApplyForm = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Enter Your Email Id"
+                  placeholder="Email"
                   value={formData.email}
                   onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Comment or Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
                   required
                 />
               </div>

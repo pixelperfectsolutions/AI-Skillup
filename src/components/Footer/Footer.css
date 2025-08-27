@@ -1,7 +1,12 @@
 .footer {
-  background-color: #212529;
+  background-color: #346bc3;
   color: #f8f9fa;
-  padding: 4rem 2rem 2rem;
+  padding: 6rem 2rem 0;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: clip; /* prevent any horizontal bleed causing right-side gap */
 }
 
 .footer-content {
@@ -121,17 +126,23 @@
 }
 
 .footer-bottom {
+  background-color: #212529; /* old footer color */
+  color: #f8f9fa;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 0.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid #444;
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #ccc;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  /* Full-bleed bar across the viewport */
+  position: relative;
+  left: 50%;
+  width: 100vw;       /* fallback */
+  width: 100dvw;      /* avoids scrollbar offset on some browsers */
+  transform: translateX(-50%);
+  margin-top: auto;    /* stick to the bottom of the footer container */
   font-size: 0.95rem;
 }
 

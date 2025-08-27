@@ -60,7 +60,8 @@
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
   width: 100%;
   padding: 1rem;
   border: 1px solid #f39c12;
@@ -68,6 +69,9 @@
   background-color: #fff;
   font-size: 1rem;
 }
+
+/* Optional: allow vertical resize only for better UX */
+.form-group textarea { resize: vertical; }
 
 .submit-btn {
   background-color: #fff;
