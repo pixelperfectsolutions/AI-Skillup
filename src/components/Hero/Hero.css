@@ -10,6 +10,21 @@
   color: #fff;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+}
+
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  background-size: cover;
+  filter: blur(4px) brightness(0.8);
+  z-index: 1;
+  transform: scale(1.02); /* Prevents blur from creating white edges */
 }
 
 .hero-slide::before {
@@ -21,6 +36,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
+  backdrop-filter: blur(1px);
 }
 
 .hero-content {
@@ -28,7 +44,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 4;
   max-width: 800px;
   padding: 0 2rem;
   width: 100%;
