@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaUserTie, FaFileAlt, FaComments, FaBuilding, FaHandshake, FaChartLine, FaUsers, FaLinkedin, FaInfinity, FaBriefcase, FaTasks, FaNetworkWired } from 'react-icons/fa';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -30,6 +30,70 @@ function PrevArrow(props) {
 const Courses = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [counters, setCounters] = useState({
+    placementRate: 0,
+    companies: 0,
+    students: 0,
+    partners: 0,
+    interviews: 0
+  });
+  const statsRef = useRef(null);
+  const animationStarted = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !animationStarted.current) {
+            animationStarted.current = true;
+            startCounters();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
+
+  const startCounters = () => {
+    const duration = 2000; // Animation duration in ms
+    const startTime = Date.now();
+    const endValues = {
+      placementRate: 95,
+      companies: 500,
+      students: 1000,
+      partners: 200,
+      interviews: 50
+    };
+
+    const animate = () => {
+      const now = Date.now();
+      const progress = Math.min(1, (now - startTime) / duration);
+      
+      setCounters({
+        placementRate: Math.floor(progress * endValues.placementRate),
+        companies: Math.floor(progress * endValues.companies),
+        students: Math.floor(progress * endValues.students),
+        partners: Math.floor(progress * endValues.partners),
+        interviews: Math.floor(progress * endValues.interviews)
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  };
 
   const openCourse = (course) => {
     setSelectedCourse(course);
@@ -210,48 +274,86 @@ const Courses = () => {
             <img src="/images/placement-2.png" alt="Placement Highlight 2" />
           </div>
 
-          <div className="placement-stats">
+          <div className="placement-stats" ref={statsRef}>
             <div className="stat reveal">
               <div className="stat-icon"><FaChartLine /></div>
-              <h3>95%</h3>
+              <h3>{counters.placementRate}%</h3>
               <p>Placement Rate</p>
             </div>
             <div className="stat reveal">
               <div className="stat-icon"><FaBuilding /></div>
-              <h3>500+</h3>
+              <h3>{counters.companies}+</h3>
               <p>Companies Visited</p>
             </div>
             <div className="stat reveal">
               <div className="stat-icon"><FaUsers /></div>
-              <h3>1000+</h3>
+              <h3>{counters.students}+</h3>
               <p>Students Placed</p>
             </div>
             <div className="stat reveal">
               <div className="stat-icon"><FaHandshake /></div>
-              <h3>200+</h3>
+              <h3>{counters.partners}+</h3>
               <p>Hiring Partners</p>
             </div>
             <div className="stat reveal">
               <div className="stat-icon"><FaComments /></div>
-              <h3>50+</h3>
+              <h3>{counters.interviews}+</h3>
               <p>Mock Interviews</p>
             </div>
           </div>
 
-          <div className="placement-process reveal">
-            <h3>Our Placement Process</h3>
-            <ol>
-              <li><FaUserTie className="li-icon" /> Career Counseling & Assessment</li>
-              <li><FaFileAlt className="li-icon" /> Resume Building & Interview Preparation</li>
-              <li><FaComments className="li-icon" /> Mock Interviews & Skill Assessment</li>
-              <li><FaBuilding className="li-icon" /> Job Fairs & Company Visits</li>
-              <li><FaHandshake className="li-icon" /> Placement Offers & Alumni Network</li>
-            </ol>
+          <div className="placement-process-container reveal">
+            <div className="placement-layout">
+              <div className="placement-content">
+                <h3>100% Placement Assistance for Every Student</h3>
+                <p className="placement-intro">At AI Skillup, we provide comprehensive placement assistance for every student. Our strong connections with leading tech companies ensure you have access to exciting career opportunities in AI and technology.</p>
+                
+                <div className="placement-cta">
+                  <p>Our dedicated placement team supports you with resume building, interview preparation, and placement drives, ensuring you are fully prepared for the competitive job market.</p>
+                  <button className="start-journey-btn" onClick={scrollToApply}>
+                    Start Your Journey <span>→</span>
+                  </button>
+                </div>
+              </div>
+              
+              <div className="placement-topics">
+                <div className="topic-box">
+                  <div className="topic-icon"><FaUserTie /></div>
+                  <h4>Career Guidance</h4>
+                  <p>Personalized career path planning and industry insights</p>
+                </div>
+                <div className="topic-box">
+                  <div className="topic-icon"><FaFileAlt /></div>
+                  <h4>Resume Building</h4>
+                  <p>ATS-optimized resume creation and review</p>
+                </div>
+                <div className="topic-box">
+                  <div className="topic-icon"><FaComments /></div>
+                  <h4>Mock Interviews</h4>
+                  <p>Practice with industry experts and HR professionals</p>
+                </div>
+                <div className="topic-box">
+                  <div className="topic-icon"><FaBuilding /></div>
+                  <h4>Company Connect</h4>
+                  <p>Direct interaction with hiring managers</p>
+                </div>
+                <div className="topic-box">
+                  <div className="topic-icon"><FaNetworkWired /></div>
+                  <h4>Networking Events</h4>
+                  <p>Exclusive access to industry meetups and networking sessions</p>
+                </div>
+                <div className="topic-box">
+                  <div className="topic-icon"><FaChartLine /></div>
+                  <h4>Career Growth</h4>
+                  <p>Continuous learning and upskilling opportunities</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Illustration moved below the process list and enlarged via CSS */}
           <div className="placement-illustration reveal">
-            <img src="/images/placement-3.jpg" alt="Our Placement Process Illustration" />
+            <img src="/images/placement-3.png" alt="Our Placement Process Illustration" />
           </div>
 
           <div className="placement-benefits reveal">

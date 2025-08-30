@@ -4,7 +4,7 @@
 export const courses = [
   {
     title: 'Full-Stack Web Development Using AI (Next-Gen Web Development)',
-    description: 'Duration: 4 Months | 2 months course, 2 months internship. Level: Beginner to Advanced',
+    description: 'Duration: 4 Months | 2 months course. Level: Beginner to Advanced',
     image: '/images/course-1.png',
     highlights: [
       'AI-Assisted Coding – Use Cursor AI & GitHub Copilot for faster development',
@@ -21,7 +21,7 @@ export const courses = [
   },
   {
     title: 'UI/UX Design with AI (Smart Design Automation)',
-    description: 'Duration: 2 Months | 1 month course, 1 month internship. Level: Beginner to Advanced',
+    description: 'Duration: 2 Months | 1 month course. Level: Beginner to Advanced',
     image: '/images/course-2.png',
     highlights: [
       'AI-Generated UI/UX Designs – Use Midjourney & Figma AI for rapid prototyping',
@@ -38,7 +38,7 @@ export const courses = [
   },
   {
     title: 'AI-Based Mobile App Development (Next-Level App Building)',
-    description: 'Duration: 4 Months | 2 months course, 2 months internship. Level: Beginner to Advanced',
+    description: 'Duration: 4 Months | 2 months course. Level: Beginner to Advanced',
     image: '/images/course-3.png',
     highlights: [
       'AI-Generated App Code – Use Flutter AI & ChatGPT to write app logic',
@@ -72,7 +72,7 @@ export const courses = [
   },
   {
     title: 'Digital Marketing Using AI (AI-Powered Growth Hacking)',
-    description: 'Duration: 2 Months | 1 month course, 1 month internship. Level: Beginner to Advanced',
+    description: 'Duration: 2 Months | 1 month course. Level: Beginner to Advanced',
     image: '/images/course-5.png',
     highlights: [
       'AI-Generated Ad Copies & Content – Use ChatGPT & Jasper for high-conversion ads',

@@ -41,7 +41,13 @@ const Partners = () => {
 
   return (
     <section className="partners">
-      <h3 className="partners-title">Our Accreditations & Partnerships</h3>
+      <div className="partners-header">
+        <h2 className="partners-title">Our Esteemed Partners & Industry Leaders</h2>
+        <p className="partners-description">
+          At AI Skill Up, we're proud to collaborate with leading technology companies and educational institutions to provide you with industry-relevant training and certification programs. 
+          Our partnerships ensure that our curriculum stays current with the latest advancements in AI and technology, giving you the competitive edge in today's job market.
+        </p>
+      </div>
       <div className="partners-slider">
         <Slider {...settings}>
           {logos.map((logo, index) => (
