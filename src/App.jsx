@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Courses from './components/Courses/Courses';
 import Features from './components/Features/Features';
 import ApplyForm from './components/ApplyForm/ApplyForm';
+import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp/FloatingWhatsApp';
 import './App.css';
@@ -29,6 +30,7 @@ function App() {
               </div>
               <Features />
               <ApplyForm />
+              <Testimonials />
               <div id="contact">
                 <Footer />
               </div>
