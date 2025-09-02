@@ -1,89 +1,202 @@
 .courses {
   padding: 4rem 2rem;
-  background-color: #ffc107;
+  background-color: #fff8e1;
 }
 
-.courses-container {
-  max-width: 1400px;
-  margin: 0 auto;
+.courses-header {
+  max-width: 1450px;
+  margin: 0 auto 3rem;
   display: flex;
-  gap: 3rem;
-  align-items: stretch; /* Stretch items to be equal height */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
 }
 
-.courses-intro {
-  flex: 1;
-  padding-right: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
+.courses h2.section-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0;
+  position: relative;
+  display: inline-block;
   text-align: left;
 }
 
-.courses-slider-container {
-  flex: 2;
-  min-width: 0; /* Important for flexbox and sliders */
-  position: relative; /* Establishes positioning context for arrows */
+.courses h2.section-title:after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background: #ffc107;
+  bottom: -15px;
+  left: 0;
+  transform: none;
 }
 
-.courses-intro p {
+/* Enroll Now Button */
+.enroll-now-btn {
+  background-color: var(--primary-color, #f39c12);
+  color: white;
+  border: 2px solid var(--primary-color, #f39c12);
+  padding: 0.7rem 1.8rem;
   font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.courses-intro h2 {
-  font-size: 2.8rem;
-  color: #0d2c54;
-  font-weight: bold;
-  line-height: 1.2;
+.enroll-now-btn:hover {
+  background-color: var(--primary-hover, #e67e22);
+  border-color: var(--primary-hover, #e67e22);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+  color: white;
+}
+
+.enroll-now-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.courses-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
 .course-card {
-  position: relative;
+  background: white;
   border-radius: 8px;
   overflow: hidden;
-  margin: 0 0.5rem;
-  height: 440px; /* increased height for larger images */
-  color: #fff;
-  border: 2px solid #ffc107;
-}
-
-.course-card img {
-  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  border: 2px solid #000000;
+  border-top: 4px solid #000000;
+  transform: translateY(0);
 }
 
-.course-card:hover img {
-  transform: scale(1.05);
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.course-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.5rem;
-  z-index: 2;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, transparent);
-}
-
-.course-info h3 {
-  font-size: 1.6rem;
-  font-weight: bold;
+.course-image {
+  height: 200px;
+  overflow: hidden;
   margin-bottom: 0.5rem;
 }
 
-.course-info p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  color: #eee;
+/* Target specific course cards for custom spacing */
+/* 2nd, 3rd, and 4th cards */
+.course-card:nth-child(2) .course-details,
+.course-card:nth-child(3) .course-details,
+.course-card:nth-child(4) .course-details {
+  padding-bottom: 0.5rem;
+  gap: 0.4rem;
 }
 
-/* Button styles are now in global styles (index.css) */
+/* 5th course card's image */
+.course-card:nth-child(5) .course-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 220px;
+}
+
+.course-card:nth-child(5) .course-image img {
+  object-position: center 20%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 0;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.course-card:hover .course-image img {
+  transform: scale(1.05);
+}
+
+.course-details {
+  padding: 0 1.25rem 0.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: -0.5rem;
+}
+
+.course-details h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+  min-height: auto;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.course-cta {
+  margin-top: 0.25rem;
+  width: 100%;
+  padding-bottom: 0;
+}
+
+/* Read More Button */
+.course-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color, #f39c12);
+  color: white;
+  border: 2px solid var(--primary-color, #f39c12);
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  min-width: 120px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-cta .btn:hover {
+  background-color: var(--primary-hover, #e67e22);
+  border-color: var(--primary-hover, #e67e22);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(243, 156, 18, 0.25);
+  color: white;
+}
+
+.course-cta .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 .custom-arrow {
   position: absolute;
@@ -226,7 +339,28 @@
 .course-modal-details {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.course-duration {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+}
+
+.course-duration h4 {
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.course-duration p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .apply-course-btn {

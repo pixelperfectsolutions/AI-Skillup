@@ -24,41 +24,41 @@ const Testimonials = () => {
   
   // No avatar generation needed as per requirements
 
-  // Generate random whole number ratings between 3 and 5
-  const getRandomRating = () => Math.floor(Math.random() * 3) + 3; // 3, 4, or 5
+  // All testimonials will have 5-star ratings
+  const getRandomRating = () => 5; // Always return 5 stars
 
   const testimonials = [
     {
       id: 1,
-      name: 'Aarav Sharma',
+      name: 'Nantha Kumar',
       role: 'AI/ML Engineer',
       rating: getRandomRating(),
       content: 'The AI courses transformed my career! The hands-on projects and expert mentorship helped me land my dream job at a top tech company.'
     },
     {
       id: 2,
-      name: 'Priya Patel',
+      name: 'Keerthi',
       role: 'Data Science Lead',
       rating: getRandomRating(),
       content: 'Exceptional curriculum and instructors. The practical approach to AI concepts made complex topics easy to understand and apply in real-world scenarios.'
     },
     {
       id: 3,
-      name: 'Rahul Verma',
+      name: 'Gokul Krishnan',
       role: 'Machine Learning Specialist',
       rating: getRandomRating(),
       content: 'The best investment I\'ve made in my education. The courses are well-structured and the community support is outstanding.'
     },
     {
       id: 4,
-      name: 'Ananya Gupta',
+      name: 'Shamini',
       role: 'AI Research Scientist',
       rating: getRandomRating(),
       content: 'The perfect blend of theory and practice. I was able to immediately apply what I learned to my job and see real results.'
     },
     {
       id: 5,
-      name: 'Vikram Singh',
+      name: 'Karthik',
       role: 'Deep Learning Engineer',
       rating: getRandomRating(),
       content: 'The instructors are industry experts who genuinely care about student success. The career support team is also fantastic at helping with job placement.'

@@ -13,7 +13,6 @@
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, #f39c12, #e67e22, #f39c12);
   background-size: 200% auto;
   animation: gradientBG 8s ease infinite;
 }

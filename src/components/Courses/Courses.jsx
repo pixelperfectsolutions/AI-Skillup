@@ -199,30 +199,42 @@ const Courses = () => {
   return (
     <>
       <section className="courses" id="courses">
+        <div className="courses-header">
+          <h2 className="section-title">Our Popular Courses</h2>
+          <button 
+            className="enroll-now-btn"
+            onClick={() => {
+              const applySection = document.getElementById('apply-form');
+              if (applySection) {
+                applySection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            Enroll Now
+          </button>
+        </div>
         <div className="courses-container">
-          <div className="courses-intro">
-            <p>"At AI SKILL UP, our cutting-edge labs are dedicated to honing practical skills and combatting unemployment. Guided by industry veterans with over 20 years of experience and driven by young innovators, our tech campus is continuously evolving to embrace the latest in-demand technologies and trends."</p>
-            <h2>Choose the right way to upgrade your career.</h2>
-          </div>
-          <div className="courses-slider-container">
-            <Slider {...settings} className="courses-slider">
-              {courses.map((course, index) => (
-                <div key={index} className="course-card" onClick={() => openCourse(course)}>
-                  <img src={course.image} alt={course.title} />
-                  <div className="course-info">
-                    <h3>{course.title}</h3>
-                    <p>{course.description}</p>
-                    <button
-                      className="btn btn-primary btn-arrow"
-                      onClick={(e) => { e.stopPropagation(); openCourse(course); }}
-                    >
-                      View Course
-                    </button>
-                  </div>
+          {courses.map((course, index) => (
+            <div key={index} className="course-card">
+              <div className="course-image">
+                <img src={course.image} alt={course.title} />
+              </div>
+              <div className="course-details">
+                <h3>{course.title.split(' (')[0]}</h3>
+                <div className="course-cta">
+                  <button 
+                    className="btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openCourse(course);
+                    }}
+                  >
+                    Read More
+                  </button>
                 </div>
-              ))}
-            </Slider>
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
       {isModalOpen && selectedCourse && (
@@ -237,7 +249,19 @@ const Courses = () => {
                 <img src={selectedCourse.image} alt={selectedCourse.title} />
               </div>
               <div className="course-modal-details">
-                <p>{selectedCourse.description}</p>
+                {selectedCourse.description && (
+                  <div className="course-duration">
+                    <h4>Duration</h4>
+                    <p>
+                      {selectedCourse.description.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < selectedCourse.description.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                )}
                 {Array.isArray(selectedCourse.highlights) && selectedCourse.highlights.length > 0 && (
                   <>
                     <h4>Course Highlights</h4>
