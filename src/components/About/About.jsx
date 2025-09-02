@@ -45,7 +45,7 @@ const About = () => {
           <p className="reveal fade-up delay-3">
             We are India's largest turnkey solution provider in Manufacturing of Fracture Connecting Rods. Developing new conceptual products for Automotive sectors like Hyundai Motors, Supporting hardware automation and software development we have wide range of diversified tech verticals and also owning a Skill development campus collaborated with World's leading companies.
           </p>
-          <a href="#apply-form" className="about-btn reveal fade-up delay-4" onClick={(e) => { e.preventDefault(); scrollToApply(); }}>About AI SKILL UP &rarr;</a>
+          <a href="#apply-form" className="btn btn-primary btn-arrow reveal fade-up delay-4" onClick={(e) => { e.preventDefault(); scrollToApply(); }}>About AI SKILL UP</a>
         </div>
       </div>
     </section>

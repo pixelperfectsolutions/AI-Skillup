@@ -1,5 +1,5 @@
 .footer {
-  background-color: #346bc3;
+  background-color: #0e2e62;
   color: #f8f9fa;
   padding: 6rem 2rem 0;
   min-height: 600px;
@@ -128,7 +128,7 @@
 .footer-bottom {
   background-color: #212529; /* old footer color */
   color: #f8f9fa;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

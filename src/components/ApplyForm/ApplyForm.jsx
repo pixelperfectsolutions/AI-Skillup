@@ -112,7 +112,7 @@ const ApplyForm = () => {
                   ))}
                 </select>
               </div>
-              <button type="submit" className="submit-btn">Submit</button>
+              <button type="submit" className="btn btn-primary">Submit Application</button>
             </form>
             <div className="apply-form-image">
               <img src="/images/apply form-1.png" alt="Student with books" />

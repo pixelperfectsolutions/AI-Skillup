@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Testimonials.css';
 
 // Star rating component with only full stars
@@ -20,6 +20,7 @@ const StarRating = ({ rating }) => {
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   
   // No avatar generation needed as per requirements
 
@@ -64,65 +65,112 @@ const Testimonials = () => {
     }
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-  };
+  }, [testimonials.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
+  }, [testimonials.length]);
 
-  // Auto slide every 5 seconds
+  // Auto slide every 5 seconds, but only when not paused
   useEffect(() => {
+    if (isPaused) return;
+    
     const timer = setTimeout(() => {
       nextSlide();
     }, 5000);
+    
     return () => clearTimeout(timer);
-  }, [currentSlide]);
+  }, [currentSlide, isPaused]);
+  
+  // Pause auto-slide when user interacts with the slider
+  const pauseAutoSlide = useCallback(() => {
+    setIsPaused(true);
+    // Resume after 10 seconds of inactivity
+    const timer = setTimeout(() => {
+      setIsPaused(false);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, []);
+  
+  // Go to specific slide
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    pauseAutoSlide();
+  };
 
   return (
     <section className="testimonials-section">
       <div className="container">
         <h2 className="section-title">What Our Students Say</h2>
-        <div className="testimonials-slider">
-          <button className="slider-arrow prev" onClick={prevSlide}>&#10094;</button>
+        <div 
+          className="testimonials-slider"
+          onMouseEnter={pauseAutoSlide}
+          onFocus={pauseAutoSlide}
+        >
+          <button 
+            className="slider-arrow prev" 
+            onClick={() => {
+              prevSlide();
+              pauseAutoSlide();
+            }}
+            aria-label="Previous testimonial"
+          >
+            &#10094;
+          </button>
           
           <div className="testimonials-container">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={testimonial.id}
                 className={`testimonial ${index === currentSlide ? 'active' : ''}`}
+                aria-hidden={index !== currentSlide}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`${index + 1} of ${testimonials.length}`}
               >
                 <div className="testimonial-content">
-                  <p>"{testimonial.content}"</p>
                   <div className="testimonial-author">
-                    <div className="testimonial-initials">
+                    <div className="testimonial-fallback">
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div className="author-info">
                       <h4>{testimonial.name}</h4>
-                      <p className="role">{testimonial.role}</p>
-                      <div className="rating-container">
-                        <StarRating rating={testimonial.rating} />
-                      </div>
+                      <span className="role">{testimonial.role}</span>
                     </div>
                   </div>
+                  <StarRating rating={testimonial.rating} />
+                  <p>"{testimonial.content}"</p>
                 </div>
               </div>
             ))}
           </div>
           
-          <button className="slider-arrow next" onClick={nextSlide}>&#10095;</button>
-        </div>
-        
-        <div className="testimonial-dots">
-          {testimonials.map((_, index) => (
-            <span 
-              key={index}
-              className={`dot ${index === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(index)}
-            ></span>
-          ))}
+          <button 
+            className="slider-arrow next" 
+            onClick={() => {
+              nextSlide();
+              pauseAutoSlide();
+            }}
+            aria-label="Next testimonial"
+          >
+            &#10095;
+          </button>
+          
+          {/* Dots Navigation */}
+          <div className="testimonial-dots" role="tablist">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                className={`dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+                aria-label={`Go to testimonial ${index + 1}`}
+                aria-selected={index === currentSlide}
+                role="tab"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

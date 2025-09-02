@@ -70,24 +70,20 @@
   font-size: 1rem;
 }
 
-/* Optional: allow vertical resize only for better UX */
-.form-group textarea { resize: vertical; }
+/* Button styles are now in global styles (index.css) */
 
-.submit-btn {
-  background-color: #fff;
-  color: #e67e22;
-  border: 2px solid #e67e22;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* Optional: allow vertical resize only for better UX */
+.form-group textarea { 
+  resize: vertical; 
+  min-height: 100px;
 }
 
-.submit-btn:hover {
-  background-color: #e67e22;
-  color: #fff;
+/* Form button specific styles */
+.apply-form .btn {
+  width: 100%;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 .apply-form-image {

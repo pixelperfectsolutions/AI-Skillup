@@ -213,10 +213,10 @@ const Courses = () => {
                     <h3>{course.title}</h3>
                     <p>{course.description}</p>
                     <button
-                      className="view-course-btn"
+                      className="btn btn-primary btn-arrow"
                       onClick={(e) => { e.stopPropagation(); openCourse(course); }}
                     >
-                      View Course &rarr;
+                      View Course
                     </button>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ const Courses = () => {
                     </ul>
                   </>
                 )}
-                <button className="apply-course-btn" onClick={applyAndClose}>Apply Course &rarr;</button>
+                <button className="btn btn-secondary btn-arrow" onClick={applyAndClose}>Apply Course</button>
               </div>
             </div>
           </div>
@@ -310,8 +310,8 @@ const Courses = () => {
                 
                 <div className="placement-cta">
                   <p>Our dedicated placement team supports you with resume building, interview preparation, and placement drives, ensuring you are fully prepared for the competitive job market.</p>
-                  <button className="start-journey-btn" onClick={scrollToApply}>
-                    Start Your Journey <span>→</span>
+                  <button className="btn btn-primary btn-arrow" onClick={scrollToApply}>
+                    Start Your Journey
                   </button>
                 </div>
               </div>
@@ -370,9 +370,8 @@ const Courses = () => {
               <li><FaComments className="li-icon" /> Soft Skills & Communication Training</li>
               <li><FaHandshake className="li-icon" /> Post-Placement Support</li>
             </ul>
-            <div className="placement-cta">
-              <button className="placement-btn" onClick={scrollToApply}>Apply Now →</button>
-              <a className="placement-btn" href="https://wa.me/919655422511" target="_blank" rel="noreferrer">Talk to Career Counselor</a>
+            <div className="placement-cta" style={{ justifyContent: 'center' }}>
+              <button className="btn btn-primary btn-arrow" onClick={scrollToApply}>Apply Now</button>
             </div>
           </div>
         </div>

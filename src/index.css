@@ -5,6 +5,72 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Global Button Styles */
+  --primary-color: #f39c12;
+  --primary-hover: #e67e22;
+  --primary-shadow: rgba(243, 156, 18, 0.3);
+  --secondary-color: #0d6efd;
+  --secondary-hover: #0b5ed7;
+  --secondary-shadow: rgba(13, 110, 253, 0.3);
+  --white: #fff;
+  --transition: all 0.3s ease;
+
+  /* Base Button Style */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--primary-shadow);
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-color: var(--secondary-color);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--secondary-hover);
+    border-color: var(--secondary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--secondary-shadow);
+  }
+
+  /* Button with Arrow */
+  .btn-arrow::after {
+    content: '→';
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-arrow:hover::after {
+    transform: translateX(4px);
+  }
   background-color: #f8f9fa;
 }
 
