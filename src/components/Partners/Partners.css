@@ -37,6 +37,16 @@
   .partners-description {
     font-size: 1rem;
   }
+  
+  .partner-logo-container {
+    padding: 15px 1.5rem; /* Increased vertical padding and horizontal spacing */
+    margin: 5px 0; /* Added margin between logo containers */
+  }
+  
+  .partner-logo {
+    max-width: 120px; /* Slightly reduced logo size for better mobile fit */
+    max-height: 50px;
+  }
 }
 
 .partners-slider {
