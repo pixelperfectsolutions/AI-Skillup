@@ -27,39 +27,76 @@
 
 @media (max-width: 768px) {
   .partners {
-    padding: 3rem 1.5rem;
+    padding: 3rem 0;
+    overflow: hidden;
+    width: 100%;
   }
   
   .partners-title {
     font-size: 1.8rem;
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
   }
   
   .partners-description {
     font-size: 1rem;
+    padding: 0 1.5rem;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+  }
+  
+  .partners-slider {
+    padding: 20px 10px;
+    margin: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  
+  .partners-slider .slick-track {
+    display: flex !important;
+    align-items: center;
   }
   
   .partner-logo-container {
-    padding: 15px 1.5rem; /* Increased vertical padding and horizontal spacing */
-    margin: 5px 0; /* Added margin between logo containers */
+    display: inline-flex !important;
+    padding: 10px 15px;
+    margin: 0 8px;
+    height: 50px;
+    width: auto !important;
+    float: none;
   }
   
   .partner-logo {
-    max-width: 120px; /* Slightly reduced logo size for better mobile fit */
-    max-height: 50px;
+    max-width: 100px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 }
 
 .partners-slider {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 20px 0;
+  overflow: visible;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .partner-logo-container {
-  display: flex !important; /* Override slick display */
+  display: inline-flex !important; /* Change to inline-flex */
   justify-content: center;
   align-items: center;
   height: 80px;
-  padding: 0 1rem;
+  padding: 0 15px;
+  margin: 0 10px; /* Reduced margin for mobile */
+  box-sizing: border-box;
+  width: auto !important;
+  float: none !important; /* Prevent any floating */
 }
 
 .partner-logo {
