@@ -24,7 +24,7 @@
 }
 
 .placement-container {
-  max-width: 1400px;
+  max-width: 1450px;
   margin: 0 auto;
 }
 
@@ -37,7 +37,7 @@
 .placement p {
   font-size: 1.1rem;
   color: #6c757d;
-  max-width: 800px;
+  max-width: 1450px;
   margin: 0 auto 2rem auto;
   line-height: 1.6;
 }
@@ -149,7 +149,7 @@
 .placement-layout {
   display: flex;
   gap: 3rem;
-  max-width: 1400px;
+  max-width: 1450px;
   margin: 0 auto;
   padding: 0 2rem;
   min-height: 600px; /* Fixed minimum height */
@@ -178,7 +178,7 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   padding: 2.5rem;
   margin: 3rem auto;
-  max-width: 1400px;
+  max-width: 1450px;
   width: 90%;
 }
 

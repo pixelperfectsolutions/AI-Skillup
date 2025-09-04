@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaPhoneAlt } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState('');
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    // Set active link based on current path
+    const path = location.pathname;
+    if (path === '/') {
+      setActiveLink('home');
+    } else if (path === '/about') {
+      setActiveLink('about');
+    } else if (path === '/contact') {
+      setActiveLink('contact');
+    } else if (path.startsWith('/courses')) {
+      setActiveLink('courses');
+    }
+  }, [location]);
+
   const scrollToSection = (sectionId) => {
     if (sectionId === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -16,25 +34,27 @@ const Header = () => {
     }
   };
 
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   const toggleMobileMenu = () => setMobileOpen((v) => !v);
   const closeMobileMenu = () => setMobileOpen(false);
+
+  // Helper function to determine if a link is active
+  const isActive = (linkName) => activeLink === linkName ? 'active' : '';
 
   return (
     <>
       <header className="header">
         <div className="header-container">
           <div className="logo" aria-label="AI SKILL UP">
-            <img src="/images/AI logo.png" alt="AI SKILL UP" />
+            <Link to="/">
+              <img src="/images/AI logo.png" alt="AI SKILL UP" />
+            </Link>
           </div>
           <nav className="nav-desktop">
             <ul>
-              <li><Link to="/" onClick={() => scrollToSection('home')}>Home</Link></li>
-              <li><Link to="/" onClick={() => scrollToSection('about')}>About</Link></li>
-              <li><Link to="/" onClick={() => scrollToSection('courses')}>Courses</Link></li>
-              <li><Link to="/" onClick={() => scrollToSection('placement')}>Placement</Link></li>
-              <li><Link to="/" onClick={() => scrollToSection('contact')}>Contact Us</Link></li>
+              <li><Link to="/" className={isActive('home')} onClick={() => { scrollToSection('home'); closeMobileMenu(); }}>Home</Link></li>
+              <li><Link to="/about" className={isActive('about')} onClick={closeMobileMenu}>About</Link></li>
+              <li><Link to="/courses" className={isActive('courses')} onClick={() => { scrollToSection('courses'); closeMobileMenu(); }}>Courses</Link></li>
+              <li><Link to="/contact" className={isActive('contact')} onClick={closeMobileMenu}>Contact Us</Link></li>
             </ul>
           </nav>
           <div className="actions">
@@ -44,28 +64,26 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Mobile hamburger */}
           <button
             className="hamburger-btn"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileOpen}
             onClick={toggleMobileMenu}
           >
             {mobileOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
-      </header>
 
-      {/* Mobile dropdown menu */}
-      {mobileOpen && (
-        <div className="mobile-menu" role="menu">
-          <Link to="/" role="menuitem" onClick={() => { scrollToSection('home'); closeMobileMenu(); }}>Home</Link>
-          <Link to="/" role="menuitem" onClick={() => { scrollToSection('about'); closeMobileMenu(); }}>About</Link>
-          <Link to="/" role="menuitem" onClick={() => { scrollToSection('courses'); closeMobileMenu(); }}>Courses</Link>
-          <Link to="/" role="menuitem" onClick={() => { scrollToSection('placement'); closeMobileMenu(); }}>Placement</Link>
-          <Link to="/" role="menuitem" onClick={() => { scrollToSection('contact'); closeMobileMenu(); }}>Contact Us</Link>
+        <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
+          <nav>
+            <ul>
+              <li><Link to="/" className={isActive('home')} onClick={() => { scrollToSection('home'); closeMobileMenu(); }}>Home</Link></li>
+              <li><Link to="/about" className={isActive('about')} onClick={closeMobileMenu}>About</Link></li>
+              <li><Link to="/courses" className={isActive('courses')} onClick={() => { scrollToSection('courses'); closeMobileMenu(); }}>Courses</Link></li>
+              <li><Link to="/contact" className={isActive('contact')} onClick={closeMobileMenu}>Contact Us</Link></li>
+            </ul>
+          </nav>
         </div>
-      )}
+      </header>
     </>
   );
 };
