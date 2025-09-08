@@ -3,6 +3,7 @@
 
 export const courses = [
   {
+    slug: 'full-stack-development-using-ai',
     title: 'Full-Stack Development Using AI (Next-Gen Web Development)',
     description: '4 Months | 2 months course\nLevel: Beginner to Advanced',
     image: '/images/course-1.png',
@@ -20,6 +21,7 @@ export const courses = [
     ],
   },
   {
+    slug: 'ui-ux-design-with-ai',
     title: 'UI/UX Design with AI (Smart Design Automation)',
     description: '2 Months | 1 month course\nLevel: Beginner to Advanced',
     image: '/images/course-2.png',
@@ -37,6 +39,7 @@ export const courses = [
     ],
   },
   {
+    slug: 'ai-based-mobile-app-development',
     title: 'AI-Based Mobile App Development (Next-Level App Building)',
     description: '4 Months | 2 months course\nLevel: Beginner to Advanced',
     image: '/images/course-3.png',
@@ -54,6 +57,7 @@ export const courses = [
     ],
   },
   {
+    slug: 'no-code-development-course',
     title: 'No-Code Development Course (Build Without Coding)',
     description: '3 Months | 1 month course\nLevel: Beginner to Advanced',
     image: '/images/course-4.png',
@@ -71,6 +75,7 @@ export const courses = [
     ],
   },
   {
+    slug: 'digital-marketing-using-ai',
     title: 'Digital Marketing Using AI (AI-Powered Growth Hacking)',
     description: '2 Months | 1 month course\nLevel: Beginner to Advanced',
     image: '/images/course-5.png',

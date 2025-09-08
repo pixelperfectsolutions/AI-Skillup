@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ApplyForm.css';
 import { courseTitles } from '../../data/courses';
 
-const ApplyForm = () => {
+const ApplyForm = ({ inline = false, hideImage = false, compact = false }) => {
   const WHATSAPP_NUMBER = '919655422511'; // target number in international format without '+'
 
   const buildWhatsAppMessage = ({ name, phone, email, course, message }) => {
@@ -31,14 +31,11 @@ const ApplyForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log('Form submitted:', formData);
 
-    // Open WhatsApp with prefilled message
     const text = buildWhatsAppMessage(formData);
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 
-    // Attempt to open in a new tab; fallback to same tab
     const newWin = window.open(waUrl, '_blank');
     if (!newWin) {
       window.location.href = waUrl;
@@ -48,16 +45,85 @@ const ApplyForm = () => {
     setFormData({ name: '', email: '', phone: '', course: '', message: '' });
   };
 
+  // Inline compact variant (for ContactPage right side)
+  if (inline) {
+    return (
+      <div className="apply-form-inline">
+        <form onSubmit={handleSubmit} className="apply-form apply-form-grid">
+          <div className="form-group">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <select
+              name="course"
+              value={formData.course}
+              onChange={handleChange}
+              required
+            >
+              <option value="" disabled>Your Interested Course</option>
+              {courseTitles.map((title, index) => (
+                <option key={index} value={title}>{title}</option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group form-group-wide">
+            <textarea
+              name="message"
+              placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
+              rows={4}
+              required
+            />
+          </div>
+          <div className="form-actions-right">
+            <button type="submit" className="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+    );
+  }
+
+  // Default full-width promotional variant
   return (
     <section className="apply-form-section" id="apply-form">
       <div className="apply-form-container">
         <div className="apply-form-content">
-          <div className="discount-info">
-            <h2>Wait! <br/><span>Before you go,</span> <br/>Here is a 20% <br/>Discount.</h2>
-            <hr/>
-            <p>in your Course Fee</p>
-          </div>
-          <div className="form-image-container">
+          {!compact && (
+            <div className="discount-info">
+              <h2>Wait! <br/><span>Before you go,</span> <br/>Here is a 20% <br/>Discount.</h2>
+              <hr/>
+              <p>in your Course Fee</p>
+            </div>
+          )}
+          <div className={`form-image-container ${compact ? 'form-card' : ''}`}>
             <form onSubmit={handleSubmit} className="apply-form">
               <div className="form-group">
                 <input
@@ -114,9 +180,11 @@ const ApplyForm = () => {
               </div>
               <button type="submit" className="btn btn-primary">Submit Application</button>
             </form>
-            <div className="apply-form-image">
-              <img src="/images/apply form-1.png" alt="Student with books" />
-            </div>
+            {!hideImage && (
+              <div className="apply-form-image">
+                <img src="/images/apply form-1.png" alt="Student with books" />
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp/FloatingWhatsApp';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import CoursePage from './pages/CoursePage';
 import './App.css';
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
       <Routes>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:slug" element={<CoursePage />} />
         <Route path="/" element={
           <>
             <Hero />

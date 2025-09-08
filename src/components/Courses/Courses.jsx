@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FaUserTie, FaFileAlt, FaComments, FaBuilding, FaHandshake, FaChartLine, FaUsers, FaLinkedin, FaInfinity, FaBriefcase, FaTasks, FaNetworkWired } from 'react-icons/fa';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -28,8 +29,6 @@ function PrevArrow(props) {
 }
 
 const Courses = () => {
-  const [selectedCourse, setSelectedCourse] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [counters, setCounters] = useState({
     placementRate: 0,
     companies: 0,
@@ -95,39 +94,12 @@ const Courses = () => {
     requestAnimationFrame(animate);
   };
 
-  const openCourse = (course) => {
-    setSelectedCourse(course);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedCourse(null);
-  };
-
   const scrollToApply = () => {
     const el = document.getElementById('apply-form');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  const applyAndClose = () => {
-    closeModal();
-    scrollToApply();
-  };
-
-  // Close modal with Escape key
-  useEffect(() => {
-    if (!isModalOpen) return;
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [isModalOpen]);
 
   // Reveal-on-scroll for placement section
   useEffect(() => {
@@ -222,72 +194,15 @@ const Courses = () => {
               <div className="course-details">
                 <h3>{course.title.split(' (')[0]}</h3>
                 <div className="course-cta">
-                  <button 
-                    className="btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      openCourse(course);
-                    }}
-                  >
+                  <Link to={`/courses/${course.slug}`} className="btn" onClick={(e) => e.stopPropagation()}>
                     Read More
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </section>
-      {isModalOpen && selectedCourse && (
-        <div className="course-modal-overlay" onClick={closeModal}>
-          <div className="course-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="course-modal-close" onClick={closeModal} aria-label="Close">×</button>
-            <div className="course-modal-header">
-              <h3>{selectedCourse.title}</h3>
-            </div>
-            <div className="course-modal-body">
-              <div className="course-modal-image">
-                <img src={selectedCourse.image} alt={selectedCourse.title} />
-              </div>
-              <div className="course-modal-details">
-                {selectedCourse.description && (
-                  <div className="course-duration">
-                    <h4>Duration</h4>
-                    <p>
-                      {selectedCourse.description.split('\n').map((line, i) => (
-                        <span key={i}>
-                          {line}
-                          {i < selectedCourse.description.split('\n').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-                )}
-                {Array.isArray(selectedCourse.highlights) && selectedCourse.highlights.length > 0 && (
-                  <>
-                    <h4>Course Highlights</h4>
-                    <ul className="course-highlights">
-                      {selectedCourse.highlights.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-                {Array.isArray(selectedCourse.projects) && selectedCourse.projects.length > 0 && (
-                  <>
-                    <h4>Projects</h4>
-                    <ul className="course-projects">
-                      {selectedCourse.projects.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-                <button className="btn btn-secondary btn-arrow" onClick={applyAndClose}>Apply Course</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
       <section className="placement" id="placement">
         <div className="placement-container">
           <h2 className="reveal">100% Placement Assistance</h2>

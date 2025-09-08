@@ -1,0 +1,26 @@
+/* Course Page Hero */
+.course-hero {
+  background: #f3f4f6; /* light neutral like contact */
+  color: #2d3748;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.course-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.course-hero .subtitle {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+  .course-hero { padding: 60px 16px; }
+  .course-hero h1 { font-size: 2.2rem; }
+  .course-hero .subtitle { font-size: 1rem; max-width: 100%; }
+}

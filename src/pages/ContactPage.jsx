@@ -23,9 +23,9 @@ const ContactPage = () => {
       {/* Hero Section */}
       <section className="contact-hero" data-aos="fade-up">
         <div className="container">
-          <h1 data-aos="fade-up" data-aos-delay="100">Get In Touch</h1>
+          <h1 data-aos="fade-up" data-aos-delay="100">CONTACT US</h1>
           <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
-            We'd love to hear from you. Fill out the form and we'll respond as soon as possible.
+            Our commitment is to help learners become more successful by offering modern, job-ready AI programs and career support.
           </p>
         </div>
       </section>
@@ -33,45 +33,44 @@ const ContactPage = () => {
       <div className="contact-container">
         <div className="container">
           <div className="contact-sections">
-            {/* Contact Form */}
-            <div className="contact-section" data-aos="fade-up" data-aos-delay="300">
-              <div className="contact-form-container">
-                <h2>Send Us a Message</h2>
-                <ApplyForm />
-              </div>
-            </div>
-
-            {/* Contact Info */}
-            <div className="contact-section" data-aos="fade-up" data-aos-delay="400">
+            {/* Contact Info (Left) */}
+            <div className="contact-section contact-section-plain" data-aos="fade-up" data-aos-delay="300">
               <div className="contact-info">
-                <h2>Contact Information</h2>
+                <h2>Get In Touch With Us</h2>
+                <p style={{ marginTop: '-8px', marginBottom: '18px', color: '#4a5568' }}>Book your appointment with us</p>
+
                 <div className="contact-details">
+                  <div className="contact-item">
+                    <div className="contact-icon">📞</div>
+                    <div>
+                      <h3>Call Us Now</h3>
+                      <p>Talk to us and see how we can work together</p>
+                      <p><strong>+91 96554 22511</strong></p>
+                    </div>
+                  </div>
+
+                  <div className="contact-item">
+                    <div className="contact-icon">📝</div>
+                    <div>
+                      <h3>Enquiry Form</h3>
+                      <p>For any of your requirements, please fill out the form. Our team will get back to you shortly.</p>
+                    </div>
+                  </div>
+
                   <div className="contact-item">
                     <div className="contact-icon">📍</div>
                     <div>
                       <h3>Our Location</h3>
-                      <p>45, Gokhale Street, Ram Nagar, Near MK Residency,<br />Coimbatore, Tamil Nadu 641009.</p>
-                    </div>
-                  </div>
-                  <div className="contact-item">
-                    <div className="contact-icon">📞</div>
-                    <div>
-                      <h3>Phone Number</h3>
-                      <p>+91 98765 43210</p>
-                      <h3>Whatsapp Number</h3>
-                      <p>+91 98765 43211</p>
-                    </div>
-                  </div>
-                  <div className="contact-item">
-                    <div className="contact-icon">✉️</div>
-                    <div>
-                      <h3>Email Address</h3>
-                      <p>info@aiskillup.com</p>
-                      <p>support@aiskillup.com</p>
+                      <p>
+                        45, Gokhale Street, Ram Nagar, Near MK Residency,<br />
+                        Coimbatore, Tamil Nadu 641009, India
+                      </p>
+                      <p>Phone: +91 96554 22511</p>
+                      <p>Email: info@aiskillup.com</p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="social-links">
                   <h3>Follow Us</h3>
                   <div className="social-icons">
@@ -89,6 +88,14 @@ const ContactPage = () => {
                     </a>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Contact Form (Right) */}
+            <div className="contact-section contact-card" data-aos="fade-up" data-aos-delay="400">
+              <div className="contact-form-container">
+                <h2 style={{ textTransform: 'uppercase' }}>Submit Application</h2>
+                <ApplyForm inline />
               </div>
             </div>
           </div>
