@@ -170,6 +170,16 @@ const Courses = () => {
 
   return (
     <>
+      {/* Page Hero for Courses listing */}
+      <section className="courses-hero" data-aos="fade-up">
+        <div className="container">
+          <h1 data-aos="fade-up" data-aos-delay="100">Courses</h1>
+          <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
+            Our commitment is to help learners become more successful by offering modern, job-ready AI programs and career support.
+          </p>
+        </div>
+      </section>
+
       <section className="courses" id="courses">
         <div className="courses-header">
           <h2 className="section-title">Our Popular Courses</h2>

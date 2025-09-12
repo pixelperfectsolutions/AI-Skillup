@@ -12,7 +12,7 @@
 .footer-content {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 1400px;
+  max-width: 1350px;
   margin: 0 auto 2rem auto;
   margin-bottom: 1.5rem;
   gap: 2rem;
@@ -64,12 +64,31 @@
 .footer-section.contact a {
   color: #ccc;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .footer-section.contact a:hover {
-  color: #f39c12;
+  color: inherit !important;
   text-decoration: underline;
+}
+
+/* Ensure entire Contact Info column uses #ccc for text */
+.footer-section.contact,
+.footer-section.contact p,
+.footer-section.contact a,
+.footer-section.contact a:link,
+.footer-section.contact a:visited,
+.footer-section.contact a:active {
+  color: #ccc !important;
+}
+
+/* Make sure the column and its text wrap nicely */
+.footer-section.contact { width: 100%; }
+.footer-section.contact .contact-item p,
+.footer-section.contact .contact-item a {
+  max-width: 100%;
+  color: inherit !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Contact items with icons */
@@ -78,6 +97,16 @@
   align-items: flex-start;
   gap: 0.6rem;
   margin: 0.45rem 0;
+  transition: none !important; /* prevent hover animations from global styles */
+  background: transparent !important; /* ensure no hover bg bleed */
+  box-shadow: none !important; /* ensure no hover shadow bleed */
+}
+
+/* Disable hover effects specifically inside the footer contact column */
+.footer-section.contact .contact-item:hover {
+  background: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 .footer-section.contact .contact-icon {
@@ -106,7 +135,10 @@
   text-decoration: none;
 }
 
-.footer-section.contact .contact-item p a:hover { text-decoration: underline; }
+.footer-section.contact .contact-item p a:hover { 
+  color: inherit !important;
+  text-decoration: underline;
+}
 
 .footer-section.links ul {
   list-style: none;
@@ -118,11 +150,11 @@
   text-decoration: none;
   margin-bottom: 0.5rem;
   display: block;
-  transition: color 0.3s ease;
 }
 
 .footer-section.links ul li a:hover {
-  color: #f39c12;
+  color: inherit !important;
+  text-decoration: underline;
 }
 
 .footer-bottom {
@@ -147,12 +179,12 @@
 }
 
 .footer-bottom .designer-credit a {
-  color: #f39c12;
+  color: #ccc;
   text-decoration: none;
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
 .footer-bottom .designer-credit a:hover {
+  color: inherit !important;
   text-decoration: underline;
 }
 
@@ -181,8 +213,21 @@
     align-items: flex-start;
     text-align: left;
   }
+  .footer-section.contact { text-align: left; width: 100%; }
+  .footer-section.contact .contact-item { align-items: flex-start; gap: 0.5rem; }
+  .footer-section.contact .contact-icon { width: 18px; flex: 0 0 18px; margin-top: 2px; }
+  .footer-section.contact .contact-icon svg { font-size: 14px; }
+  .footer-section.contact .contact-item p,
+  .footer-section.contact .contact-item a { line-height: 1.5; font-size: 0.95rem; }
 }
 
 @media (min-width: 992px) {
   .footer-content { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Extra small devices: tighten spacing further */
+@media (max-width: 420px) {
+  .footer-section.contact .contact-item { gap: 0.45rem; }
+  .footer-section.contact .contact-icon { width: 16px; flex: 0 0 16px; }
+  .footer-section.contact .contact-icon svg { font-size: 13px; }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Partners from './components/Partners/Partners';
@@ -15,10 +15,20 @@ import ContactPage from './pages/ContactPage';
 import CoursePage from './pages/CoursePage';
 import './App.css';
 
+// Scroll to top on every route change
+function ScrollToTop() {
+  const location = useLocation();
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
+  return null;
+}
+
 function App() {
   return (
     <div className="App">
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -37,12 +47,11 @@ function App() {
             <Features />
             <ApplyForm />
             <Testimonials />
-            <div id="contact">
-              <Footer />
-            </div>
           </>
         } />
       </Routes>
+      {/* Global footer on all pages */}
+      <Footer />
       <FloatingWhatsApp />
     </div>
   );

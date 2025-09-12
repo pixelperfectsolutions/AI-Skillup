@@ -241,6 +241,35 @@
   transform: rotate(-45deg);
 }
 
+/* Courses Listing Page Hero */
+.courses-hero {
+  background: #f3f4f6;
+  color: #2d3748;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.courses-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.courses-hero .subtitle {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+  .courses-hero { padding: 60px 16px; }
+  .courses-hero h1 { font-size: 2.2rem; }
+  .courses-hero .subtitle { font-size: 1rem; max-width: 100%; }
+}
+
 /* ===== Course Modal (full-screen) ===== */
 .course-modal-overlay {
   position: fixed;
