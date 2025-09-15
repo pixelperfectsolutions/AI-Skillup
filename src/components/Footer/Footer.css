@@ -179,16 +179,15 @@
 }
 
 .footer-bottom .designer-credit a {
-  color: #ccc;
+  color: rgb(212, 175, 55);
   text-decoration: none;
 }
 
 .footer-bottom .designer-credit a:hover {
-  color: inherit !important;
-  text-decoration: underline;
+  color: rgb(212, 175, 55) !important;
 }
 
-.footer-section ul { list-style: none; padding: 0; margin: 0; }
+.footer-section ul { list-style: none; padding: 5px; margin: px; }
 .footer-section ul li { margin: 0.4rem 0; }
 
 /* Ensure About heading sits on same baseline as others */
@@ -207,7 +206,7 @@
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .footer-content { text-align: left; }
   .footer-bottom {
     align-items: flex-start;
@@ -230,4 +229,15 @@
   .footer-section.contact .contact-item { gap: 0.45rem; }
   .footer-section.contact .contact-icon { width: 16px; flex: 0 0 16px; }
   .footer-section.contact .contact-icon svg { font-size: 13px; }
+}
+
+/* Ensure footer contact items never stack under global page styles */
+@media (max-width: 992px) {
+  .footer .contact-item { 
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .footer .contact-icon { margin-bottom: 0 !important; }
 }

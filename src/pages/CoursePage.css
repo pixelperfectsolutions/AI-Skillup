@@ -4,6 +4,8 @@
   color: #2d3748;
   padding: 80px 20px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .course-hero h1 {
@@ -20,6 +22,24 @@
   margin: 0 auto;
   opacity: 0.9;
 }
+
+/* Hero decor */
+.course-hero .course-hero-decor { position: absolute; inset: 0; pointer-events: none; }
+.course-hero .ch-dot { position: absolute; width: 200px; height: 140px; opacity: 0.35; background-image: radial-gradient(currentColor 1.6px, transparent 1.6px); background-size: 14px 14px; }
+.course-hero .ch-dot-1 { color: #60a5fa; top: 10%; left: 8%; transform: rotate(10deg); animation: ch-floatY 10s ease-in-out infinite; }
+.course-hero .ch-dot-2 { color: #a78bfa; bottom: -12px; right: 10%; transform: rotate(-12deg); animation: ch-floatX 11s ease-in-out infinite; }
+.course-hero .ch-ring-1 { position: absolute; right: -160px; top: -160px; width: 420px; height: 420px; border-radius: 50%; border: 1px dashed rgba(0,0,0,0.08); }
+
+@keyframes ch-floatY { 0%,100%{transform: rotate(10deg) translateY(0)} 50%{transform: rotate(10deg) translateY(8px)} }
+@keyframes ch-floatX { 0%,100%{transform: rotate(-12deg) translateX(0)} 50%{transform: rotate(-12deg) translateX(10px)} }
+
+/* Course page section decor */
+.course-page-decor { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.course-page-decor .cp-dots-left { position: absolute; left: -30px; top: 30%; width: 200px; height: 150px; background-image: radial-gradient(#34d399 1.6px, transparent 1.6px); background-size: 16px 16px; opacity: 0.3; transform: rotate(8deg); }
+.course-page-decor .cp-ring { position: absolute; right: -120px; bottom: -140px; width: 380px; height: 380px; border-radius: 50%; border: 1px dashed rgba(0,0,0,0.07); }
+
+/* content above decor */
+.courses > * { position: relative; z-index: 1; }
 
 @media (max-width: 992px) {
   .course-hero { padding: 60px 16px; }

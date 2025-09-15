@@ -28,7 +28,7 @@ function PrevArrow(props) {
   );
 }
 
-const Courses = () => {
+const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => {
   const [counters, setCounters] = useState({
     placementRate: 0,
     companies: 0,
@@ -40,6 +40,7 @@ const Courses = () => {
   const animationStarted = useRef(false);
 
   useEffect(() => {
+    if (!showPlacement) return; // do nothing when placement is hidden
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -61,7 +62,27 @@ const Courses = () => {
         observer.unobserve(statsRef.current);
       }
     };
-  }, []);
+  }, [showPlacement]);
+
+  useEffect(() => {
+    if (!showPlacement) return; // do nothing when placement is hidden
+    const elements = document.querySelectorAll('.placement .reveal');
+    if (!elements.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            // Once revealed, unobserve to avoid re-trigger
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    elements.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [showPlacement]);
 
   const startCounters = () => {
     const duration = 2000; // Animation duration in ms
@@ -101,34 +122,18 @@ const Courses = () => {
     }
   };
 
-  // Reveal-on-scroll for placement section
-  useEffect(() => {
-    const elements = document.querySelectorAll('.placement .reveal');
-    if (!elements.length) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            // Once revealed, unobserve to avoid re-trigger
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    elements.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-
   const settings = {
-    dots: true,
+    dots: false,
+    arrows: false,
     infinite: true,
-    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 1800,
+    speed: 300,
+    cssEase: 'ease-in-out',
+    pauseOnHover: true,
+    pauseOnFocus: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024, // Tablet and below
@@ -136,8 +141,11 @@ const Courses = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
-          arrows: true
+          dots: false,
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 1800,
+          speed: 300
         }
       },
       {
@@ -146,11 +154,14 @@ const Courses = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 0,
-          arrows: true,
-          dots: true,
+          arrows: false,
+          dots: false,
           centerMode: true,
           centerPadding: '20px',
-          swipeToSlide: true
+          swipeToSlide: true,
+          autoplay: true,
+          autoplaySpeed: 1800,
+          speed: 300
         }
       },
       {
@@ -158,11 +169,14 @@ const Courses = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
-          dots: true,
+          arrows: false,
+          dots: false,
           centerMode: true,
           centerPadding: '30px',
-          swipeToSlide: true
+          swipeToSlide: true,
+          autoplay: true,
+          autoplaySpeed: 1800,
+          speed: 300
         }
       }
     ]
@@ -171,48 +185,92 @@ const Courses = () => {
   return (
     <>
       {/* Page Hero for Courses listing */}
-      <section className="courses-hero" data-aos="fade-up">
-        <div className="container">
-          <h1 data-aos="fade-up" data-aos-delay="100">Courses</h1>
-          <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
-            Our commitment is to help learners become more successful by offering modern, job-ready AI programs and career support.
-          </p>
+      {showHero && (
+        <section className="courses-hero" data-aos="fade-up">
+          <div className="container">
+            <h1 data-aos="fade-up" data-aos-delay="100">Courses</h1>
+            <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
+              Our commitment is to help learners become more successful by offering modern, job-ready AI programs and career support.
+            </p>
+          </div>
+        </section>
+      )}
+      <section className="courses section-decor" id="courses">
+        <div className={`courses-header ${layout === 'slider' ? 'center' : ''}`}>
+          <h2 className="section-title">Lead The Creative World With Fulcrum’S Advanced Training In Coimbatore</h2>
+          {layout !== 'slider' && (
+            <button 
+              className="enroll-now-btn"
+              onClick={() => {
+                const applySection = document.getElementById('apply-form');
+                if (applySection) {
+                  applySection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Enroll Now
+            </button>
+          )}
         </div>
-      </section>
-
-      <section className="courses" id="courses">
-        <div className="courses-header">
-          <h2 className="section-title">Our Popular Courses</h2>
-          <button 
-            className="enroll-now-btn"
-            onClick={() => {
-              const applySection = document.getElementById('apply-form');
-              if (applySection) {
-                applySection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            Enroll Now
-          </button>
-        </div>
-        <div className="courses-container">
-          {courses.map((course, index) => (
-            <div key={index} className="course-card">
-              <div className="course-image">
-                <img src={course.image} alt={course.title} />
-              </div>
-              <div className="course-details">
-                <h3>{course.title.split(' (')[0]}</h3>
-                <div className="course-cta">
-                  <Link to={`/courses/${course.slug}`} className="btn" onClick={(e) => e.stopPropagation()}>
-                    Read More
-                  </Link>
+        {layout === 'slider' ? (
+          <>
+            <Slider {...settings} className="courses-slider" aria-label="Popular courses slider">
+              {courses.map((course, index) => (
+                <div key={index}>
+                  <div className="course-card v2" role="group" aria-roledescription="slide">
+                    <span className="course-badge" aria-label="Delivery mode">Online + Offline</span>
+                    <div className="course-thumb">
+                      <img src={course.image} alt={course.title} />
+                    </div>
+                    <Link to={`/courses/${course.slug}`} className="course-title" onClick={(e) => e.stopPropagation()}>
+                      {course.title.split(' (')[0]}
+                    </Link>
+                    <div className="course-cta-inline">
+                      <Link to={`/courses/${course.slug}`} className="btn btn-primary btn-arrow" onClick={(e) => e.stopPropagation()}>
+                        Learn More
+                      </Link>
+                    </div>
+                    <span className="course-bottom-line" aria-hidden="true" />
+                  </div>
+                </div>
+              ))}
+            </Slider>
+            {/* Global Explore Courses CTA below the slider */}
+            <div className="courses-explore-cta">
+              <button 
+                className="enroll-now-btn"
+                onClick={() => {
+                  const applySection = document.getElementById('apply-form');
+                  if (applySection) {
+                    applySection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                Explore Courses
+              </button>
+            </div>
+          </>
+        ) : (
+          <div className="courses-container">
+            {courses.map((course, index) => (
+              <div key={index} className="course-card">
+                <div className="course-image">
+                  <img src={course.image} alt={course.title} />
+                </div>
+                <div className="course-details">
+                  <h3>{course.title.split(' (')[0]}</h3>
+                  <div className="course-cta">
+                    <Link to={`/courses/${course.slug}`} className="btn" onClick={(e) => e.stopPropagation()}>
+                      Read More
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </section>
+      {showPlacement && (
       <section className="placement" id="placement">
         <div className="placement-container">
           <h2 className="reveal">100% Placement Assistance</h2>
@@ -325,6 +383,7 @@ const Courses = () => {
           </div>
         </div>
       </section>
+      )}
     </>
   );
 };

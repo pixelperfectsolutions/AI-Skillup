@@ -32,7 +32,7 @@ const About = () => {
     return () => io.disconnect();
   }, []);
   return (
-    <section className="about">
+    <section className="about section-decor">
       <div className="about-container">
         <div className="about-image-container reveal fade-right">
           <img src="/images/about-1.png" alt="AI Technology" className="about-image" />

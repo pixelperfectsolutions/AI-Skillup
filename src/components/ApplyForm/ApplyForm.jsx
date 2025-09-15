@@ -49,62 +49,60 @@ const ApplyForm = ({ inline = false, hideImage = false, compact = false }) => {
   if (inline) {
     return (
       <div className="apply-form-inline">
-        <form onSubmit={handleSubmit} className="apply-form apply-form-grid">
+        <form onSubmit={handleSubmit} className="apply-form">
           <div className="form-group">
+            <label htmlFor="name">Name</label>
             <input
+              id="name"
               type="text"
               name="name"
-              placeholder="Full Name"
+              placeholder=""
               value={formData.name}
               onChange={handleChange}
               required
             />
           </div>
           <div className="form-group">
+            <label htmlFor="email">Email ID</label>
             <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
+              id="email"
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder=""
               value={formData.email}
               onChange={handleChange}
               required
             />
           </div>
           <div className="form-group">
+            <label htmlFor="phone">Mobile Number</label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              placeholder=""
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="course">Courses</label>
             <select
+              id="course"
               name="course"
               value={formData.course}
               onChange={handleChange}
               required
             >
-              <option value="" disabled>Your Interested Course</option>
+              <option value="" disabled>----Select Course----</option>
               {courseTitles.map((title, index) => (
                 <option key={index} value={title}>{title}</option>
               ))}
             </select>
           </div>
-          <div className="form-group form-group-wide">
-            <textarea
-              name="message"
-              placeholder="Message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={4}
-              required
-            />
-          </div>
           <div className="form-actions-right">
-            <button type="submit" className="btn btn-primary">Send Message</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
           </div>
         </form>
       </div>
@@ -113,7 +111,7 @@ const ApplyForm = ({ inline = false, hideImage = false, compact = false }) => {
 
   // Default full-width promotional variant
   return (
-    <section className="apply-form-section" id="apply-form">
+    <section className="apply-form-section section-decor" id="apply-form">
       <div className="apply-form-container">
         <div className="apply-form-content">
           {!compact && (

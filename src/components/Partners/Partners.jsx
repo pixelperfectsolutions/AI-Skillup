@@ -55,7 +55,7 @@ const Partners = () => {
   };
 
   return (
-    <section className="partners">
+    <section className="partners section-decor">
       <div className="partners-header">
         <h2 className="partners-title">Our Esteemed Partners & Industry Leaders</h2>
         <p className="partners-description">

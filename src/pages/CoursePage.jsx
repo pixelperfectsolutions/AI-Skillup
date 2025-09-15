@@ -35,6 +35,11 @@ const CoursePage = () => {
     <>
       {/* Page Hero (like Contact) */}
       <section className="course-hero" data-aos="fade-up">
+        <div className="course-hero-decor" aria-hidden="true">
+          <span className="ch-dot ch-dot-1" />
+          <span className="ch-dot ch-dot-2" />
+          <span className="ch-ring ch-ring-1" />
+        </div>
         <div className="container">
           <h1 data-aos="fade-up" data-aos-delay="100">{course.title.split(' (')[0]}</h1>
           <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
@@ -43,7 +48,11 @@ const CoursePage = () => {
         </div>
       </section>
 
-      <section className="courses" style={{ paddingTop: '40px' }}>
+      <section className="courses" style={{ paddingTop: '40px', position: 'relative' }}>
+        <div className="course-page-decor" aria-hidden="true">
+          <span className="cp-dots-left" />
+          <span className="cp-ring" />
+        </div>
         <div className="courses-header">
           <h2 className="section-title">{course.title}</h2>
           <button className="enroll-now-btn" onClick={scrollToApply}>Apply Now</button>

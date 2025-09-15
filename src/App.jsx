@@ -42,11 +42,11 @@ function App() {
               <About />
             </div>
             <div id="courses">
-              <Courses />
+              <Courses layout="slider" showHero={false} showPlacement={false} />
             </div>
             <Features />
             <ApplyForm />
-            <Testimonials />
+            <Testimonials layout="slider" columns={3} showControls={false} />
           </>
         } />
       </Routes>

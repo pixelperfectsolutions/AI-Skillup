@@ -1,12 +1,67 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Footer from '../components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../App.css';
+import './AboutPage.css';
+import Testimonials from '../components/Testimonials/Testimonials';
+
+const useCountUp = (target = 0, { duration = 1500, decimals = 0, startOnView = true } = {}) => {
+  const [value, setValue] = useState(0);
+  const [started, setStarted] = useState(!startOnView);
+  const rafRef = useRef(null);
+  const startRef = useRef(null);
+
+  const animate = (ts) => {
+    if (!startRef.current) startRef.current = ts;
+    const progress = Math.min((ts - startRef.current) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+    const current = target * eased;
+    const factor = Math.pow(10, decimals);
+    setValue(Math.round(current * factor) / factor);
+    if (progress < 1) rafRef.current = requestAnimationFrame(animate);
+  };
+
+  const start = () => {
+    if (started) return;
+    setStarted(true);
+    cancelAnimationFrame(rafRef.current);
+    startRef.current = null;
+    rafRef.current = requestAnimationFrame(animate);
+  };
+
+  useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
+  return { value, start };
+};
+
+const AnimatedNumber = ({ target, decimals = 0, suffix = '', className = '' }) => {
+  const ref = useRef(null);
+  const { value, start } = useCountUp(target, { duration: 1500, decimals, startOnView: true });
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { start(); obs.disconnect(); } },
+      { threshold: 0.4 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [start]);
+
+  return (
+    <span ref={ref} className={className}>
+      {value.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}{suffix}
+    </span>
+  );
+};
 
 const AboutPage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const whyRef = React.useRef(null);
+  const teamRef = React.useRef(null);
+  const valuesRef = React.useRef(null);
+  const testimonialsRef = React.useRef(null);
 
   useEffect(() => {
     AOS.init({
@@ -23,6 +78,43 @@ const AboutPage = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    const sections = [whyRef, teamRef, valuesRef, testimonialsRef];
+    const onScroll = () => {
+      const vh = window.innerHeight || 1;
+      sections.forEach((r) => {
+        const el = r?.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const progress = Math.max(0, Math.min(1, center / vh));
+        const deg = Math.round(progress * 360);
+        el.style.setProperty('--rot', `${deg}deg`);
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const handleParallaxMove = (ref) => (e) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const mx = (x - 0.5) * 10;
+    const my = (y - 0.5) * 10;
+    el.style.setProperty('--mx', `${mx}px`);
+    el.style.setProperty('--my', `${my}px`);
+    // cursor-based rotation angle around the section center
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const angle = Math.atan2(e.clientY - cy, e.clientX - cx) * (180 / Math.PI);
+    const norm = Math.round(((angle % 360) + 360) % 360); // 0..360
+    el.style.setProperty('--rotMouse', `${norm}deg`);
+  };
 
   const missionStyles = {
     container: {
@@ -120,9 +212,20 @@ const AboutPage = () => {
           padding: '0',
           margin: '-110px auto 0',
           backgroundColor: '#fff',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          position: 'relative'
         }}
       >
+        {/* Decorative animated background */}
+        <div className="about-decor" aria-hidden="true">
+          <span className="dot-grid dot-grid-1" />
+          <span className="dot-grid dot-grid-2" />
+          <span className="ring ring-1" />
+          <span className="ring ring-2" />
+          <span className="arc arc-left" />
+          <span className="arc arc-bottom" />
+          <span className="blob blob-1" />
+        </div>
         <div style={{
           padding: '0 20px',
           margin: '0 auto'
@@ -196,55 +299,58 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Stats Counter Section */}
-      <section 
-        data-aos="fade-up"
-        data-aos-delay="200"
-        style={{
-          backgroundColor: '#4a6cf7',
-          padding: '10px 0',
-          color: 'white',
-          textAlign: 'center'
-        }}
-      >
-        <div style={{
-          maxWidth: '1450px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '30px',
-          padding: '0 20px'
-        }}>
-          {[
-            { number: '200,000+', label: 'Students' },
-            { number: '350+', label: 'Institutions' },
-            { number: '1,500+', label: 'Workshops Conducted' },
-            { number: '12+', label: 'Years of Excellence' },
-            { number: '99%', label: 'Success Rate' }
-          ].map((stat, index) => (
-            <div key={index} style={{
-              padding: '30px 20px',
-              borderRadius: '8px',
-              background: 'rgba(255, 255, 255, 0.1)',
-              backdropFilter: 'blur(5px)',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '150px'
-            }}>
-              <div style={{
-                fontSize: '2.5rem',
-                fontWeight: '700',
-                lineHeight: '1.2',
-                marginBottom: '10px'
-              }}>{stat.number}</div>
-              <div style={{
-                fontSize: '1.1rem',
-                opacity: '0.9'
-              }}>{stat.label}</div>
+      {/* Decorative band below Hero: Mission & Vision */}
+      <section className="about-band" data-aos="fade-up" data-aos-delay="120">
+        <div className="band-decor" aria-hidden="true">
+          <span className="band-arc-left" />
+          <span className="band-dots-right" />
+        </div>
+        <div className="band-container">
+          <div className="band-grid">
+            <div className="band-item" data-aos="fade-up" data-aos-delay="150">
+              <div className="band-icon">🎯</div>
+              <h3>Our Mission</h3>
+              <p>
+                Our mission is to provide hands-on industrial training that equips learners with
+                practical skills, fosters innovation, and enhances employability.
+              </p>
             </div>
-          ))}
+            <div className="band-item" data-aos="fade-up" data-aos-delay="250">
+              <div className="band-icon">📈</div>
+              <h3>Our Vision</h3>
+              <p>
+                To be a premier hub for industrial training, driving skill development,
+                innovation, and workforce readiness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Counter Section (decorated band with stat cards) */}
+      <section className="stats-band" data-aos="fade-up" data-aos-delay="200">
+        <div className="stats-decor" aria-hidden="true">
+          <span className="stats-dots-left" />
+          <span className="stats-dots-right" />
+          <span className="stats-arc" />
+        </div>
+        <div className="stats-container">
+          <div className="stats-cards">
+            {[
+              { icon: '👤', value: 29.3, suffix: 'K', decimals: 1, label: 'STUDENT ENROLLED', tone: '#a7f3d0' },
+              { icon: '🧰', value: 32.4, suffix: 'K', decimals: 1, label: 'CLASS COMPLETED', tone: '#fde68a' },
+              { icon: '👍', value: 100, suffix: '%', decimals: 0, label: 'SATISFACTION RATE', tone: '#bfdbfe' },
+              { icon: '👨‍🏫', value: 354, suffix: '+', decimals: 0, label: 'TOP INSTRUCTORS', tone: '#ffe4b5' }
+            ].map((s, i) => (
+              <div className="stat-card" key={i} data-aos="zoom-in" data-aos-delay={150 + i * 80}>
+                <div className="stat-icon" style={{ backgroundColor: `${s.tone}` }}>{s.icon}</div>
+                <div className="stat-number">
+                  <AnimatedNumber target={s.value} suffix={s.suffix} decimals={s.decimals} />
+                </div>
+                <div className="stat-label">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -301,13 +407,71 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Why Choose Section (below Mission) */}
+      <section
+        className="why-choose"
+        data-aos="fade-up"
+        data-aos-delay="160"
+        ref={whyRef}
+        onMouseMove={handleParallaxMove(whyRef)}
+      >
+        <div className="wc-decor" aria-hidden="true">
+          <span className="wc-dots-left" />
+          <span className="wc-dots-right" />
+          <span className="wc-arc-right" />
+          <span className="wc-arc-bottom" />
+        </div>
+        <div className="wc-container">
+          <div className="wc-heading" data-aos="fade-up" data-aos-delay="180">
+            <div className="wc-eyebrow">WHY CHOOSE AI SKILL UP</div>
+            <h2>
+              The Best <span className="highlight">Beneficial</span> Side
+              <br /> of AI SkillUp
+            </h2>
+            <div className="wc-underline" />
+          </div>
+          <div className="wc-grid">
+            <div className="wc-card" data-aos="zoom-in" data-aos-delay="220">
+              <div className="wc-card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=1600&h=900&fit=crop&auto=format&dpr=1" alt="Industry Experienced Trainers" /></div>
+              <div className="wc-card-body">
+                <div className="wc-badge">🎓</div>
+                <h3>Industry Experienced Trainers</h3>
+                <p>Nurturing talent with industry experts. Training led by experienced instructors with practical insights for real-world success.</p>
+              </div>
+            </div>
+            <div className="wc-card" data-aos="zoom-in" data-aos-delay="260">
+              <div className="wc-card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&h=900&fit=crop&auto=format&dpr=1" alt="100% Practical Training" /></div>
+              <div className="wc-card-body">
+                <div className="wc-badge">🧪</div>
+                <h3>100% Practical Training</h3>
+                <p>Hands-on sessions, workshops, and projects designed to build confidence through application-focused learning.</p>
+              </div>
+            </div>
+            <div className="wc-card" data-aos="zoom-in" data-aos-delay="300">
+              <div className="wc-card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1600&h=900&fit=crop&auto=format&dpr=1" alt="Dedicated Placement Support" /></div>
+              <div className="wc-card-body">
+                <div className="wc-badge">💼</div>
+                <h3>Dedicated Placement Cell Support</h3>
+                <p>End-to-end guidance to connect you with rewarding career opportunities and support your path to success.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section 
         className="team-section" 
         data-aos="zoom-in"
         data-aos-delay="200"
         style={{padding: '80px 0', backgroundColor: '#f8f9fa' }}
+        ref={teamRef}
+        onMouseMove={handleParallaxMove(teamRef)}
       >
+        <div className="team-decor" aria-hidden="true">
+          <span className="team-dots-left" />
+          <span className="team-arc-right" />
+        </div>
         <div className="container" style={{ maxWidth: '1450px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '2.5rem',
@@ -519,8 +683,11 @@ const AboutPage = () => {
 
       {/* Values Section */}
       <section 
+        className="values-section"
         data-aos="fade-up"
         data-aos-delay="200"
+        onMouseMove={handleParallaxMove(valuesRef)}
+        ref={valuesRef}
         style={{ 
           padding: '80px 0',
           backgroundColor: '#fff',
@@ -528,6 +695,10 @@ const AboutPage = () => {
           overflow: 'hidden'
         }}
       >
+        <div className="values-decor" aria-hidden="true">
+          <span className="values-dots-right" />
+          <span className="values-arc-left" />
+        </div>
         <div style={{ 
           maxWidth: '1450px', 
           margin: '0 auto', 
@@ -592,11 +763,11 @@ const AboutPage = () => {
                 key={index} 
                 style={{
                   backgroundColor: '#fff',
-                  borderRadius: '12px',
+                  borderRadius: '2px',
                   padding: '30px',
                   boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-                  transition: 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
                   border: '1px solid #f0f0f0',
+                  transition: 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
                   position: 'relative',
                   overflow: 'hidden',
                   cursor: 'pointer',
@@ -646,7 +817,7 @@ const AboutPage = () => {
                 <div style={{
                   width: '70px',
                   height: '70px',
-                  borderRadius: '50%',
+                  borderRadius: '20%',
                   backgroundColor: `${value.color}15`,
                   display: 'flex',
                   alignItems: 'center',
@@ -700,174 +871,23 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section (reuse home component) */}
       <section 
-        data-aos="fade-up"
+        className="about-testimonials" 
+        data-aos="fade-up" 
         data-aos-delay="200"
-        style={{
-          padding: '80px 0',
-          backgroundColor: '#fff',
-          position: 'relative'
-        }}
+        ref={testimonialsRef}
+        onMouseMove={handleParallaxMove(testimonialsRef)}
       >
-        <div style={{
-          maxWidth: '1450px',
-          margin: '0 auto',
-          padding: '0 20px',
-          position: 'relative'
-        }}>
-          <h2 style={{
-            textAlign: 'center',
-            fontSize: '2.5rem',
-            marginBottom: '60px',
-            color: '#333',
-            position: 'relative',
-            paddingBottom: '15px'
-          }}>
-            What Our Students Say
-            <span style={{
-              position: 'absolute',
-              bottom: '0',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '80px',
-              height: '4px',
-              background: '#4a6cf7',
-              borderRadius: '2px'
-            }} />
-          </h2>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '30px',
-            marginTop: '40px'
-          }}>
-            {[
-              {
-                name: 'Abishek',
-                role: 'AI Engineering Student',
-                avatar: 'R',
-                review: 'The AI course transformed my career. The practical projects and expert guidance helped me land a job at a top tech company within 3 months of completion!',
-                rating: '★★★★★'
-              },
-              {
-                name: 'Priyanka',
-                role: 'Data Science Student',
-                avatar: 'P',
-                review: 'Exceptional curriculum and supportive mentors. The hands-on approach made complex AI concepts easy to understand and implement.',
-                rating: '★★★★★'
-              },
-              {
-                name: 'Lokesh',
-                role: 'Machine Learning Enthusiast',
-                avatar: 'A',
-                review: 'The best investment I made in my tech career. The course structure is well-designed, and the instructors are industry experts.',
-                rating: '★★★★★'
-              }
-            ].map((testimonial, index) => (
-              <div 
-                key={index}
-                style={{
-                  backgroundColor: '#fff',
-                  borderRadius: '12px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-                  border: '1px solid #f0f0f0',
-                  transition: 'all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  cursor: 'pointer',
-                  ':hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                    borderColor: '#4a6cf7',
-                    '::before': {
-                      transform: 'scaleX(1)',
-                      opacity: 1
-                    }
-                  },
-                  '::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '4px',
-                    backgroundColor: '#4a6cf7',
-                    transform: 'scaleX(0)',
-                    transformOrigin: 'left',
-                    transition: 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
-                    opacity: 0,
-                    zIndex: 1
-                  }
-                }}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginBottom: '20px'
-                }}>
-                  <div style={{
-                    width: '60px',
-                    height: '60px',
-                    borderRadius: '50%',
-                    backgroundColor: '#4a6cf715',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginRight: '15px',
-                    fontSize: '24px',
-                    fontWeight: 'bold',
-                    color: '#4a6cf7'
-                  }}>
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <h3 style={{
-                      margin: '0 0 5px 0',
-                      color: '#333',
-                      fontSize: '1.2rem'
-                    }}>
-                      {testimonial.name}
-                    </h3>
-                    <p style={{
-                      margin: 0,
-                      color: '#666',
-                      fontSize: '0.9rem'
-                    }}>
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-                <p style={{
-                  color: '#555',
-                  lineHeight: '1.7',
-                  marginBottom: '20px',
-                  fontStyle: 'italic',
-                  position: 'relative',
-                  paddingLeft: '20px',
-                  borderLeft: '3px solid #4a6cf7'
-                }}>
-                  "{testimonial.review}"
-                </p>
-                <div style={{
-                  color: '#ffc107',
-                  fontSize: '1.2rem',
-                  textAlign: 'right'
-                }}>
-                  {testimonial.rating}
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="about-testimonials-decor" aria-hidden="true">
+          <span className="at-dots-left" />
+          <span className="at-arc-right" />
         </div>
+        <div className="about-testimonials-container">
+           <Testimonials layout="slider" columns={3} showControls={false} />
+         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };

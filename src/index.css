@@ -111,6 +111,55 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Section background decorations */
+.section-decor {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; /* ensure pseudo elements can sit behind content */
+}
+.section-decor::before,
+.section-decor::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+/* Dotted cluster (top-left) */
+.section-decor::before {
+  top: -40px;
+  left: -40px;
+  width: 240px;
+  height: 240px;
+  background-image: radial-gradient(var(--primary-color, #f39c12) 2px, transparent 2px);
+  background-size: 16px 16px;
+  opacity: 0.18;
+  border-radius: 50%;
+}
+/* Soft radial glow (bottom-right) */
+.section-decor::after {
+  right: -140px;
+  bottom: -140px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(60% 60% at 50% 50%, rgba(243, 156, 18, 0.18), rgba(243, 156, 18, 0));
+  border-radius: 50%;
+  filter: saturate(1.1);
+}
+
+/* Optional variant for dark sections */
+.section-decor.dark::before {
+  background-image: radial-gradient(#ffffff 2px, transparent 2px);
+  opacity: 0.12;
+}
+.section-decor.dark::after {
+  background: radial-gradient(60% 60% at 50% 50%, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
+}
+
+@media (max-width: 640px) {
+  .section-decor::before { opacity: 0.12; transform: scale(0.8); }
+  .section-decor::after { opacity: 0.12; transform: scale(0.85); }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
