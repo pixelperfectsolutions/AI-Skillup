@@ -111,6 +111,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Section background decorations */
 .section-decor {
   position: relative;

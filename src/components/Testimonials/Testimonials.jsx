@@ -30,9 +30,42 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
   // Static Google rating summary (no API)
   const googleRating = 4.9;
   const googleReviewCount = 563;
-  // TODO: replace with your real Google "Write a review" URL
-  const googleReviewUrl = 'https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID';
-  
+
+  // Instead of external reviews, open a new tab with a friendly message
+  const openFeedbackClosedTab = useCallback(() => {
+    const win = window.open('', '_blank', 'noopener,noreferrer');
+    if (!win) {
+      alert('Contact owner for your feedback form application. It\'s currently closed.');
+      return;
+    }
+    const html = `<!doctype html>
+      <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Feedback Form Closed</title>
+        <style>
+          body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Poppins, Arial, sans-serif; background: #0f172a; color: #e5e7eb; display: grid; place-items: center; min-height: 100vh; }
+          .card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 28px 24px; max-width: 560px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); text-align: center; }
+          h1 { margin: 0 0 8px; font-size: 1.5rem; color: #f9fafb; }
+          p { margin: 0 0 16px; color: #cbd5e1; line-height: 1.6; }
+          .accent { color: #f39c12; font-weight: 600; }
+          a.btn { display: inline-block; margin-top: 8px; padding: 10px 16px; background: #f39c12; color: #fff; border-radius: 8px; text-decoration: none; }
+        </style>
+      </head>
+      <body>
+        <div class="card">
+          <h1>Feedback Form Closed</h1>
+          <p>Please <span class="accent">contact the owner</span> for the feedback form application. It is currently closed.</p>
+          <p>Thank you for your understanding.</p>
+          <a class="btn" href="/" onclick="window.close(); return false;">Back to site</a>
+        </div>
+      </body>
+      </html>`;
+    win.document.write(html);
+    win.document.close();
+  }, []);
+
   // No avatar generation needed as per requirements
 
   // All testimonials will have 5-star ratings
@@ -209,9 +242,9 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
               {googleReviewCount} reviews
             </span>
           </div>
-          <a className="btn-google-review" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
+          <button type="button" className="btn-google-review" onClick={openFeedbackClosedTab} title="Contact owner for your feedback form application. It's currently closed.">
             Write a Review
-          </a>
+          </button>
         </div>
         {layout === 'grid' ? (
           renderGrid()

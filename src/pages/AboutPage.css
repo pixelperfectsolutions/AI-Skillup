@@ -25,7 +25,7 @@
 .hero-container {
   padding: 0 20px;
   margin: 0 auto;
-  max-width: 1450px;
+  max-width: 1300px;
 }
 
 .about-hero-section .hero-content {
@@ -235,7 +235,7 @@
 }
 
 .about-band .band-container { 
-  max-width: 1450px; 
+  max-width: 1300px; 
   margin: 0 auto; 
   padding: 0 20px; 
   position: relative; 
@@ -293,7 +293,7 @@
 }
 
 .stats-container {
-  max-width: 1450px;
+  max-width: 1300px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -397,7 +397,7 @@
 }
 
 .mission-container {
-  width: 1450px;
+  width: 1300px;
   max-width: 100%;
   padding: 0 20px;
   margin: 0 auto;
@@ -681,4 +681,22 @@
 }
 @media (max-width: 640px) {
   .team-dots-left, .values-dots-right, .at-dots-left { width: 160px; height: 120px; opacity: .22; }
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  .about-hero-section .dot-grid-1,
+  .about-hero-section .dot-grid-2,
+  .about-hero-section .blob-1,
+  .team-arc-right,
+  .team-dots-left,
+  .values-dots-right,
+  .at-dots-left,
+  .about-testimonials::before {
+    animation: none !important;
+    transform: none !important;
+  }
 }

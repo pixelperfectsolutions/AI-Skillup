@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import '../App.css';
 import './AboutPage.css';
 import Testimonials from '../components/Testimonials/Testimonials';
@@ -62,48 +60,52 @@ const AboutPage = () => {
   const teamRef = React.useRef(null);
   const valuesRef = React.useRef(null);
   const testimonialsRef = React.useRef(null);
+  const scrollRaf = useRef(null);
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Hide global scrollbar only on About page
-  useEffect(() => {
-    document.body.classList.add('hide-scrollbar');
-    return () => {
-      document.body.classList.remove('hide-scrollbar');
-    };
-  }, []);
-
   useEffect(() => {
     const sections = [whyRef, teamRef, valuesRef, testimonialsRef];
-    const onScroll = () => {
+
+    const run = () => {
+      scrollRaf.current = null;
       const vh = window.innerHeight || 1;
-      sections.forEach((r) => {
+      for (const r of sections) {
         const el = r?.current;
-        if (!el) return;
+        if (!el) continue;
         const rect = el.getBoundingClientRect();
         const center = rect.top + rect.height / 2;
         const progress = Math.max(0, Math.min(1, center / vh));
         const deg = Math.round(progress * 360);
         el.style.setProperty('--rot', `${deg}deg`);
-      });
+      }
     };
+
+    const onScroll = () => {
+      if (scrollRaf.current != null) return;
+      scrollRaf.current = requestAnimationFrame(run);
+    };
+
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (scrollRaf.current) cancelAnimationFrame(scrollRaf.current);
+      scrollRaf.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.add('hide-scrollbar');
+    return () => {
+      document.body.classList.remove('hide-scrollbar');
+    };
   }, []);
 
   const handleParallaxMove = (ref) => (e) => {
@@ -116,11 +118,10 @@ const AboutPage = () => {
     const my = (y - 0.5) * 10;
     el.style.setProperty('--mx', `${mx}px`);
     el.style.setProperty('--my', `${my}px`);
-    // cursor-based rotation angle around the section center
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
     const angle = Math.atan2(e.clientY - cy, e.clientX - cx) * (180 / Math.PI);
-    const norm = Math.round(((angle % 360) + 360) % 360); // 0..360
+    const norm = Math.round(((angle % 360) + 360) % 360); 
     el.style.setProperty('--rotMouse', `${norm}deg`);
   };
 

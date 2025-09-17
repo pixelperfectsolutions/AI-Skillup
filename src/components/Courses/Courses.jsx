@@ -214,17 +214,12 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
         <div className={`courses-header ${layout === 'slider' ? 'center' : ''}`}>
           <h2 className="section-title">Lead The Creative World With AI SKILL UP’S Advanced Training In Coimbatore</h2>
           {layout !== 'slider' && (
-            <button 
+            <Link 
+              to="/contact"
               className="enroll-now-btn"
-              onClick={() => {
-                const applySection = document.getElementById('apply-form');
-                if (applySection) {
-                  applySection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
             >
               Enroll Now
-            </button>
+            </Link>
           )}
         </div>
         {layout === 'slider' ? (
@@ -332,9 +327,9 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
                 
                 <div className="placement-cta">
                   <p>Our dedicated placement team supports you with resume building, interview preparation, and placement drives, ensuring you are fully prepared for the competitive job market.</p>
-                  <button className="btn btn-primary btn-arrow" onClick={scrollToApply}>
+                  <Link to="/contact" className="btn btn-primary btn-arrow">
                     Start Your Journey
-                  </button>
+                  </Link>
                 </div>
               </div>
               
@@ -393,7 +388,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
               <li><FaHandshake className="li-icon" /> Post-Placement Support</li>
             </ul>
             <div className="placement-cta" style={{ justifyContent: 'center' }}>
-              <button className="btn btn-primary btn-arrow" onClick={scrollToApply}>Apply Now</button>
+              <Link to="/contact" className="btn btn-primary btn-arrow">Apply Now</Link>
             </div>
           </div>
         </div>
