@@ -79,6 +79,14 @@ const AboutPage = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Hide global scrollbar only on About page
+  useEffect(() => {
+    document.body.classList.add('hide-scrollbar');
+    return () => {
+      document.body.classList.remove('hide-scrollbar');
+    };
+  }, []);
+
   useEffect(() => {
     const sections = [whyRef, teamRef, valuesRef, testimonialsRef];
     const onScroll = () => {

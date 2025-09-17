@@ -8,6 +8,13 @@
   overflow: hidden;
 }
 
+.course-hero .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 .course-hero h1 {
   font-size: 2.8rem;
   margin-bottom: 14px;
@@ -40,6 +47,14 @@
 
 /* content above decor */
 .courses > * { position: relative; z-index: 1; }
+
+.course-modal-body {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
 @media (max-width: 992px) {
   .course-hero { padding: 60px 16px; }

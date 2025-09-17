@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaPhoneAlt, FaEnvelope, FaChevronDown } from 'react-icons/fa';
 import './Header.css';
+import { courses } from '../../data/courses';
 
 const Header = () => {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState('');
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+  // UI state for header behavior
+  const [isCompact, setIsCompact] = useState(typeof window !== 'undefined' ? window.scrollY > 20 : false);
+  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     // Set active link based on current path
@@ -21,6 +26,38 @@ const Header = () => {
       setActiveLink('courses');
     }
   }, [location]);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const y = window.scrollY || 0;
+      // compact when scrolled a bit (only affects topbar)
+      setIsCompact(y > 20);
+      // per request: never hide header
+      setIsHidden(false);
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    // initialize once
+    update();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) setMobileCoursesOpen(false);
+  }, [mobileOpen]);
 
   const scrollToSection = (sectionId) => {
     if (sectionId === 'home') {
@@ -42,17 +79,17 @@ const Header = () => {
 
   return (
     <>
-      <header className="header">
+      <header className={`header ${isCompact ? 'compact' : ''}`}>
         {/* Top info bar */}
         <div className="topbar">
           <div className="topbar-container">
             <div className="topbar-item">
               <FaPhoneAlt aria-hidden="true" />
-              <a href="tel:+919360899780">Call: +91 9360899780</a>
+              <a href="tel:+91 9655422511">Call: +91 96554 22511</a>
             </div>
             <div className="topbar-item">
               <FaEnvelope aria-hidden="true" />
-              <a href="mailto:info@fulcrumtechcbe.com">Email: info@fulcrumtechcbe.com</a>
+              <a href="mailto:info@aiskillup.example">Email: info@aiskillup.example</a>
             </div>
           </div>
         </div>
@@ -68,7 +105,7 @@ const Header = () => {
             <nav className="nav-desktop">
               <ul>
                 <li><Link to="/" className={isActive('home')} onClick={() => { scrollToSection('home'); closeMobileMenu(); }}>Home</Link></li>
-                <li>
+                <li className="has-dropdown">
                   <Link
                     to="/courses"
                     className={isActive('courses')}
@@ -84,6 +121,13 @@ const Header = () => {
                   >
                     Courses <FaChevronDown className="caret" />
                   </Link>
+                  <ul className="dropdown" role="menu" aria-label="Courses">
+                    {courses.slice(0, 5).map((c) => (
+                      <li key={c.slug} role="none">
+                        <Link role="menuitem" to={`/courses/${c.slug}`}>{c.title.split(' (')[0]}</Link>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
                 <li><Link to="#" onClick={(e)=>e.preventDefault()}>Blogs</Link></li>
                 <li><Link to="#" onClick={(e)=>e.preventDefault()}>Students Work</Link></li>
@@ -110,12 +154,39 @@ const Header = () => {
           <nav>
             <ul>
               <li><Link to="/" className={isActive('home')} onClick={() => { scrollToSection('home'); closeMobileMenu(); }}>Home</Link></li>
-              <li><Link to="/courses" className={isActive('courses')} onClick={closeMobileMenu}>Courses</Link></li>
+              <li className={`mobile-has-sub ${mobileCoursesOpen ? 'open' : ''}`}>
+                <div className="mobile-sub-row">
+                  <Link to="/courses" className={isActive('courses')} onClick={closeMobileMenu}>
+                    Courses
+                  </Link>
+                  <button
+                    type="button"
+                    className="mobile-accordion-trigger"
+                    aria-label="Toggle Courses submenu"
+                    aria-expanded={mobileCoursesOpen}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setMobileCoursesOpen((v) => !v);
+                    }}
+                  >
+                    <FaChevronDown className={`caret ${mobileCoursesOpen ? 'rotated' : ''}`} />
+                  </button>
+                </div>
+                <ul className="mobile-submenu" role="menu" aria-label="Courses">
+                  {courses.slice(0, 5).map((c) => (
+                    <li key={c.slug} role="none">
+                      <Link role="menuitem" to={`/courses/${c.slug}`} onClick={closeMobileMenu}>
+                        {c.title.split(' (')[0]}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
               <li><Link to="#" onClick={(e)=>e.preventDefault()}>Blogs</Link></li>
               <li><Link to="#" onClick={(e)=>e.preventDefault()}>Students Work</Link></li>
               <li><Link to="/about" className={isActive('about')} onClick={closeMobileMenu}>About Us</Link></li>
               <li><Link to="/contact" className={isActive('contact')} onClick={closeMobileMenu}>Contact</Link></li>
-              <li><Link to="/contact" className="enquiry-btn mobile">Enquiry Now</Link></li>
             </ul>
           </nav>
         </div>

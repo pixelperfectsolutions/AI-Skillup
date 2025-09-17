@@ -55,7 +55,6 @@ const CoursePage = () => {
         </div>
         <div className="courses-header">
           <h2 className="section-title">{course.title}</h2>
-          <button className="enroll-now-btn" onClick={scrollToApply}>Apply Now</button>
         </div>
 
         <div className="course-modal-body" style={{ display: 'flex', gap: '24px', alignItems: 'flex-start' }}>

@@ -20,7 +20,6 @@ const StarRating = ({ rating }) => {
 
 const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showControls = true }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [itemsPerView, setItemsPerView] = useState(() => {
     const w = typeof window !== 'undefined' ? window.innerWidth : 1200;
@@ -104,10 +103,9 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
   }, []);
 
   useEffect(() => {
-    if (isPaused) return;
     const timer = setTimeout(() => { nextSlide(); }, 5000);
     return () => clearTimeout(timer);
-  }, [pageIndex, isPaused, nextSlide]);
+  }, [pageIndex, nextSlide]);
 
   // Update itemsPerView on resize for responsive 3/2/1 layout
   useEffect(() => {
@@ -132,17 +130,10 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
 
   const goToSlide = (index) => {
     setPageIndex(index + 1); // +1 because of leading clone
-    setIsPaused(true);
   };
 
-  // Pause auto-slide when user interacts; resume after 10s
-  const pauseAutoSlide = useCallback(() => {
-    setIsPaused(true);
-    const timer = setTimeout(() => {
-      setIsPaused(false);
-    }, 10000);
-    return () => clearTimeout(timer);
-  }, []);
+  // No pause behavior; slider runs continuously
+  const pauseAutoSlide = useCallback(() => {}, []);
 
   // Handle transition end to snap seamlessly when we hit clones
   const handleTransitionEnd = () => {
@@ -227,13 +218,11 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
         ) : (
           <div 
             className="testimonials-slider"
-            onMouseEnter={pauseAutoSlide}
-            onFocus={pauseAutoSlide}
           >
             {showControls && (
               <button 
                 className="slider-arrow prev" 
-                onClick={() => { prevSlide(); pauseAutoSlide(); }}
+                onClick={() => { prevSlide(); }}
                 aria-label="Previous"
               >&#10094;</button>
             )}
@@ -272,7 +261,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
             {showControls && (
               <button 
                 className="slider-arrow next" 
-                onClick={() => { nextSlide(); pauseAutoSlide(); }}
+                onClick={() => { nextSlide(); }}
                 aria-label="Next"
               >&#10095;</button>
             )}

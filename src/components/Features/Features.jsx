@@ -23,7 +23,7 @@ const Features = () => {
           <div className="why-choose-cards">
             {features.slice(0, 4).map((feature, index) => (
               <div className="feature-card v2" key={index}>
-                <div className="feature-icon">{feature.icon}</div>
+                {/* Removed icon to match reference simple text cards */}
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
                 <a className="feature-link" href="#courses">Explore now!</a>
@@ -32,7 +32,7 @@ const Features = () => {
           </div>
           <div className="why-choose-visual">
             <div className="visual-frame">
-              <img src="/images/placement-3.png" alt="AI Skill Up learning experience" />
+              <img src="/images/Feature-1.png" alt="AI Skill Up learning experience" />
               <span className="floating-badge b1">AI</span>
               <span className="floating-badge b2">ML</span>
               <span className="floating-badge b3">DS</span>

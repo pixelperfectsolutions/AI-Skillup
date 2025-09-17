@@ -1,6 +1,14 @@
 /* About Page Styles */
 .about-page {
   overflow-x: hidden;
+  /* Hide scrollbar visuals across browsers while keeping scroll functional */
+  -ms-overflow-style: none; /* IE and old Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+/* Chrome, Safari, and other WebKit-based browsers */
+.about-page::-webkit-scrollbar {
+  display: none;
 }
 
 /* Hero Section */

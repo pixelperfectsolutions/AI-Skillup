@@ -5,7 +5,7 @@
 }
 
 .partners-header {
-  max-width: 1450px;
+  max-width: 1300px;
   margin: 0 auto 3rem;
 }
 
@@ -22,7 +22,7 @@
   color: #4a5568;
   line-height: 1.7;
   margin: 0 auto;
-  max-width: 1450px;
+  max-width: 1300px;
 }
 
 @media (max-width: 768px) {

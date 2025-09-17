@@ -38,6 +38,18 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
   });
   const statsRef = useRef(null);
   const animationStarted = useRef(false);
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 992 : false);
+
+  useEffect(() => {
+    const onResize = () => {
+      const next = window.innerWidth >= 992;
+      setIsDesktop(next);
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {}, [isDesktop]);
 
   useEffect(() => {
     if (!showPlacement) return; // do nothing when placement is hidden
@@ -124,59 +136,62 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
 
   const settings = {
     dots: false,
-    arrows: false,
+    arrows: true, // desktop default
     infinite: true,
     autoplay: true,
     autoplaySpeed: 1800,
     speed: 300,
-    cssEase: 'ease-in-out',
+    cssEase: 'ease',
+    waitForAnimate: false,
     pauseOnHover: true,
     pauseOnFocus: true,
-    slidesToShow: 3,
+    slidesToShow: 3, // desktop default: 3
     slidesToScroll: 1,
+    adaptiveHeight: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    draggable: false,
+    swipe: false,
+    touchMove: false,
+    swipeToSlide: false,
     responsive: [
       {
-        breakpoint: 1024, // Tablet and below
+        breakpoint: 992, // <= 992px (tablet)
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
           dots: false,
           arrows: false,
-          autoplay: true,
-          autoplaySpeed: 1800,
-          speed: 300
+          nextArrow: null,
+          prevArrow: null,
+          draggable: true,
+          swipe: true,
+          touchMove: true,
+          swipeToSlide: true
         }
       },
       {
-        breakpoint: 768, // Mobile landscape and below
+        breakpoint: 768, // <= 768px (mobile)
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 0,
-          arrows: false,
+          infinite: true,
           dots: false,
-          centerMode: true,
-          centerPadding: '20px',
-          swipeToSlide: true,
+          arrows: true,
+          nextArrow: <NextArrow />,
+          prevArrow: <PrevArrow />,
           autoplay: true,
-          autoplaySpeed: 1800,
-          speed: 300
-        }
-      },
-      {
-        breakpoint: 480, // Small mobile devices
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: false,
+          autoplaySpeed: 2500,
+          speed: 300,
+          waitForAnimate: false,
+          draggable: false,
+          swipe: false,
+          touchMove: false,
+          swipeToSlide: false,
           centerMode: true,
-          centerPadding: '30px',
-          swipeToSlide: true,
-          autoplay: true,
-          autoplaySpeed: 1800,
-          speed: 300
+          centerPadding: '0px',
+          variableWidth: true
         }
       }
     ]
@@ -197,7 +212,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
       )}
       <section className="courses section-decor" id="courses">
         <div className={`courses-header ${layout === 'slider' ? 'center' : ''}`}>
-          <h2 className="section-title">Lead The Creative World With Fulcrum’S Advanced Training In Coimbatore</h2>
+          <h2 className="section-title">Lead The Creative World With AI SKILL UP’S Advanced Training In Coimbatore</h2>
           {layout !== 'slider' && (
             <button 
               className="enroll-now-btn"

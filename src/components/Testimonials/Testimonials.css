@@ -32,7 +32,7 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-testimonials-section h2::after {
+.testimonials-section h2::after {
   content: '';
   position: absolute;
   width: 80px;
