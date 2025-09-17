@@ -57,11 +57,17 @@ const CoursePage = () => {
           <h2 className="section-title">{course.title}</h2>
         </div>
 
-        <div className="course-modal-body" style={{ display: 'flex', gap: '24px', alignItems: 'flex-start' }}>
-          <div className="course-modal-image" style={{ maxWidth: 480 }}>
-            <img src={course.image} alt={course.title} style={{ width: '100%', borderRadius: 12 }} />
-          </div>
-          <div className="course-modal-details" style={{ flex: 1 }}>
+        {/* Course image placed below title and above duration */}
+        <div style={{ maxWidth: 980, margin: '24px auto 8px', padding: '0 20px' }}>
+          <img
+            src={course.image}
+            alt={course.title}
+            style={{ display: 'block', width: '100%', maxWidth: 860, margin: '0 auto', borderRadius: 12 }}
+          />
+        </div>
+
+        <div className="course-modal-body" style={{ maxWidth: 980, margin: '0 auto', padding: '0 20px' }}>
+          <div className="course-modal-details">
             {course.description && (
               <div className="course-duration">
                 <h4>Duration</h4>
