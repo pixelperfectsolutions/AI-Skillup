@@ -39,11 +39,13 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
   const statsRef = useRef(null);
   const animationStarted = useRef(false);
   const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 992 : false);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
 
   useEffect(() => {
     const onResize = () => {
       const next = window.innerWidth >= 992;
       setIsDesktop(next);
+      setIsMobile(window.innerWidth <= 768);
     };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
@@ -178,20 +180,21 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
           slidesToScroll: 1,
           infinite: true,
           dots: false,
-          arrows: true,
-          nextArrow: <NextArrow />,
-          prevArrow: <PrevArrow />,
+          arrows: false,
+          nextArrow: null,
+          prevArrow: null,
           autoplay: true,
-          autoplaySpeed: 2500,
-          speed: 300,
+          autoplaySpeed: 5000,
+          speed: 700,
+          fade: true,
+          cssEase: 'linear',
           waitForAnimate: false,
           draggable: false,
           swipe: false,
           touchMove: false,
           swipeToSlide: false,
-          centerMode: true,
-          centerPadding: '0px',
-          variableWidth: true
+          centerMode: false,
+          variableWidth: false
         }
       }
     ]
@@ -222,11 +225,11 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
             </Link>
           )}
         </div>
-        {layout === 'slider' ? (
+        {layout === 'slider' && !isMobile ? (
           <>
             <Slider {...settings} className="courses-slider" aria-label="Popular courses slider">
               {courses.map((course, index) => (
-                <div key={index}>
+                <div key={index} className="course-slide-container">
                   <div className="course-card v2" role="group" aria-roledescription="slide">
                     <span className="course-badge" aria-label="Delivery mode">Online + Offline</span>
                     <div className="course-thumb">
@@ -246,6 +249,43 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
               ))}
             </Slider>
             {/* Global Explore Courses CTA below the slider */}
+            <div className="courses-explore-cta">
+              <button 
+                className="enroll-now-btn"
+                onClick={() => {
+                  const applySection = document.getElementById('apply-form');
+                  if (applySection) {
+                    applySection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                Explore Courses
+              </button>
+            </div>
+          </>
+        ) : layout === 'slider' && isMobile ? (
+          <>
+            <div className="courses-grid-mobile" aria-label="Popular courses grid">
+              {courses.map((course, index) => (
+                <div key={index} className="course-slide-container">
+                  <div className="course-card v2 boxed" role="group">
+                    <span className="course-badge" aria-label="Delivery mode">Online + Offline</span>
+                    <div className="course-thumb">
+                      <img src={course.image} alt={course.title} />
+                    </div>
+                    <Link to={`/courses/${course.slug}`} className="course-title">
+                      {course.title.split(' (')[0]}
+                    </Link>
+                    <div className="course-cta-inline">
+                      <Link to={`/courses/${course.slug}`} className="btn btn-primary btn-arrow">
+                        Learn More
+                      </Link>
+                    </div>
+                    <span className="course-bottom-line" aria-hidden="true" />
+                  </div>
+                </div>
+              ))}
+            </div>
             <div className="courses-explore-cta">
               <button 
                 className="enroll-now-btn"

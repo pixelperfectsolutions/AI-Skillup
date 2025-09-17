@@ -621,6 +621,28 @@
   }
 }
 
+@media (max-width: 768px) {
+  .courses-grid-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  .courses-grid-mobile .course-card.v2.boxed {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    padding: 10px;
+  }
+  .courses-grid-mobile .course-thumb img {
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+}
+
 /* CTA below slider (homepage) */
 .courses-explore-cta {
   display: flex;
@@ -641,20 +663,19 @@
 
 /* ===== FINAL MOBILE CLEANUP (desktop look, 1-at-a-time via slider) ===== */
 @media (max-width: 768px) {
-  /* Use flex track so variableWidth works correctly */
-  .courses-slider .slick-track { display: flex !important; }
-  .courses-slider .slick-slide { padding: 0 10px !important; width: auto !important; flex: 0 0 auto !important; }
+  /* Make the slider full-bleed (edge-to-edge) like the hero */
+  .courses { padding: 2rem 0; }
+  .courses-slider { width: 100vw; max-width: 100vw; padding: 0; margin: 0; position: relative; left: 50%; transform: translateX(-50%); }
+  .courses-slider .slick-list { overflow: hidden; padding: 0 !important; }
+  .courses-slider .slick-track { display: block !important; }
+  .courses-slider .slick-slide { width: 100% !important; padding: 0 !important; }
+  .courses-slider .slick-slide > div { width: 100% !important; }
 
-  /* Fix the inner slide/card width to 370px so one full box moves per slide */
-  .courses-slider .slick-slide > div { width: 370px !important; }
-  .course-card.v2 { width: 370px !important; max-width: 370px !important; background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; text-align: left; }
+  /* Keep the inner card boxed with comfortable margins */
+  .course-card.v2 { width: 100% !important; max-width: none !important; padding: 0 16px !important; box-sizing: border-box; }
+  .course-card.v2 .course-thumb img { width: 100%; height: 240px; object-fit: cover; }
 
-  /* Desktop visual style on mobile */
-  .course-card.v2 .course-thumb { border-radius: 2px; overflow: hidden; }
-  .course-card.v2 .course-thumb img { width: 100%; height: 220px; object-fit: cover; display: block; }
-
-  .course-card.v2 .course-badge { top: 10px; left: 10px; padding: 6px 12px; font-size: 0.82rem; border-radius: 8px; }
-  .course-card.v2 .course-title { margin: 16px 20px 0; font-size: 1.02rem; font-weight: 700; text-align: left; }
-  .course-card.v2 .course-cta-inline { justify-content: flex-start; margin-top: 10px; }
-  .course-card.v2 .course-cta-inline .btn { padding: 8px 14px; font-size: 0.9rem; border-radius: 6px; }
+  /* Center title and CTA on mobile for a hero-like feel */
+  .course-card.v2 .course-title { margin: 16px 12px 0; text-align: center; }
+  .course-card.v2 .course-cta-inline { justify-content: center; }
 }
