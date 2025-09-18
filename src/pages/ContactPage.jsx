@@ -88,6 +88,9 @@ const ContactPage = () => {
             </div>
           </div>
 
+          {/* Map Decorations */}
+          <div className="decor-element decor-dots map-decor-dots-1" aria-hidden="true"></div>
+          <div className="decor-element decor-arc map-decor-arc-1" aria-hidden="true"></div>
           {/* Map */}
           <div className="map-container">
             <iframe 

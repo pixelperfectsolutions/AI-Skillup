@@ -44,6 +44,15 @@
 .course-page-decor { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
 .course-page-decor .cp-dots-left { position: absolute; left: -30px; top: 30%; width: 200px; height: 150px; background-image: radial-gradient(#34d399 1.6px, transparent 1.6px); background-size: 16px 16px; opacity: 0.3; transform: rotate(8deg); }
 .course-page-decor .cp-ring { position: absolute; right: -120px; bottom: -140px; width: 380px; height: 380px; border-radius: 50%; border: 1px dashed rgba(0,0,0,0.07); }
+.course-page-blob-1 {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  color: var(--primary-color);
+  opacity: 0.05;
+}
 
 /* content above decor */
 .courses > * { position: relative; z-index: 1; }

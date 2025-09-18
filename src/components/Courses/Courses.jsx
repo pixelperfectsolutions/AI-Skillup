@@ -181,8 +181,6 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
           infinite: true,
           dots: false,
           arrows: false,
-          nextArrow: null,
-          prevArrow: null,
           autoplay: true,
           autoplaySpeed: 5000,
           speed: 700,
@@ -205,6 +203,8 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
       {/* Page Hero for Courses listing */}
       {showHero && (
         <section className="courses-hero" data-aos="fade-up">
+          <div className="decor-element decor-dots courses-hero-decor-dots-1" aria-hidden="true"></div>
+          <div className="decor-element decor-arc courses-hero-decor-arc-1" aria-hidden="true"></div>
           <div className="container">
             <h1 data-aos="fade-up" data-aos-delay="100">Courses</h1>
             <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
@@ -322,6 +322,8 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
       </section>
       {showPlacement && (
       <section className="placement" id="placement">
+        <div className="decor-element decor-dots placement-decor-dots-1" aria-hidden="true"></div>
+        <div className="decor-element decor-arc placement-decor-arc-1" aria-hidden="true"></div>
         <div className="placement-container">
           <h2 className="reveal">100% Placement Assistance</h2>
           <p className="reveal">Our commitment to your success doesn't end with course completion. We provide comprehensive placement assistance to help you launch your career.</p>

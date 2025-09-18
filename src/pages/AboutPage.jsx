@@ -363,7 +363,9 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Section */}
-      <section style={missionStyles.container}>
+      <section style={{...missionStyles.container, position: 'relative', overflow: 'hidden'}}>
+        <div className="decor-element decor-dots about-mission-dots-1" aria-hidden="true"></div>
+        <div className="decor-element decor-blob about-mission-blob-1" aria-hidden="true"></div>
         <div style={missionStyles.content}>
           <div style={missionStyles.text}>
             <h2 style={{

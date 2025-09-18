@@ -1,8 +1,51 @@
 .courses {
-  padding: 4rem 2rem;
-  background-color: #ffffff;
+  padding: 0 2rem; /* Horizontal padding for content */
+  background-color: transparent; /* Make transparent so wrapper background is visible */
+  position: relative; /* Ensure content is above decorations */
+  z-index: 1; /* Ensure content is above decorations */
   /* Prevent any accidental horizontal scroll due to inner decorations */
+}
+
+.courses-overflow-container {
   overflow-x: hidden;
+  width: 100%;
+}
+
+.courses-section-wrapper {
+  position: relative; /* Container for decorations */
+  padding: 4rem 0; /* This controls the spacing around the section */
+  background-color: #ffffff; /* Match the original background */
+  width: 100%;
+  overflow-x: clip; /* Use clip to prevent scrollbars but allow bleeding */
+}
+
+.courses-section-wrapper::before,
+.courses-section-wrapper::after {
+  content: '';
+  position: absolute;
+  z-index: 0; /* Ensure they are behind the content */
+  pointer-events: none; /* Make them non-interactive */
+}
+
+.courses-section-wrapper::before {
+  top: 10%;
+  left: 2%;
+  width: 150px;
+  height: 100px;
+  background-image: radial-gradient(var(--primary-color) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  opacity: 0.2;
+}
+
+.courses-section-wrapper::after {
+  bottom: 15%;
+  right: -100px; /* Position to bleed off-screen */
+  width: 250px;
+  height: 250px;
+  background-color: var(--secondary-color);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  opacity: 0.15;
+  animation: morph 8s ease-in-out infinite both alternate;
 }
 
 .courses-header {
@@ -292,6 +335,32 @@
   color: #2d3748;
   padding: 80px 20px;
   text-align: center;
+  position: relative; /* Required for positioning decorations */
+  overflow: hidden; /* Hide parts of decorations that go off-screen */
+}
+
+/* Courses Hero Decorations */
+.courses-hero-decor-dots-1 {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 150px;
+  height: 100px;
+  color: var(--primary-color);
+  opacity: 0.2;
+}
+
+.courses-hero-decor-arc-1 {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  border-color: var(--secondary-color);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(-45deg);
+  opacity: 0.2;
 }
 
 .courses-hero h1 {

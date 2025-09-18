@@ -220,6 +220,8 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
         <span className="ts-dots tr" />
         <span className="ts-dots bl" />
         <span className="ts-dots br" />
+        <div className="decor-element decor-arc testimonials-decor-arc-1"></div>
+        <div className="decor-element decor-arc testimonials-decor-arc-2"></div>
       </div>
       <div className="container">
         {showTitle && <h2 className="section-title">What Our Students Say</h2>}

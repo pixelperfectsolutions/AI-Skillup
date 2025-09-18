@@ -1,5 +1,6 @@
 .about {
   padding: 5rem 2rem;
+  position: relative; /* Ensure decorations are positioned relative to this container */
 }
 
 .about-container {
@@ -8,6 +9,8 @@
   gap: 3rem;
   max-width: 1300px;
   margin: 0 auto;
+  position: relative; /* Ensure content is above decorations */
+  z-index: 1; /* Ensure content is above decorations */
 }
 
 .about-image-container {
@@ -88,6 +91,30 @@
 .delay-2 { transition-delay: 160ms; }
 .delay-3 { transition-delay: 240ms; }
 .delay-4 { transition-delay: 320ms; }
+
+/* About Section Decorations */
+.about-decor-dots-1 {
+  top: 5%;
+  right: 5%;
+  width: 150px;
+  height: 100px;
+  color: var(--secondary-color);
+  position: absolute;
+}
+
+.about-decor-arc-1 {
+  bottom: 5%;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  border-color: var(--primary-color);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+  position: absolute;
+  border-style: solid;
+  border-width: 5px;
+}
 
 @media (max-width: 768px) {
   .about-container {

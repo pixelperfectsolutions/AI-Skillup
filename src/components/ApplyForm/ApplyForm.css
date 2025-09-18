@@ -1,11 +1,33 @@
 .apply-form-section {
   padding: 4rem 2rem;
   background-color: #fff;
+  position: relative; /* Required for positioning decorations */
+}
+
+/* ApplyForm Section Decorations */
+.apply-form-decor-dots-1 {
+  top: 5%;
+  right: 5%;
+  width: 180px;
+  height: 120px;
+  color: var(--secondary-color);
+  opacity: 0.2;
+}
+
+.apply-form-decor-blob-1 {
+  bottom: 5%;
+  left: 5%;
+  width: 250px;
+  height: 250px;
+  color: var(--primary-color);
+  opacity: 0.1;
 }
 
 .apply-form-container {
   max-width: 1300px;
   margin: 0 auto;
+  position: relative; /* Ensure content is above decorations */
+  z-index: 1; /* Ensure content is above decorations */
 }
 
 .apply-form-content {

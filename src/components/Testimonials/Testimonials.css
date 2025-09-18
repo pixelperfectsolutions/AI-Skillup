@@ -20,6 +20,11 @@
   transform-origin: top left;
 }
 
+.testimonials-section .container {
+  position: relative;
+  z-index: 1;
+}
+
 .testimonials-section h2 {
   text-align: center;
   font-size: 2.75rem;
@@ -895,3 +900,28 @@
 /* Reuse testimonial-card styles from grid section */
 /* Responsive gaps */
 @media (max-width: 640px) { .slide { gap: 16px; } }
+
+/* Testimonials Section Decorations */
+.testimonials-decor-arc-1 {
+  top: -10%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  border-color: var(--primary-color);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(45deg);
+  opacity: 0.1;
+}
+
+.testimonials-decor-arc-2 {
+  bottom: -10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-color: var(--secondary-color);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(45deg);
+  opacity: 0.1;
+}

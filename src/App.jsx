@@ -42,7 +42,8 @@ function App() {
             <div id="about">
               <About />
             </div>
-            <div id="courses">
+            <div id="courses" className="courses-section-wrapper">
+              {/* Decorations are now positioned via CSS relative to this wrapper */}
               <Courses layout="slider" showHero={false} showPlacement={false} />
             </div>
             <Features />

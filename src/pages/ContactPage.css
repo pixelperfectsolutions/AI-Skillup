@@ -7,6 +7,11 @@
   position: relative;
 }
 
+.contact-page > .contact-container {
+  position: relative; /* Ensure content is above decorations */
+  z-index: 1; /* Ensure content is above decorations */
+}
+
 /* Page decorative layer: only within the contact page area (not footer) */
 .contact-page .page-decor { display: none; }
 
@@ -45,6 +50,28 @@
 @keyframes c-floatY { 0%,100%{transform: rotate(8deg) translateY(0)} 50%{transform: rotate(8deg) translateY(6px)} }
 @keyframes c-floatX { 0%,100%{transform: rotate(-10deg) translateX(0)} 50%{transform: rotate(-10deg) translateX(8px)} }
 
+/* Make hero decorations touch edges on small screens */
+@media (max-width: 576px) {
+  /* Let the decoration layer span the full viewport width */
+  .contact-hero { padding-left: 0; padding-right: 0; }
+  .contact-hero > .container { padding: 0 16px; }
+  .contact-hero .contact-decor {
+    position: absolute;
+    left: 50% !important;
+    right: auto;
+    width: 100vw !important;
+    transform: translateX(-50%);
+  }
+
+  /* Dots to edges */
+  .contact-hero .c-dot-1 { left: 0 !important; top: 10%; transform: rotate(8deg); }
+  .contact-hero .c-dot-2 { right: 0 !important; bottom: 0; transform: rotate(-10deg); }
+
+  /* Rings to corners with slight bleed */
+  .contact-hero .c-ring-1 { top: -28px; right: -28px; }
+  .contact-hero .c-ring-2 { bottom: -28px; left: -28px; }
+}
+
 /* Box-level decorations: appear in empty corners of each container */
 .contact-section-plain,
 .contact-card { position: relative; overflow: visible; }
@@ -68,6 +95,12 @@
   pointer-events: none; transition: transform .3s ease, opacity .3s ease;
 }
 .contact-card:hover::after { opacity: .35; transform: rotate(-10deg) translateX(4px); }
+
+/* Nudge section/card corner accents to the viewport edges on small screens */
+@media (max-width: 576px) {
+  .contact-section-plain::before { left: 0; top: 0; width: 140px; height: 100px; }
+  .contact-card::after { right: 0; bottom: 0; width: 140px; height: 100px; }
+}
 
 /* Optional soft blob behind the form card */
 .contact-card::before {
@@ -300,6 +333,34 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.map-decor-dots-1 {
+  top: 50%;
+  left: 5%;
+  width: 150px;
+  height: 100px;
+  color: var(--primary-color);
+  opacity: 0.2;
+  position: absolute;
+  background-image: radial-gradient(currentColor 1.6px, transparent 1.6px);
+  background-size: 14px 14px;
+}
+
+.map-decor-arc-1 {
+  bottom: 20%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  border-color: var(--secondary-color);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(45deg);
+  opacity: 0.2;
+  position: absolute;
+  border-style: solid;
+  border-width: 2px;
 }
 
 .map-container iframe {
@@ -484,20 +545,16 @@
     transform: translateX(-50%);
   }
   
-  .contact-page .contact-item {
-    padding: 10px;
-  }
-  
-  .contact-page .contact-item h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-  }
-  
-  .contact-page .contact-item p {
-    font-size: 0.95rem;
-    margin: 2px 0;
-  }
-  
+  /* Ensure Address / Email / Phone are left-aligned on mobile */
+  .contact-info { text-align: left !important; }
+  .contact-info .info-block h4 { text-align: left !important; }
+  .contact-info .info-block p { text-align: left !important; }
+  .contact-info .info-link { display: inline-block; text-align: left !important; }
+
+  .contact-page .contact-item { padding: 10px; }
+  .contact-page .contact-item h3 { font-size: 1.1rem; margin-bottom: 5px; }
+  .contact-page .contact-item p { font-size: 0.95rem; margin: 2px 0; }
+
   .social-links h3 {
     text-align: center;
   }
@@ -548,8 +605,18 @@
   .contact-sections.reference-layout { grid-template-columns: 1fr; }
   .contact-sections.reference-layout::before { display: none; }
   .contact-form-container { padding: 22px; }
-  .contact-left-title { font-size: 1.6rem; text-align: center; }
+  .contact-left-title { font-size: 1.6rem; text-align: left; }
   .info-block h4 { text-align: center; }
   .info-block p, .contact-form-sub { text-align: center; }
   .social-row { justify-content: center; }
+}
+
+/* FINAL mobile overrides: force Address/Email/Phone to align left */
+@media (max-width: 576px) {
+  /* Scope to the left column only */
+  .contact-info { text-align: left !important; }
+  .contact-info .info-block { align-items: flex-start; }
+  .contact-info .info-block h4 { text-align: left !important; width: 100%; }
+  .contact-info .info-block p { text-align: left !important; width: 100%; }
+  .contact-info .info-link { text-align: left !important; display: inline-block; width: auto; }
 }

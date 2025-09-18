@@ -2132,3 +2132,36 @@
   .placement-illustration::after { right: -140px; width: 260px; height: 260px; border-width: 9px; }
   .placement-images::after { right: -50px; width: 160px; height: 120px; }
 }
+
+/* Placement Section Decorations */
+.placement-decor-dots-1 {
+  top: 5%;
+  right: 5%;
+  width: 180px;
+  height: 120px;
+  color: var(--secondary-color);
+  opacity: 0.2;
+}
+
+.placement-decor-arc-1 {
+  bottom: 10%;
+  left: 5%;
+  width: 220px;
+  height: 220px;
+  border-color: var(--primary-color);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+  opacity: 0.2;
+}
+
+.placement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-size: 200% auto;
+  animation: gradientBG 8s ease infinite;
+}

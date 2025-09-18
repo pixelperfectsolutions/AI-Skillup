@@ -112,6 +112,8 @@ const ApplyForm = ({ inline = false, hideImage = false, compact = false }) => {
   // Default full-width promotional variant
   return (
     <section className="apply-form-section section-decor" id="apply-form">
+      <div className="decor-element decor-dots apply-form-decor-dots-1" aria-hidden="true"></div>
+      <div className="decor-element decor-blob apply-form-decor-blob-1" aria-hidden="true"></div>
       <div className="apply-form-container">
         <div className="apply-form-content">
           {!compact && (

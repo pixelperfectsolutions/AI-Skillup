@@ -39,6 +39,36 @@
   backdrop-filter: blur(1px);
 }
 
+/* Decorations container */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3; /* Above overlay, below content */
+  pointer-events: none;
+}
+
+.hero-decor-dots-1 {
+  top: 10%;
+  left: 5%;
+  width: 200px;
+  height: 150px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-decor-arc-1 {
+  bottom: 15%;
+  right: 5%;
+  width: 250px;
+  height: 250px;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(45deg);
+}
+
 .hero-content {
   position: absolute;
   top: 50%;
