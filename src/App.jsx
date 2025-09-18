@@ -25,6 +25,7 @@ function ScrollToTop() {
 }
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
       <Header />
@@ -52,7 +53,8 @@ function App() {
       </Routes>
       {/* Global footer on all pages */}
       <Footer />
-      <FloatingWhatsApp />
+      {/* Hide floating WhatsApp on About page to remove the extra right-side widget */}
+      {location.pathname !== '/about' && <FloatingWhatsApp />}
     </div>
   );
 }

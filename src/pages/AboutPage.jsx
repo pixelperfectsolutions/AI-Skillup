@@ -102,10 +102,9 @@ const AboutPage = () => {
   }, []);
 
   useEffect(() => {
-    document.body.classList.add('hide-scrollbar');
-    return () => {
-      document.body.classList.remove('hide-scrollbar');
-    };
+    // On page mount, ensure we start at the very top so header/topbar are visible
+    try { window.scrollTo(0, 0); } catch (e) {}
+    return () => {};
   }, []);
 
   const handleParallaxMove = (ref) => (e) => {
@@ -153,8 +152,9 @@ const AboutPage = () => {
       borderRadius: isMobile ? 0 : '12px',
       overflow: 'hidden',
       boxShadow: isMobile ? 'none' : '0 10px 30px rgba(0,0,0,0.1)',
-      width: isMobile ? '100vw' : 'auto',
-      margin: isMobile ? '0 -20px' : 0,
+      // Avoid horizontal overflow on mobile by using 100% instead of 100vw and no negative margins
+      width: isMobile ? '100%' : 'auto',
+      margin: 0,
       order: isMobile ? 1 : 2
     },
     imageContent: {
@@ -218,9 +218,7 @@ const AboutPage = () => {
         data-aos-delay="100"
         style={{
           maxWidth: '100%',
-          padding: '0',
-          margin: '-110px auto 0',
-          backgroundColor: '#fff',
+          margin: '0 auto',
           overflow: 'hidden',
           position: 'relative'
         }}
@@ -244,7 +242,7 @@ const AboutPage = () => {
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '40px',
             alignItems: 'center',
-            padding: '20px 0 40px'
+            padding: '0 0 80px'
           }}>
             {/* Left Column - Content */}
             <div style={{
@@ -291,7 +289,8 @@ const AboutPage = () => {
             <div style={{
               borderRadius: '12px',
               overflow: 'hidden',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+              boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+              marginTop: isMobile ? '10px' : '20px'
             }}>
               <img 
                 src="/images/AboutPage.jpg" 
@@ -346,10 +345,10 @@ const AboutPage = () => {
         <div className="stats-container">
           <div className="stats-cards">
             {[
-              { icon: '👤', value: 29.3, suffix: 'K', decimals: 1, label: 'STUDENT ENROLLED', tone: '#a7f3d0' },
-              { icon: '🧰', value: 32.4, suffix: 'K', decimals: 1, label: 'CLASS COMPLETED', tone: '#fde68a' },
-              { icon: '👍', value: 100, suffix: '%', decimals: 0, label: 'SATISFACTION RATE', tone: '#bfdbfe' },
-              { icon: '👨‍🏫', value: 354, suffix: '+', decimals: 0, label: 'TOP INSTRUCTORS', tone: '#ffe4b5' }
+              { icon: '👤', value: 29.3, suffix: 'K', decimals: 1, label: 'STUDENT ENROLLED', tone: 'var(--primary-color)' },
+              { icon: '🧰', value: 32.4, suffix: 'K', decimals: 1, label: 'CLASS COMPLETED', tone: 'var(--primary-color)' },
+              { icon: '👍', value: 100, suffix: '%', decimals: 0, label: 'SATISFACTION RATE', tone: 'var(--primary-color)' },
+              { icon: '👨‍🏫', value: 354, suffix: '+', decimals: 0, label: 'TOP INSTRUCTORS', tone: 'var(--primary-color)' }
             ].map((s, i) => (
               <div className="stat-card" key={i} data-aos="zoom-in" data-aos-delay={150 + i * 80}>
                 <div className="stat-icon" style={{ backgroundColor: `${s.tone}` }}>{s.icon}</div>
@@ -385,7 +384,7 @@ const AboutPage = () => {
                 transform: isMobile ? 'translateX(-50%)' : 'none',
                 width: '80px',
                 height: '4px',
-                background: '#4a6cf7',
+                background: 'var(--primary-color)',
                 borderRadius: '2px'
               }} />
             </h2>
@@ -499,7 +498,7 @@ const AboutPage = () => {
               transform: 'translateX(-50%)',
               width: '80px',
               height: '4px',
-              background: '#4a6cf7',
+              background: 'var(--primary-color)',
               borderRadius: '2px'
             }} />
           </h2>
@@ -560,7 +559,7 @@ const AboutPage = () => {
                 />
               </div>
               <h3 style={{ color: '#333', marginBottom: '5px' }}>John Doe</h3>
-              <p style={{ color: '#4a6cf7', fontWeight: '600', marginBottom: '10px' }}>Founder & CEO</p>
+              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>Founder & CEO</p>
               <p style={{ color: '#666', fontSize: '0.9rem' }}>10+ years in AI research and development</p>
             </div>
 
@@ -601,7 +600,7 @@ const AboutPage = () => {
                 />
               </div>
               <h3 style={{ color: '#333', marginBottom: '5px' }}>Jane Smith</h3>
-              <p style={{ color: '#4a6cf7', fontWeight: '600', marginBottom: '10px' }}>Head of Education</p>
+              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>Head of Education</p>
               <p style={{ color: '#666', fontSize: '0.9rem' }}>Former AI lead at Tech Corp</p>
             </div>
 
@@ -642,7 +641,7 @@ const AboutPage = () => {
                 />
               </div>
               <h3 style={{ color: '#333', marginBottom: '5px' }}>Alex Johnson</h3>
-              <p style={{ color: '#4a6cf7', fontWeight: '600', marginBottom: '10px' }}>Lead Instructor</p>
+              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>Lead Instructor</p>
               <p style={{ color: '#666', fontSize: '0.9rem' }}>Specialist in Machine Learning</p>
             </div>
 
@@ -683,7 +682,7 @@ const AboutPage = () => {
                 />
               </div>
               <h3 style={{ color: '#333', marginBottom: '5px' }}>Sarah Williams</h3>
-              <p style={{ color: '#4a6cf7', fontWeight: '600', marginBottom: '10px' }}>Student Success</p>
+              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>Student Success</p>
               <p style={{ color: '#666', fontSize: '0.9rem' }}>Dedicated to your learning journey</p>
             </div>
           </div>
@@ -731,7 +730,7 @@ const AboutPage = () => {
               transform: 'translateX(-50%)',
               width: '80px',
               height: '4px',
-              background: '#4a6cf7',
+              background: 'var(--primary-color)',
               borderRadius: '2px'
             }} />
           </h2>
@@ -746,25 +745,25 @@ const AboutPage = () => {
               { 
                 title: 'Excellence', 
                 desc: 'We strive for the highest standards in AI education',
-                color: '#4a6cf7',
+                color: 'var(--primary-color)',
                 icon: '⭐'
               },
               { 
                 title: 'Innovation', 
                 desc: 'Continuously updating our curriculum with the latest AI advancements',
-                color: '#6c5ce7',
+                color: 'var(--primary-color)',
                 icon: '🚀'
               },
               { 
                 title: 'Community', 
                 desc: 'Building a supportive network of AI enthusiasts',
-                color: '#00b894',
+                color: 'var(--primary-color)',
                 icon: '👥'
               },
               { 
                 title: 'Accessibility', 
                 desc: 'Making AI education available to everyone',
-                color: '#e17055',
+                color: 'var(--primary-color)',
                 icon: '🌍'
               },
             ].map((value, index) => (

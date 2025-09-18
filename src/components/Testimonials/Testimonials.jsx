@@ -242,7 +242,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
               {googleReviewCount} reviews
             </span>
           </div>
-          <button type="button" className="btn-google-review" onClick={openFeedbackClosedTab} title="Contact owner for your feedback form application. It's currently closed.">
+          <button type="button" className="btn btn-primary btn-google-review" onClick={openFeedbackClosedTab} title="Contact owner for your feedback form application. It's currently closed.">
             Write a Review
           </button>
         </div>

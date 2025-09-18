@@ -10,7 +10,7 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
   // UI state for header behavior
-  const [isCompact, setIsCompact] = useState(typeof window !== 'undefined' ? window.scrollY > 20 : false);
+  const [isCompact, setIsCompact] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Header = () => {
       }
     };
 
-    // initialize once
+    // initialize once after mount
     update();
 
     window.addEventListener('scroll', onScroll, { passive: true });

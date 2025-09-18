@@ -57,7 +57,7 @@ const Hero = () => {
             <div className="hero-content">
               <h1>{slide.title}</h1>
               <p>{slide.description}</p>
-              <button onClick={() => goToCourse(slide.slug)}>Explore Course</button>
+              <button className="btn btn-primary" onClick={() => goToCourse(slide.slug)}>Explore Course</button>
             </div>
           </div>
         </div>

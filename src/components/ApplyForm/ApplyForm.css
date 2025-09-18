@@ -26,11 +26,11 @@
 }
 
 .discount-info h2 span {
-  color: #e67e22;
+  color: var(--secondary-color);
 }
 
 .discount-info hr {
-  border: 1px solid #e67e22;
+  border: 1px solid var(--secondary-color);
   width: 100px;
   margin: 1.5rem 0;
 }
@@ -42,7 +42,7 @@
 
 .form-image-container {
   display: flex;
-  background-color: #fff5e6;
+  background-color: rgba(23, 163, 128, 0.06);
   border-radius: 15px;
   padding: 2rem;
   gap: 2rem;
@@ -64,7 +64,7 @@
 .form-group textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #f39c12;
+  border: 1px solid var(--secondary-color);
   border-radius: 8px;
   background-color: #fff;
   font-size: 1rem;
@@ -188,7 +188,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(230, 126, 34, 0.1);
+    background: rgba(23, 163, 128, 0.12);
     border-radius: 10px;
     animation: pulse 2s infinite;
     pointer-events: none;

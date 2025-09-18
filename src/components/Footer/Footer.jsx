@@ -5,18 +5,6 @@ import { FaMapLocationDot } from 'react-icons/fa6';
 import './Footer.css';
 
 const Footer = () => {
-  const scrollToSection = (sectionId) => {
-    if (sectionId === 'home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-    
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -29,10 +17,10 @@ const Footer = () => {
         <div className="footer-section links">
           <h3>Quick Links</h3>
           <ul>
-            <li><Link to="/" onClick={() => scrollToSection('home')}>Home</Link></li>
-            <li><Link to="/" onClick={() => scrollToSection('about')}>About</Link></li>
-            <li><Link to="/" onClick={() => scrollToSection('courses')}>Courses</Link></li>
-            <li><Link to="/" onClick={() => scrollToSection('contact')}>Contact</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/courses">Courses</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
         <div className="footer-section contact" id="contact-section">

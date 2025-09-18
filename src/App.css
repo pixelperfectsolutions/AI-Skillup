@@ -8,13 +8,15 @@
   box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
 }
 
-/* Hide scrollbar utility for pages that opt-in via body class */
-body.hide-scrollbar {
+/* Hide scrollbar utility for pages that opt-in via body/html class */
+body.hide-scrollbar,
+html.hide-scrollbar {
   /* Firefox */
   scrollbar-width: none;
   /* IE and old Edge */
   -ms-overflow-style: none;
 }
-body.hide-scrollbar::-webkit-scrollbar {
+body.hide-scrollbar::-webkit-scrollbar,
+html.hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge (Chromium) */
 }
