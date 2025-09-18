@@ -1,8 +1,8 @@
 .footer {
-  background-color: #0057ff; /* matches your current footer bg */
+  background-color: white; /* matches your current footer bg */
   color: #000; /* all footer text black */
   padding: 6rem 2rem 0;
-  min-height: 600px;
+  min-height: 660px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
