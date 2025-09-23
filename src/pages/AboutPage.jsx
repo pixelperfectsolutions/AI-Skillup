@@ -345,13 +345,13 @@ const AboutPage = () => {
         <div className="stats-container">
           <div className="stats-cards">
             {[
-              { icon: '👤', value: 29.3, suffix: 'K', decimals: 1, label: 'STUDENT ENROLLED', tone: 'var(--primary-color)' },
-              { icon: '🧰', value: 32.4, suffix: 'K', decimals: 1, label: 'CLASS COMPLETED', tone: 'var(--primary-color)' },
+              { icon: '👤', value: 1278, suffix: '+', decimals: 1, label: 'STUDENT ENROLLED', tone: 'var(--primary-color)' },
+              { icon: '🧰', value: 10, suffix: 'k', decimals: 1, label: 'CLASS COMPLETED', tone: 'var(--primary-color)' },
               { icon: '👍', value: 100, suffix: '%', decimals: 0, label: 'SATISFACTION RATE', tone: 'var(--primary-color)' },
               { icon: '👨‍🏫', value: 354, suffix: '+', decimals: 0, label: 'TOP INSTRUCTORS', tone: 'var(--primary-color)' }
             ].map((s, i) => (
               <div className="stat-card" key={i} data-aos="zoom-in" data-aos-delay={150 + i * 80}>
-                <div className="stat-icon" style={{ backgroundColor: `${s.tone}` }}>{s.icon}</div>
+                <div className="stat-icon" style={ { backgroundColor: s.tone } }>{s.icon}</div>
                 <div className="stat-number">
                   <AnimatedNumber target={s.value} suffix={s.suffix} decimals={s.decimals} />
                 </div>
@@ -435,8 +435,8 @@ const AboutPage = () => {
           <div className="wc-heading" data-aos="fade-up" data-aos-delay="180">
             <div className="wc-eyebrow">WHY CHOOSE AI SKILL UP</div>
             <h2>
-              The Best <span className="highlight">Beneficial</span> Side
-              <br /> of AI SkillUp
+              The <span className="highlight"> Best  Beneficial</span> Side
+              <br /> of <span className="highlight">AI SkillUp</span>
             </h2>
             <div className="wc-underline" />
           </div>

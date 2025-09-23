@@ -329,8 +329,8 @@
   width: 99dvw;         /* avoid scrollbar offset on some browsers */
   transform: translateX(-50%);
   /* comfortable space above map (CTA button sits just above) */
-  margin: 56px 0 50px;
-  border-radius: 12px;
+  margin: 56px 0 0;
+  border-radius: 2px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -451,7 +451,7 @@
 
 /* Make the card-to-map gap minimal like the reference */
 .contact-sections { margin-bottom: 0; }
-.map-container { margin: 6px 0 32px; }
+.map-container { margin: 6px 0 0; }
 
 /* Absolute crop: eliminate any remaining pixel gap under CTA */
 .contact-card .contact-form-container { padding-bottom: 40px; }

@@ -94,12 +94,14 @@ const ContactPage = () => {
           {/* Map */}
           <div className="map-container">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1958.1598818464008!2d76.9633314!3d11.0146179!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858fff3c5f2e3%3A0xdb874aa0157dc97!2s45%2C%20Gokhale%20St%2C%20near%20MK%20Residency%2C%20Opposite%20Senthil%20Kumaran%20Theatre%2C%20Ram%20Nagar%2C%20Coimbatore%2C%20Tamil%20Nadu%20641009!5e0!3m2!1sen!2sin!4v1756981986236!5m2!1sen!2sin"
-              style={{ border: 0, borderRadius: '12px' }} 
-              allowFullScreen 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.316868602607!2d76.9638168!3d11.0148355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8594767deeaf7%3A0x578b90b22a69fb4c!2sGraphic%2C%20UI%20UX%2C%20AI%20Design%20Academy!5e0!3m2!1sen!2sin!4v1758620455629!5m2!1sen!2sin"
+              width="800"
+              height="650"
+              style={{ border: 0, borderRadius: '2px' }}
+              allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="AI Skill Up Location"
+              title="Graphic, UI UX, AI Design Academy Location"
             ></iframe>
           </div>
         </div>

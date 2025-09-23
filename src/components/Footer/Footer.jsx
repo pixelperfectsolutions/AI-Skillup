@@ -9,7 +9,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section about">
-          <h3 className="logo-text">AI SKILL UP</h3>
+          <div className="logo-wrap">
+            <img src="/images/AI logo.png" alt="AI Skill Up Logo" />
+          </div>
           <p>
             AI SKILL UP is a leading provider of AI-powered courses, dedicated to preparing students for the future of technology.
           </p>
@@ -18,8 +20,10 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
             <li><Link to="/courses">Courses</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/">Students Work</Link></li>
+            <li><Link to="/">Blogs</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
@@ -39,7 +43,7 @@ const Footer = () => {
           </div>
           <div className="contact-item">
             <span className="contact-icon" aria-hidden="true"><FaMapLocationDot /></span>
-            <p><a href="https://maps.app.goo.gl/n5sw7Whk6syLkCAq7" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+            <p><a href="https://www.google.com/maps/place/Graphic,+UI+UX,+AI+Design+Academy/@11.0148355,76.9638168,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba8594767deeaf7:0x578b90b22a69fb4c!8m2!3d11.0148355!4d76.9638168!16s%2Fg%2F11v00g_j1l?entry=ttu" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
           </div>
           <div className="contact-item">
             <span className="contact-icon" aria-hidden="true"><FaEnvelope /></span>

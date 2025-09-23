@@ -379,8 +379,8 @@
 .wc-heading { text-align: center; margin-bottom: 26px; }
 .wc-eyebrow { font-size: .85rem; color: #9ca3af; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
 .wc-heading h2 { font-size: 2rem; color: #111827; margin: 0; }
-.wc-heading .highlight { color: #f59e0b; }
-.wc-underline { width: 90px; height: 6px; margin: 10px auto 0; border-radius: 3px; background: linear-gradient(90deg, #f59e0b, #ef4444); }
+.wc-heading .highlight { color: var(--secondary-color); }
+.wc-underline { width: 90px; height: 6px; margin: 10px auto 0; border-radius: 3px; background: var(--secondary-color); }
 
 .wc-grid { display: grid; grid-template-columns: repeat(3, minmax(260px, 1fr)); gap: 26px; justify-content: center; }
 .wc-card { background: #fff; border: 1px solid #eef2f7; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 18px 26px rgba(0,0,0,0.06); overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; }

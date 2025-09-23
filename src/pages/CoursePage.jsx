@@ -48,7 +48,7 @@ const CoursePage = () => {
         </div>
       </section>
 
-      <section className="courses" style={{ paddingTop: '40px', position: 'relative' }}>
+      <section className="courses course-page-section" style={{ paddingTop: '40px', position: 'relative' }}>
         <div className="course-page-decor" aria-hidden="true">
           <span className="cp-dots-left" />
           <span className="cp-ring" />
