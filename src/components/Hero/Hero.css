@@ -112,7 +112,7 @@
 
 /* Slider Pagination: dash style */
 .hero-slider .slick-dots {
-  bottom: 70px;
+  bottom: 150px;
   display: flex !important;
   gap: 10px;
   align-items: center;
@@ -120,8 +120,8 @@
 }
 
 .hero-slider .slick-dots li {
-  width: 28px;
-  height: 4px;
+  width: 40px;
+  height: 2px;
   margin: 0; /* override slick default */
 }
 

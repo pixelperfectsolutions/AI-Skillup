@@ -10,6 +10,7 @@ import ApplyForm from './components/ApplyForm/ApplyForm';
 import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp/FloatingWhatsApp';
+import Popup from './components/Popup';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import CoursePage from './pages/CoursePage';
@@ -56,6 +57,8 @@ function App() {
       <Footer />
       {/* Hide floating WhatsApp on About page to remove the extra right-side widget */}
       {location.pathname !== '/about' && <FloatingWhatsApp />}
+      {/* Popup form that appears on first visit and every 3 minutes */}
+      <Popup />
     </div>
   );
 }
