@@ -112,7 +112,7 @@
 
 /* Slider Pagination: dash style */
 .hero-slider .slick-dots {
-  bottom: 150px;
+  bottom:70px;
   display: flex !important;
   gap: 10px;
   align-items: center;
