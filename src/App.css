@@ -53,7 +53,6 @@ html.hide-scrollbar::-webkit-scrollbar {
   animation: morph 8s ease-in-out infinite both alternate;
   will-change: border-radius;
 }
-
 @keyframes morph {
   0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
   100% { border-radius: 40% 60%; }
@@ -64,3 +63,26 @@ html.hide-scrollbar::-webkit-scrollbar {
 .decor-top-right { top: -50px; right: -50px; }
 .decor-bottom-left { bottom: -50px; left: -50px; }
 .decor-bottom-right { bottom: -50px; right: -50px; }
+
+/* === Global Box Radius Overrides (Square boxes site-wide) === */
+/* Square off cards/sections/panels only; keep circular badges/icons/images intact */
+.course-card,
+.course-card.v2,
+.courses-section-wrapper,
+.contact-section,
+.contact-card,
+.map-container,
+.testimonial-content,
+.testimonial-card,
+.google-rating-card,
+.features .feature-card,
+.feature-card.v2,
+.feature-item,
+.has-dropdown .dropdown {
+  border-radius: 0 !important;
+}
+
+/* === Global Images: no rounded corners === */
+img {
+  border-radius: 0 !important;
+}

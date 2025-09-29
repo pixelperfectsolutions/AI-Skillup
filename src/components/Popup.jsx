@@ -39,8 +39,9 @@ const Popup = () => {
             <img src="/images/apply form-1.png" alt="Happy students" />
           </div>
           <div className="modal-body">
-            <h3 className="modal-title">One Form. One Dream.<br/>One Career Upgrade.</h3>
-            <p className="modal-subtitle">Just a few quick details and we're all set.</p>
+            <h2>Wait! <span>Before you go,</span> Here is a 20% Discount.</h2>
+            <hr/>
+            <p>in your Course Fee</p>
             <ApplyForm inline={true} hideImage={true} compact={true} />
           </div>
         </div>

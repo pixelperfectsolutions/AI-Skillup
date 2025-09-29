@@ -89,7 +89,7 @@ const Header = () => {
             </div>
             <div className="topbar-item">
               <FaEnvelope aria-hidden="true" />
-              <a href="mailto:info@aiskillup.example">Email: info@aiskillup.example</a>
+              <a href="mailto:info@aiskillup.com">Email: info@aiskillup.com</a>
             </div>
           </div>
         </div>
@@ -109,15 +109,7 @@ const Header = () => {
                   <Link
                     to="/courses"
                     className={isActive('courses')}
-                    onClick={(e) => {
-                      if (location.pathname === '/') {
-                        scrollToSection('courses');
-                      } else if (location.pathname === '/courses') {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }
-                      closeMobileMenu();
-                    }}
+                    onClick={closeMobileMenu}
                   >
                     Courses <FaChevronDown className="caret" />
                   </Link>
@@ -156,7 +148,11 @@ const Header = () => {
               <li><Link to="/" className={isActive('home')} onClick={() => { scrollToSection('home'); closeMobileMenu(); }}>Home</Link></li>
               <li className={`mobile-has-sub ${mobileCoursesOpen ? 'open' : ''}`}>
                 <div className="mobile-sub-row">
-                  <Link to="/courses" className={isActive('courses')} onClick={closeMobileMenu}>
+                  <Link
+                    to="/courses"
+                    className={isActive('courses')}
+                    onClick={closeMobileMenu}
+                  >
                     Courses
                   </Link>
                   <button

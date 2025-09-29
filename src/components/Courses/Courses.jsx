@@ -250,54 +250,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
             </Slider>
             {/* Global Explore Courses CTA below the slider */}
             <div className="courses-explore-cta">
-              <button 
-                className="enroll-now-btn"
-                onClick={() => {
-                  const applySection = document.getElementById('apply-form');
-                  if (applySection) {
-                    applySection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Explore Courses
-              </button>
-            </div>
-          </>
-        ) : layout === 'slider' && isMobile ? (
-          <>
-            <div className="courses-grid-mobile" aria-label="Popular courses grid">
-              {courses.map((course, index) => (
-                <div key={index} className="course-slide-container">
-                  <div className="course-card v2 boxed" role="group">
-                    <span className="course-badge" aria-label="Delivery mode">Online + Offline</span>
-                    <div className="course-thumb">
-                      <img src={course.image} alt={course.title} />
-                    </div>
-                    <Link to={`/courses/${course.slug}`} className="course-title">
-                      {course.title.split(' (')[0]}
-                    </Link>
-                    <div className="course-cta-inline">
-                      <Link to={`/courses/${course.slug}`} className="btn btn-primary btn-arrow">
-                        Learn More
-                      </Link>
-                    </div>
-                    <span className="course-bottom-line" aria-hidden="true" />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="courses-explore-cta">
-              <button 
-                className="enroll-now-btn"
-                onClick={() => {
-                  const applySection = document.getElementById('apply-form');
-                  if (applySection) {
-                    applySection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Explore Courses
-              </button>
+              <Link to="/courses" className="enroll-now-btn">Explore Courses</Link>
             </div>
           </>
         ) : (
@@ -321,12 +274,11 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
         )}
       </section>
       {showPlacement && (
-      <section className="placement" id="placement">
-        <div className="decor-element decor-dots placement-decor-dots-1" aria-hidden="true"></div>
-        <div className="decor-element decor-arc placement-decor-arc-1" aria-hidden="true"></div>
-        <div className="placement-container">
+        <section className="placement" id="placement">
+          <div className="decor-element decor-dots placement-decor-dots-1" aria-hidden="true"></div>
+          <div className="decor-element decor-arc placement-decor-arc-1" aria-hidden="true"></div>
+          <div className="placement-container">
           <h2 className="reveal">100% Placement Assistance</h2>
-          <p className="reveal">Our commitment to your success doesn't end with course completion. We provide comprehensive placement assistance to help you launch your career.</p>
 
           <div className="placement-images reveal">
             <img src="/images/placement-1.png" alt="Placement Highlight 1" />

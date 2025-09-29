@@ -410,8 +410,8 @@
 }
 
 .star.filled {
-  color: var(--secondary-color);
-  text-shadow: 0 2px 8px rgba(23, 163, 128, 0.3);
+  color: #FFD700; /* Gold */
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.35);
   animation: starPop 0.4s ease-out forwards;
 }
 
@@ -619,6 +619,14 @@
   .google-center-logo { font-size: 12.5px; }
 }
 
+/* === Global Box Radius Overrides (Testimonials) === */
+/* Square off content cards and grid cards only; keep circular badges/images intact */
+.testimonial-content,
+.testimonial-card,
+.google-rating-card {
+  border-radius: 0 !important;
+}
+
 /* Animation for testimonial entry */
 @keyframes fadeInUp {
   from {
@@ -693,7 +701,7 @@
 .testimonial-image {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 0;
   margin: 0 auto 15px;
   background-color: #f8f9fa;
   border: 3px solid var(--secondary-color);
@@ -760,8 +768,8 @@
 }
 
 .star.filled {
-  color: var(--secondary-color);
-  text-shadow: 0 0 2px rgba(23, 163, 128, 0.3);
+  color: #FFD700; /* Gold */
+  text-shadow: 0 0 2px rgba(255, 215, 0, 0.35);
 }
 
 .star.half:before {
@@ -885,7 +893,7 @@
 .testimonials-track {
   display: flex;
   width: 100%;
-  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 600ms linear;
   will-change: transform;
 }
 

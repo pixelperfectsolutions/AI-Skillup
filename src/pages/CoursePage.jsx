@@ -33,21 +33,6 @@ const CoursePage = () => {
 
   return (
     <>
-      {/* Page Hero (like Contact) */}
-      <section className="course-hero" data-aos="fade-up">
-        <div className="course-hero-decor" aria-hidden="true">
-          <span className="ch-dot ch-dot-1" />
-          <span className="ch-dot ch-dot-2" />
-          <span className="ch-ring ch-ring-1" />
-        </div>
-        <div className="container">
-          <h1 data-aos="fade-up" data-aos-delay="100">{course.title.split(' (')[0]}</h1>
-          <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
-            Our commitment is to help learners become more successful by offering modern, job-ready AI programs and career support.
-          </p>
-        </div>
-      </section>
-
       <section className="courses course-page-section" style={{ paddingTop: '40px', position: 'relative' }}>
         <div className="course-page-decor" aria-hidden="true">
           <span className="cp-dots-left" />
