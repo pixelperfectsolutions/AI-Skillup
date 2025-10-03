@@ -147,7 +147,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
     waitForAnimate: false,
     pauseOnHover: true,
     pauseOnFocus: true,
-    slidesToShow: 3, // desktop default: 3
+    slidesToShow: 2, // desktop default: 3
     slidesToScroll: 1,
     adaptiveHeight: true,
     nextArrow: <NextArrow />,

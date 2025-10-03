@@ -37,7 +37,9 @@ const About = () => {
       <div className="decor-element decor-arc about-decor-arc-1" aria-hidden="true"></div>
       <div className="about-container">
         <div className="about-image-container reveal fade-right">
-          <img src="/images/about-1.png" alt="AI Technology" className="about-image" />
+          <div className="visual-frame">
+            <img src="/images/about-1.png" alt="AI Technology" />
+          </div>
         </div>
         <div className="about-content">
           <h2 className="reveal fade-up">We create <span className="highlight">Industry Ready</span> Engineers</h2>

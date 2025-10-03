@@ -155,7 +155,7 @@
 }
 
 .course-image {
-  height: 200px;
+  height: auto;
   overflow: hidden;
   margin-bottom: 1.5rem;
 }
@@ -171,25 +171,27 @@
 
 /* 5th course card's image */
 .course-card:nth-child(5) .course-image {
-  display: flex;
+  display: flex; /* Was 'auto' */
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  height: 200px;
+  height: auto;
 }
 
 .course-card:nth-child(5) .course-image img {
   object-position: center 20%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%; /* Add this */
+  height: auto;
+  object-fit: contain; /* Was 'auto' */
   margin-top: 0;
 }
 
 .course-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%; /* Add this */
+  height: auto;
+  object-fit: contain; /* Was 'auto' */
   transition: transform 0.5s ease;
 }
 
@@ -265,17 +267,17 @@
 .custom-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%);   /* keep to center vertically */
   z-index: 2;
   cursor: pointer;
-  background: white;
+  background: transparent;       /* was: white */
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: none;              /* was: 0 2px 8px rgba(0, 0, 0, 0.15) */
   transition: all 0.3s ease;
 }
 
@@ -295,17 +297,14 @@
   padding: 3px;
 }
 
-.prev-arrow {
-  left: -20px;
-}
+.prev-arrow { left: -80px; margin-top: -30px }   /* was: left: -20px; */
+.next-arrow { right: -80px; margin-top: -30px }  /* was: right: -20px; */
+
 
 .prev-arrow::before {
   transform: rotate(135deg);
 }
 
-.next-arrow {
-  right: -20px;
-}
 
 .next-arrow::before {
   transform: rotate(-45deg);
@@ -424,9 +423,10 @@
 }
 
 .course-card.v2 .course-thumb img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%; /* Add this */
+  height: auto;
+  object-fit: contain; /* Was 'cover' */
   display: block;
   transition: transform 0.5s ease, filter 0.35s ease;
 }
@@ -526,7 +526,6 @@
 
   /* Desktop-like media/thumb */
   .course-card.v2 .course-thumb { border-radius: 2px; overflow: hidden; }
-  .course-card.v2 .course-thumb img { height: 260px; object-fit: cover; width: 100%; display: block; }
 
   /* Desktop-like badge */
   .course-card.v2 .course-badge {
@@ -577,7 +576,7 @@
     padding-right: 0;
   }
   /* Slightly reduce card height on tablets */
-  .course-card { height: 400px; }
+  .course-card { height: auto; }
 }
 
 @media (max-width: 768px) {

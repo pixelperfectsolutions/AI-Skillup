@@ -57,10 +57,9 @@ const Partners = () => {
   return (
     <section className="partners section-decor">
       <div className="partners-header">
-        <h2 className="partners-title">Our Esteemed Partners & Industry Leaders</h2>
+        <h2 className="partners-title"> Practical AI Tools for Smarter Learning, Careers, and Innovation</h2>
         <p className="partners-description">
-          At AI Skill Up, we're proud to collaborate with leading technology companies and educational institutions to provide you with industry-relevant training and certification programs. 
-          Our partnerships ensure that our curriculum stays current with the latest advancements in AI and technology, giving you the competitive edge in today's job market.
+        At AI Skill Up, we equip you with hands-on experience in today’s most powerful AI tools and platforms. From AI-powered productivity apps to advanced machine learning frameworks, our programs are designed to help you master practical tools that are transforming industries. By learning with real-world AI applications, you’ll gain the skills needed to stay ahead in the evolving tech landscape and apply them directly in your career or business.
         </p>
       </div>
       <div className="partners-slider">

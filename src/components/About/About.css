@@ -19,7 +19,12 @@
 
 .about-image {
   width: 100%;
+  aspect-ratio: 1 / 1;
+  height: 100%;
   border-radius: 50%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .about-content {

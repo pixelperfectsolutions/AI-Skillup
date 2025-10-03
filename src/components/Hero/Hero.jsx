@@ -6,26 +6,18 @@ import './Hero.css';
 const slides = [
   {
     image: '/images/slider-1.png',
-    title: 'UI/UX Design with AI',
-    description: 'Design smarter with Figma AI and Midjourney—rapid prototyping, user research, and systemized design.',
     slug: 'ui-ux-design-with-ai'
   },
   {
     image: '/images/slider-2.png',
-    title: 'Digital Marketing Using AI',
-    description: 'Scale growth with AI-driven SEO, ads, social, and analytics—hands-on campaigns using top tools.',
     slug: 'digital-marketing-using-ai'
   },
   {
     image: '/images/slider-3.png',
-    title: 'AI-Based Mobile App Development',
-    description: 'Create cross-platform apps with AI-generated code, smart features, and automated testing.',
     slug: 'ai-based-mobile-app-development'
   },
   {
     image: '/images/slider-4.png',
-    title: 'Full-Stack Web Development Using AI',
-    description: 'Build modern web apps faster using AI-assisted coding, automation, and real-world projects.',
     slug: 'full-stack-development-using-ai'
   }
 ];
@@ -42,7 +34,7 @@ function Hero() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    fade: true,
+    fade: false,
     cssEase: 'linear',
     arrows: false
   };
@@ -53,8 +45,6 @@ function Hero() {
         <div key={index}>
           <div className="hero-slide" style={{ backgroundImage: `url(${slide.image})` }}>
             <div className="hero-content">
-              <h1>{slide.title}</h1>
-              <p>{slide.description}</p>
               <button className="btn btn-primary" onClick={() => goToCourse(slide.slug)}>
                 Explore Course
               </button>
