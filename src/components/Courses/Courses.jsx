@@ -318,15 +318,12 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
             <div className="placement-layout">
               <div className="placement-content">
                 <h3>100% Placement Assistance for Every Student</h3>
-                <p className="placement-intro">At AI Skillup, we provide comprehensive placement assistance for every student. Our strong connections with leading tech companies ensure you have access to exciting career opportunities in AI and technology.</p>
-                
-                <div className="placement-cta">
-                  <p>Our dedicated placement team supports you with resume building, interview preparation, and placement drives, ensuring you are fully prepared for the competitive job market.</p>
+                <p className="placement-intro">At AI Skillup, we provide comprehensive placement assistance for every student. Our strong connections with leading tech companies ensure you have access to exciting career opportunities in AI and technology.
+                  Our dedicated placement team supports you with resume building, interview preparation, and placement drives, ensuring you are fully prepared for the competitive job market.</p>
                   <Link to="/contact" className="btn btn-primary btn-arrow">
                     Start Your Journey
                   </Link>
                 </div>
-              </div>
               
               <div className="placement-topics">
                 <div className="topic-box">
@@ -362,7 +359,6 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
               </div>
             </div>
           </div>
-
           {/* Illustration moved below the process list and enlarged via CSS */}
           <div className="placement-illustration reveal">
             <img src="/images/placement-3.png" alt="Our Placement Process Illustration" />
@@ -386,7 +382,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
               <Link to="/contact" className="btn btn-primary btn-arrow">Apply Now</Link>
             </div>
           </div>
-        </div>
+          </div>
       </section>
       )}
     </>

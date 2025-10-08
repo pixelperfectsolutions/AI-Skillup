@@ -11,6 +11,15 @@
   display: none;
 }
 
+/* Ensure sections allow vertical touch scrolling on mobile browsers */
+.about-page,
+.about-page section {
+  touch-action: pan-y;
+  /* Allow natural scroll chaining to parent to avoid trapped scroll */
+  overscroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .about-page > * {
   position: relative; /* Ensure content is above decorations */
   z-index: 1; /* Ensure content is above decorations */
@@ -20,9 +29,9 @@
 .about-hero-section {
   max-width: 100%;
   padding: 0; /* remove any top padding */
-  margin: -20px auto 0; /* pull hero slightly under sticky header to remove visible gap */
+  margin: 0 auto 0; /* avoid negative margin that can interfere with sticky headers */
   background-color: #fff;
-  overflow: hidden;
+  overflow: visible;
   position: relative; /* added to contain absolute decorative elements */
   background: radial-gradient(1200px 600px at 70% 20%, #faf7ef 0%, #ffffff 60%);
 }
@@ -209,7 +218,7 @@
 /* Decorative band below hero */
 .about-band {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: linear-gradient(180deg, #fff 0%, #fbfbfb 60%, #ffffff 100%);
   padding: 50px 0 40px;
 }
@@ -339,7 +348,7 @@
 /* Stats band styling to match reference */
 .stats-band {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: linear-gradient(180deg, #ffffff 0%, #fafafa 60%, #ffffff 100%);
   padding: 40px 0 30px;
 }
@@ -373,7 +382,7 @@
 @media (max-width: 640px) { .stats-cards { grid-template-columns: 1fr; justify-items: center; } .stat-card { width: 100%; max-width: 360px; } }
 
 /* Why Choose Section */
-.why-choose { position: relative; overflow: hidden; background: #fff; padding: 70px 0; }
+.why-choose { position: relative; overflow: visible; background: #fff; padding: 70px 0; }
 .wc-decor { position: absolute; inset: 0; pointer-events: none; }
 .wc-dots-left, .wc-dots-right { position: absolute; width: 200px; height: 150px; background-image: radial-gradient(#22c55e 2px, transparent 2px); background-size: 18px 18px; opacity: .28; transition: transform .2s ease; }
 .wc-dots-left { left: 4%; top: 18%; transform: translate(calc(var(--mx,0px) * .3), calc(var(--my,0px) * .3)); }
@@ -486,7 +495,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-hero-section .hero-content {
     grid-template-columns: 1fr;
     padding: 40px 0;
@@ -515,6 +524,17 @@
   .section-title {
     font-size: 2rem;
     margin-bottom: 30px;
+  }
+
+  /* Relax overflow on heavy sections to avoid scroll trapping on mobile */
+  .why-choose,
+  .team-section,
+  .values-section,
+  .about-testimonials,
+  .about-hero-section,
+  .about-band,
+  .stats-band {
+    overflow: visible;
   }
 }
 
@@ -560,7 +580,7 @@
 /* =============================
    Team Section Decorations
    ============================= */
-.team-section { position: relative; overflow: hidden; }
+.team-section { position: relative; overflow: visible; }
 .team-decor { position: absolute; inset: 0; pointer-events: none; }
 .team-dots-left { 
   position: absolute; 
@@ -604,7 +624,7 @@
 /* =============================
    Values Section Decorations
    ============================= */
-.values-section { position: relative; overflow: hidden; }
+.values-section { position: relative; overflow: visible; }
 .values-decor { position: absolute; inset: 0; pointer-events: none; }
 .values-dots-right { 
   position: absolute; 
@@ -653,7 +673,7 @@
 /* =============================
    About Testimonials Decorations
    ============================= */
-.about-testimonials { position: relative; overflow: hidden; }
+.about-testimonials { position: relative; overflow: visible; }
 .about-testimonials-decor { position: absolute; inset: 0; pointer-events: none; }
 .at-dots-left {
   position: absolute; 

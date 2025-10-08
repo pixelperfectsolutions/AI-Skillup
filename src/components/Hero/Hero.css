@@ -22,9 +22,9 @@
   bottom: 0;
   background: inherit;
   background-size: cover;
-  filter: brightness(1);
+  filter: brightness();
   z-index: 1;
-  transform: scale(1.02); /* Prevents blur from creating white edges */
+  transform: scale(1); /* Prevents blur from creating white edges */
 }
 
 .hero-slide::before {

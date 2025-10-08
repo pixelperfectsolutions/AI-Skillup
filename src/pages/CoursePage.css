@@ -61,6 +61,28 @@
 
 .course-page-section {
     overflow-x: hidden;
+    padding-bottom: 120px; /* add breathing room above footer on desktop */
+}
+
+/* Center the title specifically on CoursePage */
+.course-page-section .courses-header {
+  justify-content: center;
+}
+
+.course-page-section .section-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.course-page-section .section-title:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Ensure CTA button text stays on one line on CoursePage */
+.course-page-section .btn {
+  white-space: nowrap;
 }
 
 .course-modal-body {
@@ -71,8 +93,32 @@
   overflow-x: hidden;
 }
 
+/* Subtle rounded card for the CoursePage content area */
+.course-modal-body .course-modal-details {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
 @media (max-width: 1024px) {
   .course-hero { padding: 60px 16px; text-align: left; }
   .course-hero h1 { font-size: 2.2rem; text-align: left; }
   .course-hero .subtitle { font-size: 1rem; max-width: 100%; text-align: left; }
+}
+
+@media (max-width: 768px) {
+  .course-page-section {
+    padding-bottom: 70px; /* slightly less space on mobile */
+  }
+  /* Slightly tighten button padding to avoid wrapping on narrow screens */
+  .course-page-section .btn {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  .course-modal-body .course-modal-details {
+    padding: 16px;
+    border-radius: 10px;
+  }
 }

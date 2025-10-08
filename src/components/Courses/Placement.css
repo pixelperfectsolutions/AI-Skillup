@@ -17,6 +17,16 @@
   animation: gradientBG 8s ease infinite;
 }
 
+/* Mobile section spacing normalization for Placement */
+@media (max-width: 768px) {
+  .placement { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+  .placement-stats { margin: 1.5rem 0; }
+  .placement-process-container { margin: 0.75rem 0; }
+  .placement-illustration { margin: 1rem 0; }
+  .placement-benefits { margin: 1.25rem 0; }
+  .placement-cta { margin: 1.25rem 0 !important; }
+}
+
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -2014,14 +2024,9 @@
 
 /* New: mid-right thick arc second layer for depth */
 .placement .arc-layer { display: none; }
-.placement::before { /* first arc already defined */ }
-.placement-container::after { /* ring already defined */ }
 
 /* Add a faint big ring at far-left bottom */
 .placement .far-left-ring { display: none; }
-.placement::selection { /* noop */ }
-.placement::backdrop { /* noop */ }
-.placement .placement-container::after { /* already used; keep */ }
 
 /* Use the images area as another host for decorations */
 .placement-images { position: relative; }

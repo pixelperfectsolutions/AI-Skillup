@@ -64,6 +64,14 @@
   gap: 0.75rem;
 }
 
+/* Force center alignment for Courses header (grid view too) */
+.courses .courses-header {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .courses-header.center .section-title {
   text-align: center;
 }
@@ -72,8 +80,9 @@
   color: #333;
   margin: 0;
   position: relative;
-  display: inline-block;
-  text-align: left;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .courses h2.section-title:after {
@@ -83,8 +92,19 @@
   height: 3px;
   background: var(--secondary-color);
   bottom: -15px;
-  left: 0;
-  transform: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Hard center the Courses header title and underline (override any leftovers) */
+.courses .courses-header .section-title {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+.courses .courses-header .section-title:after {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 
 .courses-header.center .section-title:after {
@@ -146,7 +166,7 @@
   height: 100%;
   border: none;
   transform: translateY(0);
-  padding: 1.5rem;
+  padding: 0; /* remove inner padding to make media full-bleed */
 }
 
 .course-card:hover {
@@ -157,11 +177,26 @@
 .course-image {
   height: auto;
   overflow: hidden;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0; /* no spacing under image to keep edge-to-edge look */
+}
+
+/* Make images full width inside course grid cards */
+.course-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Center the titles under images in the grid layout */
+.courses .course-card .course-details { 
+  text-align: center; 
+}
+.courses .course-card .course-details h3 { 
+  text-align: center; 
 }
 
 /* Target specific course cards for custom spacing */
-/* 2nd, 3rd, and 4th cards */
 .course-card:nth-child(2) .course-details,
 .course-card:nth-child(3) .course-details,
 .course-card:nth-child(4) .course-details {
@@ -169,34 +204,22 @@
   gap: 0.4rem;
 }
 
-/* 5th course card's image */
+/* 5th course card's image wrapper */
 .course-card:nth-child(5) .course-image {
-  display: flex; /* Was 'auto' */
+  display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   height: auto;
 }
 
+/* 5th course card's image */
 .course-card:nth-child(5) .course-image img {
   object-position: center 20%;
-  width: auto;
-  max-width: 100%; /* Add this */
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  object-fit: contain; /* Was 'auto' */
   margin-top: 0;
-}
-
-.course-image img {
-  width: auto;
-  max-width: 100%; /* Add this */
-  height: auto;
-  object-fit: contain; /* Was 'auto' */
-  transition: transform 0.5s ease;
-}
-
-.course-card:hover .course-image img {
-  transform: scale(1.05);
 }
 
 .course-info {
@@ -581,7 +604,7 @@
 
 @media (max-width: 768px) {
   .courses {
-    padding: 3rem 1rem;
+    padding: 2rem 0;
   }
   .courses-intro h2 {
     font-size: 2.2rem;
@@ -648,7 +671,7 @@
   
   .course-card {
     margin: 0 5px;
-    padding: 20px 15px; /* Increased vertical padding */
+    padding: 0; /* remove padding on mobile too */
     display: flex;
     flex-direction: column;
     gap: 20px; /* Added gap between elements */
@@ -729,4 +752,16 @@
   /* Center title and CTA on mobile for a hero-like feel */
   .course-card.v2 .course-title { margin: 16px 12px 0; text-align: center; }
   .course-card.v2 .course-cta-inline { justify-content: center; }
+}
+
+/* Mobile section spacing normalization for Courses */
+@media (max-width: 768px) {
+  /* Ensure a modest gap after the hero */
+  .courses-hero { margin-bottom: 16px; }
+
+  /* Tighten header bottom gap */
+  .courses-header { margin-bottom: 1.5rem; }
+
+  /* Slightly reduce inner container vertical padding */
+  .courses-container { padding: 1rem 0; }
 }

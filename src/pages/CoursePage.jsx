@@ -90,7 +90,7 @@ const CoursePage = () => {
               </>
             )}
 
-            <div style={{ marginTop: 16, display: 'flex', gap: 12 }}>
+            <div style={{ marginTop: 16, display: 'flex', gap: 12, justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
               <button className="btn btn-secondary btn-arrow" onClick={scrollToApply}>Apply Course</button>
               <Link to="/courses" className="btn">Back to Courses</Link>
             </div>

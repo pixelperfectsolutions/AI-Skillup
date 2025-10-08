@@ -137,6 +137,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* On small screens, prefer native scrolling to avoid sticky feel */
+@media (max-width: 768px) {
+  html { scroll-behavior: auto; }
+}
+
 /* Section background decorations */
 .section-decor {
   position: relative;

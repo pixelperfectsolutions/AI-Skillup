@@ -57,8 +57,8 @@ function App() {
       <Footer />
       {/* Hide floating WhatsApp on About page to remove the extra right-side widget */}
       {location.pathname !== '/about' && <FloatingWhatsApp />}
-      {/* Popup form that appears on first visit and every 3 minutes */}
-      <Popup />
+      {/* Popup form disabled on About page to avoid scroll interference */}
+      {location.pathname !== '/about' && <Popup />}
     </div>
   );
 }
