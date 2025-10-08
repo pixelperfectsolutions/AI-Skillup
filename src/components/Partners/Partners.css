@@ -48,7 +48,6 @@
 
 .partners-description {
   font-size: 1.1rem;
-  color: #4a5568;
   line-height: 1.7;
   margin: 0 auto;
   max-width: 1300px;
@@ -56,16 +55,12 @@
 
 @media (max-width: 768px) {
   .partners {
-    padding: 3rem 0;
+    padding: 1rem 0 0rem 0; /* moved slightly up on mobile */
     overflow: hidden;
     width: 100%;
   }
-  
-  .partners-title {
-    font-size: 1.8rem;
-    padding: 0 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
+  .partners-header {
+    margin: 0 auto 2rem; /* reduce bottom gap under heading on mobile */
   }
   
   .partners-description {
