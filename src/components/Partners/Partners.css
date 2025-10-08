@@ -55,7 +55,8 @@
 
 @media (max-width: 768px) {
   .partners {
-    padding: 1rem 0 0rem 0; /* moved slightly up on mobile */
+    padding: 4rem 2rem; /* keep same side padding as desktop */
+    margin-top: -12px; /* move section slightly up on mobile */
     overflow: hidden;
     width: 100%;
   }
