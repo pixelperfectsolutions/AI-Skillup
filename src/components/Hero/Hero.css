@@ -136,17 +136,16 @@
 /* Hide default dot icon */
 .hero-slider .slick-dots li button:before {
   content: '';
-  color: transparent;
+  color: grey;
   opacity: 1;
 }
 
-/* Active dash */
 .hero-slider .slick-dots li.slick-active button {
   background: var(--secondary-color);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-slider,
   .hero-slider .slick-slide,
   .hero-slide {
@@ -155,8 +154,43 @@
   }
 
   .hero-slide {
-    background-size: auto;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: top center;
+    image-rendering: auto;
+  }
+  /* Remove duplicated scaled background on mobile to avoid perceived blur */
+  .hero-slide::after {
+    display: none !important;
+    filter: none !important;
+    transform: none !important;
+    background: none !important;
+    content: none !important;
+  }
+
+  /* Remove dark overlay on mobile/tablet */
+  .hero-slide::before {
+    background-color: transparent !important;
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
+  }
+
+  /* Extra specificity to override any external styles */
+  .hero-slider .slick-slide .hero-slide::after {
+    display: none !important;
+    filter: none !important;
+    transform: none !important;
+    background: none !important;
+    content: none !important;
+  }
+
+  /* Extra specificity for before overlay as well (mobile/tablet only) */
+  .hero-slider .slick-slide .hero-slide::before {
+    background-color: transparent !important;
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
   }
 
   .hero-content {
@@ -164,10 +198,22 @@
     left: auto;
     right: -360px;
     transform: translateX(-50%);
+    pointer-events: none; /* allow slide to receive taps */
   }
 
   .hero-slider .slick-dots {
     bottom: 12px;
+  }
+
+  /* Match desktop pagination styles on mobile */
+  .hero-slider .slick-dots li button {
+    background: rgba(173, 172, 172, 0.5) !important;
+  }
+  .hero-slider .slick-dots li.slick-active button {
+    background: var(--secondary-color) !important;
+  }
+  .hero-slider .slick-dots li button:before {
+    color: transparent !important;
   }
 
   .hero-content h1 {
@@ -177,9 +223,29 @@
   .hero-content p {
     font-size: 1rem;
   }
+
   .hero-content button {
     padding: 0.6rem 1.3rem;
     font-size: 0.6rem;
-    
+    display: none; /* hide CTA on mobile, slide is clickable */
+  }
+
+  /* Ensure hero starts directly under header */
+  .hero-slider {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .hero-slider .slick-list {
+    padding-top: 0 !important;
+  }
+
+  /* Final guard: remove any pseudo overlays on slick slide itself */
+  .hero-slider .slick-slide::before,
+  .hero-slider .slick-slide::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    filter: none !important;
+    opacity: 0 !important;
   }
 }

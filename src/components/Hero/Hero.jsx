@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { useNavigate } from 'react-router-dom';
 import './Hero.css';
@@ -26,6 +26,15 @@ function Hero() {
   const navigate = useNavigate();
   const goToCourse = (slug) => navigate(`/courses/${slug}`);
 
+  // Mobile detection for enabling slide-wide tap navigation
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth <= 1024);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -43,8 +52,23 @@ function Hero() {
     <Slider {...settings} className="hero-slider">
       {slides.map((slide, index) => (
         <div key={index}>
-          <div className="hero-slide" style={{ backgroundImage: `url(${slide.image})` }}>
+          <div
+            className="hero-slide"
+            style={{ backgroundImage: `url(${slide.image})`, cursor: isMobile ? 'pointer' : 'default' }}
+            role={isMobile ? 'link' : undefined}
+            tabIndex={isMobile ? 0 : -1}
+            onClick={() => { if (isMobile) goToCourse(slide.slug); }}
+            onKeyDown={(e) => {
+              if (!isMobile) return;
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                goToCourse(slide.slug);
+              }
+            }}
+            aria-label={isMobile ? `Open course ${slide.slug.replace(/-/g, ' ')}` : undefined}
+          >
             <div className="hero-content">
+              {/* Desktop button remains; hidden on mobile via CSS */}
               <button className="btn btn-primary" onClick={() => goToCourse(slide.slug)}>
                 Explore Course
               </button>
