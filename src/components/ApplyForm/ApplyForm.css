@@ -90,6 +90,7 @@
   border-radius: 8px;
   background-color: #fff;
   font-size: 1rem;
+  font-family: inherit;
 }
 
 /* Button styles are now in global styles (index.css) */
@@ -140,6 +141,7 @@
   border-radius: 6px;
   background-color: #fff;
   font-size: 0.95rem;
+  font-family: inherit;
 }
 
 .apply-form-grid textarea {

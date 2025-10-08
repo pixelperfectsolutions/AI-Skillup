@@ -153,10 +153,20 @@
   padding: 2rem 0;
 }
 
+/* === Override global square rules for GRID cards on Courses page === */
+.courses .courses-container .course-card {
+  border-radius: 16px !important;
+  overflow: hidden !important; /* clip inner content to radius */
+}
+.courses .courses-container .course-image img {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+}
+
 .course-card {
   background: white;
-  border-radius: 30px;
-  overflow: hidden;
+  border-radius: 16px;
+  overflow: hidden; /* ensure inner content follows rounded corners */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   text-align: center;
@@ -186,6 +196,9 @@
   width: 100%;
   max-width: 100%;
   height: auto;
+  /* Ensure the image follows the card's rounded corners in grid layout */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 /* Center the titles under images in the grid layout */

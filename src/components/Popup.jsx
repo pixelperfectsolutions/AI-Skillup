@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import ApplyForm from './ApplyForm/ApplyForm';
 import './Popup.css';
 
@@ -26,27 +27,41 @@ const Popup = () => {
     setIsVisible(false);
   };
 
+  // Lock body scroll while popup is open
+  useEffect(() => {
+    if (isVisible) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [isVisible]);
+
   if (!isVisible) return null;
 
-  return (
-    <div className="popup-overlay" onClick={closePopup}>
-      <div className="popup-content modal" onClick={(e) => e.stopPropagation()}>
-        <button className="popup-close" onClick={closePopup} aria-label="Close">
-          ×
-        </button>
-        <div className="modal-grid">
-          <div className="modal-image">
-            <img src="/images/apply form-1.png" alt="Happy students" />
-          </div>
-          <div className="modal-body">
-            <h2>Wait! <span>Before you go,</span> Here is a 20% Discount.</h2>
-            <hr/>
-            <p>in your Course Fee</p>
-            <ApplyForm inline={true} hideImage={true} compact={true} />
+  return createPortal(
+    (
+      <div className="popup-overlay" onClick={closePopup}>
+        <div className="popup-content modal" onClick={(e) => e.stopPropagation()}>
+          <button className="popup-close" onClick={closePopup} aria-label="Close">
+            ×
+          </button>
+          <div className="modal-grid">
+            <div className="modal-image">
+              <img src="/images/apply form-1.png" alt="Happy students" />
+            </div>
+            <div className="modal-body">
+              <h2>Wait! <span>Before you go,</span> Here is a 20% Discount.</h2>
+              <hr/>
+              <p>in your Course Fee</p>
+              <ApplyForm inline={true} hideImage={true} compact={true} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    ),
+    document.body
   );
 };
 

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap');
 
+/* Prevent horizontal scroll that can offset fixed/centered overlays */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -111,7 +117,7 @@ p {
 
 /* Common subtitle helper class uses Rubik (e.g., hero subtitles in pages) */
 .subtitle {
-  font-family: 'Rubik', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: inherit;
 }
 
 @media (min-width: 1025px) {
