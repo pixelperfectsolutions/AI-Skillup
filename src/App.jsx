@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
@@ -34,15 +34,15 @@ function App() {
       <Routes>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses" element={<Courses showHero={false} />} />
         <Route path="/courses/:slug" element={<CoursePage />} />
         <Route path="/" element={
           <>
             <Hero />
-            <Partners />
             <div id="about">
               <About />
             </div>
+            <Partners />
             <div id="courses" className="courses-section-wrapper">
               {/* Decorations are now positioned via CSS relative to this wrapper */}
               <Courses layout="slider" showHero={false} showPlacement={false} />

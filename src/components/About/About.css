@@ -101,7 +101,6 @@
 .about-decor-dots-1 {
   top: 5%;
   right: 5%;
-  width: 150px;
   height: 100px;
   color: var(--secondary-color);
   position: absolute;
@@ -121,11 +120,19 @@
   border-width: 5px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
   .about-container {
-    flex-direction: column;
+    flex-direction: column; /* stack vertically on smaller screens */
     text-align: left; /* keep left alignment on mobile */
   }
+  /* Reorder: show text first, then image */
+  .about-content { order: 1; }
+  .about-image-container { order: 2; }
+
+  /* Optional spacing for better flow */
+  .about-content { margin-bottom: 1.25rem; }
+  .about-image-container { margin-top: 0.5rem; }
+
   .about-content h2 { text-align: left; }
 
   .about-content p {

@@ -215,7 +215,8 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
       )}
       <section className="courses section-decor" id="courses">
         <div className={`courses-header ${layout === 'slider' ? 'center' : ''}`}>
-          <h2 className="section-title">Lead The Creative World With AI SKILL UP’S Advanced Training In Coimbatore</h2>
+          <h2 className="section-title">Explore our industry-ready IT courses in Coimbatore
+          </h2>
           {layout !== 'slider' && (
             <Link 
               to="/contact"
