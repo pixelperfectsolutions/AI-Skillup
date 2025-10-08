@@ -1,7 +1,7 @@
 /* Course Page Hero */
 .course-hero {
   background: #f3f4f6; /* light neutral like contact */
-  color: #2d3748;
+  color: #394a67; /* match contact hero tone */
   padding: 80px 20px;
   text-align: center;
   position: relative;
@@ -21,13 +21,15 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .course-hero .subtitle {
   font-size: 1.1rem;
-  max-width: 800px;
+  max-width: 820px; /* comfortable reading width */
   margin: 0 auto;
   opacity: 0.9;
+  text-align: center; /* center on desktop like contact */
 }
 
 /* Hero decor */
@@ -69,8 +71,8 @@
   overflow-x: hidden;
 }
 
-@media (max-width: 992px) {
-  .course-hero { padding: 60px 16px; }
-  .course-hero h1 { font-size: 2.2rem; }
-  .course-hero .subtitle { font-size: 1rem; max-width: 100%; }
+@media (max-width: 1024px) {
+  .course-hero { padding: 60px 16px; text-align: left; }
+  .course-hero h1 { font-size: 2.2rem; text-align: left; }
+  .course-hero .subtitle { font-size: 1rem; max-width: 100%; text-align: left; }
 }

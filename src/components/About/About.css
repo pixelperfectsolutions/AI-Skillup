@@ -26,7 +26,6 @@
   object-position: center;
   display: block;
 }
-
 .about-content {
   flex: 1.2;
 }
@@ -54,16 +53,17 @@
 
 .about-content p {
   font-size: 1rem;
-  color: #6c757d;
+  color: #4a5568; /* unify with site paragraph color */
   line-height: 1.7;
   margin-bottom: 1.5rem;
   border-left: 3px solid var(--secondary-color);
   padding-left: 1rem;
+  text-align: justify; /* body text justified */
 }
 
 /* Button styles are now in global styles (index.css) */
 
-/* Specific styles for About section button */
+/*Specific styles for About section button */
 .about .btn {
   margin-top: 1rem;
   display: inline-flex;
@@ -121,15 +121,16 @@
   border-width: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-container {
     flex-direction: column;
-    text-align: center;
+    text-align: left; /* keep left alignment on mobile */
   }
+  .about-content h2 { text-align: left; }
 
   .about-content p {
     border-left: none;
     padding-left: 0;
-    text-align: left;
+    text-align: justify; /* keep justified on mobile */
   }
 }

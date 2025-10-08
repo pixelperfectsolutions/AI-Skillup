@@ -93,6 +93,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Rubik', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
+/* Site-wide text alignment for titles and paragraphs */
+h1, h2, h3, h4, h5, h6 {
+  text-align: left; /* titles left-aligned like screenshot */
+}
+
+p {
+  text-align: justify; /* body text justified */
+  text-justify: inter-word;
+}
+
 /* Common subtitle helper class uses Rubik (e.g., hero subtitles in pages) */
 .subtitle {
   font-family: 'Rubik', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
