@@ -45,10 +45,10 @@ const About = () => {
           <h2 className="reveal fade-up">We create <span className="highlight">Industry Ready</span> Engineers</h2>
           <h3 className="sub-heading reveal fade-up delay-1">AI SKILL UP</h3>
           <p className="reveal fade-up delay-2">
-            A promising future awaits at Theoretical Academy. I am confident and excited about the great things to come.
-          </p>
-          <p className="reveal fade-up delay-3">
-            We are India's largest turnkey solution provider in Manufacturing of Fracture Connecting Rods. Developing new conceptual products for Automotive sectors like Hyundai Motors, Supporting hardware automation and software development we have wide range of diversified tech verticals and also owning a Skill development campus collaborated with World's leading companies.
+            At AI Skill Up, we provide industry-aligned training that turns learners into job‑ready professionals.
+            Our programs combine expert‑led classes, hands‑on projects, mentoring, certifications, internships,
+            and dedicated placement support. We also deliver corporate upskilling, real‑time workshops, and
+            customized learning paths across in‑demand technologies to help you build a strong, future‑proof career.
           </p>
           <Link to="/about" className="btn btn-primary btn-arrow reveal fade-up delay-4">
             About AI SKILL UP

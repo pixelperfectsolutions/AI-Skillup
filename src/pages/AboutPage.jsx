@@ -233,21 +233,16 @@ const AboutPage = () => {
           <span className="arc arc-bottom" />
           <span className="blob blob-1" />
         </div>
-        <div style={{
-          padding: '0 20px',
-          margin: '0 auto'
-        }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: isMobile ? '1fr' : '1.2fr 1fr',
             gap: '40px',
             alignItems: 'center',
-            padding: '0 0 80px'
+            padding: '0 20px 80px'
           }}>
             {/* Left Column - Content */}
             <div style={{
-              padding: '20px',
-              backgroundColor: '#fff'
+              padding: 0
             }}>
               <h1 style={{
                 fontSize: '2.8rem',
@@ -263,13 +258,6 @@ const AboutPage = () => {
                 lineHeight: '1.6'
               }}>
                 AI SKILL UP is one of the leading software training institutes in Coimbatore, which focuses on industry-applicable skills and knowledge for the people.
-              </p>
-              <p style={{
-                fontSize: '1.1rem',
-                color: '#555',
-                marginBottom: '30px',
-                lineHeight: '1.6'
-              }}>
                 Our courses are prepared in such a way that each student gets hands-on experiences and practical skills to work from day one. We provide the newest facilities, trained mentors, and student-centered methodologies to uphold excellence in education while creating a nurturing and innovative learning environment for all.
               </p>
               <Link 
@@ -304,7 +292,6 @@ const AboutPage = () => {
               />
             </div>
           </div>
-        </div>
       </section>
 
       {/* Decorative band below Hero: Mission & Vision */}
@@ -320,15 +307,17 @@ const AboutPage = () => {
               <h3>Our Mission</h3>
               <p>
                 Our mission is to provide hands-on industrial training that equips learners with
-                practical skills, fosters innovation, and enhances employability.
+                practical skills, fosters innovation, and enhances employability.To be a premier hub for industrial training, driving skill development,
+                innovation, and workforce readiness.
               </p>
             </div>
             <div className="band-item" data-aos="fade-up" data-aos-delay="250">
               <div className="band-icon">📈</div>
               <h3>Our Vision</h3>
               <p>
-                To be a premier hub for industrial training, driving skill development,
-                innovation, and workforce readiness.
+                To empower learners with future-ready skills through practical, project-driven education
+                and to become a trusted hub that bridges academia and industry with real-world expertise
+                and career outcomes.
               </p>
             </div>
           </div>
@@ -397,13 +386,6 @@ const AboutPage = () => {
               marginBottom: '20px'
             }}>
               At AI SkillUp, we believe in democratizing AI education and making cutting-edge knowledge accessible to everyone. Our mission is to bridge the gap between theoretical knowledge and practical AI applications through comprehensive, industry-relevant courses.
-            </p>
-            <p style={{
-              fontSize: '1.1rem',
-              color: '#555',
-              lineHeight: '1.6',
-              marginBottom: '20px'
-            }}>
               What sets us apart is our commitment to excellence in education. We provide state-of-the-art facilities, industry-experienced mentors, and a curriculum that's constantly updated to reflect the latest technological advancements.
             </p>
           </div>

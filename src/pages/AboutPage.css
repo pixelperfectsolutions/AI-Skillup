@@ -19,20 +19,17 @@
 /* Hero Section */
 .about-hero-section {
   max-width: 100%;
-  padding: 12px 0 0; /* small top padding for breathing room */
-  margin: calc(-1 * var(--topbar-h, 48px)) auto 0; /* pull up under sticky header topbar on desktop */
+  padding: 0; /* remove any top padding */
+  margin: -20px auto 0; /* pull hero slightly under sticky header to remove visible gap */
   background-color: #fff;
   overflow: hidden;
   position: relative; /* added to contain absolute decorative elements */
   background: radial-gradient(1200px 600px at 70% 20%, #faf7ef 0%, #ffffff 60%);
 }
 
-/* On mobile the topbar is hidden, so remove the negative offset */
+/* Keep mobile safe from overlap */
 @media (max-width: 768px) {
-  .about-hero-section {
-    margin: 0 auto 0;
-    padding-top: 8px;
-  }
+  .about-hero-section { margin-top: 0; }
 }
 
 .hero-container {
@@ -46,11 +43,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
-  padding: 20px 0 40px;
+  padding: 0 0 40px; /* remove top padding */
 }
 
 .hero-text {
-  padding: 20px;
+  padding: 0 20px 20px; /* remove top padding */
   background-color: #fff;
 }
 
@@ -58,6 +55,7 @@
   font-size: 2.8rem;
   font-weight: 700;
   color: #333;
+  margin-top: 0; /* remove default top margin */
   margin-bottom: 20px;
   line-height: 1.2;
 }
