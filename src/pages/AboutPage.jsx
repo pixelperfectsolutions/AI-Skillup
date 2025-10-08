@@ -434,7 +434,7 @@ const AboutPage = () => {
         <div className="wc-container">
           <div className="wc-heading" data-aos="fade-up" data-aos-delay="180">
             <div className="wc-eyebrow">WHY CHOOSE AI SKILL UP</div>
-            <h2>
+            <h2 style={{ textAlign: 'center' }}>
               The <span className="highlight"> Best  Beneficial</span> Side
               <br /> of <span className="highlight">AI SkillUp</span>
             </h2>

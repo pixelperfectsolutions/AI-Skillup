@@ -217,18 +217,33 @@
   }
 }
 
-@media (max-width: 768px) {
-  .apply-form-grid {
-    grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+    .apply-form-grid {
+      grid-template-columns: 1fr;
+    }
+    .form-actions-right {
+      grid-column: 1 / -1;
+      justify-content: stretch;
+    }
+    .apply-form-inline .btn.btn-primary {
+      width: 100%;
+    }
+    /* Fix heading layout on mobile only */
+    .discount-info h2 {
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+    .discount-info h2 br {
+      display: none; /* remove forced line breaks on small screens */
+    }
+    .discount-info hr {
+      width: 80px;
+      margin: 1rem 0;
+    }
+    .discount-info p {
+      font-size: 1rem;
+    }
   }
-  .form-actions-right {
-    grid-column: 1 / -1;
-    justify-content: stretch;
-  }
-  .apply-form-inline .btn.btn-primary {
-    width: 100%;
-  }
-}
 
 @media (min-width: 992px) {
   .discount-info h2 {

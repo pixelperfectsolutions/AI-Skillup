@@ -19,12 +19,20 @@
 /* Hero Section */
 .about-hero-section {
   max-width: 100%;
-  padding: 0;
-  margin: -110px auto 0;
+  padding: 12px 0 0; /* small top padding for breathing room */
+  margin: calc(-1 * var(--topbar-h, 48px)) auto 0; /* pull up under sticky header topbar on desktop */
   background-color: #fff;
   overflow: hidden;
   position: relative; /* added to contain absolute decorative elements */
   background: radial-gradient(1200px 600px at 70% 20%, #faf7ef 0%, #ffffff 60%);
+}
+
+/* On mobile the topbar is hidden, so remove the negative offset */
+@media (max-width: 768px) {
+  .about-hero-section {
+    margin: 0 auto 0;
+    padding-top: 8px;
+  }
 }
 
 .hero-container {
@@ -725,4 +733,10 @@
     animation: none !important;
     transform: none !important;
   }
+}
+
+/* Force justify for the Team section intro paragraph below the heading */
+.team-section .container > p {
+  text-align: justify !important;
+  text-justify: inter-word;
 }
