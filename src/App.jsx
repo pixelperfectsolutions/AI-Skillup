@@ -27,8 +27,9 @@ function ScrollToTop() {
 
 function App() {
   const location = useLocation();
+  const isHome = location.pathname === '/';
   return (
-    <div className="App">
+    <div className={`App site-bg ${isHome ? 'home-minimal' : ''}`}>
       <Header />
       <ScrollToTop />
       <Routes>

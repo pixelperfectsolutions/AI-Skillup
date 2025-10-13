@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaPhoneAlt, FaEnvelope, FaChevronDown } from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import './Header.css';
 import { courses } from '../../data/courses';
 
@@ -80,20 +80,6 @@ const Header = () => {
   return (
     <>
       <header className={`header ${isCompact ? 'compact' : ''}`}>
-        {/* Top info bar */}
-        <div className="topbar">
-          <div className="topbar-container">
-            <div className="topbar-item">
-              <FaPhoneAlt aria-hidden="true" />
-              <a href="tel:+91 9655422511">Call: +91 96554 22511</a>
-            </div>
-            <div className="topbar-item">
-              <FaEnvelope aria-hidden="true" />
-              <a href="mailto:info@aiskillup.com">Email: info@aiskillup.com</a>
-            </div>
-          </div>
-        </div>
-
         {/* Main navbar */}
         <div className="navbar">
           <div className="header-container">

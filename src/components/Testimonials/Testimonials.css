@@ -417,8 +417,8 @@
 }
 
 .star.filled {
-  color: #FFD700; /* Gold */
-  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.35);
+  color: var(--primary-color);
+  text-shadow: 0 2px 8px color-mix(in srgb, var(--primary-color) 35%, transparent);
   animation: starPop 0.4s ease-out forwards;
 }
 
@@ -777,8 +777,8 @@
 }
 
 .star.filled {
-  color: #FFD700; /* Gold */
-  text-shadow: 0 0 2px rgba(255, 215, 0, 0.35);
+  color: var(--primary-color);
+  text-shadow: 0 0 2px color-mix(in srgb, var(--primary-color) 35%, transparent);
 }
 
 .star.half:before {
@@ -787,7 +787,7 @@
   left: 0;
   width: 50%;
   overflow: hidden;
-  color: #FFD700; /* Gold color */
+  color: var(--primary-color);
   text-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 
