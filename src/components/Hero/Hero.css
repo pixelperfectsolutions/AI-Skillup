@@ -122,10 +122,10 @@
 
 .hero-content {
   position: absolute;
-  top: 10%;
-  bottom: 50%;
+  top: 50%;
+  bottom: auto;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -42%);
   z-index: 20; /* ensure content is above any hero decorations */
   max-width: 800px;
   padding: 0 2rem;
@@ -186,7 +186,10 @@
 }
 
 .hero-content p {
-    font-size: 1rem;
+  font-size: 1rem;
+  margin: 0 auto; /* center horizontally */
+  max-width: 760px; /* readable width */
+  text-align: center;
 }
 
 .hero-content button {
@@ -212,7 +215,7 @@
 .title-accent-green { color: #1a8a53 !important; text-shadow: 0 1px 6px rgba(0,0,0,0.08); display: inline-block; opacity: 1 !important; }
 
 /* CTAs row */
-.hero-ctas { display: inline-flex; gap: 12px; align-items: center; justify-content: center; margin-top: 14px; }
+.hero-ctas { display: inline-flex; gap: 12px; align-items: center; justify-content: center; margin-top: 14px; margin-left: auto; margin-right: auto; }
 .hero-ctas .btn.btn-secondary { background: transparent; color: #0f6; border-color: #0f6; }
 .hero-ctas .btn.btn-secondary:hover { background: #0f6; color: #0b3; border-color: #0f6; }
 
@@ -325,11 +328,11 @@
 
   /* Increase specificity and force apply on mobile */
   .hero-slide .hero-content {
-    top: 10% !important; /* slightly higher than center */
+    top: 50% !important; /* center vertically on mobile/tablet */
     bottom: auto;
     left: 50%;
     right: auto;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -12%);
     pointer-events: auto;
     max-width: 90%;
     padding: 0 12px;
