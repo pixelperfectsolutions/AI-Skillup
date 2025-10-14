@@ -13,15 +13,37 @@
   overflow: visible; /* allow content (title) to render fully */
 }
 
+/* Diagonal stripes band behind transparent header */
+.hero-top-stripes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(19,135,227,0.12) 0px,
+      rgba(19,135,227,0.12) 6px,
+      rgba(19,135,227,0.0) 6px,
+      rgba(19,135,227,0.0) 18px
+    );
+  opacity: 0.75;
+  z-index: 0; /* below hero-edges (1) and hero-content (20) */
+  pointer-events: none;
+}
+
 /* Static hero variant (no image) */
 .hero-static {
   color: #0e2431;
   background:
-    radial-gradient(1200px 600px at -5% 95%, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 60%),
-    radial-gradient(900px 500px at 105% -5%, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0) 60%),
+    /* Large soft corner glows */
+    radial-gradient(1100px 520px at -8% 96%, rgba(19,135,227,0.08) 0%, rgba(19,135,227,0) 60%),
+    radial-gradient(900px 480px at 108% -10%, rgba(19,135,227,0.08) 0%, rgba(19,135,227,0) 60%),
+    /* Base soft gradient */
     linear-gradient(135deg, #f7fbff 0%, #f2f9ff 45%, #eef7ff 100%);
-  /* Add space for sticky header */
-  padding-top: 320px;
+  /* Space to tuck under decorated header */
+  padding-top: 180px;
 }
 
 /* Edge decorations at far left/right */
@@ -36,7 +58,7 @@
 .hero-edges .edge.left::after { width: 360px; height: 220px; background: linear-gradient( to right, rgba(255,255,255,0.8), rgba(242,250,255,0.8)); border: 1px solid rgba(19,135,227,0.12); transform: rotate(45deg) translate(20%, 40%); }
 
 /* Right corner diagonal card */
-.hero-edges .edge.right { right: -160px; top: -110px; width: 460px; height: 360px; transform: rotate(45deg); border-radius: 28px; background: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(235,248,255,0.75) 100%); border: 1px solid rgba(19,135,227,0.15); }
+.hero-edges .edge.right { right: -140px; top: -110px; width: 460px; height: 360px; transform: rotate(45deg); border-radius: 28px; background: linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(235,248,255,0.78) 100%); border: 1px solid rgba(19,135,227,0.15); }
 .hero-edges .edge.right::after { content: ''; position: absolute; right: -60px; top: 140px; width: 160px; height: 160px; border-radius: 999px; background: radial-gradient(circle at 30% 30%, rgba(19,135,227,0.18), rgba(19,135,227,0.05) 60%, rgba(19,135,227,0) 70%); }
 
 .hero-slide::after {
@@ -100,8 +122,8 @@
 
 .hero-content {
   position: absolute;
-  top: 50%;
-  bottom: auto;
+  top: 10%;
+  bottom: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 20; /* ensure content is above any hero decorations */

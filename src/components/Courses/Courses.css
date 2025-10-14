@@ -414,6 +414,63 @@
   text-align: left;
 }
 
+/* Home page only: Certified badge at top-right of course cards */
+.home-minimal .courses .course-card.v2 {
+  overflow: visible;
+}
+
+.home-minimal .courses .course-card.v2::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  z-index: 6;
+  width: 74px;
+  height: 74px;
+  background: url('/images/verified-badge.aiskillup.png') center/contain no-repeat;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Home page only: also show badge on mobile grid cards (non-v2) */
+.home-minimal .courses .courses-container .course-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 6;
+  width: 64px;
+  height: 64px;
+  background: url('/images/verified-badge.aiskillup.png') center/contain no-repeat;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Ensure badge isn't clipped on grid cards (mobile) */
+.home-minimal .courses .courses-container .course-card {
+  overflow: visible !important;
+}
+
+.home-minimal .courses .course-card.v2::after { content: none; }
+
+@media (max-width: 768px) {
+  .home-minimal .courses .course-card.v2::before {
+    width: 58px; height: 58px; top: -10px; right: -10px;
+  }
+  .home-minimal .courses .course-card.v2::after { content: none; }
+  .home-minimal .courses .courses-container .course-card::before {
+    width: 54px; height: 54px; top: -8px; right: -8px;
+  }
+}
+
+/* Home page only: hide the default delivery badge "Online + Offline" */
+.home-minimal .courses .course-card.v2 .course-badge { display: none !important; }
+
+/* Home page only: hide the default delivery badge "Online + Offline" */
+.home-minimal .courses .course-card.v2 .course-badge {
+  display: none !important;
+}
+
 .course-card.v2:hover { transform: translateY(-4px); transition: transform 0.25s ease, box-shadow 0.25s ease; }
 
 .course-card.v2 .course-badge {

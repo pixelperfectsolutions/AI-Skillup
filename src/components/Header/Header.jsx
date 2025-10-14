@@ -81,7 +81,11 @@ const Header = () => {
     <>
       <header className={`header ${isCompact ? 'compact' : ''}`}>
         {/* Main navbar */}
-        <div className="navbar">
+        <div
+          className={
+            `navbar ${location.pathname === '/' && !isCompact ? 'decorated' : 'plain'}`
+          }
+        >
           <div className="header-container">
             <div className="logo" aria-label="AI SKILL UP">
               <Link to="/">

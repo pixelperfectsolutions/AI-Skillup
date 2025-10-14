@@ -37,20 +37,63 @@
 
 /* Main navbar */
 .navbar { 
-  background: linear-gradient(135deg, #f7fbff 0%, #f2f9ff 45%, #eef7ff 100%);
+  background: #ffffff; /* default plain white */
   border-bottom: 1px solid #eef2f7; 
   position: relative; 
   isolation: isolate; /* contain stacking for pseudo elements */
   overflow: visible; /* allow dropdown to extend beyond header */
 }
-.navbar::before, .navbar::after {
+/* Subtle elevation when plain */
+.navbar.plain { box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06); }
+
+/* Transparent variant (home at top): header overlays hero */
+.navbar.transparent {
+  background: transparent;
+  border-bottom: none;
+}
+.navbar.transparent::before,
+.navbar.transparent::after { display: none !important; }
+
+/* Glass pill container on home top to match reference */
+.navbar.transparent .header-container {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(19,135,227,0.12);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+  border-radius: 18px;
+  padding: 12px 20px; /* slightly tighter inside the pill */
+  margin-top: 12px;
+}
+
+/* Decorated variant: used only on home at the very top */
+.navbar.decorated { 
+  background: linear-gradient(135deg, #f7fbff 0%, #f2f9ff 45%, #eef7ff 100%);
+}
+.navbar.decorated .navbar-stripes {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 64px; /* stripe band height */
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(19,135,227,0.12) 0px,
+      rgba(19,135,227,0.12) 6px,
+      rgba(19,135,227,0.0) 6px,
+      rgba(19,135,227,0.0) 18px
+    );
+  opacity: 0.75;
+  z-index: 1; /* below header-container which is z-index 1200 */
+  pointer-events: none;
+}
+.navbar.decorated::before, .navbar.decorated::after {
   content: '';
   position: absolute;
   pointer-events: none;
-  z-index: 0; /* sit behind content */
+  z-index: 0; /* sit behind stripes and content */
 }
 /* soft diagonal bands, very subtle */
-.navbar::before {
+.navbar.decorated::before {
   inset: 0 -40px 0 -40px; /* allow slight overflow */
   background:
     /* soft corner glow at top-left */
@@ -62,7 +105,7 @@
   filter: blur(0.2px);
 }
 /* rounded diagonal card at top-right to match hero edge */
-.navbar::after {
+.navbar.decorated::after {
   top: -44px;
   right: -90px;
   width: 360px;
@@ -73,6 +116,9 @@
   border: 1px solid rgba(19,135,227,0.12);
   box-shadow: 0 14px 34px rgba(0,84,155,0.10);
 }
+
+/* Plain variant explicitly hides any decoration shapes */
+.navbar.plain::before, .navbar.plain::after { display: none; }
 .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1350px; margin: 0 auto; padding: 14px 24px; position: relative; z-index: 1200; overflow: visible; }
 .logo img { height: 55px; width: auto; display: block; }
 
@@ -135,7 +181,8 @@
   .header { position: relative; }
   .header-container { max-width: 100%; position: relative; }
   /* reduce heavy decoration on mobile */
-  .navbar::before, .navbar::after { display: none; }
+  .navbar::before, .navbar::after,
+  .navbar.decorated::before, .navbar.decorated::after { display: none; }
 
   /* Make logo bigger on mobile */
   .logo img { height: 52px; }

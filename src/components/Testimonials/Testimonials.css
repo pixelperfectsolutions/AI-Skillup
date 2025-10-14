@@ -10,14 +10,26 @@
   overscroll-behavior: auto;
 }
 
+/* Remove decorative elements (dots, arcs); keep custom ::before background */
+.testimonials-section .ts-decor,
+.testimonials-section .ts-dots,
+.testimonials-section .decor-element,
+.testimonials-section .testimonials-decor-arc-1,
+.testimonials-section .testimonials-decor-arc-2 {
+  display: none !important;
+  content: none !important;
+}
+
+/* Taller cards on desktop for more visible content */
+@media (min-width: 992px) {
+  .testimonial-card { min-height: 360px; }
+}
+
+/* Hero-like geometric soft background */
 .testimonials-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(23, 163, 128, 0.05) 100%);
+  inset: 0;
   z-index: 0;
   transform: skewY(-3deg);
   transform-origin: top left;
@@ -30,6 +42,13 @@
   touch-action: pan-y;
   overscroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
+  /* Constrain section content to 1500px and center */
+  width: 100%;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .testimonials-section h2 {
@@ -57,18 +76,20 @@
   box-shadow: 0 2px 8px var(--secondary-shadow);
 }
 
-/* Google rating summary card (static mimic) */
+/* Google rating summary header (brand left, button right; summary on next line) */
 .google-rating-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid #ececec;
-  box-shadow: 0 8px 26px rgba(0,0,0,0.06);
-  padding: 18px 18px 16px;
-  max-width: 540px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 6px;
+  align-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto 20px;
   text-align: left;
 }
@@ -89,6 +110,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  grid-column: 1 / -1; /* span both columns on second line */
+  grid-row: 2;
+  margin-top: 2px;
 }
 
 .google-summary .avg {
@@ -124,6 +148,10 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 8px var(--primary-shadow);
+  margin-left: auto; /* push to right when grid collapses */
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
 }
 
 .btn-google-review:hover {
@@ -148,9 +176,10 @@
 
 .testimonials-slider {
   position: relative;
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0;
   z-index: 1;
 }
 
@@ -236,6 +265,12 @@
   box-sizing: border-box;
   z-index: 1;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* allow more lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 5; /* standard line-clamp property for compatibility */
 }
 
 .testimonial-content p::before,
@@ -408,7 +443,7 @@
 }
 
 .star {
-  color: #e2e8f0;
+  color: #e0e0e0;
   font-size: 1.8rem;
   margin: 0 3px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -417,8 +452,8 @@
 }
 
 .star.filled {
-  color: var(--primary-color);
-  text-shadow: 0 2px 8px color-mix(in srgb, var(--primary-color) 35%, transparent);
+  color: #fbbc04;
+  text-shadow: 0 2px 8px color-mix(in srgb, #fbbc04 35%, transparent);
   animation: starPop 0.4s ease-out forwards;
 }
 
@@ -601,6 +636,8 @@
     height: 60px;
     margin-bottom: 10px;
   }
+  /* Ensure sufficient height on small screens */
+  .testimonial-card { min-height: 170px; }
   
   .author-info h4 {
     font-size: 1rem;
@@ -727,13 +764,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2px; /* allow two-letter monogram */
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* fit two letters inside the circle */
   border-radius: 50%;
   margin: 0 auto 1rem;
   border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Per-letter coloring inside avatar */
+.testimonial-fallback .initial { line-height: 1; color: #fff; }
+.testimonial-fallback .initial.l0 { color: #fff; }
+.testimonial-fallback .initial.l1 { color: #fff; }
+.testimonial-fallback .initial.l2 { color: #fff; }
+.testimonial-fallback .initial.l3 { color: #fff; }
 
 .author-info h4 {
   margin: 0;
@@ -760,7 +805,7 @@
   justify-content: center;
   align-items: center;
   gap: 4px;
-  color: #e0e0e0;
+  color: inherit;
   font-size: 1.5rem;
   line-height: 1;
   white-space: nowrap;
@@ -777,8 +822,8 @@
 }
 
 .star.filled {
-  color: var(--primary-color);
-  text-shadow: 0 0 2px color-mix(in srgb, var(--primary-color) 35%, transparent);
+  color: #fbbc04;
+  text-shadow: 0 0 2px color-mix(in srgb, #fbbc04 35%, transparent);
 }
 
 .star.half:before {
@@ -787,7 +832,7 @@
   left: 0;
   width: 50%;
   overflow: hidden;
-  color: var(--primary-color);
+  color: #fbbc04;
   text-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 
@@ -845,9 +890,10 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 26px;
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 24px auto 0;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .testimonial-card {
@@ -876,6 +922,18 @@
   font-size: 1rem;
   margin: 10px 0 14px;
   padding: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* allow more lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 5; /* standard line-clamp property for compatibility */
+}
+
+/* Smaller font for longer texts when truncated at >70 chars */
+.testimonial-card .card-quote.long {
+  font-size: 0.95rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .testimonial-card .testimonial-author { margin-top: 8px; }
@@ -894,9 +952,10 @@
 .testimonials-viewport {
   position: relative;
   overflow: hidden;
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   touch-action: pan-y;
   overscroll-behavior: auto;
 }

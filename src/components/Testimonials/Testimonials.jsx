@@ -192,8 +192,20 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
   // Update itemsPerView on resize for responsive 3/2/1 layout
   useEffect(() => {
     const onResize = () => {
-      setItemsPerView(1);
+      const w = window.innerWidth;
+      if (w >= 1200) {
+        setItemsPerView(5);
+      } else if (w >= 992) {
+        setItemsPerView(4);
+      } else if (w >= 768) {
+        setItemsPerView(3);
+      } else if (w >= 640) {
+        setItemsPerView(2);
+      } else {
+        setItemsPerView(1);
+      }
     };
+    onResize();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
@@ -237,6 +249,39 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
     }
   };
 
+  // Helper to render colored initials and truncate long review text
+  const renderInitials = (name) => {
+    const letters = String(name).trim().split(' ').filter(Boolean).map(n => n[0].toUpperCase());
+    const arr = letters.slice(0, 2);
+    return arr.map((ch, i) => (<span key={i} className={`initial l${i}`}>{ch}</span>));
+  };
+
+  const getDisplayText = (displayText) => {
+    if (!displayText) return '';
+    const words = String(displayText).trim().split(/\s+/);
+    if (words.length > 80) {
+      return words.slice(0, 80).join(' ') + ' ...';
+    }
+    return displayText;
+  };
+
+  // Deterministic color per name for avatar backgrounds
+  const getAvatarColor = (name) => {
+    const palette = [
+      '#4285F4', // blue
+      '#34A853', // green
+      '#FBBC05', // yellow
+      '#EA4335', // red
+      '#8B5CF6', // violet
+      '#06B6D4', // cyan
+      '#F97316', // orange
+      '#10B981', // emerald
+    ];
+    let hash = 0;
+    for (let i = 0; i < String(name).length; i++) hash = (hash * 31 + String(name).charCodeAt(i)) >>> 0;
+    return palette[hash % palette.length];
+  };
+
   // Grid layout renderer (3 columns visible at once)
   const renderGrid = () => (
     <div className="testimonials-grid" role="list">
@@ -248,6 +293,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
               ? t.display
               : `${t.name}${t.handle ? ` (${t.handle})` : ''}`)
           : t.content;
+        const shown = getDisplayText(displayText);
         return (
         <article
           key={t.id}
@@ -260,7 +306,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
         >
           <div className="google-badge-large"><span className="g-letter">G</span></div>
           <div className="testimonial-author">
-            <div className="testimonial-fallback">{t.name.split(' ').map(n => n[0]).join('')}</div>
+            <div className="testimonial-fallback" style={{ backgroundColor: getAvatarColor(t.name) }}>{renderInitials(t.name)}</div>
             <div className="author-info">
               <h4 className="author-name">{String(t.name).toLowerCase()}</h4>
               <div className="author-meta">
@@ -271,7 +317,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
             </div>
           </div>
           <StarRating rating={t.rating} />
-          <p className="card-quote">"{displayText}"</p>
+          <p className={`card-quote ${displayText && displayText.length > 70 ? 'long' : ''}`}>"{shown}"</p>
         </article>
         );
       })}
@@ -348,6 +394,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
                             ? t.display
                             : `${t.name}${t.handle ? ` (${t.handle})` : ''}`)
                         : t.content;
+                      const shown = getDisplayText(displayText);
                       return (
                       <article
                         key={`${idx}-${t.id}`}
@@ -360,7 +407,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
                       >
                         <div className="google-badge-large"><span className="g-letter">G</span></div>
                         <div className="testimonial-author">
-                          <div className="testimonial-fallback">{t.name.split(' ').map(n => n[0]).join('')}</div>
+                          <div className="testimonial-fallback" style={{ backgroundColor: getAvatarColor(t.name) }}>{renderInitials(t.name)}</div>
                           <div className="author-info">
                             <h4 className="author-name">{String(t.name).toLowerCase()}</h4>
                             <div className="author-meta">
@@ -371,7 +418,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
                           </div>
                         </div>
                         <StarRating rating={t.rating} />
-                        <p className="card-quote">"{displayText}"</p>
+                        <p className={`card-quote ${displayText && displayText.length > 70 ? 'long' : ''}`}>"{shown}"</p>
                       </article>
                       );
                     })}
