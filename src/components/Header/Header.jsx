@@ -83,7 +83,7 @@ const Header = () => {
         {/* Main navbar */}
         <div
           className={
-            `navbar ${location.pathname === '/' && !isCompact ? 'decorated' : 'plain'}`
+            `navbar ${location.pathname === '/' && !isCompact ? 'transparent' : 'plain'}`
           }
         >
           <div className="header-container">

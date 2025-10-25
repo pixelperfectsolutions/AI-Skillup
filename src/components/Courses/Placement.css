@@ -16,6 +16,42 @@
   background-size: 200% auto;
   animation: gradientBG 8s ease infinite;
 }
+.placement::before { content: none !important; animation: none !important; background: none !important; }
+.placement-content { border-left: none !important; }
+.placement-content h3::after,
+.topics-container h3::after,
+.stat::before,
+.stat::after,
+.topic-box::before,
+.topic-box::after,
+.placement-cta::before,
+.placement-illustration::before,
+.placement-illustration::after,
+.placement-images::before,
+.placement-images::after,
+.placement-container::before,
+.placement-container::after,
+.placement::after,
+.placement-benefits::after,
+.placement h2.section-title::before,
+.placement-process::before,
+.placement-process li::before,
+.placement-process li::after {
+  content: none !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.benefits-list li::before,
+.benefits-list li::after,
+.placement-benefits h3::after {
+  content: none !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 
 /* Mobile section spacing normalization for Placement */
 @media (max-width: 768px) {
@@ -42,7 +78,13 @@
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #212529;
+  text-align: center;
 }
+
+/* Center alignment for counters */
+.placement-stats { justify-content: center; }
+.stat { text-align: center; }
+.stat .stat-icon { display: inline-flex; margin: 0 auto 0.5rem; }
 
 .placement p {
   font-size: 1.1rem;
@@ -272,13 +314,14 @@
   background: #ffffff;
   border-radius: 12px;
   padding: 1.5rem;
-  text-align: left;
+  text-align: center;
   transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 0.75rem;
   margin: 0;
   position: relative;
@@ -298,7 +341,7 @@
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 40px;
   height: 40px;
   background: rgba(0, 0, 0, 0.06);
@@ -310,6 +353,7 @@
   margin: 0;
   font-size: 1rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .topic-box p {
@@ -318,6 +362,7 @@
   line-height: 1.5;
   margin: 0;
   opacity: 0.9;
+  text-align: center;
 }
 
 /* Topic boxes */
@@ -460,6 +505,15 @@
   .benefits-list li {
     text-align: center;
     padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .li-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
   }
   
   .placement-features {
@@ -1573,8 +1627,10 @@
   margin: 2rem auto 0;
   max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+  justify-items: stretch;
 }
 .benefits-list li {
   background: #ffffff;
@@ -1584,7 +1640,7 @@
   color: #495057;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   transition: all 0.3s ease;
 }
@@ -1592,6 +1648,11 @@
 .benefits-list li:hover {
   transform: translateY(-3px);
  
+}
+
+@media (max-width: 768px) {
+  .benefits-list { grid-template-columns: 1fr !important; }
+  .benefits-list li { width: 100%; }
 }
 
 /* CTA buttons */

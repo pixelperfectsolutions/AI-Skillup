@@ -130,13 +130,22 @@
   max-width: 800px;
   padding: 0 2rem;
   width: 100%;
-  text-align: center;
+  text-align: center !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
   position: relative; /* for center decorations */
+}
+
+/* Strong centering to avoid overrides */
+.hero-slide .hero-content h1,
+.hero-slide .hero-content p {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 /* Center decorations behind title: soft oval glow + intersecting lines on a rotated card */
@@ -233,7 +242,7 @@
 .hero-badges .badge-css { bottom: 26%; right: 26%; animation-delay: 2.5s; background: linear-gradient(180deg,#ffffff,#eef6ff); }
 .hero-badges .badge-linux { top: 44%; right: 18%; animation-delay: 3.0s; background: linear-gradient(180deg,#ffffff,#fffdf0); }
 /* New desktop-only badges */
-.hero-badges .badge-ts { top: 16%; left: 34%; background: linear-gradient(180deg,#ffffff,#eef6ff); animation-delay: 0.8s; }
+  .hero-badges .badge-ts { top: 28%; left: 34%; background: linear-gradient(180deg,#ffffff,#eef6ff); animation-delay: 0.8s; }
 .hero-badges .badge-git { top: 36%; left: 8%; background: linear-gradient(180deg,#ffffff,#fff7f2); animation-delay: 1.4s; }
 .hero-badges .badge-mongo { bottom: 24%; right: 12%; background: linear-gradient(180deg,#ffffff,#f0fff6); animation-delay: 1.9s; }
 .hero-badges .badge-tailwind { top: 18%; right: 24%; background: linear-gradient(180deg,#ffffff,#eefaff); animation-delay: 2.2s; }
@@ -283,8 +292,8 @@
     min-height: 550px;
   }
 
-  /* Reduce the top padding under header on tablet */
-  .hero-static { padding-top: 220px; }
+  /* Reduce the top padding under header on mobile/tablet */
+  .hero-static { padding-top: 120px; }
 
   .hero-slide {
     background-size: contain;
@@ -327,17 +336,29 @@
   }
 
   /* Increase specificity and force apply on mobile */
+  .hero-static.hero-slide .hero-content,
   .hero-slide .hero-content {
-    top: 50% !important; /* center vertically on mobile/tablet */
+    top: 42% !important; /* shift baseline higher on mobile/tablet */
     bottom: auto;
     left: 50%;
     right: auto;
-    transform: translate(-50%, -12%);
+    transform: translate(-50%, -50%) !important;
     pointer-events: auto;
-    max-width: 90%;
+    width: 100%;
+    max-width: 92vw;
     padding: 0 12px;
     gap: 8px;
     text-align: center;
+    align-items: center !important; /* flex cross-axis centering */
+  }
+
+  /* Ensure absolute centering of title/text on mobile */
+  .hero-slide .hero-content,
+  .hero-slide .hero-content h1,
+  .hero-slide .hero-content p {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Hide heavy central decorations on tablet/mobile */
@@ -360,14 +381,24 @@
     color: transparent !important;
   }
 
+  .hero-static.hero-slide .hero-content h1,
   .hero-slide .hero-content h1 {
     font-size: 2.1rem !important;
     line-height: 1.22 !important;
     font-family: 'Rubik', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+    width: 100%;
   }
 
+  .hero-static.hero-slide .hero-content p,
   .hero-content p {
     font-size: 0.95rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+    width: 100%;
   }
 
   .hero-content button {
@@ -394,7 +425,7 @@
   .hero-badges .badge-js { top: 22%; left: 12%; }
   .hero-badges .badge-py { top: 18%; left: 4%; }
   /* Move React badge further away to avoid overlapping enlarged title */
-  .hero-badges .badge-react { top: 12%; right: 8%; }
+  .hero-badges .badge-react { top: 28%; right: 8%; }
   .hero-badges .badge-node { top: 10%; right: 6%; }
   .hero-badges .badge-html { bottom: 18%; left: 10%; }
   .hero-badges .badge-css { bottom: 22%; right: 16%; }

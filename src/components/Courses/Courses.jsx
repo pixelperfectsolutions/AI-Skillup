@@ -276,8 +276,6 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
       </section>
       {showPlacement && (
         <section className="placement" id="placement">
-          <div className="decor-element decor-dots placement-decor-dots-1" aria-hidden="true"></div>
-          <div className="decor-element decor-arc placement-decor-arc-1" aria-hidden="true"></div>
           <div className="placement-container">
           <h2 className="reveal">100% Placement Assistance</h2>
 
