@@ -5,7 +5,7 @@
 
 .team-member-box:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Hide scrollbar utility for pages that opt-in via body/html class */
@@ -16,9 +16,11 @@ html.hide-scrollbar {
   /* IE and old Edge */
   -ms-overflow-style: none;
 }
+
 body.hide-scrollbar::-webkit-scrollbar,
 html.hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge (Chromium) */
+  display: none;
+  /* Chrome, Safari, Edge (Chromium) */
 }
 
 /* === Global Decorations === */
@@ -27,7 +29,8 @@ html.hide-scrollbar::-webkit-scrollbar {
 .decor-element {
   position: absolute;
   pointer-events: none;
-  z-index: -1; /* Sit behind content */
+  z-index: -1;
+  /* Sit behind content */
   opacity: 0.2;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -53,16 +56,37 @@ html.hide-scrollbar::-webkit-scrollbar {
   animation: morph 8s ease-in-out infinite both alternate;
   will-change: border-radius;
 }
+
 @keyframes morph {
-  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-  100% { border-radius: 40% 60%; }
+  0% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+
+  100% {
+    border-radius: 40% 60%;
+  }
 }
 
 /* Example Positions (can be overridden per component) */
-.decor-top-left { top: -50px; left: -50px; }
-.decor-top-right { top: -50px; right: -50px; }
-.decor-bottom-left { bottom: -50px; left: -50px; }
-.decor-bottom-right { bottom: -50px; right: -50px; }
+.decor-top-left {
+  top: -50px;
+  left: -50px;
+}
+
+.decor-top-right {
+  top: -50px;
+  right: -50px;
+}
+
+.decor-bottom-left {
+  bottom: -50px;
+  left: -50px;
+}
+
+.decor-bottom-right {
+  bottom: -50px;
+  right: -50px;
+}
 
 /* === Global Box Radius Overrides (Square boxes site-wide) === */
 /* Square off cards/sections/panels only; keep circular badges/icons/images intact */
@@ -91,10 +115,13 @@ img {
 .site-bg {
   position: relative;
   background:
-    radial-gradient(1200px 600px at -5% 95%, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 60%),
-    radial-gradient(900px 500px at 105% -5%, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0) 60%),
+    /* Large soft corner glows - exact same as hero section */
+    radial-gradient(1100px 520px at -8% 96%, rgba(19, 135, 227, 0.08) 0%, rgba(19, 135, 227, 0) 60%),
+    radial-gradient(900px 480px at 108% -10%, rgba(19, 135, 227, 0.08) 0%, rgba(19, 135, 227, 0) 60%),
+    /* Base soft blue gradient - exact same as hero section */
     linear-gradient(135deg, #f7fbff 0%, #f2f9ff 45%, #eef7ff 100%);
 }
+
 .site-bg::before,
 .site-bg::after {
   content: '';
@@ -103,6 +130,7 @@ img {
   pointer-events: none;
   backdrop-filter: blur(2px);
 }
+
 /* Bottom-left rounded stack */
 .site-bg::before {
   left: -140px;
@@ -110,9 +138,10 @@ img {
   width: 540px;
   height: 540px;
   border-radius: 40%;
-  background: radial-gradient(120% 120% at 20% 80%, rgba(19,135,227,0.12) 0%, rgba(19,135,227,0.05) 45%, rgba(19,135,227,0) 70%);
-  box-shadow: 0 30px 60px rgba(0,84,155,0.08);
+  background: radial-gradient(120% 120% at 20% 80%, rgba(19, 135, 227, 0.12) 0%, rgba(19, 135, 227, 0.05) 45%, rgba(19, 135, 227, 0) 70%);
+  box-shadow: 0 30px 60px rgba(0, 84, 155, 0.08);
 }
+
 /* Top-right diagonal card */
 .site-bg::after {
   right: -160px;
@@ -121,12 +150,15 @@ img {
   height: 380px;
   transform: rotate(45deg);
   border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(235,248,255,0.75) 100%);
-  border: 1px solid rgba(19,135,227,0.15);
-  box-shadow: 0 30px 60px rgba(0,84,155,0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(235, 248, 255, 0.75) 100%);
+  border: 1px solid rgba(19, 135, 227, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 84, 155, 0.08);
 }
 
 @media (max-width: 1024px) {
+
   .site-bg::before,
-  .site-bg::after { display: none; }
+  .site-bg::after {
+    display: none;
+  }
 }

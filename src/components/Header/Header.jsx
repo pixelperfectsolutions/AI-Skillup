@@ -64,7 +64,7 @@ const Header = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -112,8 +112,7 @@ const Header = () => {
                   </ul>
                 </li>
                 <li><Link to="/about" className={isActive('about')} onClick={closeMobileMenu}>About Us</Link></li>
-                <li><Link to="#" onClick={(e)=>e.preventDefault()}>Blogs</Link></li>
-                <li><Link to="#" onClick={(e)=>e.preventDefault()}>Students Work</Link></li>
+                <li><Link to="#" onClick={(e) => e.preventDefault()}>Students Work</Link></li>
                 <li><Link to="/contact" className={isActive('contact')} onClick={closeMobileMenu}>Contact</Link></li>
               </ul>
             </nav>
@@ -169,8 +168,7 @@ const Header = () => {
                   ))}
                 </ul>
               </li>
-              <li><Link to="#" onClick={(e)=>e.preventDefault()}>Blogs</Link></li>
-              <li><Link to="#" onClick={(e)=>e.preventDefault()}>Students Work</Link></li>
+              <li><Link to="#" onClick={(e) => e.preventDefault()}>Students Work</Link></li>
               <li><Link to="/about" className={isActive('about')} onClick={closeMobileMenu}>About Us</Link></li>
               <li><Link to="/contact" className={isActive('contact')} onClick={closeMobileMenu}>Contact</Link></li>
             </ul>

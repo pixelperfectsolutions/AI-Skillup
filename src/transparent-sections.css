@@ -1,0 +1,87 @@
+/* Global override to make all section backgrounds transparent */
+/* This allows the site-wide blue gradient background to show through */
+
+/* Main sections */
+.mission-section,
+.contact-page,
+.about-hero-section,
+.testimonials-section,
+.partners-section,
+.features-section,
+.placement,
+.courses-section-wrapper,
+.course-hero,
+.courses-hero,
+.apply-form-section,
+.about-section,
+.why-choose {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Body background */
+body {
+    background-color: transparent !important;
+}
+
+/* Global override to make all section backgrounds transparent */
+/* This allows the site-wide blue gradient background to show through */
+
+/* Main sections */
+.mission-section,
+.contact-page,
+.about-hero-section,
+.testimonials-section,
+.partners-section,
+.features-section,
+.placement,
+.courses-section-wrapper,
+.course-hero,
+.courses-hero,
+.apply-form-section,
+.about-section,
+.why-choose {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Body background */
+body {
+    background-color: transparent !important;
+}
+
+/* Index.css overrides */
+.section-decor {
+    background-color: transparent !important;
+}
+
+/* Footer with white background */
+.footer {
+    background: #ffffff !important;
+    color: #000000 !important;
+    /* Black text for contrast on white */
+}
+
+/* Ensure all footer text elements are black/dark */
+.footer h3,
+.footer p,
+.footer a,
+.footer li,
+.footer span,
+.footer-bottom,
+.footer-section.contact a,
+.footer-section.contact p,
+.footer-section.contact .contact-icon {
+    color: #000000 !important;
+}
+
+/* Hover state for links */
+.footer a:hover {
+    color: var(--primary-color) !important;
+    /* Blue on hover */
+}
+
+/* Footer bottom border */
+.footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1) !important;
+}

@@ -1,17 +1,24 @@
 .footer {
-  background-color: white; /* matches your current footer bg */
-  color: #000; /* all footer text black */
+  background-color: #fff;
+  /* matches your current footer bg */
+  color: #000;
+  /* all footer text black */
   padding: 6rem 2rem 0;
-  min-height: 660px;
+  min-height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-x: clip; /* prevent any horizontal bleed causing right-side gap */
+  overflow-x: clip;
+  /* prevent any horizontal bleed causing right-side gap */
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  border-top: 1px solid #e5e7eb; /* subtle separator like header border */
-  position: relative; /* for decorative pseudo-elements */
-  isolation: isolate; /* contain stacking for pseudo elements */
-  overflow: hidden; /* clip decoration inside footer */
+  border-top: 1px solid #e5e7eb;
+  /* subtle separator like header border */
+  position: relative;
+  /* for decorative pseudo-elements */
+  isolation: isolate;
+  /* contain stacking for pseudo elements */
+  overflow: hidden;
+  /* clip decoration inside footer */
 }
 
 .footer-content {
@@ -23,8 +30,10 @@
   gap: 2rem;
   align-items: start;
   position: relative;
-  z-index: 1; /* keep above decorative layers */
-  isolation: isolate; /* contain its own stacked decorations */
+  z-index: 1;
+  /* keep above decorative layers */
+  isolation: isolate;
+  /* contain its own stacked decorations */
 }
 
 /* Hero-like left decorations inside footer content */
@@ -33,7 +42,8 @@
   content: '';
   position: absolute;
   pointer-events: none;
-  z-index: -1; /* push strictly behind content */
+  z-index: -1;
+  /* push strictly behind content */
 }
 
 /* Large rounded blue glow at bottom-left (matches hero blue blobs) */
@@ -47,11 +57,13 @@
 }
 
 /* Decorative background similar to header */
-.footer::before, .footer::after {
+.footer::before,
+.footer::after {
   content: '';
   position: absolute;
   pointer-events: none;
-  z-index: 0; /* sit behind content */
+  z-index: 0;
+  /* sit behind content */
 }
 
 /* Base background + blue round shapes left and right (match hero aesthetic) */
@@ -71,8 +83,10 @@
 .footer-section h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 0 0 2rem ; /* ensure no top margin so headings align */
-  color: #000; /* black heading text */
+  margin: 0 0 2rem;
+  /* ensure no top margin so headings align */
+  color: #000;
+  /* black heading text */
   position: relative;
   padding-bottom: 0.5rem;
   line-height: 1.2;
@@ -85,13 +99,15 @@
 
 .footer-section p {
   line-height: 1.7;
-  color: #000; /* black text */
+  color: #000;
+  /* black text */
 }
 
 /* About logo */
 .footer-section.about .logo-wrap {
   display: inline-block;
-  margin: 0 0 1rem 0; /* Add bottom margin to create space between logo and paragraph */
+  margin: 0 0 1rem 0;
+  /* Add bottom margin to create space between logo and paragraph */
   line-height: 0;
 }
 
@@ -103,16 +119,18 @@
 
 /* Remove underline from the logo section since it's no longer a heading */
 .footer-section.about h3::after {
-    display: none;
+  display: none;
 }
 
 .footer-section.contact a {
-  color: #000; /* black links */
+  color: #000;
+  /* black links */
   text-decoration: none;
 }
 
 .footer-section.contact a:hover {
-  color: inherit !important; /* no hover color */
+  color: inherit !important;
+  /* no hover color */
   text-decoration: none;
 }
 
@@ -123,11 +141,15 @@
 .footer-section.contact a:link,
 .footer-section.contact a:visited,
 .footer-section.contact a:active {
-  color: #000 !important; /* black text */
+  color: #000 !important;
+  /* black text */
 }
 
 /* Make sure the column and its text wrap nicely */
-.footer-section.contact { width: 100%; }
+.footer-section.contact {
+  width: 100%;
+}
+
 .footer-section.contact .contact-item p,
 .footer-section.contact .contact-item a {
   max-width: 100%;
@@ -142,9 +164,12 @@
   align-items: flex-start;
   gap: 0.6rem;
   margin: 0.45rem 0;
-  transition: none !important; /* prevent hover animations from global styles */
-  background: transparent !important; /* ensure no hover bg bleed */
-  box-shadow: none !important; /* ensure no hover shadow bleed */
+  transition: none !important;
+  /* prevent hover animations from global styles */
+  background: transparent !important;
+  /* ensure no hover bg bleed */
+  box-shadow: none !important;
+  /* ensure no hover shadow bleed */
 }
 
 /* Disable hover effects specifically inside the footer contact column */
@@ -155,13 +180,15 @@
 }
 
 .footer-section.contact .contact-icon {
-  width: 20px; /* fixed icon column */
+  width: 20px;
+  /* fixed icon column */
   flex: 0 0 20px;
   display: inline-flex;
   justify-content: center;
   color: #000;
   line-height: 1;
-  margin-top: 2px; /* nudge to align with first text line */
+  margin-top: 2px;
+  /* nudge to align with first text line */
 }
 
 .footer-section.contact .contact-icon svg {
@@ -170,18 +197,23 @@
 
 /* Ensure text lines up straight with icon edge */
 .footer-section.contact .contact-item p {
-  margin: 0; /* remove default p margins */
-  flex: 1;   /* take remaining width so wrap aligns */
-  line-height: 1.6; /* consistent multi-line wrapping */
+  margin: 0;
+  /* remove default p margins */
+  flex: 1;
+  /* take remaining width so wrap aligns */
+  line-height: 1.6;
+  /* consistent multi-line wrapping */
 }
 
 .footer-section.contact .contact-item p a {
-  color: inherit; /* match contact text color */
+  color: inherit;
+  /* match contact text color */
   text-decoration: none;
 }
 
-.footer-section.contact .contact-item p a:hover { 
-  color: inherit !important; /* no hover color */
+.footer-section.contact .contact-item p a:hover {
+  color: inherit !important;
+  /* no hover color */
   text-decoration: none;
 }
 
@@ -191,19 +223,22 @@
 }
 
 .footer-section.links ul li a {
-  color: #000; /* black links */
+  color: #000;
+  /* black links */
   text-decoration: none;
   margin-bottom: 0.5rem;
   display: block;
 }
 
 .footer-section.links ul li a:hover {
-  color: inherit !important; /* no hover color */
+  color: inherit !important;
+  /* no hover color */
   text-decoration: none;
 }
 
 .footer-bottom {
-  background-color: #17a380; /* old footer color */
+  background-color: #17a380;
+  /* old footer color */
   color: #000;
   padding: 0.5rem 2rem;
   display: flex;
@@ -216,45 +251,76 @@
   /* Full-bleed bar across the viewport */
   position: relative;
   left: 50%;
-  width: 100vw;       /* fallback */
-  width: 100dvw;      /* avoids scrollbar offset on some browsers */
+  width: 100vw;
+  /* fallback */
+  width: 100dvw;
+  /* avoids scrollbar offset on some browsers */
   transform: translateX(-50%);
-  margin-top: auto;    /* stick to the bottom of the footer container */
+  margin-top: auto;
+  /* stick to the bottom of the footer container */
   font-size: 0.95rem;
-  z-index: 1; /* above decorative layers */
+  z-index: 1;
+  /* above decorative layers */
 }
 
+
 .footer-bottom .designer-credit a {
-  color: var(--primary-color); /* black designer credit text */
+  color: var(--primary-color);
+  /* black designer credit text */
   text-decoration: none;
 }
 
 .footer-bottom .designer-credit a:hover {
-  color: inherit !important; /* no hover color */
+  color: inherit !important;
+  /* no hover color */
 }
 
-.footer-section ul { list-style: none; padding: 5px; margin: px; }
-.footer-section ul li { margin: 0.4rem 0; }
+.footer-section ul {
+  list-style: none;
+  padding: 5px;
+  margin: px;
+}
+
+.footer-section ul li {
+  margin: 0.4rem 0;
+}
 
 /* Ensure About heading sits on same baseline as others */
-.footer-section.about { margin-top: 0; padding-top: 0; }
-.footer-section.about .logo-text { margin-top: 0; }
+.footer-section.about {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.footer-section.about .logo-text {
+  margin-top: 0;
+}
 
 /* About column tweaks */
-.footer-section.about p { max-width: 420px; margin-top: 0; } /* Remove top margin */
+.footer-section.about p {
+  max-width: 420px;
+  margin-top: 0;
+}
+
+/* Remove top margin */
 
 /* Remove any extra padding from all footer sections for tighter alignment */
-.footer-section { padding: 0; }
+.footer-section {
+  padding: 0;
+}
 
 /* Generic footer link styling (non-buttons) */
 .footer a:not(.btn) {
-  color: #000; /* default black */
+  color: #000;
+  /* default black */
   text-decoration: none;
 }
+
 .footer a:not(.btn):hover {
-  color: inherit !important; /* do not change color on hover */
+  color: inherit !important;
+  /* do not change color on hover */
   text-decoration: none;
 }
+
 .footer a:not(.btn):focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
@@ -267,42 +333,86 @@
 }
 
 @media (max-width: 768px) {
+
   /* reduce heavy decoration on mobile */
   .footer::before,
-  .footer::after { display: none; }
+  .footer::after {
+    display: none;
+  }
+
   .footer-content::before,
-  .footer-content::after { display: none; }
-  .footer-content { text-align: left; }
+  .footer-content::after {
+    display: none;
+  }
+
+  .footer-content {
+    text-align: left;
+  }
+
   .footer-bottom {
     align-items: flex-start;
     text-align: left;
   }
-  .footer-section.contact { text-align: left; width: 100%; }
-  .footer-section.contact .contact-item { align-items: flex-start; gap: 0.5rem; }
-  .footer-section.contact .contact-icon { width: 18px; flex: 0 0 18px; margin-top: 2px; }
-  .footer-section.contact .contact-icon svg { font-size: 14px; }
+
+  .footer-section.contact {
+    text-align: left;
+    width: 100%;
+  }
+
+  .footer-section.contact .contact-item {
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .footer-section.contact .contact-icon {
+    width: 18px;
+    flex: 0 0 18px;
+    margin-top: 2px;
+  }
+
+  .footer-section.contact .contact-icon svg {
+    font-size: 14px;
+  }
+
   .footer-section.contact .contact-item p,
-  .footer-section.contact .contact-item a { line-height: 1.5; font-size: 0.95rem; }
+  .footer-section.contact .contact-item a {
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
 }
 
 @media (min-width: 992px) {
-  .footer-content { grid-template-columns: repeat(3, 1fr); }
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Extra small devices: tighten spacing further */
 @media (max-width: 420px) {
-  .footer-section.contact .contact-item { gap: 0.45rem; }
-  .footer-section.contact .contact-icon { width: 16px; flex: 0 0 16px; }
-  .footer-section.contact .contact-icon svg { font-size: 13px; }
+  .footer-section.contact .contact-item {
+    gap: 0.45rem;
+  }
+
+  .footer-section.contact .contact-icon {
+    width: 16px;
+    flex: 0 0 16px;
+  }
+
+  .footer-section.contact .contact-icon svg {
+    font-size: 13px;
+  }
 }
 
 /* Ensure footer contact items never stack under global page styles */
 @media (max-width: 992px) {
-  .footer .contact-item { 
+  .footer .contact-item {
     display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
     text-align: left !important;
   }
-  .footer .contact-icon { margin-bottom: 0 !important; }
+
+  .footer .contact-icon {
+    margin-bottom: 0 !important;
+  }
 }

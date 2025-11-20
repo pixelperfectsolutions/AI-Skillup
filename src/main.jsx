@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import 'aos/dist/aos.css';
 import './index.css';
 import './pages.css';
+import './transparent-sections.css';
 import App from './App';
 import initAOS from './utils/aosConfig';
 import Lenis from '@studio-freight/lenis';
