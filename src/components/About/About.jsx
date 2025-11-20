@@ -9,7 +9,7 @@ const About = () => {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   // Local reveal-on-scroll for About section only
   useEffect(() => {
     const container = document.querySelector('.about');
@@ -32,9 +32,8 @@ const About = () => {
     return () => io.disconnect();
   }, []);
   return (
-    <section className="about section-decor">
-      <div className="decor-element decor-dots about-decor-dots-1" aria-hidden="true"></div>
-      <div className="decor-element decor-arc about-decor-arc-1" aria-hidden="true"></div>
+    <section className="about">
+
       <div className="about-container">
         <div className="about-image-container reveal fade-right">
           <div className="visual-frame">

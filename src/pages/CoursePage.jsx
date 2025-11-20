@@ -34,11 +34,7 @@ const CoursePage = () => {
   return (
     <>
       <section className="courses course-page-section" style={{ paddingTop: '40px', position: 'relative' }}>
-        <div className="course-page-decor" aria-hidden="true">
-          <span className="cp-dots-left" />
-          <span className="cp-ring" />
-          <div className="decor-element decor-blob course-page-blob-1"></div>
-        </div>
+
         <div className="courses-header">
           <h2 className="section-title">{course.title}</h2>
         </div>

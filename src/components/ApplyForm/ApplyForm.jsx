@@ -111,15 +111,14 @@ const ApplyForm = ({ inline = false, hideImage = false, compact = false }) => {
 
   // Default full-width promotional variant
   return (
-    <section className="apply-form-section section-decor" id="apply-form">
-      <div className="decor-element decor-dots apply-form-decor-dots-1" aria-hidden="true"></div>
-      <div className="decor-element decor-blob apply-form-decor-blob-1" aria-hidden="true"></div>
+    <section className="apply-form-section" id="apply-form">
+
       <div className="apply-form-container">
         <div className="apply-form-content">
           {!compact && (
             <div className="discount-info">
-              <h2>Wait! <br/><span>Before you go,</span> <br/>Here is a 20% <br/>Discount.</h2>
-              <hr/>
+              <h2>Wait! <br /><span>Before you go,</span> <br />Here is a 20% <br />Discount.</h2>
+              <hr />
               <p>in your Course Fee</p>
             </div>
           )}

@@ -15,9 +15,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="features why-choose section-decor">
-      <div className="decor-element decor-dots features-decor-dots-1" aria-hidden="true"></div>
-      <div className="decor-element decor-blob features-decor-blob-1" aria-hidden="true"></div>
+    <section className="features why-choose">
       <div className="features-container">
         <h2 className="why-choose-title">Why Choose AI SKILL UP?</h2>
         <span className="why-choose-swoosh" aria-hidden="true"></span>

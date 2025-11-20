@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
     "react": "^19.1.1",

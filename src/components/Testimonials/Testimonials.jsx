@@ -6,8 +6,8 @@ const StarRating = ({ rating }) => {
   return (
     <div className="star-rating">
       {[1, 2, 3, 4, 5].map((star) => (
-        <span 
-          key={star} 
+        <span
+          key={star}
           className={`star ${star <= rating ? 'filled' : ''}`}
           aria-hidden="true"
         >
@@ -226,7 +226,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
   };
 
   // No pause behavior; slider runs continuously
-  const pauseAutoSlide = useCallback(() => {}, []);
+  const pauseAutoSlide = useCallback(() => { }, []);
 
   // Handle transition end to snap seamlessly when we hit clones
   const handleTransitionEnd = () => {
@@ -290,35 +290,35 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
         const handleActivate = () => clickable && window.open(t.content, '_blank', 'noopener,noreferrer');
         const displayText = clickable
           ? (t.display && t.display.length > 0
-              ? t.display
-              : `${t.name}${t.handle ? ` (${t.handle})` : ''}`)
+            ? t.display
+            : `${t.name}${t.handle ? ` (${t.handle})` : ''}`)
           : t.content;
         const shown = getDisplayText(displayText);
         return (
-        <article
-          key={t.id}
-          className="testimonial-card"
-          role={clickable ? 'link' : 'listitem'}
-          tabIndex={clickable ? 0 : undefined}
-          onClick={clickable ? handleActivate : undefined}
-          onKeyDown={clickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleActivate(); } } : undefined}
-          style={clickable ? { cursor: 'pointer' } : undefined}
-        >
-          <div className="google-badge-large"><span className="g-letter">G</span></div>
-          <div className="testimonial-author">
-            <div className="testimonial-fallback" style={{ backgroundColor: getAvatarColor(t.name) }}>{renderInitials(t.name)}</div>
-            <div className="author-info">
-              <h4 className="author-name">{String(t.name).toLowerCase()}</h4>
-              <div className="author-meta">
-                <span className="handle">{t.handle ? `${t.handle}@gmail.com` : ''}</span>
-                <span className="sep">•</span>
-                <span className="time">{t.timeAgo}</span>
+          <article
+            key={t.id}
+            className="testimonial-card"
+            role={clickable ? 'link' : 'listitem'}
+            tabIndex={clickable ? 0 : undefined}
+            onClick={clickable ? handleActivate : undefined}
+            onKeyDown={clickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleActivate(); } } : undefined}
+            style={clickable ? { cursor: 'pointer' } : undefined}
+          >
+            <div className="google-badge-large"><span className="g-letter">G</span></div>
+            <div className="testimonial-author">
+              <div className="testimonial-fallback" style={{ backgroundColor: getAvatarColor(t.name) }}>{renderInitials(t.name)}</div>
+              <div className="author-info">
+                <h4 className="author-name">{String(t.name).toLowerCase()}</h4>
+                <div className="author-meta">
+                  <span className="handle">{t.handle ? `${t.handle}@gmail.com` : ''}</span>
+                  <span className="sep">•</span>
+                  <span className="time">{t.timeAgo}</span>
+                </div>
               </div>
             </div>
-          </div>
-          <StarRating rating={t.rating} />
-          <p className={`card-quote ${displayText && displayText.length > 70 ? 'long' : ''}`}>"{shown}"</p>
-        </article>
+            <StarRating rating={t.rating} />
+            <p className={`card-quote ${displayText && displayText.length > 70 ? 'long' : ''}`}>"{shown}"</p>
+          </article>
         );
       })}
     </div>
@@ -326,14 +326,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
 
   return (
     <section className="testimonials-section">
-      <div className="ts-decor" aria-hidden="true">
-        <span className="ts-dots tl" />
-        <span className="ts-dots tr" />
-        <span className="ts-dots bl" />
-        <span className="ts-dots br" />
-        <div className="decor-element decor-arc testimonials-decor-arc-1"></div>
-        <div className="decor-element decor-arc testimonials-decor-arc-2"></div>
-      </div>
+
       <div className="container">
         {showTitle && <h2 className="section-title">What Our Students Say</h2>}
         {/* Google Rating Summary Card (static mimic, no API) */}
@@ -370,15 +363,15 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
         ) : (
           <div className="testimonials-slider">
             {showControls && (
-              <button 
-                className="slider-arrow prev" 
+              <button
+                className="slider-arrow prev"
                 onClick={() => { prevSlide(); }}
                 aria-label="Previous"
               >&#10094;</button>
             )}
             <div className="testimonials-viewport">
-              <div 
-                className="testimonials-track" 
+              <div
+                className="testimonials-track"
                 ref={trackRef}
                 style={{ transform: mounted ? `translateX(-${pageIndex * 100}%)` : 'translateX(-100%)' }}
                 aria-live="polite"
@@ -391,35 +384,35 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
                       const handleActivate = () => clickable && window.open(t.content, '_blank', 'noopener,noreferrer');
                       const displayText = clickable
                         ? (t.display && t.display.length > 0
-                            ? t.display
-                            : `${t.name}${t.handle ? ` (${t.handle})` : ''}`)
+                          ? t.display
+                          : `${t.name}${t.handle ? ` (${t.handle})` : ''}`)
                         : t.content;
                       const shown = getDisplayText(displayText);
                       return (
-                      <article
-                        key={`${idx}-${t.id}`}
-                        className="testimonial-card"
-                        role={clickable ? 'link' : undefined}
-                        tabIndex={clickable ? 0 : undefined}
-                        onClick={clickable ? handleActivate : undefined}
-                        onKeyDown={clickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleActivate(); } } : undefined}
-                        style={clickable ? { cursor: 'pointer' } : undefined}
-                      >
-                        <div className="google-badge-large"><span className="g-letter">G</span></div>
-                        <div className="testimonial-author">
-                          <div className="testimonial-fallback" style={{ backgroundColor: getAvatarColor(t.name) }}>{renderInitials(t.name)}</div>
-                          <div className="author-info">
-                            <h4 className="author-name">{String(t.name).toLowerCase()}</h4>
-                            <div className="author-meta">
-                              <span className="handle">{t.handle ? `${t.handle}@gmail.com` : ''}</span>
-                              <span className="sep">•</span>
-                              <span className="time">{t.timeAgo}</span>
+                        <article
+                          key={`${idx}-${t.id}`}
+                          className="testimonial-card"
+                          role={clickable ? 'link' : undefined}
+                          tabIndex={clickable ? 0 : undefined}
+                          onClick={clickable ? handleActivate : undefined}
+                          onKeyDown={clickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleActivate(); } } : undefined}
+                          style={clickable ? { cursor: 'pointer' } : undefined}
+                        >
+                          <div className="google-badge-large"><span className="g-letter">G</span></div>
+                          <div className="testimonial-author">
+                            <div className="testimonial-fallback" style={{ backgroundColor: getAvatarColor(t.name) }}>{renderInitials(t.name)}</div>
+                            <div className="author-info">
+                              <h4 className="author-name">{String(t.name).toLowerCase()}</h4>
+                              <div className="author-meta">
+                                <span className="handle">{t.handle ? `${t.handle}@gmail.com` : ''}</span>
+                                <span className="sep">•</span>
+                                <span className="time">{t.timeAgo}</span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <StarRating rating={t.rating} />
-                        <p className={`card-quote ${displayText && displayText.length > 70 ? 'long' : ''}`}>"{shown}"</p>
-                      </article>
+                          <StarRating rating={t.rating} />
+                          <p className={`card-quote ${displayText && displayText.length > 70 ? 'long' : ''}`}>"{shown}"</p>
+                        </article>
                       );
                     })}
                   </div>
@@ -427,8 +420,8 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
               </div>
             </div>
             {showControls && (
-              <button 
-                className="slider-arrow next" 
+              <button
+                className="slider-arrow next"
                 onClick={() => { nextSlide(); }}
                 aria-label="Next"
               >&#10095;</button>

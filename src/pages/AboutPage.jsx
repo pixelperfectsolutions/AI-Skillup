@@ -103,8 +103,8 @@ const AboutPage = () => {
 
   useEffect(() => {
     // On page mount, ensure we start at the very top so header/topbar are visible
-    try { window.scrollTo(0, 0); } catch (e) {}
-    return () => {};
+    try { window.scrollTo(0, 0); } catch (e) { }
+    return () => { };
   }, []);
 
   const handleParallaxMove = (ref) => (e) => {
@@ -120,7 +120,7 @@ const AboutPage = () => {
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
     const angle = Math.atan2(e.clientY - cy, e.clientX - cx) * (180 / Math.PI);
-    const norm = Math.round(((angle % 360) + 360) % 360); 
+    const norm = Math.round(((angle % 360) + 360) % 360);
     el.style.setProperty('--rotMouse', `${norm}deg`);
   };
 
@@ -212,8 +212,8 @@ const AboutPage = () => {
   return (
     <div className="about-page">
       {/* Hero Section */}
-      <section 
-        className="about-hero-section" 
+      <section
+        className="about-hero-section"
         data-aos="fade-up"
         data-aos-delay="100"
         style={{
@@ -223,83 +223,71 @@ const AboutPage = () => {
           position: 'relative'
         }}
       >
-        {/* Decorative animated background */}
-        <div className="about-decor" aria-hidden="true">
-          <span className="dot-grid dot-grid-1" />
-          <span className="dot-grid dot-grid-2" />
-          <span className="ring ring-1" />
-          <span className="ring ring-2" />
-          <span className="arc arc-left" />
-          <span className="arc arc-bottom" />
-          <span className="blob blob-1" />
-        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? '1fr' : '1.2fr 1fr',
+          gap: '40px',
+          alignItems: 'center',
+          padding: '0 20px 80px'
+        }}>
+          {/* Left Column - Content */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : '1.2fr 1fr',
-            gap: '40px',
-            alignItems: 'center',
-            padding: '0 20px 80px'
+            padding: 0
           }}>
-            {/* Left Column - Content */}
-            <div style={{
-              padding: 0
+            <h1 style={{
+              fontSize: '2.8rem',
+              fontWeight: '700',
+              color: '#333',
+              marginBottom: '20px',
+              lineHeight: '1.2'
+            }}>Who We Are</h1>
+            <p style={{
+              fontSize: '1.1rem',
+              color: '#555',
+              marginBottom: '20px',
+              lineHeight: '1.6'
             }}>
-              <h1 style={{
-                fontSize: '2.8rem',
-                fontWeight: '700',
-                color: '#333',
-                marginBottom: '20px',
-                lineHeight: '1.2'
-              }}>Who We Are</h1>
-              <p style={{
-                fontSize: '1.1rem',
-                color: '#555',
-                marginBottom: '20px',
-                lineHeight: '1.6'
-              }}>
-                AI SKILL UP is one of the leading software training institutes in Coimbatore, which focuses on industry-applicable skills and knowledge for the people.
-                Our courses are prepared in such a way that each student gets hands-on experiences and practical skills to work from day one. We provide the newest facilities, trained mentors, and student-centered methodologies to uphold excellence in education while creating a nurturing and innovative learning environment for all.
-              </p>
-              <Link 
-                to="/contact" 
-                className="btn btn-primary"
-                style={{
-                  display: 'inline-block',
-                  textDecoration: 'none',
-                  marginTop: '10px'
-                }}
-              >
-                Learn More
-              </Link>
-            </div>
-            
-            {/* Right Column - Image */}
-            <div style={{
-              borderRadius: '12px',
-              overflow: 'hidden',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-              marginTop: isMobile ? '10px' : '20px'
-            }}>
-              <img 
-                src="/images/AboutPage.jpg" 
-                alt="AI SkillUp Team" 
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  display: 'block',
-                  borderRadius: '12px'
-                }}
-              />
-            </div>
+              AI SKILL UP is one of the leading software training institutes in Coimbatore, which focuses on industry-applicable skills and knowledge for the people.
+              Our courses are prepared in such a way that each student gets hands-on experiences and practical skills to work from day one. We provide the newest facilities, trained mentors, and student-centered methodologies to uphold excellence in education while creating a nurturing and innovative learning environment for all.
+            </p>
+            <Link
+              to="/contact"
+              className="btn btn-primary"
+              style={{
+                display: 'inline-block',
+                textDecoration: 'none',
+                marginTop: '10px'
+              }}
+            >
+              Learn More
+            </Link>
           </div>
+
+          {/* Right Column - Image */}
+          <div style={{
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+            marginTop: isMobile ? '10px' : '20px'
+          }}>
+            <img
+              src="/images/AboutPage.jpg"
+              alt="AI SkillUp Team"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+                borderRadius: '12px'
+              }}
+            />
+          </div>
+        </div>
       </section>
 
       {/* Decorative band below Hero: Mission & Vision */}
       <section className="about-band" data-aos="fade-up" data-aos-delay="120">
-        <div className="band-decor" aria-hidden="true">
-          <span className="band-arc-left" />
-          <span className="band-dots-right" />
-        </div>
+
         <div className="band-container">
           <div className="band-grid">
             <div className="band-item" data-aos="fade-up" data-aos-delay="150">
@@ -326,11 +314,7 @@ const AboutPage = () => {
 
       {/* Stats Counter Section (decorated band with stat cards) */}
       <section className="stats-band" data-aos="fade-up" data-aos-delay="200">
-        <div className="stats-decor" aria-hidden="true">
-          <span className="stats-dots-left" />
-          <span className="stats-dots-right" />
-          <span className="stats-arc" />
-        </div>
+
         <div className="stats-container">
           <div className="stats-cards">
             {[
@@ -340,7 +324,7 @@ const AboutPage = () => {
               { icon: '👨‍🏫', value: 354, suffix: '+', decimals: 0, label: 'TOP INSTRUCTORS', tone: 'var(--primary-color)' }
             ].map((s, i) => (
               <div className="stat-card" key={i} data-aos="zoom-in" data-aos-delay={150 + i * 80}>
-                <div className="stat-icon" style={ { backgroundColor: s.tone } }>{s.icon}</div>
+                <div className="stat-icon" style={{ backgroundColor: s.tone }}>{s.icon}</div>
                 <div className="stat-number">
                   <AnimatedNumber target={s.value} suffix={s.suffix} decimals={s.decimals} />
                 </div>
@@ -352,9 +336,8 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Section */}
-      <section style={{...missionStyles.container, position: 'relative', overflow: 'hidden'}}>
-        <div className="decor-element decor-dots about-mission-dots-1" aria-hidden="true"></div>
-        <div className="decor-element decor-blob about-mission-blob-1" aria-hidden="true"></div>
+      <section style={{ ...missionStyles.container, position: 'relative', overflow: 'hidden' }}>
+
         <div style={missionStyles.content}>
           <div style={missionStyles.text}>
             <h2 style={{
@@ -390,9 +373,9 @@ const AboutPage = () => {
             </p>
           </div>
           <div style={missionStyles.image}>
-            <img 
-              src="/images/about-1.png" 
-              alt="AI Education" 
+            <img
+              src="/images/about-1.png"
+              alt="AI Education"
               style={missionStyles.imageContent}
             />
           </div>
@@ -407,12 +390,7 @@ const AboutPage = () => {
         ref={whyRef}
         onMouseMove={handleParallaxMove(whyRef)}
       >
-        <div className="wc-decor" aria-hidden="true">
-          <span className="wc-dots-left" />
-          <span className="wc-dots-right" />
-          <span className="wc-arc-right" />
-          <span className="wc-arc-bottom" />
-        </div>
+
         <div className="wc-container">
           <div className="wc-heading" data-aos="fade-up" data-aos-delay="180">
             <div className="wc-eyebrow">WHY CHOOSE AI SKILL UP</div>
@@ -452,18 +430,15 @@ const AboutPage = () => {
       </section>
 
       {/* Team Section */}
-      <section 
-        className="team-section" 
+      <section
+        className="team-section"
         data-aos="zoom-in"
         data-aos-delay="200"
-        style={{padding: '80px 0', backgroundColor: '#f8f9fa' }}
+        style={{ padding: '80px 0', backgroundColor: '#f8f9fa' }}
         ref={teamRef}
         onMouseMove={handleParallaxMove(teamRef)}
       >
-        <div className="team-decor" aria-hidden="true">
-          <span className="team-dots-left" />
-          <span className="team-arc-right" />
-        </div>
+
         <div className="container" style={{ maxWidth: '1450px', margin: '0 auto' }}>
           <h2 style={{
             fontSize: '2.5rem',
@@ -531,12 +506,12 @@ const AboutPage = () => {
                 overflow: 'hidden',
                 borderRadius: '8px'
               }}>
-                <img 
-                  src="/images/Faculty-1.png" 
-                  alt="John Doe" 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
+                <img
+                  src="/images/Faculty-1.png"
+                  alt="John Doe"
+                  style={{
+                    width: '100%',
+                    height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'top center'
                   }}
@@ -572,12 +547,12 @@ const AboutPage = () => {
                 overflow: 'hidden',
                 borderRadius: '8px'
               }}>
-                <img 
-                  src="/images/Faculty-2.png" 
-                  alt="Jane Smith" 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
+                <img
+                  src="/images/Faculty-2.png"
+                  alt="Jane Smith"
+                  style={{
+                    width: '100%',
+                    height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'top center'
                   }}
@@ -613,12 +588,12 @@ const AboutPage = () => {
                 overflow: 'hidden',
                 borderRadius: '8px'
               }}>
-                <img 
-                  src="/images/Faculty-3.png" 
-                  alt="Alex Johnson" 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
+                <img
+                  src="/images/Faculty-3.png"
+                  alt="Alex Johnson"
+                  style={{
+                    width: '100%',
+                    height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'top center'
                   }}
@@ -654,12 +629,12 @@ const AboutPage = () => {
                 overflow: 'hidden',
                 borderRadius: '8px'
               }}>
-                <img 
-                  src="/images/Faculty-4.png" 
-                  alt="Sarah Williams" 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
+                <img
+                  src="/images/Faculty-4.png"
+                  alt="Sarah Williams"
+                  style={{
+                    width: '100%',
+                    height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'top center'
                   }}
@@ -674,26 +649,23 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section 
+      <section
         className="values-section"
         data-aos="fade-up"
         data-aos-delay="200"
         onMouseMove={handleParallaxMove(valuesRef)}
         ref={valuesRef}
-        style={{ 
+        style={{
           padding: '80px 0',
           backgroundColor: '#fff',
           position: 'relative',
           overflow: 'hidden'
         }}
       >
-        <div className="values-decor" aria-hidden="true">
-          <span className="values-dots-right" />
-          <span className="values-arc-left" />
-        </div>
-        <div style={{ 
-          maxWidth: '1450px', 
-          margin: '0 auto', 
+
+        <div style={{
+          maxWidth: '1450px',
+          margin: '0 auto',
           padding: '0 20px',
           position: 'relative',
           zIndex: 1
@@ -718,7 +690,7 @@ const AboutPage = () => {
               borderRadius: '2px'
             }} />
           </h2>
-          
+
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -726,33 +698,33 @@ const AboutPage = () => {
             marginTop: '40px'
           }}>
             {[
-              { 
-                title: 'Excellence', 
+              {
+                title: 'Excellence',
                 desc: 'We strive for the highest standards in AI education',
                 color: 'var(--primary-color)',
                 icon: '⭐'
               },
-              { 
-                title: 'Innovation', 
+              {
+                title: 'Innovation',
                 desc: 'Continuously updating our curriculum with the latest AI advancements',
                 color: 'var(--primary-color)',
                 icon: '🚀'
               },
-              { 
-                title: 'Community', 
+              {
+                title: 'Community',
                 desc: 'Building a supportive network of AI enthusiasts',
                 color: 'var(--primary-color)',
                 icon: '👥'
               },
-              { 
-                title: 'Accessibility', 
+              {
+                title: 'Accessibility',
                 desc: 'Making AI education available to everyone',
                 color: 'var(--primary-color)',
                 icon: '🌍'
               },
             ].map((value, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 style={{
                   backgroundColor: '#fff',
                   borderRadius: '2px',
@@ -803,7 +775,7 @@ const AboutPage = () => {
                     zIndex: 1
                   }
                 }}
-                data-aos="fade-up" 
+                data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
                 <div style={{
@@ -864,20 +836,17 @@ const AboutPage = () => {
       </section>
 
       {/* Testimonials Section (reuse home component) */}
-      <section 
-        className="about-testimonials" 
-        data-aos="fade-up" 
+      <section
+        className="about-testimonials"
+        data-aos="fade-up"
         data-aos-delay="200"
         ref={testimonialsRef}
         onMouseMove={handleParallaxMove(testimonialsRef)}
       >
-        <div className="about-testimonials-decor" aria-hidden="true">
-          <span className="at-dots-left" />
-          <span className="at-arc-right" />
-        </div>
+
         <div className="about-testimonials-container">
-           <Testimonials layout="slider" columns={3} showControls={false} />
-         </div>
+          <Testimonials layout="slider" columns={3} showControls={false} />
+        </div>
       </section>
 
     </div>

@@ -19,23 +19,10 @@ const ContactPage = () => {
 
   return (
     <div className="contact-page">
-      {/* Full-page decorative layer (behind all sections) */}
-      <div className="page-decor contact-page-decor" aria-hidden="true">
-        <span className="pd-shape pd-dots-left" />
-        <span className="pd-shape pd-dots-right" />
-        <span className="pd-shape pd-ring-top" />
-        <span className="pd-shape pd-ring-bottom" />
-        <span className="pd-shape pd-blob" />
-      </div>
+
       {/* Hero Section */}
       <section className="contact-hero" data-aos="fade-up">
-        {/* Decorative background for Contact */}
-        <div className="contact-decor" aria-hidden="true">
-          <span className="c-dot c-dot-1" />
-          <span className="c-dot c-dot-2" />
-          <span className="c-ring c-ring-1" />
-          <span className="c-ring c-ring-2" />
-        </div>
+
         <div className="container">
           <h1 data-aos="fade-up" data-aos-delay="100">CONTACT US</h1>
           <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
@@ -88,12 +75,10 @@ const ContactPage = () => {
             </div>
           </div>
 
-          {/* Map Decorations */}
-          <div className="decor-element decor-dots map-decor-dots-1" aria-hidden="true"></div>
-          <div className="decor-element decor-arc map-decor-arc-1" aria-hidden="true"></div>
+
           {/* Map */}
           <div className="map-container">
-            <iframe 
+            <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.316868602607!2d76.9638168!3d11.0148355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8594767deeaf7%3A0x578b90b22a69fb4c!2sGraphic%2C%20UI%20UX%2C%20AI%20Design%20Academy!5e0!3m2!1sen!2sin!4v1758620455629!5m2!1sen!2sin"
               width="800"
               height="650"

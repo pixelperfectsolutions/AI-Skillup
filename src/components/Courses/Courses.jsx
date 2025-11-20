@@ -51,7 +51,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  useEffect(() => {}, [isDesktop]);
+  useEffect(() => { }, [isDesktop]);
 
   useEffect(() => {
     if (!showPlacement) return; // do nothing when placement is hidden
@@ -112,7 +112,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
     const animate = () => {
       const now = Date.now();
       const progress = Math.min(1, (now - startTime) / duration);
-      
+
       setCounters({
         placementRate: Math.floor(progress * endValues.placementRate),
         companies: Math.floor(progress * endValues.companies),
@@ -203,8 +203,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
       {/* Page Hero for Courses listing */}
       {showHero && (
         <section className="courses-hero" data-aos="fade-up">
-          <div className="decor-element decor-dots courses-hero-decor-dots-1" aria-hidden="true"></div>
-          <div className="decor-element decor-arc courses-hero-decor-arc-1" aria-hidden="true"></div>
+
           <div className="container">
             <h1 data-aos="fade-up" data-aos-delay="100">Courses</h1>
             <p className="subtitle" data-aos="fade-up" data-aos-delay="200">
@@ -213,12 +212,12 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
           </div>
         </section>
       )}
-      <section className="courses section-decor" id="courses">
+      <section className="courses" id="courses">
         <div className={`courses-header ${layout === 'slider' ? 'center' : ''}`}>
           <h2 className="section-title">Explore our industry-ready IT courses in Coimbatore
           </h2>
           {layout !== 'slider' && (
-            <Link 
+            <Link
               to="/contact"
               className="enroll-now-btn"
             >
@@ -277,111 +276,111 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
       {showPlacement && (
         <section className="placement" id="placement">
           <div className="placement-container">
-          <h2 className="reveal">100% Placement Assistance</h2>
+            <h2 className="reveal">100% Placement Assistance</h2>
 
-          <div className="placement-images reveal">
-            <img src="/images/placement-1.png" alt="Placement Highlight 1" />
-            <img src="/images/placement-2.png" alt="Placement Highlight 2" />
-          </div>
+            <div className="placement-images reveal">
+              <img src="/images/placement-1.png" alt="Placement Highlight 1" />
+              <img src="/images/placement-2.png" alt="Placement Highlight 2" />
+            </div>
 
-          <div className="placement-stats" ref={statsRef}>
-            <div className="stat reveal">
-              <div className="stat-icon"><FaChartLine /></div>
-              <h3>{counters.placementRate}%</h3>
-              <p>Placement Rate</p>
+            <div className="placement-stats" ref={statsRef}>
+              <div className="stat reveal">
+                <div className="stat-icon"><FaChartLine /></div>
+                <h3>{counters.placementRate}%</h3>
+                <p>Placement Rate</p>
+              </div>
+              <div className="stat reveal">
+                <div className="stat-icon"><FaBuilding /></div>
+                <h3>{counters.companies}+</h3>
+                <p>Companies Visited</p>
+              </div>
+              <div className="stat reveal">
+                <div className="stat-icon"><FaUsers /></div>
+                <h3>{counters.students}+</h3>
+                <p>Students Placed</p>
+              </div>
+              <div className="stat reveal">
+                <div className="stat-icon"><FaHandshake /></div>
+                <h3>{counters.partners}+</h3>
+                <p>Hiring Partners</p>
+              </div>
+              <div className="stat reveal">
+                <div className="stat-icon"><FaComments /></div>
+                <h3>{counters.interviews}+</h3>
+                <p>Mock Interviews</p>
+              </div>
             </div>
-            <div className="stat reveal">
-              <div className="stat-icon"><FaBuilding /></div>
-              <h3>{counters.companies}+</h3>
-              <p>Companies Visited</p>
-            </div>
-            <div className="stat reveal">
-              <div className="stat-icon"><FaUsers /></div>
-              <h3>{counters.students}+</h3>
-              <p>Students Placed</p>
-            </div>
-            <div className="stat reveal">
-              <div className="stat-icon"><FaHandshake /></div>
-              <h3>{counters.partners}+</h3>
-              <p>Hiring Partners</p>
-            </div>
-            <div className="stat reveal">
-              <div className="stat-icon"><FaComments /></div>
-              <h3>{counters.interviews}+</h3>
-              <p>Mock Interviews</p>
-            </div>
-          </div>
 
-          <div className="placement-process-container reveal">
-            <div className="placement-layout">
-              <div className="placement-content">
-                <h3>100% Placement Assistance for Every Student</h3>
-                <p className="placement-intro">At AI Skillup, we provide comprehensive placement assistance for every student. Our strong connections with leading tech companies ensure you have access to exciting career opportunities in AI and technology.
-                  Our dedicated placement team supports you with resume building, interview preparation, and placement drives, ensuring you are fully prepared for the competitive job market.</p>
+            <div className="placement-process-container reveal">
+              <div className="placement-layout">
+                <div className="placement-content">
+                  <h3>100% Placement Assistance for Every Student</h3>
+                  <p className="placement-intro">At AI Skillup, we provide comprehensive placement assistance for every student. Our strong connections with leading tech companies ensure you have access to exciting career opportunities in AI and technology.
+                    Our dedicated placement team supports you with resume building, interview preparation, and placement drives, ensuring you are fully prepared for the competitive job market.</p>
                   <Link to="/contact" className="btn btn-primary btn-arrow">
                     Start Your Journey
                   </Link>
                 </div>
-              
-              <div className="placement-topics">
-                <div className="topic-box">
-                  <div className="topic-icon"><FaUserTie /></div>
-                  <h4>Career Guidance</h4>
-                  <p>Personalized career path planning and industry insights</p>
-                </div>
-                <div className="topic-box">
-                  <div className="topic-icon"><FaFileAlt /></div>
-                  <h4>Resume Building</h4>
-                  <p>ATS-optimized resume creation and review</p>
-                </div>
-                <div className="topic-box">
-                  <div className="topic-icon"><FaComments /></div>
-                  <h4>Mock Interviews</h4>
-                  <p>Practice with industry experts and HR professionals</p>
-                </div>
-                <div className="topic-box">
-                  <div className="topic-icon"><FaBuilding /></div>
-                  <h4>Company Connect</h4>
-                  <p>Direct interaction with hiring managers</p>
-                </div>
-                <div className="topic-box">
-                  <div className="topic-icon"><FaNetworkWired /></div>
-                  <h4>Networking Events</h4>
-                  <p>Exclusive access to industry meetups and networking sessions</p>
-                </div>
-                <div className="topic-box">
-                  <div className="topic-icon"><FaChartLine /></div>
-                  <h4>Career Growth</h4>
-                  <p>Continuous learning and upskilling opportunities</p>
+
+                <div className="placement-topics">
+                  <div className="topic-box">
+                    <div className="topic-icon"><FaUserTie /></div>
+                    <h4>Career Guidance</h4>
+                    <p>Personalized career path planning and industry insights</p>
+                  </div>
+                  <div className="topic-box">
+                    <div className="topic-icon"><FaFileAlt /></div>
+                    <h4>Resume Building</h4>
+                    <p>ATS-optimized resume creation and review</p>
+                  </div>
+                  <div className="topic-box">
+                    <div className="topic-icon"><FaComments /></div>
+                    <h4>Mock Interviews</h4>
+                    <p>Practice with industry experts and HR professionals</p>
+                  </div>
+                  <div className="topic-box">
+                    <div className="topic-icon"><FaBuilding /></div>
+                    <h4>Company Connect</h4>
+                    <p>Direct interaction with hiring managers</p>
+                  </div>
+                  <div className="topic-box">
+                    <div className="topic-icon"><FaNetworkWired /></div>
+                    <h4>Networking Events</h4>
+                    <p>Exclusive access to industry meetups and networking sessions</p>
+                  </div>
+                  <div className="topic-box">
+                    <div className="topic-icon"><FaChartLine /></div>
+                    <h4>Career Growth</h4>
+                    <p>Continuous learning and upskilling opportunities</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          {/* Illustration moved below the process list and enlarged via CSS */}
-          <div className="placement-illustration reveal">
-            <img src="/images/placement-3.png" alt="Our Placement Process Illustration" />
-          </div>
+            {/* Illustration moved below the process list and enlarged via CSS */}
+            <div className="placement-illustration reveal">
+              <img src="/images/placement-3.png" alt="Our Placement Process Illustration" />
+            </div>
 
-          <div className="placement-benefits reveal">
-            <h3>What You Get</h3>
-            <ul className="benefits-list">
-              <li><FaUsers className="li-icon" /> 1:1 Career Mentorship</li>
-              <li><FaLinkedin className="li-icon" /> Personalized Resume & LinkedIn Review</li>
-              <li><FaInfinity className="li-icon" /> Unlimited Interview Practice</li>
-              <li><FaBriefcase className="li-icon" /> Company-Specific Preparation</li>
-              <li><FaTasks className="li-icon" /> Real JD-based Assignments</li>
-              <li><FaNetworkWired className="li-icon" /> Alumni Networking & Referrals</li>
-              <li><FaUserTie className="li-icon" /> Placement Guidance & Career Roadmap</li>
-              <li><FaTasks className="li-icon" /> Portfolio & Project Review</li>
-              <li><FaComments className="li-icon" /> Soft Skills & Communication Training</li>
-              <li><FaHandshake className="li-icon" /> Post-Placement Support</li>
-            </ul>
-            <div className="placement-cta" style={{ justifyContent: 'center' }}>
-              <Link to="/contact" className="btn btn-primary btn-arrow">Apply Now</Link>
+            <div className="placement-benefits reveal">
+              <h3>What You Get</h3>
+              <ul className="benefits-list">
+                <li><FaUsers className="li-icon" /> 1:1 Career Mentorship</li>
+                <li><FaLinkedin className="li-icon" /> Personalized Resume & LinkedIn Review</li>
+                <li><FaInfinity className="li-icon" /> Unlimited Interview Practice</li>
+                <li><FaBriefcase className="li-icon" /> Company-Specific Preparation</li>
+                <li><FaTasks className="li-icon" /> Real JD-based Assignments</li>
+                <li><FaNetworkWired className="li-icon" /> Alumni Networking & Referrals</li>
+                <li><FaUserTie className="li-icon" /> Placement Guidance & Career Roadmap</li>
+                <li><FaTasks className="li-icon" /> Portfolio & Project Review</li>
+                <li><FaComments className="li-icon" /> Soft Skills & Communication Training</li>
+                <li><FaHandshake className="li-icon" /> Post-Placement Support</li>
+              </ul>
+              <div className="placement-cta" style={{ justifyContent: 'center' }}>
+                <Link to="/contact" className="btn btn-primary btn-arrow">Apply Now</Link>
+              </div>
             </div>
           </div>
-          </div>
-      </section>
+        </section>
       )}
     </>
   );
