@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp/FloatingWhatsApp';
 import Popup from './components/Popup';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import CoursePage from './pages/CoursePage';
@@ -56,6 +57,7 @@ function App() {
       </Routes>
       {/* Global footer on all pages */}
       <Footer />
+      <ScrollToTopButton />
       {/* Hide floating WhatsApp on About page to remove the extra right-side widget */}
       {location.pathname !== '/about' && <FloatingWhatsApp />}
       {/* Popup form disabled on About page to avoid scroll interference */}
