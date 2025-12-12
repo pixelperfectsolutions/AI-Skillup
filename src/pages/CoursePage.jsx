@@ -40,11 +40,11 @@ const CoursePage = () => {
         </div>
 
         {/* Course image placed below title and above duration */}
-        <div style={{ maxWidth: 980, margin: '24px auto 8px', padding: '0 20px' }}>
+        <div className="course-page-image-wrap">
           <img
             src={course.image}
             alt={course.title}
-            style={{ display: 'block', width: '100%', maxWidth: 860, margin: '0 auto', borderRadius: 12 }}
+            className="course-page-image"
           />
         </div>
 

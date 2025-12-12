@@ -224,17 +224,18 @@ const AboutPage = () => {
         }}
       >
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : '1.2fr 1fr',
-          gap: '40px',
-          alignItems: 'center',
-          padding: '0 20px 80px'
-        }}>
-          {/* Left Column - Content */}
+        <div className="hero-container">
           <div style={{
-            padding: 0
+            display: 'grid',
+            gridTemplateColumns: isMobile ? '1fr' : '1.2fr 1fr',
+            gap: '40px',
+            alignItems: 'center',
+            padding: '0 0 80px'
           }}>
+            {/* Left Column - Content */}
+            <div style={{
+              padding: 0
+            }}>
             <h1 style={{
               fontSize: '2.8rem',
               fontWeight: '700',
@@ -262,25 +263,26 @@ const AboutPage = () => {
             >
               Learn More
             </Link>
-          </div>
+            </div>
 
-          {/* Right Column - Image */}
-          <div style={{
-            borderRadius: '12px',
-            overflow: 'hidden',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-            marginTop: isMobile ? '10px' : '20px'
-          }}>
-            <img
-              src="/images/AboutPage.jpg"
-              alt="AI SkillUp Team"
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-                borderRadius: '12px'
-              }}
-            />
+            {/* Right Column - Image */}
+            <div style={{
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+              marginTop: isMobile ? '10px' : '20px'
+            }}>
+              <img
+                src="/images/AboutPage.jpg"
+                alt="AI SkillUp Team"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  borderRadius: '12px'
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>

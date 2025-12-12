@@ -405,6 +405,39 @@
 .courses-slider { max-width: 1200px; margin: 0 auto; padding: 0 10px 10px; }
 .courses-slider .slick-slide { padding: 10px; }
 
+@media (min-width: 769px) {
+  .home-minimal .courses .courses-slider {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .home-minimal .courses .courses-slider .slick-list {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .home-minimal .courses .course-slide-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-minimal .courses .course-card.v2 {
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .home-minimal .courses .course-card.v2 .course-thumb img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .home-minimal .courses .course-card.v2 .course-title {
+    margin: 14px 18px 0;
+    font-size: 1rem;
+  }
+}
+
 .course-card.v2 {
   position: relative;
   background: transparent;

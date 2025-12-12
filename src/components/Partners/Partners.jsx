@@ -9,7 +9,7 @@ const logos = [
   '/images/partner logo-4.png',
   '/images/partner logo-5.png',
   '/images/partner logo-6.png',
-  '/images/partner logo-7.png'
+  '/images/partner logo-7.png',
 ];
 
 const Partners = () => {
@@ -56,12 +56,6 @@ const Partners = () => {
 
   return (
     <section className="partners">
-      <div className="partners-header">
-        <h2 className="partners-title"> Practical AI Tools for Smarter Learning, Careers, and Innovation</h2>
-        <p className="partners-description">
-          At AISkillUp, we equip you with hands-on experience in today’s most powerful AI tools and platforms. From AI-powered productivity apps to advanced machine learning frameworks, our programs are designed to help you master practical tools that are transforming industries. By learning with real-world AI applications, you’ll gain the skills needed to stay ahead in the tech landscape and apply them directly in your career or business.
-        </p>
-      </div>
       <div className="partners-slider">
         <Slider {...settings}>
           {logos.map((logo, index) => (

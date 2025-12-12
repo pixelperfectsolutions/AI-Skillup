@@ -1,5 +1,6 @@
 .about {
   padding: 5rem 2rem;
+  background: none;
   position: relative; /* Ensure decorations are positioned relative to this container */
 }
 

@@ -1,6 +1,6 @@
 .partners {
   padding: 4rem 2rem;
-  background-color: #f8f9fa;
+  background-color: none;
   text-align: left; /* left-align section to match reference */
   position: relative; /* Required for positioning decorations */
 }
@@ -14,7 +14,7 @@
 }
 
 .partners-header {
-  max-width: 1300px;
+  max-width: 1500px;
   margin: 0 auto 3rem;
   position: relative; /* Ensure content is above decorations */
   z-index: 1; /* Ensure content is above decorations */
@@ -91,7 +91,7 @@
 }
 
 .partners-slider {
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 20px 0;
   overflow: visible;

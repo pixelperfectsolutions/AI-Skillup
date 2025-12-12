@@ -130,6 +130,15 @@
   transform: translateX(-50%);
 }
 
+ .why-choose-intro {
+  max-width: 980px;
+  margin: 1.25rem auto 2rem;
+  text-align: center;
+  color: #5b6777;
+  line-height: 1.7;
+  font-size: 1.05rem;
+ }
+
 /* Hide old swoosh underline in favor of unified ::after underline */
 .why-choose-swoosh { display: none; }
 
@@ -333,6 +342,10 @@
 @media (max-width: 640px) {
   .why-choose-title {
     font-size: 2.05rem;
+  }
+  .why-choose-intro {
+    font-size: 1rem;
+    margin: 1.1rem auto 1.6rem;
   }
   .why-choose-cards {
     grid-template-columns: 1fr;

@@ -18,6 +18,9 @@ const Features = () => {
     <section className="features why-choose">
       <div className="features-container">
         <h2 className="why-choose-title">Why Choose AI SKILL UP?</h2>
+        <p className="why-choose-intro">
+          At AI SkillUp, you learn with the tools professionals use every day. From AI-powered productivity apps to modern machine learning frameworks, our programs focus on hands-on practice and real-world use cases—so you can build job-ready skills, stay ahead of industry change, and apply what you learn to your career or business.
+        </p>
         <span className="why-choose-swoosh" aria-hidden="true"></span>
         <div className="why-choose-layout">
           <div className="why-choose-cards">

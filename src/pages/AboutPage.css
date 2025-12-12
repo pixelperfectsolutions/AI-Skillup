@@ -45,7 +45,7 @@
 .hero-container {
   padding: 0 20px;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 1350px;
 }
 
 .about-hero-section .hero-content {
@@ -271,7 +271,18 @@
 }
 
 .about-band .band-item { 
-  background: transparent; 
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 22px 22px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-band .band-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
 }
 
 .about-band .band-item h3 { 

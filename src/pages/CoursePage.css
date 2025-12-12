@@ -80,6 +80,22 @@
   transform: translateX(-50%);
 }
 
+.course-page-image-wrap {
+  max-width: 550px;
+  margin: 20px auto 8px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.course-page-image {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
 /* Ensure CTA button text stays on one line on CoursePage */
 .course-page-section .btn {
   white-space: nowrap;
@@ -120,5 +136,9 @@
   .course-modal-body .course-modal-details {
     padding: 16px;
     border-radius: 10px;
+  }
+
+  .course-page-image-wrap {
+    margin-top: 16px;
   }
 }
