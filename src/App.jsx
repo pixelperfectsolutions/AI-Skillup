@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import CompanyPartners from './components/CompanyPartners/CompanyPartners';
 import Partners from './components/Partners/Partners';
 import About from './components/About/About';
 import Courses from './components/Courses/Courses';
@@ -41,6 +42,7 @@ function App() {
         <Route path="/" element={
           <>
             <Hero />
+            <CompanyPartners />
             <div id="about">
               <About />
             </div>
