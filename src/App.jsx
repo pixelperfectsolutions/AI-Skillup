@@ -7,6 +7,7 @@ import Partners from './components/Partners/Partners';
 import About from './components/About/About';
 import Courses from './components/Courses/Courses';
 import Features from './components/Features/Features';
+import GeoSlider from './components/GeoSlider/GeoSlider';
 import ApplyForm from './components/ApplyForm/ApplyForm';
 import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
@@ -52,6 +53,7 @@ function App() {
               <Courses layout="slider" showHero={false} showPlacement={false} />
             </div>
             <Features />
+            <GeoSlider />
             <ApplyForm />
             <Testimonials layout="slider" columns={3} showControls={false} />
           </>

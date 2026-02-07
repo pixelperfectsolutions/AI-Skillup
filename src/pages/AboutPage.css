@@ -30,11 +30,9 @@
   max-width: 100%;
   padding: 0; /* remove any top padding */
   margin: 0 auto 0; /* avoid negative margin that can interfere with sticky headers */
-  background-color: #fff;
+  background-color: #e8f2ff;
   overflow: visible;
   position: relative; /* added to contain absolute decorative elements */
-  /* Use a soft primary-tinted backdrop instead of yellow */
-  background: radial-gradient(1200px 600px at 70% 20%, color-mix(in srgb, var(--primary-color) 10%, #ffffff) 0%, #ffffff 60%);
 }
 
 /* Keep mobile safe from overlap */
@@ -58,7 +56,7 @@
 
 .hero-text {
   padding: 0 20px 20px; /* remove top padding */
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .hero-text h1 {
@@ -221,7 +219,7 @@
 .about-band {
   position: relative;
   overflow: visible;
-  background: linear-gradient(180deg, #fff 0%, #fbfbfb 60%, #ffffff 100%);
+  background: #e8f2ff;
   padding: 50px 0 40px;
 }
 
@@ -362,7 +360,7 @@
 .stats-band {
   position: relative;
   overflow: visible;
-  background: linear-gradient(180deg, #ffffff 0%, #fafafa 60%, #ffffff 100%);
+  background: #e8f2ff;
   padding: 40px 0 30px;
 }
 
@@ -377,7 +375,7 @@
 
 .stat-card {
   width: 260px;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #eef2f7;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 18px 26px rgba(0,0,0,0.06);
@@ -395,7 +393,7 @@
 @media (max-width: 640px) { .stats-cards { grid-template-columns: 1fr; justify-items: center; } .stat-card { width: 100%; max-width: 360px; } }
 
 /* Why Choose Section */
-.why-choose { position: relative; overflow: visible; background: #fff; padding: 70px 0; }
+.why-choose { position: relative; overflow: visible; background: #e8f2ff; padding: 70px 0; }
 .wc-decor { position: absolute; inset: 0; pointer-events: none; }
 .wc-dots-left, .wc-dots-right { position: absolute; width: 200px; height: 150px; background-image: radial-gradient(#22c55e 2px, transparent 2px); background-size: 18px 18px; opacity: .28; transition: transform .2s ease; }
 .wc-dots-left { left: 4%; top: 18%; transform: translate(calc(var(--mx,0px) * .3), calc(var(--my,0px) * .3)); }
@@ -411,7 +409,7 @@
 .wc-underline { width: 90px; height: 6px; margin: 10px auto 0; border-radius: 3px; background: var(--secondary-color); }
 
 .wc-grid { display: grid; grid-template-columns: repeat(3, minmax(260px, 1fr)); gap: 26px; justify-content: center; }
-.wc-card { background: #fff; border: 1px solid #eef2f7; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 18px 26px rgba(0,0,0,0.06); overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; }
+.wc-card { background: #ffffff; border: 1px solid #eef2f7; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 18px 26px rgba(0,0,0,0.06); overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; }
 .wc-card:hover { transform: translateY(-4px); box-shadow: 0 6px 12px rgba(0,0,0,0.06), 0 24px 36px rgba(0,0,0,0.08); }
 .wc-card-img img { width: 100%; height: 180px; object-fit: cover; display: block; }
 .wc-card-body { padding: 18px; text-align: center; }
@@ -686,7 +684,7 @@
 /* =============================
    About Testimonials Decorations
    ============================= */
-.about-testimonials { position: relative; overflow: visible; }
+.about-testimonials { position: relative; overflow: visible; background: #e8f2ff; }
 .about-testimonials-decor { position: absolute; inset: 0; pointer-events: none; }
 .at-dots-left {
   position: absolute; 

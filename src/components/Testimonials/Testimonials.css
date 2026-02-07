@@ -1,6 +1,6 @@
 .testimonials-section {
   width: 100%;
-  background-color: #f8fafc;
+  background-color: #e8f2ff;
   text-align: center;
   padding: 6rem 0;
   position: relative;
@@ -66,14 +66,14 @@
 .testimonials-section h2::after {
   content: '';
   position: absolute;
-  width: 80px;
-  height: 4px;
-  background: var(--secondary-color);
+  width: 0;
+  height: 0;
+  background: transparent;
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 2px;
-  box-shadow: 0 2px 8px var(--secondary-shadow);
+  box-shadow: none;
 }
 
 /* Google rating summary header (brand left, button right; summary on next line) */

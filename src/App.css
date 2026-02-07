@@ -114,45 +114,12 @@ img {
 /* === Site-wide soft geometric background (matches hero) === */
 .site-bg {
   position: relative;
-  background:
-    /* Large soft corner glows - exact same as hero section */
-    radial-gradient(1100px 520px at -8% 96%, rgba(19, 135, 227, 0.08) 0%, rgba(19, 135, 227, 0) 60%),
-    radial-gradient(900px 480px at 108% -10%, rgba(19, 135, 227, 0.08) 0%, rgba(19, 135, 227, 0) 60%),
-    /* Base soft blue gradient - exact same as hero section */
-    linear-gradient(135deg, #f7fbff 0%, #f2f9ff 45%, #eef7ff 100%);
+  background-color: #e8f2ff;
 }
 
 .site-bg::before,
 .site-bg::after {
-  content: '';
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
-  backdrop-filter: blur(2px);
-}
-
-/* Bottom-left rounded stack */
-.site-bg::before {
-  left: -140px;
-  bottom: -160px;
-  width: 540px;
-  height: 540px;
-  border-radius: 40%;
-  background: radial-gradient(120% 120% at 20% 80%, rgba(19, 135, 227, 0.12) 0%, rgba(19, 135, 227, 0.05) 45%, rgba(19, 135, 227, 0) 70%);
-  box-shadow: 0 30px 60px rgba(0, 84, 155, 0.08);
-}
-
-/* Top-right diagonal card */
-.site-bg::after {
-  right: -160px;
-  top: -120px;
-  width: 520px;
-  height: 380px;
-  transform: rotate(45deg);
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(235, 248, 255, 0.75) 100%);
-  border: 1px solid rgba(19, 135, 227, 0.15);
-  box-shadow: 0 30px 60px rgba(0, 84, 155, 0.08);
+  content: none;
 }
 
 @media (max-width: 1024px) {

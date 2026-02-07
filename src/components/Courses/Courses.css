@@ -14,7 +14,7 @@
 .courses-section-wrapper {
   position: relative; /* Container for decorations */
   padding: 4rem 0; /* This controls the spacing around the section */
-  background-color: #ffffff; /* Match the original background */
+  background-color: #e8f2ff;
   width: 100%;
   overflow-x: clip; /* Use clip to prevent scrollbars but allow bleeding */
 }
@@ -88,15 +88,15 @@
 .courses h2.section-title:after {
   content: '';
   position: absolute;
-  width: 80px;
-  height: 3px;
-  background: var(--secondary-color);
+  width: 0;
+  height: 0;
+  background: transparent;
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Hard center the Courses header title and underline (override any leftovers) */
+/* Hard center the Courses header title (override any leftovers) */
 .courses .courses-header .section-title {
   display: block !important;
   width: 100% !important;

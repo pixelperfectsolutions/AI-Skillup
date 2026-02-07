@@ -1,6 +1,6 @@
 .partners {
   padding: 4rem 2rem;
-  background-color: none;
+  background-color: #e8f2ff;
   text-align: left; /* left-align section to match reference */
   position: relative; /* Required for positioning decorations */
 }

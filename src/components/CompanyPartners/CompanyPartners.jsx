@@ -15,6 +15,12 @@ const CompanyPartners = () => {
       logo: '/images/ai logo.webp',
       alt: '1dot.ai Logo',
       url: 'https://1dot.ai/'
+    },
+    {
+      name: 'CADD BIM',
+      logo: '/images/cadd bim.png',
+      alt: 'CADD BIM Logo',
+      url: 'https://caddbimtechnologies.com/'
     }
   ];
 

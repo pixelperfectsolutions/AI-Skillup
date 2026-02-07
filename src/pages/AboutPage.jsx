@@ -130,7 +130,7 @@ const AboutPage = () => {
       padding: isMobile ? '40px 0' : '80px 0',
       display: 'flex',
       justifyContent: 'center',
-      backgroundColor: '#fff'
+      backgroundColor: '#e8f2ff'
     },
     content: {
       width: '1450px',
@@ -404,7 +404,7 @@ const AboutPage = () => {
           </div>
           <div className="wc-grid">
             <div className="wc-card" data-aos="zoom-in" data-aos-delay="220">
-              <div className="wc-card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=1600&h=900&fit=crop&auto=format&dpr=1" alt="Industry Experienced Trainers" /></div>
+              <div className="wc-card-img"><img loading="lazy" src="/images/geo tag/g1.jpeg" alt="Industry Experienced Trainers" /></div>
               <div className="wc-card-body">
                 <div className="wc-badge">🎓</div>
                 <h3>Industry Experienced Trainers</h3>
@@ -412,7 +412,7 @@ const AboutPage = () => {
               </div>
             </div>
             <div className="wc-card" data-aos="zoom-in" data-aos-delay="260">
-              <div className="wc-card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&h=900&fit=crop&auto=format&dpr=1" alt="100% Practical Training" /></div>
+              <div className="wc-card-img"><img loading="lazy" src="/images/geo tag/g2.jpeg" alt="100% Practical Training" /></div>
               <div className="wc-card-body">
                 <div className="wc-badge">🧪</div>
                 <h3>100% Practical Training</h3>
@@ -420,7 +420,7 @@ const AboutPage = () => {
               </div>
             </div>
             <div className="wc-card" data-aos="zoom-in" data-aos-delay="300">
-              <div className="wc-card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1600&h=900&fit=crop&auto=format&dpr=1" alt="Dedicated Placement Support" /></div>
+              <div className="wc-card-img"><img loading="lazy" src="/images/geo tag/g3.jpeg" alt="Dedicated Placement Support" /></div>
               <div className="wc-card-body">
                 <div className="wc-badge">💼</div>
                 <h3>Dedicated Placement Cell Support</h3>
@@ -436,7 +436,7 @@ const AboutPage = () => {
         className="team-section"
         data-aos="zoom-in"
         data-aos-delay="200"
-        style={{ padding: '80px 0', backgroundColor: '#f8f9fa' }}
+        style={{ padding: '80px 0', backgroundColor: '#e8f2ff' }}
         ref={teamRef}
         onMouseMove={handleParallaxMove(teamRef)}
       >
@@ -510,7 +510,7 @@ const AboutPage = () => {
               }}>
                 <img
                   src="/images/Faculty-1.png"
-                  alt="John Doe"
+                  alt="Vasanth Kumar"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -519,9 +519,8 @@ const AboutPage = () => {
                   }}
                 />
               </div>
-              <h3 style={{ color: '#333', marginBottom: '5px' }}>John Doe</h3>
-              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>Founder & CEO</p>
-              <p style={{ color: '#666', fontSize: '0.9rem' }}>10+ years in AI research and development</p>
+              <h3 style={{ color: '#333', marginBottom: '5px', }}>PRIYANGA M</h3>
+              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>TRAINER</p>
             </div>
 
             {/* Team Member 2 */}
@@ -560,9 +559,8 @@ const AboutPage = () => {
                   }}
                 />
               </div>
-              <h3 style={{ color: '#333', marginBottom: '5px' }}>Jane Smith</h3>
-              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>Head of Education</p>
-              <p style={{ color: '#666', fontSize: '0.9rem' }}>Former AI lead at Tech Corp</p>
+              <h3 style={{ color: '#333', marginBottom: '5px' }}>SESHU VARDAAN P</h3>
+              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>TRAINER</p>
             </div>
 
             {/* Team Member 3 */}
@@ -601,9 +599,8 @@ const AboutPage = () => {
                   }}
                 />
               </div>
-              <h3 style={{ color: '#333', marginBottom: '5px' }}>Alex Johnson</h3>
-              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>Lead Instructor</p>
-              <p style={{ color: '#666', fontSize: '0.9rem' }}>Specialist in Machine Learning</p>
+              <h3 style={{ color: '#333', marginBottom: '5px' }}>ALDERIN C</h3>
+              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>TRAINER</p>
             </div>
 
             {/* Team Member 4 */}
@@ -642,9 +639,9 @@ const AboutPage = () => {
                   }}
                 />
               </div>
-              <h3 style={{ color: '#333', marginBottom: '5px' }}>Sarah Williams</h3>
-              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>Student Success</p>
-              <p style={{ color: '#666', fontSize: '0.9rem' }}>Dedicated to your learning journey</p>
+              <h3 style={{ color: '#333', marginBottom: '5px' }}>SNEKA T
+</h3>
+              <p style={{ color: 'var(--primary-color)', fontWeight: '600', marginBottom: '10px' }}>ADMIN</p>
             </div>
           </div>
         </div>
@@ -659,7 +656,7 @@ const AboutPage = () => {
         ref={valuesRef}
         style={{
           padding: '80px 0',
-          backgroundColor: '#fff',
+          backgroundColor: '#e8f2ff',
           position: 'relative',
           overflow: 'hidden'
         }}
