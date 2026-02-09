@@ -6,6 +6,10 @@
   /* Prevent any accidental horizontal scroll due to inner decorations */
 }
 
+.courses.courses-standalone {
+  padding-top: 140px;
+}
+
 .courses-overflow-container {
   overflow-x: hidden;
   width: 100%;

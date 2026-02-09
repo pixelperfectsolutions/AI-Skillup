@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero';
 import CompanyPartners from './components/CompanyPartners/CompanyPartners';
 import Partners from './components/Partners/Partners';
 import About from './components/About/About';
+import HomeVisualShowcase from './components/HomeVisualShowcase/HomeVisualShowcase';
 import Courses from './components/Courses/Courses';
 import Features from './components/Features/Features';
 import GeoSlider from './components/GeoSlider/GeoSlider';
@@ -23,8 +24,17 @@ import './App.css';
 function ScrollToTop() {
   const location = useLocation();
   React.useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [location.pathname]);
+    if (location.hash) {
+      const target = document.querySelector(location.hash);
+      if (target) {
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [location.pathname, location.hash]);
   return null;
 }
 
@@ -38,7 +48,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/courses" element={<Courses showHero={false} />} />
+        <Route path="/courses" element={<Courses showHero={false} standalone />} />
         <Route path="/courses/:slug" element={<CoursePage />} />
         <Route path="/" element={
           <>
@@ -47,6 +57,7 @@ function App() {
             <div id="about">
               <About />
             </div>
+            <HomeVisualShowcase />
             <Partners />
             <div id="courses" className="courses-section-wrapper">
               {/* Decorations are now positioned via CSS relative to this wrapper */}

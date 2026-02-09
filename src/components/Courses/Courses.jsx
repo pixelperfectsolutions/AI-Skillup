@@ -28,7 +28,7 @@ function PrevArrow(props) {
   );
 }
 
-const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => {
+const Courses = ({ showPlacement = true, layout = 'grid', showHero = true, standalone = false }) => {
   const [counters, setCounters] = useState({
     placementRate: 0,
     companies: 0,
@@ -212,7 +212,7 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true }) => 
           </div>
         </section>
       )}
-      <section className="courses" id="courses">
+      <section className={`courses ${standalone ? 'courses-standalone' : ''}`} id="courses">
         <div className={`courses-header ${layout === 'slider' ? 'center' : ''}`}>
           <h2 className="section-title">Explore our industry-ready IT courses in Coimbatore
           </h2>
