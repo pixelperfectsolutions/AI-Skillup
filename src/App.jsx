@@ -6,6 +6,7 @@ import CompanyPartners from './components/CompanyPartners/CompanyPartners';
 import Partners from './components/Partners/Partners';
 import About from './components/About/About';
 import HomeVisualShowcase from './components/HomeVisualShowcase/HomeVisualShowcase';
+import WorkshopShowcase from './components/WorkshopShowcase/WorkshopShowcase';
 import Courses from './components/Courses/Courses';
 import Features from './components/Features/Features';
 import GeoSlider from './components/GeoSlider/GeoSlider';
@@ -57,7 +58,10 @@ function App() {
             <div id="about">
               <About />
             </div>
-            <HomeVisualShowcase />
+            <div className="home-content-wrapper">
+              <HomeVisualShowcase />
+              <WorkshopShowcase />
+            </div>
             <Partners />
             <div id="courses" className="courses-section-wrapper">
               {/* Decorations are now positioned via CSS relative to this wrapper */}
