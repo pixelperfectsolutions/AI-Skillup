@@ -278,9 +278,18 @@ const Courses = ({ showPlacement = true, layout = 'grid', showHero = true, stand
           <div className="placement-container">
             <h2 className="reveal">100% Placement Assistance</h2>
 
-            <div className="placement-images reveal">
-              <img src="/images/placement-1.png" alt="Placement Highlight 1" />
-              <img src="/images/placement-2.png" alt="Placement Highlight 2" />
+            <div className="placement-images-grid reveal">
+              <div className="placement-img-wide">
+                <img src="/images/placement-1.png" alt="Placement Drive - AI Skillup" />
+              </div>
+              <div className="placement-img-row">
+                <div className="placement-img-half">
+                  <img src="/images/placement-2.png" alt="Students Placed - AI Skillup" />
+                </div>
+                <div className="placement-img-half">
+                  <img src="/images/placement-3.png" alt="Industry Partners - AI Skillup" />
+                </div>
+              </div>
             </div>
 
             <div className="placement-stats" ref={statsRef}>

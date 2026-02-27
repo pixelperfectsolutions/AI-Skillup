@@ -1,0 +1,5 @@
+{
+  "/page": "app/page.js",
+  "/courses/full-stack-development-using-ai/page": "app/courses/full-stack-development-using-ai/page.js",
+  "/contact/page": "app/contact/page.js"
+}
