@@ -1,4 +1,9 @@
 {
+  "/icon.png/route": "app/icon.png/route.js",
   "/api/data/route": "app/api/data/route.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/courses/ui-and-ux-design-course-using-ai/page": "app/courses/ui-and-ux-design-course-using-ai/page.js",
+  "/courses/full-stack-development-using-ai/page": "app/courses/full-stack-development-using-ai/page.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js"
 }
