@@ -115,7 +115,7 @@ const Footer = () => {
 
         <div className='pt-8 border-t border-black/10 flex flex-col lg:flex-row items-center justify-between gap-4'>
           <p className='text-black/40 text-sm font-medium'>
-            © 2025 AI SKILL UP Academy. All rights reserved.
+            © {new Date().getFullYear()} AI SKILL UP Academy. All rights reserved.
             <span className="mx-2 hidden lg:inline">|</span>
             <span className="block lg:inline mt-2 lg:mt-0">
               Designed by <Link href='https://pixelperfectsolutions.in' target='_blank' className='hover:text-primary underline decoration-primary/30'>Pixel Perfect Software Solutions</Link>

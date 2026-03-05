@@ -96,36 +96,23 @@ const Placement = () => {
             {/* ===== Main Placement Section ===== */}
             <section
                 ref={sectionRef}
-                className="py-20 relative overflow-hidden"
-                style={{ background: 'linear-gradient(135deg, #0d1b3e 0%, #1a2f6e 50%, #0d1b3e 100%)' }}
+                className="py-20 bg-white"
             >
-                {/* Decorative blobs */}
-                <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 pointer-events-none"
-                    style={{ background: 'radial-gradient(circle, #4f80ff, transparent)', transform: 'translate(30%, -30%)' }} />
-                <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-10 pointer-events-none"
-                    style={{ background: 'radial-gradient(circle, #7c3aed, transparent)', transform: 'translate(-30%, 30%)' }} />
-
-                <div className="container relative z-10">
+                <div className="container">
                     {/* Header */}
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="inline-block px-5 py-2 rounded-full text-sm font-semibold mb-5"
-                            style={{ background: 'rgba(255,255,255,0.1)', color: '#a8c8ff', border: '1px solid rgba(168,200,255,0.3)' }}>
+                        <span className="inline-block px-5 py-2 rounded-full text-sm font-semibold mb-5 bg-primary/10 text-primary border border-primary/20">
                             🎓 Placement Assistance
                         </span>
-                        <h2 className="text-4xl font-extrabold mb-5 leading-tight"
-                            style={{ background: 'linear-gradient(135deg, #fff, #a8c8ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                        <h2 className="text-4xl font-extrabold mb-5 leading-tight text-gray-900">
                             100% Placement Assistance for Every Student
                         </h2>
-                        <p className="text-lg leading-relaxed mb-8" style={{ color: '#b8c9e8' }}>
+                        <p className="text-lg leading-relaxed mb-8 text-gray-600">
                             At AI Skillup, we provide comprehensive placement assistance for every student. Our strong connections with leading tech companies ensure you have access to exciting career opportunities in AI and technology. Our dedicated placement team supports you with resume building, interview preparation, and placement drives, ensuring you are fully prepared for the competitive job market.
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-block px-8 py-4 rounded-full font-bold text-white text-base transition-all duration-300 hover:-translate-y-1"
-                            style={{
-                                background: 'linear-gradient(135deg, #4f80ff, #7c3aed)',
-                                boxShadow: '0 6px 24px rgba(79,128,255,0.4)'
-                            }}
+                            className="inline-block px-8 py-4 rounded-full font-bold text-white text-base transition-all duration-300 hover:-translate-y-1 bg-primary hover:bg-primary/90 shadow-lg"
                         >
                             Start Your Journey →
                         </Link>
@@ -136,23 +123,13 @@ const Placement = () => {
                         {stats.map((stat, i) => (
                             <div
                                 key={i}
-                                className="text-center rounded-2xl px-8 py-7 transition-all duration-300 hover:-translate-y-2"
-                                style={{
-                                    background: 'rgba(255,255,255,0.07)',
-                                    border: '1px solid rgba(168,200,255,0.2)',
-                                    backdropFilter: 'blur(10px)',
-                                    minWidth: 160,
-                                    flex: '1 1 150px',
-                                    maxWidth: 200
-                                }}
+                                className="text-center rounded-2xl px-8 py-7 transition-all duration-300 hover:-translate-y-2 bg-slate-gray border border-gray-100 shadow-sm"
+                                style={{ minWidth: 160, flex: '1 1 150px', maxWidth: 200 }}
                             >
-                                <div
-                                    className="block text-4xl font-black mb-2"
-                                    style={{ background: 'linear-gradient(135deg, #4f80ff, #a78bfa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-                                >
+                                <div className="block text-4xl font-black mb-2 text-primary">
                                     {counters[i]}{stat.suffix}
                                 </div>
-                                <div className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#8fa8d4' }}>
+                                <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
                                     {stat.label}
                                 </div>
                             </div>
@@ -170,30 +147,25 @@ const Placement = () => {
                         <div className="absolute inset-0"
                             style={{ background: 'linear-gradient(to top, rgba(13,27,62,0.55) 0%, transparent 60%)' }} />
                         <div className="absolute bottom-5 left-6">
-                            <span className="text-white font-bold text-sm px-4 py-2 rounded-full"
-                                style={{ background: 'rgba(79,128,255,0.85)', backdropFilter: 'blur(6px)' }}>
+                            <span className="text-white font-bold text-sm px-4 py-2 rounded-full bg-primary/80 backdrop-blur-sm">
                                 🏢 Industry Partners
                             </span>
                         </div>
                     </div>
 
-                    {/* Features — full width below image */}
+                    {/* Features */}
                     <div>
-                        <h3 className="text-2xl font-extrabold text-white mb-6">What We Offer</h3>
+                        <h3 className="text-2xl font-extrabold text-gray-900 mb-6">What We Offer</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             {features.map((f, i) => (
                                 <div
                                     key={i}
-                                    className="flex items-start gap-4 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 cursor-default"
-                                    style={{
-                                        background: 'rgba(255,255,255,0.06)',
-                                        border: '1px solid rgba(168,200,255,0.15)'
-                                    }}
+                                    className="flex items-start gap-4 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 cursor-default bg-slate-gray border border-gray-100"
                                 >
                                     <span className="text-3xl flex-shrink-0 mt-0.5">{f.icon}</span>
                                     <div>
-                                        <h4 className="font-bold text-base mb-1" style={{ color: '#e2eaff' }}>{f.title}</h4>
-                                        <p className="text-xs leading-relaxed" style={{ color: '#8fa8d4' }}>{f.desc}</p>
+                                        <h4 className="font-bold text-base mb-1 text-gray-900">{f.title}</h4>
+                                        <p className="text-xs leading-relaxed text-gray-500">{f.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -203,28 +175,17 @@ const Placement = () => {
             </section>
 
             {/* ===== What You Get Section ===== */}
-            <section
-                className="py-20 relative overflow-hidden"
-                style={{ background: 'linear-gradient(135deg, #07101f 0%, #0d1b3e 50%, #07101f 100%)' }}
-            >
-                {/* Decorative blobs */}
-                <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-10 pointer-events-none"
-                    style={{ background: 'radial-gradient(circle, #7c3aed, transparent)', transform: 'translate(-30%, -30%)' }} />
-                <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full opacity-10 pointer-events-none"
-                    style={{ background: 'radial-gradient(circle, #4f80ff, transparent)', transform: 'translate(30%, 30%)' }} />
-
-                <div className="container relative z-10">
+            <section className="py-20 bg-slate-gray">
+                <div className="container">
                     {/* Section Header */}
                     <div className="text-center max-w-2xl mx-auto mb-14">
-                        <span className="inline-block px-5 py-2 rounded-full text-sm font-semibold mb-5"
-                            style={{ background: 'rgba(255,255,255,0.1)', color: '#a8c8ff', border: '1px solid rgba(168,200,255,0.3)' }}>
+                        <span className="inline-block px-5 py-2 rounded-full text-sm font-semibold mb-5 bg-primary/10 text-primary border border-primary/20">
                             🎁 Exclusive Benefits
                         </span>
-                        <h2 className="text-4xl font-extrabold mb-4 leading-tight"
-                            style={{ background: 'linear-gradient(135deg, #fff, #a8c8ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                        <h2 className="text-4xl font-extrabold mb-4 leading-tight text-gray-900">
                             What You Get
                         </h2>
-                        <p className="text-base leading-relaxed" style={{ color: '#b8c9e8' }}>
+                        <p className="text-base leading-relaxed text-gray-600">
                             Everything you need to land your dream job — from mentorship to post-placement support.
                         </p>
                     </div>
@@ -236,17 +197,11 @@ const Placement = () => {
                             {whatYouGet.map((item, i) => (
                                 <div
                                     key={i}
-                                    className="flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
-                                    style={{
-                                        background: 'rgba(255,255,255,0.05)',
-                                        border: '1px solid rgba(168,200,255,0.15)',
-                                        backdropFilter: 'blur(8px)',
-                                    }}
+                                    className="flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 cursor-default bg-white border border-gray-100 shadow-sm"
                                 >
                                     <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                                    <span className="font-semibold text-sm" style={{ color: '#e2eaff' }}>{item.text}</span>
-                                    <span className="ml-auto flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs"
-                                        style={{ background: 'linear-gradient(135deg, #4f80ff, #7c3aed)', color: '#fff' }}>✓</span>
+                                    <span className="font-semibold text-sm text-gray-800">{item.text}</span>
+                                    <span className="ml-auto flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs bg-primary text-white">✓</span>
                                 </div>
                             ))}
 
@@ -254,11 +209,7 @@ const Placement = () => {
                             <div className="mt-4">
                                 <Link
                                     href="/contact"
-                                    className="inline-block px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-300 hover:-translate-y-1"
-                                    style={{
-                                        background: 'linear-gradient(135deg, #4f80ff, #7c3aed)',
-                                        boxShadow: '0 6px 28px rgba(79,128,255,0.45)',
-                                    }}
+                                    className="inline-block px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-300 hover:-translate-y-1 bg-primary hover:bg-primary/90 shadow-lg"
                                 >
                                     Apply Now →
                                 </Link>
@@ -276,7 +227,7 @@ const Placement = () => {
                                 />
                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
                                     style={{ background: 'linear-gradient(to top, rgba(13,27,62,0.75), transparent)' }}>
-                                    <span className="text-white font-bold text-sm px-4 py-1.5 rounded-full" style={{ background: 'rgba(79,128,255,0.8)' }}>
+                                    <span className="text-white font-bold text-sm px-4 py-1.5 rounded-full bg-primary/80">
                                         Students Placed
                                     </span>
                                 </div>
@@ -290,7 +241,7 @@ const Placement = () => {
                                 />
                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
                                     style={{ background: 'linear-gradient(to top, rgba(13,27,62,0.75), transparent)' }}>
-                                    <span className="text-white font-bold text-sm px-4 py-1.5 rounded-full" style={{ background: 'rgba(79,128,255,0.8)' }}>
+                                    <span className="text-white font-bold text-sm px-4 py-1.5 rounded-full bg-primary/80">
                                         Placement Drive
                                     </span>
                                 </div>

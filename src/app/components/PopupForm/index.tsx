@@ -40,7 +40,7 @@ const PopupForm = () => {
 
                 <div className="flex flex-col md:flex-row h-full">
                     {/* Image/Decoration Section */}
-                    <div className="hidden md:flex md:w-1/3 bg-primary bg-gradient-to-br from-primary to-purple-600 p-8 flex-col justify-end text-white">
+                    <div className="hidden md:flex md:w-1/3 bg-primary bg-gradient-to-br from-primary to-blue-600 p-8 flex-col justify-end text-white">
                         <div className="mb-4 bg-white/20 p-3 rounded-2xl w-fit">
                             <Icon icon="solar:rocket-bold-duotone" width={40} />
                         </div>

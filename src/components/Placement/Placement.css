@@ -3,7 +3,7 @@
    =========================== */
 
 .placement-section {
-  background: linear-gradient(135deg, #0d1b3e 0%, #1a2f6e 50%, #0d1b3e 100%);
+  background: #4f80ff;
   padding: 80px 20px;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow: hidden;
@@ -36,7 +36,7 @@
   color: #ffffff;
   line-height: 1.25;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #ffffff, #a8c8ff);
+  background: #4f80ff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -51,7 +51,7 @@
 
 .placement-cta-btn {
   display: inline-block;
-  background: linear-gradient(135deg, #4f80ff, #7c3aed);
+  background: #4f80ff;
   color: #ffffff;
   text-decoration: none;
   padding: 14px 34px;

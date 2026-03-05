@@ -30,12 +30,11 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs }) => {
                 priority
             />
 
-            {/* Deep gradient overlay — dark navy + purple tint */}
+            {/* Deep dark navy overlay */}
             <div
                 className="absolute inset-0"
                 style={{
-                    background:
-                        'linear-gradient(135deg, rgba(7,16,31,0.92) 0%, rgba(13,27,62,0.88) 50%, rgba(28,15,60,0.92) 100%)',
+                    background: 'linear-gradient(135deg, rgba(7,16,31,0.92) 0%, rgba(13,27,62,0.88) 50%, rgba(10,24,54,0.92) 100%)',
                 }}
             />
 
@@ -50,7 +49,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs }) => {
             <div
                 className="absolute bottom-0 right-0 w-96 h-96 rounded-full pointer-events-none"
                 style={{
-                    background: 'radial-gradient(circle, rgba(124,58,237,0.15), transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(59,130,246,0.15), transparent 70%)',
                     transform: 'translate(30%, 30%)',
                 }}
             />
@@ -65,7 +64,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs }) => {
                     >
                         <Link
                             href="/"
-                            className="flex items-center gap-1.5 transition-colors duration-200"
+                            className="flex items-center gap-1.5 transition-colors duration-200 hover:text-white"
                             style={{ color: '#a8c8ff' }}
                         >
                             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -121,7 +120,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs }) => {
                 <div className="mt-5 flex items-center gap-3">
                     <div
                         className="h-1 w-16 rounded-full"
-                        style={{ background: 'linear-gradient(90deg, #4f80ff, #7c3aed)' }}
+                        style={{ background: 'linear-gradient(90deg, #4f80ff, #2563eb)' }}
                     />
                     <div
                         className="h-1 w-6 rounded-full"

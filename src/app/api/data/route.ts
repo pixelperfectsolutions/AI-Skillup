@@ -11,11 +11,11 @@ const HeaderData: HeaderType[] = [
     label: 'Courses',
     href: '/courses',
     submenu: [
-      { label: 'Full-Stack Development', href: '/courses/full-stack-development-using-ai' },
-      { label: 'UI & UX Design', href: '/courses/ui-and-ux-design-course-using-ai' },
-      { label: 'Mobile App Development', href: '/courses/ai-based-mobile-app-development' },
-      { label: 'No-Code Development', href: '/courses/no-code-development-course' },
-      { label: 'Digital Marketing', href: '/courses/digital-marketing-course-using-ai' },
+      { label: 'Full-Stack Development Course', href: '/courses/full-stack-development-using-ai' },
+      { label: 'UI & UX Design Course', href: '/courses/ui-and-ux-design-course-using-ai' },
+      { label: 'Mobile App Development Course', href: '/courses/ai-based-mobile-app-development' },
+      { label: 'No-Code Development Course', href: '/courses/no-code-development-course' },
+      { label: 'Digital Marketing Course', href: '/courses/digital-marketing-course-using-ai' },
     ]
   },
   { label: 'About', href: '/about' },

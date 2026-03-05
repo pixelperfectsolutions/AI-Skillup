@@ -31,8 +31,8 @@ export default function UiUxCourse() {
                                     <p className='text-sm text-gray-500 font-medium'>Duration</p>
                                     <p className='text-lg font-bold text-gray-900'>2 Months | 1 month course</p>
                                 </div>
-                                <div className='bg-purple-500/5 p-6 rounded-2xl border border-purple-500/10'>
-                                    <div className='text-purple-500 mb-2'><Icon icon="solar:chart-square-bold" width={32} /></div>
+                                <div className='bg-blue-500/5 p-6 rounded-2xl border border-blue-500/10'>
+                                    <div className='text-blue-500 mb-2'><Icon icon="solar:chart-square-bold" width={32} /></div>
                                     <p className='text-sm text-gray-500 font-medium'>Level</p>
                                     <p className='text-lg font-bold text-gray-900'>Beginner to Advanced</p>
                                 </div>
@@ -78,14 +78,52 @@ export default function UiUxCourse() {
                                 </div>
                             </div>
 
+                            <div className='bg-slate-gray p-8 rounded-3xl border border-gray-100 shadow-sm'>
+                                <h3 className='text-2xl font-bold text-gray-900 mb-4'>Why AI for UI/UX Designers?</h3>
+                                <p className='text-gray-600 leading-relaxed mb-6'>
+                                    Transition from a designer to a design architect with our <strong>best UI UX design course in Coimbatore</strong>. By mastering <strong>AI design tools like Midjourney, Uizard, and Figma AI</strong>, you'll reduce repetitive tasks and focus on creative problem-solving. This course is designed to make you a futuristic designer who can build <strong>AI-driven user experiences</strong>.
+                                </p>
+                                <ul className='space-y-3'>
+                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
+                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
+                                        Master <strong>Figma AI & Advanced Prototyping</strong>
+                                    </li>
+                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
+                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
+                                        Deep dive into <strong>AI-assisted User Research</strong>
+                                    </li>
+                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
+                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
+                                        Portfolio of <strong>3+ Live AI-Design Projects</strong>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h2 className='text-4xl font-black text-gray-900 mb-6'>Syllabus Overview</h2>
+                                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                                    {[
+                                        { title: "Foundations & Research", desc: "User personas, empathy mapping, and AI-driven user data analysis." },
+                                        { title: "Wireframing & Prototyping", desc: "Transitioning from sketches to high-fidelity mocks using AI tools." },
+                                        { title: "Visual Design Systems", desc: "Creating scalable components, typography, and color palettes." },
+                                        { title: "Interaction Design", desc: "Crafting micro-interactions and animations that feel natural." }
+                                    ].map((module, idx) => (
+                                        <div key={idx} className='p-6 bg-white rounded-2xl border border-gray-100 shadow-sm'>
+                                            <h4 className='font-bold text-primary mb-2'>{module.title}</h4>
+                                            <p className='text-sm text-gray-600'>{module.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
                             <div className='flex flex-wrap gap-4 pt-6'>
                                 <Link href='/contact' className='bg-primary text-white hover:bg-primary/90 py-4 px-10 rounded-full text-lg font-bold transition-all shadow-xl hover:-translate-y-1 active:scale-95 inline-flex items-center gap-3'>
-                                    Apply Course
+                                    Enroll in UI/UX AI Course
                                     <Icon icon='solar:arrow-right-up-bold' width={22} height={22} />
                                 </Link>
                                 <Link href='/courses' className='bg-gray-100 text-gray-700 hover:bg-gray-200 py-4 px-10 rounded-full text-lg font-bold transition-all inline-flex items-center gap-3'>
                                     <Icon icon='solar:arrow-left-linear' width={22} height={22} />
-                                    Back to Courses
+                                    Browse All Courses
                                 </Link>
                             </div>
                         </div>
