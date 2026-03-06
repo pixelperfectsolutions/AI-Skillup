@@ -1,83 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/icon.png": {
-      "initialHeaders": {
-        "cache-control": "public, immutable, no-transform, max-age=31536000",
-        "content-type": "image/png",
-        "x-next-cache-tags": "_N_T_/layout,_N_T_/icon.png/layout,_N_T_/icon.png/route,_N_T_/icon.png"
-      },
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/icon.png",
-      "dataRoute": null,
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/terms": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/terms",
-      "dataRoute": "/terms.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/signup": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/signup",
-      "dataRoute": "/signup.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/signin": {
       "experimentalBypassFor": [
         {
@@ -102,7 +25,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/courses/no-code-development-course": {
+    "/courses/ui-and-ux-design-course-using-ai": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -115,8 +38,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/courses/no-code-development-course",
-      "dataRoute": "/courses/no-code-development-course.rsc",
+      "srcRoute": "/courses/ui-and-ux-design-course-using-ai",
+      "dataRoute": "/courses/ui-and-ux-design-course-using-ai.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -126,7 +49,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/about": {
+    "/documentation": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -139,8 +62,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
+      "srcRoute": "/documentation",
+      "dataRoute": "/documentation.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -150,7 +73,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/": {
+    "/courses/full-stack-development-using-ai": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -163,8 +86,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
+      "srcRoute": "/courses/full-stack-development-using-ai",
+      "dataRoute": "/courses/full-stack-development-using-ai.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -174,7 +97,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/contact": {
+    "/courses/digital-marketing-course-using-ai": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -187,8 +110,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/contact",
-      "dataRoute": "/contact.rsc",
+      "srcRoute": "/courses/digital-marketing-course-using-ai",
+      "dataRoute": "/courses/digital-marketing-course-using-ai.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -247,7 +170,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/courses/ai-based-mobile-app-development": {
+    "/contact": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -260,8 +183,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/courses/ai-based-mobile-app-development",
-      "dataRoute": "/courses/ai-based-mobile-app-development.rsc",
+      "srcRoute": "/contact",
+      "dataRoute": "/contact.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -271,7 +194,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/courses/ui-and-ux-design-course-using-ai": {
+    "/courses/no-code-development-course": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -284,8 +207,56 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/courses/ui-and-ux-design-course-using-ai",
-      "dataRoute": "/courses/ui-and-ux-design-course-using-ai.rsc",
+      "srcRoute": "/courses/no-code-development-course",
+      "dataRoute": "/courses/no-code-development-course.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/terms": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/terms",
+      "dataRoute": "/terms.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/about": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -319,7 +290,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/courses/digital-marketing-course-using-ai": {
+    "/courses/ai-based-mobile-app-development": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -332,8 +303,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/courses/digital-marketing-course-using-ai",
-      "dataRoute": "/courses/digital-marketing-course-using-ai.rsc",
+      "srcRoute": "/courses/ai-based-mobile-app-development",
+      "dataRoute": "/courses/ai-based-mobile-app-development.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -343,7 +314,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/documentation": {
+    "/": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -356,8 +327,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/documentation",
-      "dataRoute": "/documentation.rsc",
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -367,7 +338,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/courses/full-stack-development-using-ai": {
+    "/signup": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -380,8 +351,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/courses/full-stack-development-using-ai",
-      "dataRoute": "/courses/full-stack-development-using-ai.rsc",
+      "srcRoute": "/signup",
+      "dataRoute": "/signup.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   description: 'AI SKILL UP is the premier software training institute in Coimbatore, offering courses in AI, Full Stack Development, UI/UX Design, and more.',
   icons: {
-    icon: '/icon.png',
+    icon: '/vite.png',
   }
 }
 
