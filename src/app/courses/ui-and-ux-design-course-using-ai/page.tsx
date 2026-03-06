@@ -17,7 +17,7 @@ export default function UiUxCourse() {
             <section className='py-20'>
                 <div className='container mx-auto px-4'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
-                        <div className='sticky top-24'>
+                        <div className='lg:sticky lg:top-24'>
                             <Image
                                 src='/images/course-2.png'
                                 alt='UI and UX Design Course Using AI'
@@ -25,7 +25,7 @@ export default function UiUxCourse() {
                                 height={600}
                                 className='rounded-3xl w-full shadow-2xl border-4 border-white'
                             />
-                            <div className='mt-8 grid grid-cols-2 gap-4'>
+                            <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                                 <div className='bg-primary/5 p-6 rounded-2xl border border-primary/10'>
                                     <div className='text-primary mb-2'><Icon icon="solar:clock-circle-bold" width={32} /></div>
                                     <p className='text-sm text-gray-500 font-medium'>Duration</p>
@@ -78,24 +78,26 @@ export default function UiUxCourse() {
                                 </div>
                             </div>
 
-                            <div className='bg-slate-gray p-8 rounded-3xl border border-gray-100 shadow-sm'>
+                            <div className='bg-slate-gray p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm'>
                                 <h3 className='text-2xl font-bold text-gray-900 mb-4'>Why AI for UI/UX Designers?</h3>
                                 <p className='text-gray-600 leading-relaxed mb-6'>
                                     Transition from a designer to a design architect with our <strong>best UI UX design course in Coimbatore</strong>. By mastering <strong>AI design tools like Midjourney, Uizard, and Figma AI</strong>, you'll reduce repetitive tasks and focus on creative problem-solving. This course is designed to make you a futuristic designer who can build <strong>AI-driven user experiences</strong>.
                                 </p>
-                                <ul className='space-y-3'>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Master <strong>Figma AI & Advanced Prototyping</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Deep dive into <strong>AI-assisted User Research</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Portfolio of <strong>3+ Live AI-Design Projects</strong>
-                                    </li>
+                                <ul className='grid grid-cols-1 gap-4'>
+                                    {[
+                                        { primary: "Master", highlight: "Figma AI & Advanced Prototyping" },
+                                        { primary: "Deep dive into", highlight: "AI-assisted User Research" },
+                                        { primary: "Portfolio of", highlight: "3+ Live AI-Design Projects" }
+                                    ].map((item, idx) => (
+                                        <li key={idx} className='grid grid-cols-[auto_1fr] gap-4 items-start bg-white/50 p-3 rounded-xl border border-transparent hover:border-gray-100 transition-all'>
+                                            <div className='mt-1 bg-yellow-500/10 p-1 rounded-lg'>
+                                                <Icon icon="solar:star-bold" className='text-yellow-500' width={18} />
+                                            </div>
+                                            <p className='text-gray-700 font-medium leading-relaxed pt-0.5'>
+                                                {item.primary} <strong>{item.highlight}</strong>
+                                            </p>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 

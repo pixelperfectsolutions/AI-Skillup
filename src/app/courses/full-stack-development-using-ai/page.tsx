@@ -17,7 +17,7 @@ export default function FullStackCourse() {
             <section className='py-20'>
                 <div className='container mx-auto px-4'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
-                        <div className='sticky top-24'>
+                        <div className='lg:sticky lg:top-24'>
                             <Image
                                 src='/images/course-1.png'
                                 alt='Full-Stack Development Using AI'
@@ -25,7 +25,7 @@ export default function FullStackCourse() {
                                 height={600}
                                 className='rounded-3xl w-full shadow-2xl border-4 border-white'
                             />
-                            <div className='mt-8 grid grid-cols-2 gap-4'>
+                            <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                                 <div className='bg-primary/5 p-6 rounded-2xl border border-primary/10'>
                                     <div className='text-primary mb-2'><Icon icon="solar:clock-circle-bold" width={32} /></div>
                                     <p className='text-sm text-gray-500 font-medium'>Duration</p>
@@ -78,24 +78,26 @@ export default function FullStackCourse() {
                                 </div>
                             </div>
 
-                            <div className='bg-slate-gray p-8 rounded-3xl border border-gray-100 shadow-sm'>
+                            <div className='bg-slate-gray p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm'>
                                 <h3 className='text-2xl font-bold text-gray-900 mb-4'>Why AI-Powered Full-Stack Development?</h3>
                                 <p className='text-gray-600 leading-relaxed mb-6'>
                                     In today's fast-paced tech industry, traditional coding is no longer enough. The <strong>best full-stack development course in Coimbatore</strong> now integrates AI tools to 10x developer productivity. Our curriculum focuses on <strong>Next.js AI integration</strong>, automated testing, and prompt engineering, ensuring you stay ahead in the 2025 job market.
                                 </p>
-                                <ul className='space-y-3'>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Industry-standard <strong>MERN Stack with AI</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Hands-on <strong>Cursor AI & GitHub Copilot</strong> training
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Focus on <strong>scalable cloud deployments</strong>
-                                    </li>
+                                <ul className='grid grid-cols-1 gap-4'>
+                                    {[
+                                        { primary: "Industry-standard", highlight: "MERN Stack with AI" },
+                                        { primary: "Hands-on", highlight: "Cursor AI & GitHub Copilot training" },
+                                        { primary: "Focus on", highlight: "scalable cloud deployments" }
+                                    ].map((item, idx) => (
+                                        <li key={idx} className='grid grid-cols-[auto_1fr] gap-4 items-start bg-white/50 p-3 rounded-xl border border-transparent hover:border-gray-100 transition-all'>
+                                            <div className='mt-1 bg-yellow-500/10 p-1 rounded-lg'>
+                                                <Icon icon="solar:star-bold" className='text-yellow-500' width={18} />
+                                            </div>
+                                            <p className='text-gray-700 font-medium leading-relaxed pt-0.5'>
+                                                {item.primary} <strong>{item.highlight}</strong>
+                                            </p>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 

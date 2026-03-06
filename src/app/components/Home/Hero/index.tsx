@@ -15,8 +15,8 @@ const Hero = () => {
                   className='text-success text-sm font-bold'
                 />
               </div>
-              <p className='text-success text-sm font-semibold'>
-                Get 30% off on first enroll
+              <p className='text-success text-sm font-semibold uppercase tracking-wider'>
+                Top AI-Based Software Training Institute in Coimbatore
               </p>
             </div>
             <h1 className='text-[#0F172A] lg:text-start text-center font-bold'>

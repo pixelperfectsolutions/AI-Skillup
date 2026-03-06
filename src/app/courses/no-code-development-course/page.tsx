@@ -17,7 +17,7 @@ export default function NoCodeCourse() {
             <section className='py-20'>
                 <div className='container mx-auto px-4'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
-                        <div className='sticky top-24'>
+                        <div className='lg:sticky lg:top-24'>
                             <Image
                                 src='/images/course-4.png'
                                 alt='No-Code Development Course'
@@ -25,7 +25,7 @@ export default function NoCodeCourse() {
                                 height={600}
                                 className='rounded-3xl w-full shadow-2xl border-4 border-white'
                             />
-                            <div className='mt-8 grid grid-cols-2 gap-4'>
+                            <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                                 <div className='bg-primary/5 p-6 rounded-2xl border border-primary/10'>
                                     <div className='text-primary mb-2'><Icon icon="solar:clock-circle-bold" width={32} /></div>
                                     <p className='text-sm text-gray-500 font-medium'>Duration</p>
@@ -78,24 +78,26 @@ export default function NoCodeCourse() {
                                 </div>
                             </div>
 
-                            <div className='bg-slate-gray p-8 rounded-3xl border border-gray-100 shadow-sm'>
+                            <div className='bg-slate-gray p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm'>
                                 <h3 className='text-2xl font-bold text-gray-900 mb-4'>Empowering Creativity with No-Code</h3>
                                 <p className='text-gray-600 leading-relaxed mb-6'>
                                     You don't need to be a coder to build the next big thing. Our <strong>best no-code development course in Coimbatore</strong> empowers entrepreneurs and non-techies to launch full-fledged SaaS products. Learn to use <strong>Bubble, Webflow, and Zapier</strong> combined with <strong>AI tools</strong> to build complex logic and beautiful interfaces in record time.
                                 </p>
-                                <ul className='space-y-3'>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Master <strong>Visual Programming with Bubble</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Automate everything with <strong>Make & Zapier AI</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Launch your <strong>MVP in weeks, not months</strong>
-                                    </li>
+                                <ul className='grid grid-cols-1 gap-4'>
+                                    {[
+                                        { primary: "Master", highlight: "Visual Programming with Bubble" },
+                                        { primary: "Automate everything with", highlight: "Make & Zapier AI" },
+                                        { primary: "Launch your", highlight: "MVP in weeks, not months" }
+                                    ].map((item, idx) => (
+                                        <li key={idx} className='grid grid-cols-[auto_1fr] gap-4 items-start bg-white/50 p-3 rounded-xl border border-transparent hover:border-gray-100 transition-all'>
+                                            <div className='mt-1 bg-yellow-500/10 p-1 rounded-lg'>
+                                                <Icon icon="solar:star-bold" className='text-yellow-500' width={18} />
+                                            </div>
+                                            <p className='text-gray-700 font-medium leading-relaxed pt-0.5'>
+                                                {item.primary} <strong>{item.highlight}</strong>
+                                            </p>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 

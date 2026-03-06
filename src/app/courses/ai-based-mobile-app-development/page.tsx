@@ -17,7 +17,7 @@ export default function MobileAppCourse() {
             <section className='py-20'>
                 <div className='container mx-auto px-4'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
-                        <div className='sticky top-24'>
+                        <div className='lg:sticky lg:top-24'>
                             <Image
                                 src='/images/course-3.png'
                                 alt='AI-Based Mobile App Development'
@@ -25,7 +25,7 @@ export default function MobileAppCourse() {
                                 height={600}
                                 className='rounded-3xl w-full shadow-2xl border-4 border-white'
                             />
-                            <div className='mt-8 grid grid-cols-2 gap-4'>
+                            <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                                 <div className='bg-primary/5 p-6 rounded-2xl border border-primary/10'>
                                     <div className='text-primary mb-2'><Icon icon="solar:clock-circle-bold" width={32} /></div>
                                     <p className='text-sm text-gray-500 font-medium'>Duration</p>
@@ -78,24 +78,26 @@ export default function MobileAppCourse() {
                                 </div>
                             </div>
 
-                            <div className='bg-slate-gray p-8 rounded-3xl border border-gray-100 shadow-sm'>
+                            <div className='bg-slate-gray p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm'>
                                 <h3 className='text-2xl font-bold text-gray-900 mb-4'>The Future of Mobile Apps is AI</h3>
                                 <p className='text-gray-600 leading-relaxed mb-6'>
                                     Don't just build apps; build intelligent digital assistants. As the <strong>best mobile app development training in Coimbatore</strong>, we teach you how to integrate <strong>LLMs, computer vision, and voice AI</strong> directly into Android and iOS applications. Master the art of <strong>AI-driven mobile development</strong> to create apps that can see, hear, and think.
                                 </p>
-                                <ul className='space-y-3'>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Build <strong>Hybrid Apps with React Native & Flutter</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Integrate <strong>OpenAI APIs & Firebase ML Kit</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Focus on <strong>Smart UI/UX for Mobile AI</strong>
-                                    </li>
+                                <ul className='grid grid-cols-1 gap-4'>
+                                    {[
+                                        { primary: "Build", highlight: "Hybrid Apps with React Native & Flutter" },
+                                        { primary: "Integrate", highlight: "OpenAI APIs & Firebase ML Kit" },
+                                        { primary: "Focus on", highlight: "Smart UI/UX for Mobile AI" }
+                                    ].map((item, idx) => (
+                                        <li key={idx} className='grid grid-cols-[auto_1fr] gap-4 items-start bg-white/50 p-3 rounded-xl border border-transparent hover:border-gray-100 transition-all'>
+                                            <div className='mt-1 bg-yellow-500/10 p-1 rounded-lg'>
+                                                <Icon icon="solar:star-bold" className='text-yellow-500' width={18} />
+                                            </div>
+                                            <p className='text-gray-700 font-medium leading-relaxed pt-0.5'>
+                                                {item.primary} <strong>{item.highlight}</strong>
+                                            </p>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 

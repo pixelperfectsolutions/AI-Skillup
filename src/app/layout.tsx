@@ -13,7 +13,7 @@ const font = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: 'AI SKILL UP Academy | Leading Software Training Institute',
+    default: 'AI SKILL UP | Leading Software Training Institute in Coimbatore',
     template: '%s | AI SKILL UP Academy'
   },
   description: 'AI SKILL UP is the premier software training institute in Coimbatore, offering courses in AI, Full Stack Development, UI/UX Design, and more.',

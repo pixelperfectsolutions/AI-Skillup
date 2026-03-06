@@ -81,10 +81,10 @@ const TrainingGallery = () => {
                     </div>
 
                     {/* Tab Navigation */}
-                    <div className="flex justify-center gap-4 mb-10">
+                    <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
                         <button
                             onClick={() => setActiveTab('sessions')}
-                            className={`px-6 py-3 rounded-full font-bold transition-all duration-300 ${activeTab === 'sessions'
+                            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${activeTab === 'sessions'
                                 ? 'bg-primary text-white shadow-lg scale-105'
                                 : 'bg-white text-black/60 hover:bg-primary/5 border border-black/5'
                                 }`}
@@ -93,7 +93,7 @@ const TrainingGallery = () => {
                         </button>
                         <button
                             onClick={() => setActiveTab('projects')}
-                            className={`px-6 py-3 rounded-full font-bold transition-all duration-300 ${activeTab === 'projects'
+                            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 ${activeTab === 'projects'
                                 ? 'bg-primary text-white shadow-lg scale-105'
                                 : 'bg-white text-black/60 hover:bg-primary/5 border border-black/5'
                                 }`}

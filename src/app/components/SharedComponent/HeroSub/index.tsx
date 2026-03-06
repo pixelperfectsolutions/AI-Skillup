@@ -99,7 +99,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs }) => {
 
                 {/* Title */}
                 <h1
-                    className="text-5xl sm:text-6xl font-extrabold leading-tight mb-4"
+                    className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4"
                     style={{
                         background: 'linear-gradient(135deg, #ffffff 30%, #a8c8ff 100%)',
                         WebkitBackgroundClip: 'text',

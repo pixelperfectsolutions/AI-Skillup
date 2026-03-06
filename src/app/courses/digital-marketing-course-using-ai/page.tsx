@@ -17,7 +17,7 @@ export default function DigitalMarketingCourse() {
             <section className='py-20'>
                 <div className='container mx-auto px-4'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
-                        <div className='sticky top-24'>
+                        <div className='lg:sticky lg:top-24'>
                             <Image
                                 src='/images/course-5.png'
                                 alt='Digital Marketing Course Using AI'
@@ -25,7 +25,7 @@ export default function DigitalMarketingCourse() {
                                 height={600}
                                 className='rounded-3xl w-full shadow-2xl border-4 border-white'
                             />
-                            <div className='mt-8 grid grid-cols-2 gap-4'>
+                            <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                                 <div className='bg-primary/5 p-6 rounded-2xl border border-primary/10'>
                                     <div className='text-primary mb-2'><Icon icon="solar:clock-circle-bold" width={32} /></div>
                                     <p className='text-sm text-gray-500 font-medium'>Duration</p>
@@ -78,24 +78,26 @@ export default function DigitalMarketingCourse() {
                                 </div>
                             </div>
 
-                            <div className='bg-slate-gray p-8 rounded-3xl border border-gray-100 shadow-sm'>
+                            <div className='bg-slate-gray p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm'>
                                 <h3 className='text-2xl font-bold text-gray-900 mb-4'>Master AI-Powered Marketing</h3>
                                 <p className='text-gray-600 leading-relaxed mb-6'>
                                     Stop guessing and start predicting. Our <strong>best digital marketing course in Coimbatore</strong> teaches you how to leverage <strong>big data and AI algorithms</strong> to dominate search engines and social media. From <strong>AI-driven SEO</strong> to automated content creation with Jasper and ChatGPT, you'll learn the techniques used by top 1% agencies.
                                 </p>
-                                <ul className='space-y-3'>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Advanced <strong>SEO & SEM with AI Analyics</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Social Media Automation & <strong>Viral Growth Hacking</strong>
-                                    </li>
-                                    <li className='flex items-center gap-3 text-gray-700 font-medium'>
-                                        <Icon icon="solar:star-bold" className='text-yellow-500' />
-                                        Master <strong>High-Conversion Ad Copywriting</strong>
-                                    </li>
+                                <ul className='grid grid-cols-1 gap-4'>
+                                    {[
+                                        { primary: "Advanced", highlight: "SEO & SEM with AI Analytics" },
+                                        { primary: "Social Media Automation &", highlight: "Viral Growth Hacking" },
+                                        { primary: "Master", highlight: "High-Conversion Ad Copywriting" }
+                                    ].map((item, idx) => (
+                                        <li key={idx} className='grid grid-cols-[auto_1fr] gap-4 items-start bg-white/50 p-3 rounded-xl border border-transparent hover:border-gray-100 transition-all'>
+                                            <div className='mt-1 bg-yellow-500/10 p-1 rounded-lg'>
+                                                <Icon icon="solar:star-bold" className='text-yellow-500' width={18} />
+                                            </div>
+                                            <p className='text-gray-700 font-medium leading-relaxed pt-0.5'>
+                                                {item.primary} <strong>{item.highlight}</strong>
+                                            </p>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 

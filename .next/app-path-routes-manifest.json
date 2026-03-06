@@ -1,18 +1,18 @@
 {
   "/_not-found/page": "/_not-found",
   "/api/data/route": "/api/data",
-  "/courses/digital-marketing-course-using-ai/page": "/courses/digital-marketing-course-using-ai",
   "/courses/ai-based-mobile-app-development/page": "/courses/ai-based-mobile-app-development",
+  "/courses/digital-marketing-course-using-ai/page": "/courses/digital-marketing-course-using-ai",
   "/courses/full-stack-development-using-ai/page": "/courses/full-stack-development-using-ai",
   "/courses/no-code-development-course/page": "/courses/no-code-development-course",
-  "/(site)/(auth)/signin/page": "/signin",
-  "/(site)/(auth)/signup/page": "/signup",
   "/courses/ui-and-ux-design-course-using-ai/page": "/courses/ui-and-ux-design-course-using-ai",
+  "/(site)/(auth)/signup/page": "/signup",
   "/(site)/documentation/page": "/documentation",
   "/contact/page": "/contact",
-  "/privacy/page": "/privacy",
-  "/courses/page": "/courses",
+  "/(site)/(auth)/signin/page": "/signin",
+  "/about/page": "/about",
   "/page": "/",
+  "/privacy/page": "/privacy",
   "/terms/page": "/terms",
-  "/about/page": "/about"
+  "/courses/page": "/courses"
 }

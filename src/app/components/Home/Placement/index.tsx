@@ -137,7 +137,7 @@ const Placement = () => {
                     </div>
 
                     {/* Full-Width Banner Image */}
-                    <div className="relative rounded-2xl overflow-hidden group w-full mb-12" style={{ height: 420 }}>
+                    <div className="relative rounded-2xl overflow-hidden group w-full mb-12 h-[240px] sm:h-[420px]">
                         <Image
                             src="/images/placement-3.png"
                             alt="Industry Partners - AI Skillup"
@@ -218,7 +218,7 @@ const Placement = () => {
 
                         {/* Images */}
                         <div className="flex flex-col gap-4">
-                            <div className="relative rounded-2xl overflow-hidden group" style={{ height: 280 }}>
+                            <div className="relative rounded-2xl overflow-hidden group h-[200px] sm:h-[280px]">
                                 <Image
                                     src="/images/placement-2.png"
                                     alt="Students Placed - AI Skillup"
@@ -232,7 +232,7 @@ const Placement = () => {
                                     </span>
                                 </div>
                             </div>
-                            <div className="relative rounded-2xl overflow-hidden group" style={{ height: 280 }}>
+                            <div className="relative rounded-2xl overflow-hidden group h-[200px] sm:h-[280px]">
                                 <Image
                                     src="/images/placement-1.png"
                                     alt="Placement Drive - AI Skillup"
