@@ -36,10 +36,10 @@ const ContactForm = () => {
     const message = encodeURIComponent(
       `Hello AI Skill Up! 👋\n\n` +
       `I am interested in enrolling.\n\n` +
-      `*Name:* ${formData.fullname}\n` +
-      `*Mobile:* ${formData.mobile}\n` +
-      `*Email:* ${formData.email}\n` +
-      `*Interested Course:* ${formData.course}`
+      `Name: ${formData.fullname}\n` +
+      `Mobile: ${formData.mobile}\n` +
+      `Email: ${formData.email}\n` +
+      `Interested Course: ${formData.course}`
     )
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank')
   }

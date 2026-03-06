@@ -7,6 +7,13 @@
       "static/chunks/main-app-c3025803f780c81d.js",
       "static/chunks/app/_not-found/page-89fd53ea64df7f29.js"
     ],
+    "/api/data/route": [
+      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-c3025803f780c81d.js",
+      "static/chunks/app/api/data/route-89fd53ea64df7f29.js"
+    ],
     "/not-found": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
@@ -23,41 +30,7 @@
       "static/css/542c8e0f2922a139.css",
       "static/chunks/481-75d24f823727be53.js",
       "static/chunks/262-937d2708a372fb11.js",
-      "static/chunks/app/layout-a15bea86c4ac7c9b.js"
-    ],
-    "/api/data/route": [
-      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-ebd51be49873d76c.js",
-      "static/chunks/main-app-c3025803f780c81d.js",
-      "static/chunks/app/api/data/route-89fd53ea64df7f29.js"
-    ],
-    "/courses/digital-marketing-course-using-ai/page": [
-      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-ebd51be49873d76c.js",
-      "static/chunks/main-app-c3025803f780c81d.js",
-      "static/chunks/481-75d24f823727be53.js",
-      "static/chunks/262-937d2708a372fb11.js",
-      "static/chunks/app/courses/digital-marketing-course-using-ai/page-fb74d2f6c38c1262.js"
-    ],
-    "/courses/ui-and-ux-design-course-using-ai/page": [
-      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-ebd51be49873d76c.js",
-      "static/chunks/main-app-c3025803f780c81d.js",
-      "static/chunks/481-75d24f823727be53.js",
-      "static/chunks/262-937d2708a372fb11.js",
-      "static/chunks/app/courses/ui-and-ux-design-course-using-ai/page-fb74d2f6c38c1262.js"
-    ],
-    "/courses/full-stack-development-using-ai/page": [
-      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-ebd51be49873d76c.js",
-      "static/chunks/main-app-c3025803f780c81d.js",
-      "static/chunks/481-75d24f823727be53.js",
-      "static/chunks/262-937d2708a372fb11.js",
-      "static/chunks/app/courses/full-stack-development-using-ai/page-fb74d2f6c38c1262.js"
+      "static/chunks/app/layout-b281b3d4971232d4.js"
     ],
     "/courses/ai-based-mobile-app-development/page": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
@@ -68,6 +41,24 @@
       "static/chunks/262-937d2708a372fb11.js",
       "static/chunks/app/courses/ai-based-mobile-app-development/page-fb74d2f6c38c1262.js"
     ],
+    "/courses/digital-marketing-course-using-ai/page": [
+      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-c3025803f780c81d.js",
+      "static/chunks/481-75d24f823727be53.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/courses/digital-marketing-course-using-ai/page-fb74d2f6c38c1262.js"
+    ],
+    "/courses/full-stack-development-using-ai/page": [
+      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-c3025803f780c81d.js",
+      "static/chunks/481-75d24f823727be53.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/courses/full-stack-development-using-ai/page-fb74d2f6c38c1262.js"
+    ],
     "/courses/no-code-development-course/page": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
@@ -77,22 +68,14 @@
       "static/chunks/262-937d2708a372fb11.js",
       "static/chunks/app/courses/no-code-development-course/page-fb74d2f6c38c1262.js"
     ],
-    "/contact/page": [
+    "/courses/ui-and-ux-design-course-using-ai/page": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-ebd51be49873d76c.js",
       "static/chunks/main-app-c3025803f780c81d.js",
       "static/chunks/481-75d24f823727be53.js",
       "static/chunks/262-937d2708a372fb11.js",
-      "static/chunks/app/contact/page-b0b2ba21f521e56f.js"
-    ],
-    "/(site)/(auth)/signup/page": [
-      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-ebd51be49873d76c.js",
-      "static/chunks/main-app-c3025803f780c81d.js",
-      "static/chunks/481-75d24f823727be53.js",
-      "static/chunks/app/(site)/(auth)/signup/page-a84f0b6f11d7b266.js"
+      "static/chunks/app/courses/ui-and-ux-design-course-using-ai/page-fb74d2f6c38c1262.js"
     ],
     "/(site)/(auth)/signin/page": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
@@ -102,22 +85,22 @@
       "static/chunks/481-75d24f823727be53.js",
       "static/chunks/app/(site)/(auth)/signin/page-53f2f6db960d9f9f.js"
     ],
-    "/(site)/documentation/page": [
+    "/(site)/(auth)/signup/page": [
+      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-c3025803f780c81d.js",
+      "static/chunks/481-75d24f823727be53.js",
+      "static/chunks/app/(site)/(auth)/signup/page-a84f0b6f11d7b266.js"
+    ],
+    "/contact/page": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-ebd51be49873d76c.js",
       "static/chunks/main-app-c3025803f780c81d.js",
       "static/chunks/481-75d24f823727be53.js",
       "static/chunks/262-937d2708a372fb11.js",
-      "static/chunks/app/(site)/documentation/page-52139347407d4ed5.js"
-    ],
-    "/about/page": [
-      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-ebd51be49873d76c.js",
-      "static/chunks/main-app-c3025803f780c81d.js",
-      "static/chunks/481-75d24f823727be53.js",
-      "static/chunks/app/about/page-0fe0ede7f3972102.js"
+      "static/chunks/app/contact/page-b0b2ba21f521e56f.js"
     ],
     "/courses/page": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
@@ -139,15 +122,15 @@
       "static/chunks/481-75d24f823727be53.js",
       "static/chunks/262-937d2708a372fb11.js",
       "static/chunks/575-57efb15467a3b035.js",
-      "static/chunks/app/page-7200a601f5ff0b55.js"
+      "static/chunks/app/page-64406b451025f6b0.js"
     ],
-    "/privacy/page": [
+    "/about/page": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-ebd51be49873d76c.js",
       "static/chunks/main-app-c3025803f780c81d.js",
       "static/chunks/481-75d24f823727be53.js",
-      "static/chunks/app/privacy/page-4ec99cace19fe2d2.js"
+      "static/chunks/app/about/page-0fe0ede7f3972102.js"
     ],
     "/terms/page": [
       "static/chunks/webpack-e7c6d65e71f2b9a9.js",
@@ -156,6 +139,23 @@
       "static/chunks/main-app-c3025803f780c81d.js",
       "static/chunks/481-75d24f823727be53.js",
       "static/chunks/app/terms/page-4ec99cace19fe2d2.js"
+    ],
+    "/(site)/documentation/page": [
+      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-c3025803f780c81d.js",
+      "static/chunks/481-75d24f823727be53.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/(site)/documentation/page-52139347407d4ed5.js"
+    ],
+    "/privacy/page": [
+      "static/chunks/webpack-e7c6d65e71f2b9a9.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-c3025803f780c81d.js",
+      "static/chunks/481-75d24f823727be53.js",
+      "static/chunks/app/privacy/page-4ec99cace19fe2d2.js"
     ]
   }
 }

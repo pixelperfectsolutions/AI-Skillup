@@ -7,6 +7,30 @@ import Link from 'next/link'
 const PopupForm = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isVisible, setIsVisible] = useState(false)
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        course: ''
+    })
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target
+        setFormData(prev => ({ ...prev, [name]: value }))
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+
+        // Validation
+        if (!formData.name || !formData.phone) {
+            alert('Please fill in your name and phone number')
+            return
+        }
+
+        const message = `Name: ${formData.name}\nPhone: ${formData.phone}\nCourse: ${formData.course || 'Select Interested Course'}`
+        const whatsappUrl = `https://wa.me/919655422511?text=${encodeURIComponent(message)}`
+        window.open(whatsappUrl, '_blank')
+    }
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -51,26 +75,39 @@ const PopupForm = () => {
                     <div className="flex-1 p-8 md:p-10">
                         <div className="mb-8">
                             <h2 className="text-3xl font-black text-gray-900 mb-2">Apply Now</h2>
-                            <p className="text-gray-500 font-medium">Get a call back from our industry experts and find the perfect course for you.</p>
+                            <p className="text-gray-500 font-medium font-bold">Get 30% off on first enroll</p>
                         </div>
 
-                        <form className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
                                 <input
                                     type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
                                     placeholder="Your Name"
+                                    required
                                     className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all outline-none font-medium text-gray-900"
                                 />
                             </div>
                             <div>
                                 <input
                                     type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
                                     placeholder="Phone Number"
+                                    required
                                     className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all outline-none font-medium text-gray-900"
                                 />
                             </div>
                             <div>
-                                <select className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all outline-none font-medium text-gray-500 focus:text-gray-900">
+                                <select
+                                    name="course"
+                                    value={formData.course}
+                                    onChange={handleInputChange}
+                                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all outline-none font-medium text-gray-500 focus:text-gray-900"
+                                >
                                     <option value="">Select Interested Course</option>
                                     <option>Full-Stack Development</option>
                                     <option>UI & UX Design</option>
@@ -80,7 +117,7 @@ const PopupForm = () => {
                                 </select>
                             </div>
 
-                            <button className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2 mt-6">
+                            <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2 mt-6">
                                 Submit Application
                                 <Icon icon="solar:arrow-right-up-bold" width={20} />
                             </button>
