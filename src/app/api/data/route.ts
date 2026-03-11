@@ -19,6 +19,7 @@ const HeaderData: HeaderType[] = [
     ]
   },
   { label: 'About', href: '/about' },
+  { label: 'Corporate Training', href: '/corporate-training' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -217,6 +218,7 @@ const FooterLinkData: FooterLinkType[] = [
       { label: 'Home', href: '/' },
       { label: 'Courses', href: '/courses' },
       { label: 'About', href: '/about' },
+      { label: 'Corporate Training', href: '/corporate-training' },
       { label: 'Contact', href: '/contact' },
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms & Conditions', href: '/terms' },

@@ -66,7 +66,7 @@ const WorkshopShowcase = () => {
           <Slider {...settings} className="workshop-slider">
             {workshopImages.map((img, i) => (
               <div key={i} className="px-3 outline-none">
-                <div className='relative overflow-hidden rounded-3xl shadow-lg border-4 border-white bg-white aspect-[4/3] group-hover:shadow-xl transition-all duration-500'>
+                <div className='relative overflow-hidden rounded-3xl shadow-lg bg-white aspect-[4/3] group-hover:shadow-xl transition-all duration-500'>
                   <Image
                     src={img}
                     alt={`Railway Department Workshop - ${i + 1}`}

@@ -21,7 +21,7 @@ const Newsletter = () => {
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
                   <Icon icon="solar:users-group-rounded-bold" className="text-primary text-xl" />
-                  <span className="text-sm font-bold text-midnight_text">500+ Students</span>
+                  <span className="text-sm font-bold text-midnight_text">9K+ Students</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
                   <Icon icon="solar:check-circle-bold" className="text-secondary text-xl" />
@@ -32,7 +32,7 @@ const Newsletter = () => {
 
             <div className='grid grid-cols-2 gap-4'>
               <div className='space-y-4 pt-12'>
-                <div className='rounded-2xl overflow-hidden shadow-xl border-4 border-white transform hover:-rotate-2 transition-all duration-500'>
+                <div className='rounded-2xl overflow-hidden shadow-xl transform hover:-rotate-2 transition-all duration-500'>
                   <Image
                     src="/images/Aiskillup-welcomepost.jpeg"
                     alt="AI Skill Up Welcome"
@@ -41,7 +41,7 @@ const Newsletter = () => {
                     className="w-full h-auto object-cover"
                   />
                 </div>
-                <div className='rounded-2xl overflow-hidden shadow-xl border-4 border-white transform hover:rotate-2 transition-all duration-500'>
+                <div className='rounded-2xl overflow-hidden shadow-xl transform hover:rotate-2 transition-all duration-500'>
                   <Image
                     src="/images/Aiskillup-welcomepost1.jpeg"
                     alt="AI Skill Up Workshop"
@@ -52,7 +52,7 @@ const Newsletter = () => {
                 </div>
               </div>
               <div className='flex items-center'>
-                <div className='rounded-2xl overflow-hidden shadow-xl border-4 border-white transform hover:rotate-2 transition-all duration-500'>
+                <div className='rounded-2xl overflow-hidden shadow-xl transform hover:rotate-2 transition-all duration-500'>
                   <Image
                     src="/images/Aiskillup-welcomepost2.jpeg"
                     alt="AI Skill Up Academy"

@@ -109,7 +109,7 @@ const Testimonial = () => {
                   {[...Array(5)].map((_, i) => <Icon key={i} icon="tabler:star-filled" />)}
                 </div>
               </div>
-              <p className="text-sm text-black/50 font-medium">Based on 52 Google Reviews</p>
+              <p className="text-sm text-black/50 font-medium">Based on 83 Google Reviews</p>
             </div>
             <a
               href="https://www.google.com/maps/place/Graphic,+UI+UX,+AI+Design+Academy/@11.0148355,76.9638168,17z/data=!4m18!1m9!3m8!1s0x3ba8594767deeaf7:0x578b90b22a69fb4c!2sGraphic,+UI+UX,+AI+Design+Academy!8m2!3d11.0148355!4d76.9638168!9m1!1b1!16s%2Fg%2F11xrc58944!3m7!1s0x3ba8594767deeaf7:0x578b90b22a69fb4c!8m2!3d11.0148355!4d76.9638168!9m1!1b1!16s%2Fg%2F11xrc58944?entry=ttu"

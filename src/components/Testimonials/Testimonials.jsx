@@ -24,7 +24,7 @@ const Testimonials = ({ layout = 'slider', columns = 3, showTitle = true, showCo
   const [itemsPerView, setItemsPerView] = useState(() => 1);
   // Static Google rating summary (no API)
   const googleRating = 5;
-  const googleReviewCount = 52;
+  const googleReviewCount = 83;
   const GOOGLE_FIRST_REVIEW_URL = 'https://maps.app.goo.gl/VqPxnK6FDWsgo7Ev8';
 
   // Instead of external reviews, open a new tab with a friendly message

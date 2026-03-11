@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-    { value: "1,278+", label: "Student Enrolled" },
-    { value: "10K", label: "Class Completed" },
-    { value: "100%", label: "Satisfaction Rate" },
-    { value: "354+", label: "Top Instructors" },
+    { value: "9K+", label: "Student Enrolled" },
+    { value: "1", label: "Overall Branches" },
+    { value: "5000+", label: "Placed Students" },
+    { value: "6+", label: "Years of Experience" },
 ];
 
 const team = [

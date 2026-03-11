@@ -93,7 +93,7 @@ const Placement = () => {
         <section className="placement-section" ref={sectionRef}>
             {/* Header */}
             <div className="placement-header">
-                <span className="placement-badge">🎓 Placement Assistance</span>
+                <span className="placement-badge">Placement Assistance</span>
                 <h2 className="placement-main-title">
                     100% Placement Assistance for Every Student
                 </h2>

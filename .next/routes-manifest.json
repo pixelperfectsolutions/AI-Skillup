@@ -45,6 +45,12 @@
       "namedRegex": "^/contact(?:/)?$"
     },
     {
+      "page": "/corporate-training",
+      "regex": "^/corporate\\-training(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/corporate\\-training(?:/)?$"
+    },
+    {
       "page": "/courses",
       "regex": "^/courses(?:/)?$",
       "routeKeys": {},

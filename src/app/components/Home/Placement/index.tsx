@@ -5,57 +5,51 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const stats = [
-    { value: 95, suffix: '%', label: 'Placement Rate' },
+    { value: 100, suffix: '%', label: 'Placement Support' },
     { value: 500, suffix: '+', label: 'Companies Visited' },
-    { value: 1000, suffix: '+', label: 'Students Placed' },
+    { value: 5000, suffix: '+', label: 'Students Placed' },
     { value: 200, suffix: '+', label: 'Hiring Partners' },
     { value: 50, suffix: '+', label: 'Mock Interviews' },
 ]
 
 const features = [
     {
-        icon: '🧭',
         title: 'Career Guidance',
         desc: 'Personalized career path planning and industry insights',
     },
     {
-        icon: '📄',
         title: 'Resume Building',
         desc: 'ATS-optimized resume creation and review',
     },
     {
-        icon: '🎤',
         title: 'Mock Interviews',
         desc: 'Practice with industry professionals and get real feedback',
     },
     {
-        icon: '🏢',
         title: 'Campus Drives',
         desc: 'Regular on-campus placement drives with top companies',
     },
     {
-        icon: '🤝',
         title: 'Industry Connect',
         desc: 'Direct connections with 200+ hiring partners across India',
     },
     {
-        icon: '📈',
         title: 'Salary Negotiation',
         desc: 'Expert guidance on package negotiation and career growth',
     },
 ]
 
 const whatYouGet = [
-    { icon: '🧑‍💼', text: '1:1 Career Mentorship' },
-    { icon: '📄', text: 'Personalized Resume & LinkedIn Review' },
-    { icon: '🎤', text: 'Unlimited Interview Practice' },
-    { icon: '🏢', text: 'Company-Specific Preparation' },
-    { icon: '📋', text: 'Real JD-based Assignments' },
-    { icon: '🤝', text: 'Alumni Networking & Referrals' },
-    { icon: '🗺️', text: 'Placement Guidance & Career Roadmap' },
-    { icon: '💼', text: 'Portfolio & Project Review' },
-    { icon: '🗣️', text: 'Soft Skills & Communication Training' },
-    { icon: '🚀', text: 'Post-Placement Support' },
+    { text: '1:1 Career Mentorship' },
+    { text: 'Personalized Resume & LinkedIn Review' },
+    { text: 'Unlimited Interview Practice' },
+    { text: 'Company-Specific Preparation' },
+    { text: 'Real JD-based Assignments' },
+    { text: 'Alumni Networking & Referrals' },
+    { text: 'Placement Guidance & Career Roadmap' },
+    { text: 'Portfolio & Project Review' },
+    { text: 'Soft Skills & Communication Training' },
+    { text: 'Post-Placement Support' },
 ]
 
 const Placement = () => {
@@ -102,7 +96,7 @@ const Placement = () => {
                     {/* Header */}
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <span className="inline-block px-5 py-2 rounded-full text-sm font-semibold mb-5 bg-primary/10 text-primary border border-primary/20">
-                            🎓 Placement Assistance
+                            Placement Assistance
                         </span>
                         <h2 className="text-4xl font-extrabold mb-5 leading-tight text-gray-900">
                             100% Placement Assistance for Every Student
@@ -160,13 +154,10 @@ const Placement = () => {
                             {features.map((f, i) => (
                                 <div
                                     key={i}
-                                    className="flex items-start gap-4 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 cursor-default bg-slate-gray border border-gray-100"
+                                    className="rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 cursor-default bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/20 group"
                                 >
-                                    <span className="text-3xl flex-shrink-0 mt-0.5">{f.icon}</span>
-                                    <div>
-                                        <h4 className="font-bold text-base mb-1 text-gray-900">{f.title}</h4>
-                                        <p className="text-xs leading-relaxed text-gray-500">{f.desc}</p>
-                                    </div>
+                                    <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-primary transition-colors">{f.title}</h4>
+                                    <p className="text-sm leading-relaxed text-gray-500">{f.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -180,7 +171,7 @@ const Placement = () => {
                     {/* Section Header */}
                     <div className="text-center max-w-2xl mx-auto mb-14">
                         <span className="inline-block px-5 py-2 rounded-full text-sm font-semibold mb-5 bg-primary/10 text-primary border border-primary/20">
-                            🎁 Exclusive Benefits
+                            Exclusive Benefits
                         </span>
                         <h2 className="text-4xl font-extrabold mb-4 leading-tight text-gray-900">
                             What You Get
@@ -197,11 +188,12 @@ const Placement = () => {
                             {whatYouGet.map((item, i) => (
                                 <div
                                     key={i}
-                                    className="flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 cursor-default bg-white border border-gray-100 shadow-sm"
+                                    className="flex items-center gap-4 rounded-xl px-6 py-4 transition-all duration-300 hover:-translate-y-0.5 cursor-default bg-white border border-gray-100 shadow-sm group hover:border-primary/30"
                                 >
-                                    <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                                    <span className="font-semibold text-sm text-gray-800">{item.text}</span>
-                                    <span className="ml-auto flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs bg-primary text-white">✓</span>
+                                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
+                                        <span className="text-primary group-hover:text-white transition-colors">✓</span>
+                                    </div>
+                                    <span className="font-bold text-gray-800">{item.text}</span>
                                 </div>
                             ))}
 
