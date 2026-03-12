@@ -35,13 +35,13 @@ const Footer = () => {
               AI SKILL UP Academy is a leading provider of AI-powered courses, dedicated to preparing students for the future of technology.
             </p>
             <div className='flex items-center gap-5'>
-              <Link href='#' className='text-black hover:text-primary text-2xl transition-all'>
+              <Link href='https://www.facebook.com/AISKILLUP6/' target='_blank' className='text-black hover:text-primary text-2xl transition-all'>
                 <Icon icon='tabler:brand-facebook' />
               </Link>
-              <Link href='#' className='text-black hover:text-primary text-2xl transition-all'>
-                <Icon icon='tabler:brand-twitter' />
+              <Link href='https://wa.me/919655422511' target='_blank' className='text-black hover:text-primary text-2xl transition-all'>
+                <Icon icon='tabler:brand-whatsapp' />
               </Link>
-              <Link href='#' className='text-black hover:text-primary text-2xl transition-all'>
+              <Link href='https://www.instagram.com/academyaiskillup/' target='_blank' className='text-black hover:text-primary text-2xl transition-all'>
                 <Icon icon='tabler:brand-instagram' />
               </Link>
             </div>
@@ -71,8 +71,10 @@ const Footer = () => {
           </div>
 
           <div className='col-span-2 sm:col-span-6 md:col-span-2'>
+            <h4 className='mb-8 font-bold text-[#000000] opacity-80 uppercase tracking-widest text-sm'>
+              Reach Us
+            </h4>
             <div className='flex flex-col gap-6'>
-              <p className='text-transparent h-8 hidden lg:block'></p>
               <div className='flex items-start gap-4'>
                 <div className='bg-white p-2 rounded-lg shadow-sm text-primary'>
                   <Icon icon='solar:point-on-map-perspective-bold' width={24} height={24} />
@@ -97,17 +99,16 @@ const Footer = () => {
                   info@aiskillup.example
                 </p>
               </Link>
-              <div className='flex gap-4 mt-2'>
-                <Link href='https://wa.me/919655422511' target='_blank'
-                  className='bg-[#25D366] text-white px-4 py-2 rounded-lg flex items-center gap-2 font-bold hover:shadow-lg transition-all active:scale-95'>
-                  <Icon icon="tabler:brand-whatsapp" width={20} />
-                  WhatsApp
-                </Link>
-                <Link href='https://maps.google.com' target='_blank'
-                  className='bg-primary text-white px-4 py-2 rounded-lg flex items-center gap-2 font-bold hover:shadow-lg transition-all active:scale-95'>
-                  <Icon icon="material-symbols:map-outline" width={20} />
-                  Maps
-                </Link>
+              <div className='mt-2 rounded-xl overflow-hidden shadow-sm border border-white/20 h-32 w-full'>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.316868602607!2d76.9638168!3d11.0148355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8594767deeaf7%3A0x578b90b22a69fb4c!2sAI%20SKILLUP%20-%20Graphic%2C%20UI%20UX%2C%20FULL%20STACK%20Academy!5e0!3m2!1sen!2sin!4v1773291625999!5m2!1sen!2sin">
+                </iframe>
               </div>
             </div>
           </div>

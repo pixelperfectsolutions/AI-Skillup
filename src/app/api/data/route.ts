@@ -7,6 +7,7 @@ import { NextResponse } from 'next/server'
 
 const HeaderData: HeaderType[] = [
   { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
   {
     label: 'Courses',
     href: '/courses',
@@ -18,7 +19,6 @@ const HeaderData: HeaderType[] = [
       { label: 'Digital Marketing Course', href: '/courses/digital-marketing-course-using-ai' },
     ]
   },
-  { label: 'About', href: '/about' },
   { label: 'Corporate Training', href: '/corporate-training' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -216,8 +216,8 @@ const FooterLinkData: FooterLinkType[] = [
     section: 'Quick Links',
     links: [
       { label: 'Home', href: '/' },
-      { label: 'Courses', href: '/courses' },
       { label: 'About', href: '/about' },
+      { label: 'Courses', href: '/courses' },
       { label: 'Corporate Training', href: '/corporate-training' },
       { label: 'Contact', href: '/contact' },
       { label: 'Privacy Policy', href: '/privacy' },

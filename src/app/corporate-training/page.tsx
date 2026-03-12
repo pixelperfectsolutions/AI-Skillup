@@ -40,7 +40,7 @@ const trainingPrograms = [
 const stats = [
     { label: "Corporate Partners", value: "5+", icon: "solar:buildings-bold" },
     { label: "Professionals Trained", value: "1000+", icon: "solar:user-bold" },
-    { label: "Course Satisfaction", value: "98%", icon: "solar:star-bold" },
+    { label: "Experience", value: "5+ Years", icon: "solar:star-bold" },
     { label: "Training Hours", value: "3K+", icon: "solar:clock-circle-bold" }
 ];
 
@@ -50,21 +50,24 @@ const corporateTestimonials = [
         name: "Ragual",
         role: "CEO",
         company: "1dot.ai",
-        initials: "RA"
+        initials: "RA",
+        link: "https://1dot.ai/"
     },
     {
         quote: "Transforming client businesses requires us to stay ahead of design trends. AI Skillup's corporate training in advanced UI/UX strategy provided our team with the exact tools needed to deliver premium, high-converting digital products. Their focus on AI-driven workflows has given us a significant competitive edge.",
         name: "Gowtham",
         role: "CEO",
         company: "Pixel Perfect Solutions",
-        initials: "GO"
+        initials: "GO",
+        link: "https://pixelperfect.co.in/"
     },
     {
         quote: "In the world of CADD and BIM, precision and efficiency are everything. AI Skillup helped our architectural and civil engineering teams bridge the gap between traditional design and AI-powered automation. The training was practical, hands-on, and perfectly tailored to our industry's complex requirements.",
         name: "Vasanth Kumar",
         role: "CEO",
         company: "CADD BIM Technologies",
-        initials: "VK"
+        initials: "VK",
+        link: "https://caddbimtechnologies.com/"
     }
 ];
 
@@ -273,23 +276,13 @@ export default function CorporateTraining() {
                         </div>
                         <div className="lg:w-1/2 relative">
                             <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full"></div>
-                            <div className="relative p-6 bg-white rounded-[3rem] border border-gray-100 shadow-2xl">
-                                <Image
-                                    src="/images/corporate/collaboration.png"
-                                    alt="Training Session"
-                                    width={700}
-                                    height={900}
-                                    className="rounded-[2.5rem] w-full"
-                                />
-                                <div className="mt-8 flex items-center justify-between px-4">
-                                    <div className="flex -space-x-4">
-                                        {[1, 2, 3, 4].map(i => (
-                                            <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-primary/20 flex items-center justify-center text-xs font-black text-primary">HR</div>
-                                        ))}
-                                    </div>
-                                    <p className="text-sm font-black text-gray-500 uppercase tracking-widest">+ Trusted by HR Leaders</p>
-                                </div>
-                            </div>
+                            <Image
+                                src="/images/corporate/collaboration.png"
+                                alt="Training Session"
+                                width={700}
+                                height={900}
+                                className="rounded-[2.5rem] w-full"
+                            />
                         </div>
                     </div>
                 </div>
@@ -306,20 +299,28 @@ export default function CorporateTraining() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {corporateTestimonials.map((t, idx) => (
-                            <div key={idx} className="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 transition-all group h-full flex flex-col">
-                                <p className="text-lg text-white/80 mb-10 leading-relaxed italic font-normal flex-grow">
-                                    "{t.quote}"
-                                </p>
-                                <div className="flex items-center gap-4 border-t border-white/10 pt-8 mt-auto">
-                                    <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center font-black text-white text-xl">
-                                        {t.initials}
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-black text-lg">{t.name}</h4>
-                                        <p className="text-primary font-black uppercase tracking-widest text-[10px]">{t.role}, {t.company}</p>
+                            <Link 
+                                href={t.link} 
+                                key={idx} 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block h-full group"
+                            >
+                                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 transition-all group h-full flex flex-col">
+                                    <p className="text-lg text-white/80 mb-10 leading-relaxed italic font-normal flex-grow">
+                                        "{t.quote}"
+                                    </p>
+                                    <div className="flex items-center gap-4 border-t border-white/10 pt-8 mt-auto">
+                                        <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center font-black text-white text-xl">
+                                            {t.initials}
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-black text-lg">{t.name}</h4>
+                                            <p className="text-primary font-black uppercase tracking-widest text-[10px]">{t.role}, {t.company}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
