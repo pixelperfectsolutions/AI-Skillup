@@ -1,4 +1,4 @@
-// File: D:\PROJECTS\AI-Skillup\src\app\courses\digital-marketing-course-using-ai\page.tsx
+// File: D:\Projects\AI-Skillup\src\app\courses\digital-marketing-course-using-ai\page.tsx
 import * as entry from '../../../../../src/app/courses/digital-marketing-course-using-ai/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

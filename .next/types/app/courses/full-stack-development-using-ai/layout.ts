@@ -1,4 +1,4 @@
-// File: D:\PROJECTS\AI-Skillup\src\app\courses\full-stack-development-using-ai\layout.tsx
+// File: D:\Projects\AI-Skillup\src\app\courses\full-stack-development-using-ai\layout.tsx
 import * as entry from '../../../../../src/app/courses/full-stack-development-using-ai/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

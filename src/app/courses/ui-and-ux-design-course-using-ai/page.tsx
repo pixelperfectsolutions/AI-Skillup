@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
+import VideoGallery from '../../components/SharedComponent/VideoGallery'
 
 const highlights = [
     { title: "Convenient learning format", desc: "Online/Offline hybrid format with hands-on AI tool integration." },
@@ -417,6 +418,9 @@ export default function UiUxCourse() {
                     </div>
                 </div>
             </section>
+
+            {/* Video Gallery Section */}
+            <VideoGallery />
 
             {/* Our Certificates Section */}
             <section className="py-24 bg-white overflow-hidden">

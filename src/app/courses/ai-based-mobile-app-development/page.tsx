@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
+import VideoGallery from '../../components/SharedComponent/VideoGallery'
 
 const highlights = [
     { title: "Universal App Skills", desc: "Master both Android and iOS development with a focus on modern AI features." },
@@ -373,6 +374,9 @@ export default function MobileAppCourse() {
                     </div>
                 </div>
             </section>
+
+            {/* Video Gallery Section */}
+            <VideoGallery />
 
             {/* Curriculum Section */}
             <section className="py-24 bg-white">

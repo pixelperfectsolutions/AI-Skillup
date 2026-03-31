@@ -1,4 +1,4 @@
-// File: D:\PROJECTS\AI-Skillup\src\app\(site)\(auth)\signup\page.tsx
+// File: D:\Projects\AI-Skillup\src\app\(site)\(auth)\signup\page.tsx
 import * as entry from '../../../../../../src/app/(site)/(auth)/signup/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

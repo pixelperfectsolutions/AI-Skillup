@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
+import VideoGallery from '../../components/SharedComponent/VideoGallery'
 
 const highlights = [
     { title: "Zero Coding Required", desc: "Build professional web and mobile apps using drag-and-drop visual builders." },
@@ -373,6 +374,9 @@ export default function NoCodeCourse() {
                     </div>
                 </div>
             </section>
+
+            {/* Video Gallery Section */}
+            <VideoGallery />
 
             {/* Curriculum Section */}
             <section className="py-24 bg-white">

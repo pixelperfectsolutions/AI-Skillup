@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
+import VideoGallery from '../../components/SharedComponent/VideoGallery'
 
 const highlights = [
     { title: "Universal Marketing Skills", desc: "Master SEO, SEM, SMM, and AI-driven content marketing strategies." },
@@ -373,6 +374,9 @@ export default function DigitalMarketingCourse() {
                     </div>
                 </div>
             </section>
+
+            {/* Video Gallery Section */}
+            <VideoGallery />
 
             {/* Curriculum Section */}
             <section className="py-24 bg-white">

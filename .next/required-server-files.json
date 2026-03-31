@@ -99,7 +99,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "D:\\PROJECTS\\AI-Skillup",
+    "outputFileTracingRoot": "D:\\Projects\\AI-Skillup",
     "experimental": {
       "useSkewCookie": false,
       "cacheLife": {
@@ -289,10 +289,10 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.mjs",
     "turbopack": {
-      "root": "D:\\PROJECTS\\AI-Skillup"
+      "root": "D:\\Projects\\AI-Skillup"
     }
   },
-  "appDir": "D:\\PROJECTS\\AI-Skillup",
+  "appDir": "D:\\Projects\\AI-Skillup",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",

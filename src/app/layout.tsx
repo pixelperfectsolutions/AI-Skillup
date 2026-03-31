@@ -12,6 +12,7 @@ const font = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://aiskillup.academy'),
   title: {
     default: 'AI SKILL UP | Leading Software Training Institute in Coimbatore',
     template: '%s | AI SKILL UP Academy'
