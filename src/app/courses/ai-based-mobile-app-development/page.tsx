@@ -6,6 +6,9 @@ import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
 import VideoGallery from '../../components/SharedComponent/VideoGallery'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const highlights = [
     { title: "Universal App Skills", desc: "Master both Android and iOS development with a focus on modern AI features." },
@@ -161,6 +164,25 @@ export default function MobileAppCourse() {
         { title: "Android + Kotlin", level: "Native Hub", duration: "60 Days", learners: "3100+", price: "9,200" },
         { title: "iOS + Swift + AI", level: "Premium Dev", duration: "75 Days", learners: "1800+", price: "14,500" }
     ];
+
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
     return (
         <div className="bg-white overflow-hidden">
@@ -378,6 +400,46 @@ export default function MobileAppCourse() {
             {/* Video Gallery Section */}
             <VideoGallery />
 
+            {/* SEO Content Section */}
+            <section className="py-24 bg-white border-t border-gray-100">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <div className="flex flex-col gap-16">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div className="md:col-span-4">
+                                <h3 className="text-3xl font-black text-gray-900 border-l-8 border-primary pl-6">App Development</h3>
+                            </div>
+                            <div className="md:col-span-8">
+                                <p className="text-gray-600 leading-relaxed text-xl">
+                                    Our <strong className="text-primary">mobile app development</strong> course provides a foundation in both native and cross-platform technologies. Master <strong className="text-primary">Flutter</strong> to build high-performance applications for <strong className="text-primary">iOS and Android apps</strong>. We focus on app architecture and responsive UI design.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-8 border-t border-gray-50">
+                            <div className="md:col-span-4 md:order-2">
+                                <h3 className="text-3xl font-black text-gray-900 border-r-8 border-primary pr-6 text-right">AI Integration</h3>
+                            </div>
+                            <div className="md:col-span-8 md:order-1">
+                                <p className="text-gray-600 leading-relaxed text-xl text-right md:text-left">
+                                    In the era of smart technology, <strong className="text-primary">AI integration</strong> is a crucial skill. We teach you how to incorporate intelligent features like real-time image recognition and natural language processing into your mobile projects using advanced AI APIs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-8 border-t border-gray-50">
+                            <div className="md:col-span-4">
+                                <h3 className="text-3xl font-black text-gray-900 border-l-8 border-primary pl-6">Lifecycle & Deployment</h3>
+                            </div>
+                            <div className="md:col-span-8">
+                                <p className="text-gray-600 leading-relaxed text-xl">
+                                    From concept to final deployment, our program covers the entire <strong className="text-primary">mobile development lifecycle</strong>. Gain hands-on experience in performance optimization and navigating the complexities of the App Store and Google Play Store.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Curriculum Section */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
@@ -425,32 +487,48 @@ export default function MobileAppCourse() {
             <section className="py-24 bg-gray-50 overflow-hidden">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className='text-4xl md:text-5xl font-black text-gray-900 mb-4'>What Our <span className="text-primary italic">Developers</span> Say</h2>
+                        <h2 className='text-4xl md:text-5xl font-black text-gray-900 mb-4'>Trust from our <span className="text-primary italic">Graduates</span></h2>
                         <p className="text-gray-600 max-w-2xl mx-auto text-lg pt-4 leading-relaxed">Hear from students who successfully launched apps and landed dream jobs.</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {testimonials.map((test, idx) => (
-                            <div key={idx} className="bg-white border border-gray-100 p-10 rounded-[32px] hover:shadow-2xl transition-all group relative">
-                                <div className="absolute top-10 right-10 text-primary opacity-10">
-                                    <Icon icon="tabler:quote" width={80} />
-                                </div>
-                                <div className="flex text-yellow-500 mb-6">
-                                    {[...Array(5)].map((_, i) => <Icon key={i} icon="solar:star-bold" width={20} />)}
-                                </div>
-                                <p className="text-gray-700 leading-relaxed mb-10 italic text-xl">"{test.text}"</p>
-                                <div className="flex items-center gap-5">
-                                    <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center font-black text-white text-3xl shadow-lg shadow-primary/30">
-                                        {test.name.charAt(0)}
+                    <div className="max-w-6xl mx-auto testimonial-slider">
+                        <Slider {...sliderSettings}>
+                            {testimonials.map((test, idx) => (
+                                <div key={idx} className="px-4">
+                                    <div className="bg-white border border-gray-100 p-10 rounded-[32px] hover:shadow-2xl transition-all group relative h-full">
+                                        <div className="absolute top-10 right-10 text-primary opacity-10">
+                                            <Icon icon="tabler:quote" width={80} />
+                                        </div>
+                                        <div className="flex text-yellow-500 mb-6">
+                                            {[...Array(5)].map((_, i) => <Icon key={i} icon="solar:star-bold" width={20} />)}
+                                        </div>
+                                        <p className="text-gray-700 leading-relaxed mb-10 italic text-xl">"{test.text}"</p>
+                                        <div className="flex items-center gap-5">
+                                            <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center font-black text-white text-3xl shadow-lg shadow-primary/30">
+                                                {test.name.charAt(0)}
+                                            </div>
+                                            <div>
+                                                <h4 className="font-black text-xl text-gray-900">{test.name}</h4>
+                                                <p className="text-sm text-primary font-black uppercase tracking-[0.15em] pt-1">Mobile Developer</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-black text-xl text-gray-900">{test.name}</h4>
-                                        <p className="text-sm text-primary font-black uppercase tracking-[0.15em] pt-1">Mobile Developer</p>
-                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </Slider>
                     </div>
                 </div>
+                <style jsx global>{`
+                    .testimonial-slider .slick-dots {
+                        bottom: -40px;
+                    }
+                    .testimonial-slider .slick-dots li button:before {
+                        color: #2563eb;
+                        font-size: 12px;
+                    }
+                    .testimonial-slider .slick-dots li.slick-active button:before {
+                        color: #2563eb;
+                    }
+                `}</style>
             </section>
 
             {/* FAQs */}

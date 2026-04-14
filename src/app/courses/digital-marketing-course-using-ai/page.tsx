@@ -6,6 +6,9 @@ import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
 import VideoGallery from '../../components/SharedComponent/VideoGallery'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const highlights = [
     { title: "Universal Marketing Skills", desc: "Master SEO, SEM, SMM, and AI-driven content marketing strategies." },
@@ -161,6 +164,25 @@ export default function DigitalMarketingCourse() {
         { title: "SEO + Content AI", level: "Content specialist", duration: "45 Days", learners: "2200+", price: "8,500" },
         { title: "Paid Ads + Analytics", level: "ROI Expert", duration: "60 Days", learners: "1900+", price: "12,500" }
     ];
+
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
     return (
         <div className="bg-white overflow-hidden">
@@ -378,6 +400,94 @@ export default function DigitalMarketingCourse() {
             {/* Video Gallery Section */}
             <VideoGallery />
 
+            {/* SEO Content Section */}
+            <section className="py-24 bg-white border-t border-gray-100">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <div className="flex flex-col gap-16">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div className="md:col-span-4">
+                                <h3 className="text-3xl font-black text-gray-900 border-l-8 border-primary pl-6">The Evolution of Digital Marketing</h3>
+                            </div>
+                            <div className="md:col-span-8">
+                                <p className="text-gray-600 leading-relaxed text-xl">
+                                    In today's fast-paced digital landscape, traditional <strong className="text-primary">digital marketing</strong> strategies are being revolutionized by artificial intelligence. Our <strong className="text-primary">Digital Marketing Course Using AI</strong> empowers you to stay ahead of the curve by integrating advanced AI tools for data analysis, automation, and predictive modeling. By mastering <strong className="text-primary">AI marketing</strong> techniques, you can optimize your campaigns in real-time, ensuring maximum ROI and a significant competitive advantage in the global market.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-8 border-t border-gray-50">
+                            <div className="md:col-span-4 md:order-2">
+                                <h3 className="text-3xl font-black text-gray-900 border-r-8 border-primary pr-6 text-right">Strategic SEO & Content Optimization</h3>
+                            </div>
+                            <div className="md:col-span-8 md:order-1">
+                                <p className="text-gray-600 leading-relaxed text-xl text-right md:text-left">
+                                    Search Engine Optimization (SEO) is no longer just about keywords; it's about intent and relevance. Our comprehensive curriculum covers <strong className="text-primary">SEO strategies</strong> that leverage AI for deep-dive keyword research, competitor analysis, and automated content generation. Students learn to build high-authority backlinks and perform technical SEO audits that align with the latest search engine algorithms. This <strong className="text-primary">SEO course</strong> ensures your brand achieves top rankings.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-8 border-t border-gray-50">
+                            <div className="md:col-span-4">
+                                <h3 className="text-3xl font-black text-gray-900 border-l-8 border-primary pl-6">High-Performance PPC & Ad Strategy</h3>
+                            </div>
+                            <div className="md:col-span-8">
+                                <p className="text-gray-600 leading-relaxed text-xl">
+                                    Mastering <strong className="text-primary">paid advertising</strong> is crucial for immediate business impact. Lead-generating <strong className="text-primary">PPC campaigns</strong> on Google and targeted <strong className="text-primary">social media marketing</strong> on platforms like Facebook and Instagram are core components of our training. We provide hands-on experience in managing real budgets, optimizing ad spend, and crafting compelling ad copies that convert. Our course equips you with the skills to run multi-channel campaigns.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Paid Ads Deep Dive */}
+            <section className="py-24 bg-slate-50">
+                <div className="container mx-auto px-4 max-w-6xl">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-black text-gray-900 mb-4 italic uppercase">Mastering <span className="text-primary">Paid Advertisements</span></h2>
+                        <p className="text-gray-600 text-lg">Take control of the world's most powerful advertising platforms.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        {/* Google Ads */}
+                        <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 hover:shadow-2xl transition-all group">
+                            <div className="flex items-center gap-6 mb-8">
+                                <div className="p-4 bg-gray-50 rounded-2xl group-hover:scale-110 transition-transform">
+                                    <Icon icon="logos:google-ads" width={60} />
+                                </div>
+                                <h3 className="text-3xl font-black text-gray-900 italic uppercase">Google Ads <span className="text-primary">Campaigns</span></h3>
+                            </div>
+                            <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                                <strong className="text-gray-900">Google Ads</strong> allows you to reach potential customers exactly when they are searching for what you offer. From Search campaigns that target high-intent keywords to Display campaigns that build brand awareness, we teach you how to master bidding strategies, quality score optimization, and conversion tracking to dominate the search results.
+                            </p>
+                            <ul className="space-y-3 text-gray-700 font-bold italic">
+                                <li className="flex items-center gap-2"><Icon icon="solar:check-circle-bold" className="text-primary" /> Search & Display Network</li>
+                                <li className="flex items-center gap-2"><Icon icon="solar:check-circle-bold" className="text-primary" /> PPC Keyword Bidding</li>
+                                <li className="flex items-center gap-2"><Icon icon="solar:check-circle-bold" className="text-primary" /> Conversion Optimization</li>
+                            </ul>
+                        </div>
+
+                        {/* Facebook Ads */}
+                        <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 hover:shadow-2xl transition-all group">
+                            <div className="flex items-center gap-6 mb-8">
+                                <div className="p-4 bg-gray-50 rounded-2xl group-hover:scale-110 transition-transform">
+                                    <Icon icon="logos:facebook" width={60} />
+                                </div>
+                                <h3 className="text-3xl font-black text-gray-900 italic uppercase">Facebook Ads <span className="text-primary">Strategy</span></h3>
+                            </div>
+                            <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                                <strong className="text-gray-900">Facebook Ads</strong> offers unparalleled targeting capabilities based on demographics, interests, and behaviors. Our course covers the full spectrum of social media advertising, including Lead Generation ads, Carousel ads, and Retargeting campaigns. Learn how to use the Facebook Pixel and Meta Business Suite to scale your brand effectively.
+                            </p>
+                            <ul className="space-y-3 text-gray-700 font-bold italic">
+                                <li className="flex items-center gap-2"><Icon icon="solar:check-circle-bold" className="text-primary" /> Demographics Targeting</li>
+                                <li className="flex items-center gap-2"><Icon icon="solar:check-circle-bold" className="text-primary" /> Remarketing Funnels</li>
+                                <li className="flex items-center gap-2"><Icon icon="solar:check-circle-bold" className="text-primary" /> Ad Creative Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Curriculum Section */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
@@ -428,29 +538,45 @@ export default function DigitalMarketingCourse() {
                         <h2 className='text-4xl md:text-5xl font-black text-gray-900 mb-4'>Trust from our <span className="text-primary italic">Graduates</span></h2>
                         <p className="text-gray-600 max-w-2xl mx-auto text-lg pt-4 leading-relaxed">See how our marketing graduates are driving growth for their brands.</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {testimonials.map((test, idx) => (
-                            <div key={idx} className="bg-white border border-gray-100 p-10 rounded-[32px] hover:shadow-2xl transition-all group relative">
-                                <div className="absolute top-10 right-10 text-primary opacity-10">
-                                    <Icon icon="tabler:quote" width={80} />
-                                </div>
-                                <div className="flex text-yellow-500 mb-6">
-                                    {[...Array(5)].map((_, i) => <Icon key={i} icon="solar:star-bold" width={20} />)}
-                                </div>
-                                <p className="text-gray-700 leading-relaxed mb-10 italic text-xl">"{test.text}"</p>
-                                <div className="flex items-center gap-5">
-                                    <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center font-black text-white text-3xl shadow-lg shadow-primary/30">
-                                        {test.name.charAt(0)}
+                    <div className="max-w-6xl mx-auto testimonial-slider">
+                        <Slider {...sliderSettings}>
+                            {testimonials.map((test, idx) => (
+                                <div key={idx} className="px-4">
+                                    <div className="bg-white border border-gray-100 p-10 rounded-[32px] hover:shadow-2xl transition-all group relative h-full">
+                                        <div className="absolute top-10 right-10 text-primary opacity-10">
+                                            <Icon icon="tabler:quote" width={80} />
+                                        </div>
+                                        <div className="flex text-yellow-500 mb-6">
+                                            {[...Array(5)].map((_, i) => <Icon key={i} icon="solar:star-bold" width={20} />)}
+                                        </div>
+                                        <p className="text-gray-700 leading-relaxed mb-10 italic text-xl">"{test.text}"</p>
+                                        <div className="flex items-center gap-5">
+                                            <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center font-black text-white text-3xl shadow-lg shadow-primary/30">
+                                                {test.name.charAt(0)}
+                                            </div>
+                                            <div>
+                                                <h4 className="font-black text-xl text-gray-900">{test.name}</h4>
+                                                <p className="text-sm text-primary font-black uppercase tracking-[0.15em] pt-1">Marketing Expert</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-black text-xl text-gray-900">{test.name}</h4>
-                                        <p className="text-sm text-primary font-black uppercase tracking-[0.15em] pt-1">Marketing Expert</p>
-                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </Slider>
                     </div>
                 </div>
+                <style jsx global>{`
+                    .testimonial-slider .slick-dots {
+                        bottom: -40px;
+                    }
+                    .testimonial-slider .slick-dots li button:before {
+                        color: #2563eb;
+                        font-size: 12px;
+                    }
+                    .testimonial-slider .slick-dots li.slick-active button:before {
+                        color: #2563eb;
+                    }
+                `}</style>
             </section>
 
             {/* FAQs */}
