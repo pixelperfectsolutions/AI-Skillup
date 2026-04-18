@@ -360,7 +360,7 @@ export default function FullStackCourse() {
                                         <div className="flex text-yellow-500 mb-1">
                                             {[1, 2, 3, 4, 5].map(i => <Icon key={i} icon="solar:star-bold" width={16} />)}
                                         </div>
-                                        <p className="text-midnight_text font-bold">4.9/5 Course Rating</p>
+                                        <p className="text-midnight_text font-bold">5.0/5 Course Rating</p>
                                     </div>
                                 </Link>
                             </div>

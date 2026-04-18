@@ -6,19 +6,16 @@ import { HeaderType } from "@/app/types/menu";
 
 const HeaderLink: React.FC<{ item: HeaderType }> = ({ item }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
-  const path = usePathname(); // Get the current path from Next.js router
+  const path = usePathname();
   const [isActive, setIsActive] = useState(false);
 
-  // Check if the current path matches the link or any submenu link
   useEffect(() => {
     const isLinkActive = (path === item.href || (item.submenu && item.submenu.some(subItem => path === subItem.href))) ?? false;
-    setIsActive(isLinkActive); // Ensure isLinkActive is always a boolean
+    setIsActive(isLinkActive);
   }, [path, item.href, item.submenu]);
 
   const handleMouseEnter = () => {
-    if (item.submenu) {
-      setSubmenuOpen(true);
-    }
+    if (item.submenu) setSubmenuOpen(true);
   };
 
   const handleMouseLeave = () => {
@@ -59,21 +56,22 @@ const HeaderLink: React.FC<{ item: HeaderType }> = ({ item }) => {
 
       {submenuOpen && (
         <div
-          className={`absolute py-2 left-0 mt-4 w-72 bg-white dark:bg-darklight dark:text-white shadow-2xl rounded-xl border border-gray-100 `}
+          className="absolute py-2 left-0 mt-4 w-[440px] bg-white dark:bg-darklight dark:text-white shadow-2xl rounded-xl border border-gray-100 z-50"
           data-aos="fade-up"
           data-aos-duration="500"
         >
           <div className="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
           {item.submenu?.map((subItem, index) => {
-            const isSubItemActive = path === subItem.href; // Check if the submenu item is active
+            const isSubItemActive = path === subItem.href;
             return (
               <Link
                 key={index}
                 href={subItem.href}
-                className={`block px-5 py-3 text-[15px] font-semibold transition-all duration-300 ${isSubItemActive
-                  ? "bg-primary text-white"
-                  : "text-gray-700 hover:bg-primary/10 hover:text-primary"
-                  }`}
+                className={`block px-5 py-2.5 text-[14px] font-semibold transition-all duration-200 ${
+                  isSubItemActive
+                    ? "bg-primary text-white"
+                    : "text-gray-700 hover:bg-primary/10 hover:text-primary"
+                }`}
               >
                 {subItem.label}
               </Link>

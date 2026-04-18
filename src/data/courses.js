@@ -3,9 +3,45 @@
 
 export const courses = [
   {
-    slug: 'full-stack-development-using-ai',
-    title: 'Full-Stack Development Using AI (Next-Gen Web Development)',
-    description: '4 Months | 2 months course\nLevel: Beginner to Advanced',
+    slug: 'python-course-coimbatore',
+    title: 'Python Programming Course in Coimbatore',
+    description: '3 Months | Beginner to Advanced',
+    image: '/images/courses/python.png',
+    highlights: [
+      'Python + AI Integration – Learn faster with AI-assisted coding',
+      '100% Placement Support in Coimbatore IT hub',
+      'Real-world Automation & AI Projects',
+      'NASSCOM Certified Curriculum',
+      'Hands-on training by industry experts',
+    ],
+    projects: [
+      'Build an AI-powered automation script',
+      'Create a Data Scraping tool',
+      'Develop a Python-based AI agent',
+    ],
+  },
+  {
+    slug: 'data-science-course-coimbatore',
+    title: 'Data Science Course in Coimbatore',
+    description: '4 Months | Beginner to Advanced',
+    image: '/images/courses/data-science.png',
+    highlights: [
+      'AI-Driven Data Science – Master predictive analytics',
+      'Machine Learning & Deep Learning Foundations',
+      'Data Visualization with Power BI & Tableau',
+      'Real-time Industry Data Projects',
+      'Placement assurance with top tech firms',
+    ],
+    projects: [
+      'Predictive Analytics for Retail Hubs',
+      'Customer Sentiment Analysis Model',
+      'Healthcare Data Visualisation Dashboard',
+    ],
+  },
+  {
+    slug: 'full-stack-development-course-coimbatore',
+    title: 'Full-Stack Development Course in Coimbatore',
+    description: '4 Months | Level: Beginner to Advanced',
     image: '/images/course-1.png',
     highlights: [
       'AI-Assisted Coding – Use Cursor AI & GitHub Copilot for faster development',
@@ -21,9 +57,9 @@ export const courses = [
     ],
   },
   {
-    slug: 'ui-ux-design-with-ai',
-    title: 'UI/UX Design with AI (Smart Design Automation)',
-    description: '2 Months | 1 month course\nLevel: Beginner to Advanced',
+    slug: 'ui-ux-design-course-coimbatore',
+    title: 'UI/UX Design Course in Coimbatore',
+    description: '2 Months | Level: Beginner to Advanced',
     image: '/images/course-2.png',
     highlights: [
       'AI-Generated UI/UX Designs – Use Midjourney & Figma AI for rapid prototyping',
@@ -39,9 +75,9 @@ export const courses = [
     ],
   },
   {
-    slug: 'ai-based-mobile-app-development',
-    title: 'AI-Based Mobile App Development (Next-Level App Building)',
-    description: '4 Months | 2 months course\nLevel: Beginner to Advanced',
+    slug: 'mobile-app-development-course-coimbatore',
+    title: 'Mobile App Development Course in Coimbatore',
+    description: '4 Months | Level: Beginner to Advanced',
     image: '/images/course-3.png',
     highlights: [
       'AI-Generated App Code – Use Flutter AI & ChatGPT to write app logic',
@@ -57,9 +93,9 @@ export const courses = [
     ],
   },
   {
-    slug: 'no-code-development-course',
-    title: 'No-Code Development Course (Build Without Coding)',
-    description: '3 Months | 1 month course\nLevel: Beginner to Advanced',
+    slug: 'no-code-ai-automation-coimbatore',
+    title: 'No-Code AI Automation Course in Coimbatore',
+    description: '3 Months | Level: Beginner to Advanced',
     image: '/images/course-4.png',
     highlights: [
       'Drag-and-Drop AI Development – Build web & mobile apps without coding',
@@ -75,9 +111,9 @@ export const courses = [
     ],
   },
   {
-    slug: 'digital-marketing-using-ai',
-    title: 'Digital Marketing Using AI (AI-Powered Growth Hacking)',
-    description: '2 Months | 1 month course\nLevel: Beginner to Advanced',
+    slug: 'digital-marketing-course-coimbatore',
+    title: 'Digital Marketing Course in Coimbatore',
+    description: '2 Months | Level: Beginner to Advanced',
     image: '/images/course-5.png',
     highlights: [
       'AI-Generated Ad Copies & Content – Use ChatGPT & Jasper for high-conversion ads',

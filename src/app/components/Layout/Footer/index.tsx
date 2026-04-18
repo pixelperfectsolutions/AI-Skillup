@@ -26,13 +26,15 @@ const Footer = () => {
   return (
     <footer className='bg-[#D5EFFA] pt-16 pb-8'>
       <div className='container'>
-        <div className='grid grid-cols-1 sm:grid-cols-6 lg:gap-20 md:gap-24 sm:gap-12 gap-12 pb-16'>
-          <div className='col-span-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16'>
+
+          {/* Logo & About */}
+          <div>
             <div className='mb-6'>
               <Logo />
             </div>
-            <p className='text-black/70 text-base mb-8 leading-relaxed max-w-[300px]'>
-              AI SKILL UP Academy is a leading provider of AI-powered courses, dedicated to preparing students for the future of technology.
+            <p className='text-black/70 text-base mb-8 leading-relaxed'>
+              AI SKILL UP Academy is a leading provider of AI-powered courses in Coimbatore, dedicated to preparing students for the future of technology.
             </p>
             <div className='flex items-center gap-5'>
               <Link href='https://www.facebook.com/AISKILLUP6/' target='_blank' className='text-black hover:text-primary text-2xl transition-all'>
@@ -47,59 +49,85 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='col-span-2'>
-            <div className='flex flex-wrap gap-10 lg:gap-24'>
-              {footerlink.map((product, i) => (
-                <div key={i} className='min-w-[120px]'>
-                  <h4 className='mb-8'>
-                    {product.section === 'Quick Links' ? 'Links' : product.section}
-                  </h4>
-                  <ul className="space-y-4">
-                    {product.links.map((item, i) => (
-                      <li key={i}>
-                        <Link
-                          href={item.href}
-                          className='text-black/60 hover:text-primary text-base font-medium transition-colors'>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+          {/* Quick Links */}
+          <div>
+            {footerlink.map((product, i) => (
+              <div key={i}>
+                <h4 className='mb-6 font-bold text-[#000000] opacity-80 uppercase tracking-widest text-sm'>
+                  {product.section === 'Quick Links' ? 'Quick Links' : product.section}
+                </h4>
+                <ul className="space-y-3">
+                  {product.links.map((item, j) => (
+                    <li key={j}>
+                      <Link
+                        href={item.href}
+                        className='text-black/60 hover:text-primary text-sm font-medium transition-colors'>
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
-          <div className='col-span-2 sm:col-span-6 md:col-span-2'>
-            <h4 className='mb-8 font-bold text-[#000000] opacity-80 uppercase tracking-widest text-sm'>
+          {/* Courses Column */}
+          <div>
+            <h4 className='mb-6 font-bold text-[#000000] opacity-80 uppercase tracking-widest text-sm'>
+              Our Courses
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { label: 'Python Programming in Coimbatore', href: '/courses/python-course-coimbatore' },
+                { label: 'Data Science in Coimbatore', href: '/courses/data-science-course-coimbatore' },
+                { label: 'Full-Stack Development in Coimbatore', href: '/courses/full-stack-development-course-coimbatore' },
+                { label: 'UI & UX Design in Coimbatore', href: '/courses/ui-ux-design-course-coimbatore' },
+                { label: 'Mobile App Development in Coimbatore', href: '/courses/mobile-app-development-course-coimbatore' },
+                { label: 'No-Code AI Automation in Coimbatore', href: '/courses/no-code-ai-automation-coimbatore' },
+                { label: 'Digital Marketing in Coimbatore', href: '/courses/digital-marketing-course-coimbatore' },
+              ].map((course, i) => (
+                <li key={i}>
+                  <Link
+                    href={course.href}
+                    className='text-black/60 hover:text-primary text-sm font-medium transition-colors leading-snug'>
+                    {course.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Reach Us */}
+          <div>
+            <h4 className='mb-6 font-bold text-[#000000] opacity-80 uppercase tracking-widest text-sm'>
               Reach Us
             </h4>
-            <div className='flex flex-col gap-6'>
+            <div className='flex flex-col gap-5'>
               <div className='flex items-start gap-4'>
-                <div className='bg-white p-2 rounded-lg shadow-sm text-primary'>
+                <div className='bg-white p-2 rounded-lg shadow-sm text-primary shrink-0'>
                   <Icon icon='solar:point-on-map-perspective-bold' width={24} height={24} />
                 </div>
-                <p className='text-black/80 text-base font-medium leading-relaxed pt-1'>
+                <p className='text-black/80 text-sm font-medium leading-relaxed pt-1'>
                   45, Gokhale Street, Ram Nagar, Near MK Residency, Coimbatore, TN 641009.
                 </p>
               </div>
-              <Link href='tel:+919655422511' className='flex items-center gap-4 group text-nowrap'>
-                <div className='bg-white p-2 rounded-lg shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all'>
+              <Link href='tel:+919655422511' className='flex items-center gap-4 group'>
+                <div className='bg-white p-2 rounded-lg shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0'>
                   <Icon icon='solar:phone-bold' width={24} height={24} />
                 </div>
-                <p className='text-black/60 group-hover:text-primary text-base font-bold transition-colors'>
+                <p className='text-black/60 group-hover:text-primary text-sm font-bold transition-colors'>
                   +91 96554 22511
                 </p>
               </Link>
               <Link href='mailto:info@aiskillup.example' className='flex items-center gap-4 group'>
-                <div className='bg-white p-2 rounded-lg shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all'>
+                <div className='bg-white p-2 rounded-lg shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0'>
                   <Icon icon='solar:mailbox-bold' width={24} height={24} />
                 </div>
-                <p className='text-black/60 group-hover:text-primary text-base font-bold transition-colors'>
+                <p className='text-black/60 group-hover:text-primary text-sm font-bold transition-colors'>
                   info@aiskillup.example
                 </p>
               </Link>
-              <div className='mt-2 rounded-xl overflow-hidden shadow-sm border border-white/20 h-32 w-full'>
+              <div className='mt-1 rounded-xl overflow-hidden shadow-sm border border-white/20 h-32 w-full'>
                 <iframe
                   width="100%"
                   height="100%"
@@ -126,8 +154,6 @@ const Footer = () => {
 
       </div>
     </footer>
-
-
   )
 }
 

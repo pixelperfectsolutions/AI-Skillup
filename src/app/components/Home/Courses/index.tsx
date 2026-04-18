@@ -20,7 +20,24 @@ const Courses = () => {
         const res = await fetch('/api/data')
         if (!res.ok) throw new Error('Failed to fetch')
         const data = await res.json()
-        setCourse(data.CourseData)
+        // Exclude Python and Data Science – they have dedicated hero pages
+        // Also restore original images for Home Page slider as requested
+        const filtered = (data.CourseData as CourseType[])
+          .filter(
+            (c) =>
+              !c.slug?.includes('python-course') &&
+              !c.slug?.includes('data-science-course')
+          )
+          .map((c) => {
+            let originalImg = c.imgSrc;
+            if (c.slug?.includes('full-stack')) originalImg = '/images/course-1.png';
+            if (c.slug?.includes('ui-ux')) originalImg = '/images/course-2.png';
+            if (c.slug?.includes('mobile-app')) originalImg = '/images/course-3.png';
+            if (c.slug?.includes('no-code')) originalImg = '/images/course-4.png';
+            if (c.slug?.includes('digital-marketing')) originalImg = '/images/course-5.png';
+            return { ...c, imgSrc: originalImg };
+          });
+        setCourse(filtered)
       } catch (error) {
         console.error('Error fetching service:', error)
       } finally {
@@ -101,7 +118,7 @@ const Courses = () => {
             Popular courses
           </h2>
           <Link
-            href={'/'}
+            href={'/courses'}
             className='text-primary text-lg font-medium hover:underline duration-500'>
             Explore all courses&nbsp;&gt;
           </Link>
@@ -141,16 +158,27 @@ const Courses = () => {
                         {items.heading}
                       </h6>
                     </Link>
-                    <div className='flex justify-between items-center py-6 border-b'>
+                    <Link
+                      href='https://www.google.com/search?q=AI+SKILL+UP+Academy+Coimbatore#lrd=0x3ba8594767deeaf7:0x578b90b22a69fb4c,1'
+                      target='_blank'
+                      className='flex justify-between items-center py-6 border-b group/rating'>
                       <div className='flex items-center gap-4'>
-                        <p className='text-red-700 text-2xl font-medium'>
-                          {items.rating.toFixed(1)}
-                        </p>
-                        <div className='flex'>
-                          {renderStars(items.rating)} {/* Dynamic stars */}
+                        <div className='flex items-center gap-2'>
+                          <Icon icon='logos:google-icon' width={20} />
+                          <p className='text-red-700 text-2xl font-bold'>
+                            {items.rating.toFixed(1)}
+                          </p>
+                        </div>
+                        <div className='flex flex-col'>
+                          <div className='flex'>
+                            {renderStars(items.rating)}
+                          </div>
+                          <p className='text-[10px] text-gray-400 font-bold uppercase tracking-wider group-hover/rating:text-primary transition-colors'>
+                            Google Rating
+                          </p>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                     <div className='flex justify-between pt-6'>
                       <div className='flex gap-4'>
                         <Icon
