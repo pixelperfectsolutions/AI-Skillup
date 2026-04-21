@@ -35,6 +35,10 @@
     "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
     "contentDispositionType": "attachment",
     "remotePatterns": [],
+    "qualities": [
+      75,
+      100
+    ],
     "unoptimized": true,
     "sizes": [
       640,

@@ -289,12 +289,12 @@ export default function CorporateTraining() {
             </section>
 
             {/* Testimonials Section */}
-            <section className="py-24 bg-midnight_text relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,_rgba(37,99,235,0.1),transparent)]"></div>
+            <section className="py-24 bg-slate-gray relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,_rgba(37,99,235,0.05),transparent)]"></div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-16">
-                        <Icon icon="tabler:quote" width={60} className="text-primary mx-auto mb-6 opacity-40" />
-                        <h2 className="text-3xl md:text-5xl font-black text-white italic">Trusted by <span className="text-primary not-italic">Industry Leaders</span></h2>
+                        <Icon icon="tabler:quote" width={60} className="text-primary mx-auto mb-6 opacity-20" />
+                        <h2 className="text-3xl md:text-5xl font-black text-black italic">Trusted by <span className="text-primary not-italic">Industry Leaders</span></h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -306,16 +306,16 @@ export default function CorporateTraining() {
                                 rel="noopener noreferrer"
                                 className="block h-full group"
                             >
-                                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 transition-all group h-full flex flex-col">
-                                    <p className="text-lg text-white/80 mb-10 leading-relaxed italic font-normal flex-grow">
+                                <div className="bg-white border border-gray-100 p-10 rounded-[2.5rem] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                                    <p className="text-lg text-black/70 mb-10 leading-relaxed italic font-medium flex-grow">
                                         "{t.quote}"
                                     </p>
-                                    <div className="flex items-center gap-4 border-t border-white/10 pt-8 mt-auto">
-                                        <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center font-black text-white text-xl">
+                                    <div className="flex items-center gap-4 border-t border-gray-100 pt-8 mt-auto">
+                                        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center font-black text-primary text-xl">
                                             {t.initials}
                                         </div>
                                         <div>
-                                            <h4 className="text-white font-black text-lg">{t.name}</h4>
+                                            <h4 className="text-black font-black text-lg">{t.name}</h4>
                                             <p className="text-primary font-black uppercase tracking-widest text-[10px]">{t.role}, {t.company}</p>
                                         </div>
                                     </div>
@@ -327,20 +327,20 @@ export default function CorporateTraining() {
             </section>
 
             {/* Final CTA */}
-            <section className="py-32 bg-primary relative">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+            <section className="py-32 bg-white relative border-t border-gray-100">
+                <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -mr-48 -mb-48"></div>
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-8 italic">Ready to Upskill Your <span className="text-white not-italic border-b-8 border-white">Team?</span></h2>
-                    <p className="text-white/90 text-2xl mb-12 max-w-2xl mx-auto font-medium">Let's discuss how we can tailor our programs for your organizational success.</p>
+                    <h2 className="text-4xl md:text-6xl font-black text-black mb-8 italic">Ready to Upskill Your <span className="text-primary not-italic underline decoration-success decoration-8 underline-offset-12">Team?</span></h2>
+                    <p className="text-black/60 text-2xl mb-12 max-w-2xl mx-auto font-bold">Let's discuss how we can tailor our programs for your organizational success.</p>
                     <div className="flex flex-wrap justify-center gap-6">
                         <button
                             onClick={() => setShowPopup(true)}
-                            className='bg-gray-900 text-white hover:bg-black py-6 px-16 rounded-full text-xl font-black transition-all shadow-2xl hover:-translate-y-2 active:scale-95 flex items-center gap-3 uppercase tracking-widest'
+                            className='bg-primary text-white hover:bg-primary/90 py-6 px-16 rounded-full text-xl font-black transition-all shadow-xl shadow-primary/20 hover:-translate-y-2 active:scale-95 flex items-center gap-3 uppercase tracking-widest'
                         >
                             Get Started
                             <Icon icon='solar:heart-bold' width={24} height={24} />
                         </button>
-                        <Link href='tel:+919655422511' className='bg-white text-primary hover:bg-gray-100 py-6 px-16 rounded-full text-xl font-black transition-all shadow-2xl hover:-translate-y-2 active:scale-95 flex items-center gap-3 uppercase tracking-widest border border-white/20'>
+                        <Link href='tel:+919655422511' className='bg-success text-white hover:bg-success/90 py-6 px-16 rounded-full text-xl font-black transition-all shadow-xl shadow-success/20 hover:-translate-y-2 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
                             Call Expert
                             <Icon icon='solar:phone-bold' width={24} height={24} />
                         </Link>

@@ -26,7 +26,7 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
   }, [initialData])
 
   return (
-    <footer className='bg-[#D5EFFA] pt-16 pb-8'>
+    <footer className='bg-slate-gray pt-16 pb-8'>
       <div className='container'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16'>
 

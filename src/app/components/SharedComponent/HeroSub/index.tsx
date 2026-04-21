@@ -13,17 +13,105 @@ interface HeroSubProps {
     title: string
     subtitle?: string
     breadcrumbs?: BreadcrumbItem[]
+    whiteTheme?: boolean
+    bgImage?: string
 }
 
-const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs }) => {
+const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs, whiteTheme = false, bgImage = "/images/hero-banner-bg.png" }) => {
+    if (whiteTheme) {
+        return (
+            <section
+                className="relative flex items-center overflow-hidden lg:mt-24 sm:mt-24 mt-20 bg-white border-b border-gray-100"
+                style={{ minHeight: 300 }}
+            >
+                {/* Decorative shining blobs */}
+                <div
+                    className="absolute top-0 left-0 w-72 h-72 rounded-full pointer-events-none opacity-50"
+                    style={{
+                        background: 'radial-gradient(circle, rgba(79,128,255,0.08), transparent 70%)',
+                        transform: 'translate(-30%, -30%)',
+                    }}
+                />
+                <div
+                    className="absolute bottom-0 right-0 w-96 h-96 rounded-full pointer-events-none opacity-50"
+                    style={{
+                        background: 'radial-gradient(circle, rgba(67,198,57,0.08), transparent 70%)',
+                        transform: 'translate(30%, 30%)',
+                    }}
+                />
+
+                {/* Content */}
+                <div className="container relative z-10 py-16">
+                    {/* Breadcrumb */}
+                    {breadcrumbs && breadcrumbs.length > 0 && (
+                        <nav
+                            aria-label="breadcrumb"
+                            className="flex items-center gap-2 mb-6 text-xs font-black flex-wrap uppercase tracking-widest"
+                        >
+                            <Link
+                                href="/"
+                                className="flex items-center gap-1.5 transition-colors duration-200 hover:text-primary text-gray-400"
+                            >
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
+                                </svg>
+                                Home
+                            </Link>
+                            {breadcrumbs.map((crumb, i) => (
+                                <React.Fragment key={i}>
+                                    <svg width="10" height="10" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" strokeWidth={4} className="text-gray-200">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                    {crumb.href && i < breadcrumbs.length - 1 ? (
+                                        <Link
+                                            href={crumb.href}
+                                            className="transition-colors duration-200 hover:text-primary text-gray-400"
+                                        >
+                                            {crumb.label}
+                                        </Link>
+                                    ) : (
+                                        <span className="text-primary font-black">
+                                            {crumb.label}
+                                        </span>
+                                    )}
+                                </React.Fragment>
+                            ))}
+                        </nav>
+                    )}
+
+                    {/* Title */}
+                    <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-tight mb-6 text-black">
+                        {title}
+                    </h1>
+
+                    {/* Subtitle */}
+                    {subtitle && (
+                        <p className="text-xl max-w-3xl text-black/60 font-medium leading-relaxed border-l-4 border-success pl-6">
+                            {subtitle}
+                        </p>
+                    )}
+
+                    {/* Decorative line */}
+                    <div className="mt-10 flex items-center gap-3">
+                        <div className="h-1 w-20 rounded-full bg-primary shadow-lg shadow-primary/20" />
+                        <div className="h-1 w-8 rounded-full bg-success/20" />
+                        <div className="h-1 w-4 rounded-full bg-primary/10" />
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
     return (
         <section
             className="relative flex items-center overflow-hidden lg:mt-24 sm:mt-24 mt-20"
-            style={{ minHeight: 340 }}
+            style={{ minHeight: 400 }}
         >
             {/* Background Image */}
             <Image
-                src="/images/hero-banner-bg.png"
+                src={bgImage}
                 alt="Hero background"
                 fill
                 className="object-cover object-center"
@@ -55,7 +143,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs }) => {
             />
 
             {/* Content */}
-            <div className="container relative z-10 py-16">
+            <div className="container relative z-10 py-20">
                 {/* Breadcrumb */}
                 {breadcrumbs && breadcrumbs.length > 0 && (
                     <nav

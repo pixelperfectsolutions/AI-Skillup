@@ -5,6 +5,7 @@ import Footer from './components/Layout/Footer'
 import { HeaderData, FooterLinkData } from '@/data/siteData'
 import SchemaOrg from './components/Common/SchemaOrg'
 import { Metadata } from 'next'
+import GlobalPopup from './components/SharedComponent/GlobalPopup'
 
 const font = Poppins({ 
   subsets: ['latin'],
@@ -55,6 +56,7 @@ export default function RootLayout({
         <Header initialData={HeaderData} />
         {children}
         <Footer initialData={FooterLinkData} />
+        <GlobalPopup />
       </body>
     </html>
   )

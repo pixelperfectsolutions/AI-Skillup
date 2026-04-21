@@ -45,6 +45,63 @@ export const CourseData: CourseType[] = [
     price: 20,
     rating: 5.0,
     slug: '/courses/python-course-coimbatore',
+    description: 'Master Python programming from scratch with a focus on AI and Automation. This course takes you from basics to advanced topics like Data Analysis and AI Scripting.',
+    aiPositioning: 'Supercharge your Python coding with AI-powered assistants and learn to build AI agents.',
+    placementPromise: '100% Placement Support with Dedicated Interview Prep for Python Developers.',
+    whyChoose: {
+      marketDemand: 'Python is the #1 language for AI and Data Science in 2025.',
+      salaryInsights: 'Entry-level Python developers in Coimbatore earn 4-8 LPA.',
+      careerRoles: ['Backend Developer', 'Data Analyst', 'AI Engineer', 'Automation Specialist']
+    },
+    syllabus: [
+      {
+        tabName: 'Core Python',
+        sections: [
+          { title: 'Python Fundamentals', modules: ['Variables & Data Types', 'Control Flow & Loops', 'Functions & Modules', 'File Handling'] },
+          { title: 'OOP & Modules', modules: ['Classes & Objects', 'Inheritance', 'Exception Handling', 'Custom Modules'] }
+        ]
+      },
+      {
+        tabName: 'Advanced Python',
+        sections: [
+          { title: 'File Handling & APIs', modules: ['JSON/CSV Processing', 'REST APIs', 'Web Scraping', 'Database Integration'] },
+          { title: 'Data Science Basics', modules: ['NumPy', 'Pandas', 'Matplotlib', 'EDA Foundations'] }
+        ]
+      },
+      {
+        tabName: 'AI & Automation',
+        sections: [
+          { title: 'AI Integration', modules: ['ChatGPT API', 'GitHub Copilot', 'Building AI Chatbots', 'Prompt Engineering'] },
+          { title: 'Automation Projects', modules: ['Web Automation', 'Desktop Automation', 'Email Bot', 'Syllabus AI Agent'] }
+        ]
+      }
+    ],
+    tools: [
+      { name: 'Python 3', icon: 'logos:python' },
+      { name: 'VS Code', icon: 'logos:visual-studio-code' },
+      { name: 'Cursor AI', icon: 'logos:cursor' }
+    ],
+    projects: [
+      { title: 'AI Web Scraper', description: 'Extract and summarize web data using AI.' },
+      { title: 'Inventory AI', description: 'Backend system with automated AI reporting.' }
+    ],
+    faqs: [
+      { q: 'Is this course suitable for absolute beginners?', a: 'Yes, we start from the very basics of Python and eventually move toward advanced AI and automation topics.' },
+      { q: 'What is the duration and batch timing?', a: 'The course lasts 12 weeks. we offer flexible morning, evening, and weekend batches to suit working professionals.' },
+      { q: 'Do you provide placement assistance?', a: 'Absolutely. We provide 100% placement support including resume building, mock interviews, and direct referrals.' },
+      { q: 'Will I learn to use AI tools for coding?', a: 'Yes, we uniquely integrate AI tools like Cursor and GitHub Copilot to help you code 3x faster.' },
+      { q: 'Is there a certification provided?', a: 'Yes, you will receive an industry-recognized certificate from AI Skill Up Academy upon successful completion.' }
+    ],
+    combos: [
+      { title: "Python + Data Science", level: "Data Track", duration: "90 Days", learners: "1800+", price: "14,500" },
+      { title: "Python + Full Stack", level: "Dev Track", duration: "120 Days", learners: "2100+", price: "18,000" },
+      { title: "Python + AI & ML", level: "AI Track", duration: "60 Days", learners: "950+", price: "12,500" },
+    ],
+    longFormContent: [
+      "Aspiring to join the tech industry? Our Python Programming Course in Coimbatore is meticulously designed to bridge the gap between academic learning and industry requirements. As a premier software training institute in Coimbatore with placement assurance, we provide hands-on experience that goes beyond basic syntax.",
+      "In today's competitive market, simply knowing Python isn't enough. That's why we've integrated modern AI tools into our curriculum, making us the top AI-based software training institute in Coimbatore. You'll learn to leverage AI for debugging, code generation, and automation, allowing you to work 3x faster than traditional developers.",
+      "Our training center in Ram Nagar offers a state-of-the-art learning environment. Whether you are a college fresher or a working professional looking for life-changing career growth, our 100% placement support ensures you get direct access to top-tier MNCs and startups in Coimbatore and beyond."
+    ]
   },
   {
     heading: 'Data Science Course in Coimbatore',
@@ -55,6 +112,44 @@ export const CourseData: CourseType[] = [
     price: 20,
     rating: 5.0,
     slug: '/courses/data-science-course-coimbatore',
+    description: 'Master Data Science and Machine Learning using AI tools. Learn to analyze big data and build predictive models.',
+    aiPositioning: 'Leverage AI tools for faster data cleaning, visualization, and automated ML model generation.',
+    placementPromise: '100% Placement Support for Data Science roles in top tech firms.',
+    whyChoose: {
+      marketDemand: 'Data Science is the backbone of the AI revolution.',
+      salaryInsights: 'Data Scientists in Coimbatore can expect 6-12 LPA.',
+      careerRoles: ['Data Scientist', 'ML Engineer', 'Data Analyst', 'Business Intelligence']
+    },
+    syllabus: [
+      {
+        tabName: 'Core Foundations',
+        sections: [
+          { title: 'Data Analytics Foundations', modules: ['Statistics & Math', 'NumPy & Pandas', 'Data Visualization', 'SQL Basics'] },
+          { title: 'Machine Learning & AI', modules: ['Supervised Learning', 'Unsupervised Learning', 'Deep Learning Basics', 'AI for Data Prep'] }
+        ]
+      }
+    ],
+    tools: [
+      { name: 'Pandas', icon: 'logos:pandas-icon' },
+      { name: "Scikit Learn", icon: "logos:scikit-learn" },
+      { name: 'Tableau', icon: 'logos:tableau' }
+    ],
+    projects: [
+      { title: 'Predictive Analytics', description: 'Build a model to predict housing prices using ML.' },
+      { title: 'Sentiment AI', description: 'Analyze customer reviews using Natural Language Processing.' }
+    ],
+    faqs: [
+      { q: 'Do I need a strong math background for Data Science?', a: 'A basic understanding of math is helpful, but we cover all the necessary statistics and mathematical concepts from scratch.' },
+      { q: 'Which tools will be covered in this course?', a: 'You will master Python, Pandas, NumPy, Scikit-Learn, Tableau, and various AI-driven data cleaning tools.' },
+      { q: 'Are there real-time projects included?', a: 'Yes, you will work on 5+ industry projects including predictive modeling and sentiment analysis.' },
+      { q: 'What is the salary expectation after this course?', a: 'Freshers in Coimbatore can expect 4-8 LPA, while experienced professionals can reach 12+ LPA.' },
+      { q: 'Is placement support guaranteed?', a: 'While we don\'t "guarantee" jobs (no one can), we provide 100% placement support and have a strong track record of placements.' }
+    ],
+    longFormContent: [
+      "In the era of Big Data, skilled professionals are in high demand. Our Data Science Course in Coimbatore offers a comprehensive roadmap to mastering data analytics, machine learning, and artificial intelligence. Recognized as the best Data Science training institute in Coimbatore, we focus on project-based learning to ensure practical proficiency.",
+      "Our curriculum uniquely integrates AI-assisted data processing, setting us apart as a leading AI-based software training center in Coimbatore. You will master tools like Python, Pandas, and Tableau while using AI to automate complex data cleaning and visualization tasks, preparing you for the high-paying roles of 2025.",
+      "Located conveniently in Ram Nagar, our academy provides intensive placement training, mock interviews, and resume-building sessions. We bridge the gap between you and the industry, making us the preferred choice for students seeking data science courses with placement in Coimbatore."
+    ]
   },
   {
     heading: 'Full-Stack Development Course in Coimbatore',
@@ -65,6 +160,44 @@ export const CourseData: CourseType[] = [
     price: 20,
     rating: 5.0,
     slug: '/courses/full-stack-development-course-coimbatore',
+    description: 'Learn MERN stack development integrated with AI-driven development practices (Cursor, Copilot).',
+    aiPositioning: 'Coimbatore’s only Full Stack course teaching you to build and deploy apps 3x faster with AI.',
+    placementPromise: 'Direct interview access to 200+ hiring partners for MERN developers.',
+    whyChoose: {
+      marketDemand: 'Every tech company needs full-stack capabilities in 2025.',
+      salaryInsights: 'Full Stack developers earn 5-10 LPA on average.',
+      careerRoles: ['MERN Developer', 'Frontend Architect', 'Backend Lead', 'SaaS Engineer']
+    },
+    syllabus: [
+      {
+        tabName: 'Development',
+        sections: [
+          { title: 'Frontend & Design', modules: ['React.js & Next.js', 'Tailwind CSS', 'Figma to Code', 'State Management'] },
+          { title: 'Backend & AI Apps', modules: ['Node.js & MongoDB', 'API Architecture', 'Integrating OpenAI APIs', 'Cloud Deployment'] }
+        ]
+      }
+    ],
+    tools: [
+      { name: 'React', icon: 'logos:react' },
+      { name: 'Node.js', icon: 'logos:nodejs-icon' },
+      { name: 'MongoDB', icon: 'logos:mongodb-icon' }
+    ],
+    projects: [
+      { title: 'AI-SaaS Platform', description: 'Create a subscription-based app with AI features.' },
+      { title: 'Social Network', description: 'Build a full-scale real-time social media application.' }
+    ],
+    faqs: [
+      { q: 'What is the MERN stack?', a: 'MERN stands for MongoDB, Express.js, React, and Node.js. It is the most popular stack for modern web development.' },
+      { q: 'How does AI impact Full Stack development?', a: 'AI tools like Cursor AI help you generate boilerplate code, debug faster, and focus on complex architecture rather than syntax.' },
+      { q: 'Will I build a complete professional application?', a: 'Yes, you will build and deploy a full-scale AI-SaaS platform and a real-time social network as part of your portfolio.' },
+      { q: 'Is there any eligibility criteria?', a: 'A basic understanding of how the web works is helpful, but we welcome students from all educational backgrounds.' },
+      { q: 'Do you offer online or offline classes?', a: 'We offer both high-quality offline classes in Coimbatore and live interactive online sessions.' }
+    ],
+    longFormContent: [
+      "Looking for a career in web development? Our Full-Stack Development Course in Coimbatore is designed for the modern era. As the most trusted software training institute in Coimbatore with placement, we provide an intensive boot camp experience that covers the entire MERN stack—MongoDB, Express, React, and Node.js.",
+      "What makes our academy unique is our 'AI-First' approach. Unlike traditional courses, we teach you to build and deploy applications using AI-driven development tools. This makes us the premier AI-based software training center in Coimbatore, where you learn to code smarter and ship products faster.",
+      "Our placement department has strong ties with local tech hubs in Coimbatore and global software giants. When you join our Ram Nagar center, you're not just signing up for a course; you're securing your future with dedicated interview conditioning and unlimited placement opportunities."
+    ]
   },
   {
     heading: 'UI and UX Design Course in Coimbatore',
@@ -75,6 +208,44 @@ export const CourseData: CourseType[] = [
     price: 20,
     rating: 5.0,
     slug: '/courses/ui-ux-design-course-coimbatore',
+    description: 'Learn modern UI/UX design with a focus on AI-assisted prototyping and user research.',
+    aiPositioning: 'Master AI design tools like Midjourney and Canva AI to create stunning visuals in minutes.',
+    placementPromise: '100% Portfolio review and placement support for UI/UX designers.',
+    whyChoose: {
+      marketDemand: 'Design-centric companies are the highest payers in Coimbatore.',
+      salaryInsights: 'UI/UX designers start at 3.5-7 LPA.',
+      careerRoles: ['Product Designer', 'UI Lead', 'UX Researcher', 'Interaction Designer']
+    },
+    syllabus: [
+      {
+        tabName: 'Design Process',
+        sections: [
+          { title: 'Design Fundamentals', modules: ['Color Theory & Typography', 'Wireframing', 'User Psychology', 'Design Systems'] },
+          { title: 'Advanced UI & AI', modules: ['Figma Mastery', 'AI Prototyping', 'Portfolio Building', 'Collaboration Tools'] }
+        ]
+      }
+    ],
+    tools: [
+      { name: 'Figma', icon: 'logos:figma' },
+      { name: 'Adobe XD', icon: 'logos:adobe-xd' },
+      { name: 'Midjourney', icon: 'logos:midjourney' }
+    ],
+    projects: [
+      { title: 'Fintech App Design', description: 'Complete design and prototype for a banking application.' },
+      { title: 'AI Dashboard Design', description: 'Design complex interfaces for AI data platforms.' }
+    ],
+    faqs: [
+      { q: 'Do I need to be good at drawing for UI/UX?', a: 'Not at all! UI/UX is about problem-solving and user psychology, not traditional sketching. We teach you to use digital tools like Figma.' },
+      { q: 'How is this course different from Graphic Design?', a: 'Graphic design focuses on aesthetics, while UI/UX focuses on how users interact with products and the logic behind the design.' },
+      { q: 'Will I get access to premium design tools?', a: 'Yes, we provide hands-on training with Figma, Adobe XD, and AI-driven design tools like Midjourney.' },
+      { q: 'Is there a portfolio building phase?', a: 'Yes, the last 4 weeks are dedicated to building a professional case study for your portfolio.' },
+      { q: 'What kind of companies hire UI/UX designers?', a: 'MNCs, product-based startups, and digital agencies are always on the lookout for skilled designers.' }
+    ],
+    longFormContent: [
+      "Master the art of creating digital experiences. Our UI and UX Design Course in Coimbatore is the gold standard for aspiring designers. As the best UI UX design training institute in Coimbatore, we follow an industry-first curriculum that covers user research, wireframing, and advanced prototyping using Figma.",
+      "We go beyond traditional design by integrating AI-assisted creative tools—positioning us as the only AI-based software training school in Coimbatore that teaches you to use AI for faster layout generation and user testing. You will build a world-class portfolio that catches the eyes of top hiring managers.",
+      "With 100% placement coaching and direct industry connects in Ram Nagar, Coimbatore, AI Skill Up provides the perfect platform to launch your creative career. Our graduates are working in top product companies, proving that we are the best choice for UI UX courses with placement in Coimbatore."
+    ]
   },
   {
     heading: 'Mobile App Development Course in Coimbatore',
@@ -85,6 +256,44 @@ export const CourseData: CourseType[] = [
     price: 20,
     rating: 5.0,
     slug: '/courses/mobile-app-development-course-coimbatore',
+    description: 'Build native and cross-platform mobile apps for Android and iOS using Flutter and AI tools.',
+    aiPositioning: 'Learn to use AI code generation for mobile UI and state management in record time.',
+    placementPromise: 'Guaranteed placement support in mobile-first startups and MNCs.',
+    whyChoose: {
+      marketDemand: 'Mobile app usage is at an all-time high with no signs of slowing.',
+      salaryInsights: 'Mobile developers in Coimbatore earn 4-9 LPA.',
+      careerRoles: ['Android Developer', 'iOS Developer', 'Flutter Engineer', 'Mobile Architect']
+    },
+    syllabus: [
+      {
+        tabName: 'Mobile Dev',
+        sections: [
+          { title: 'App Foundations', modules: ['Dart Programming', 'UI/UX for Mobile', 'Native APIs', 'Firebase Integration'] },
+          { title: 'Advanced Apps', modules: ['State Management', 'Push Notifications', 'App Store Deployment', 'AI in Mobile Apps'] }
+        ]
+      }
+    ],
+    tools: [
+      { name: 'Flutter', icon: 'logos:flutter' },
+      { name: 'Dart', icon: 'logos:dart' },
+      { name: 'Firebase', icon: 'logos:firebase' }
+    ],
+    projects: [
+      { title: 'Delivery App', description: 'Cross-platform app for local delivery services.' },
+      { title: 'AI Fitness App', description: 'Built-in tracking and AI-driven coaching features.' }
+    ],
+    faqs: [
+      { q: 'Will I learn both Android and iOS development?', a: 'Yes, we use Flutter, which allows you to build high-performance apps for both platforms using a single codebase.' },
+      { q: 'Is Firebase covered in this course?', a: 'Absolutely. We cover Firebase for real-time databases, authentication, and cloud messaging.' },
+      { q: 'Can I build my own app idea during the course?', a: 'Yes, we encourage students to work on their own startup ideas during the project phase.' },
+      { q: 'How do AI tools help in mobile development?', a: 'We teach you how to use AI for UI code generation and automated testing, significantly reducing development time.' },
+      { q: 'Do you provide lifetime support?', a: 'Yes, all our students get lifetime access to our community and project mentorship.' }
+    ],
+    longFormContent: [
+      "The mobile-first world is here, and skilled app developers are the architects. Our Mobile App Development Course in Coimbatore specializes in Flutter and Dart, allowing you to build apps for both Android and iOS. Recognized as the top software training institute in Coimbatore for mobile development, we focus on performance and native user experience.",
+      "As a pioneer AI-based software training center in Coimbatore, we teach you to use AI to generate boilerplate code and optimize mobile UI designs. This ensures you can build complex, data-driven apps 10x faster, giving you a massive advantage in the job market of 2025.",
+      "Based in the tech-friendly hub of Ram Nagar, our training program includes rigorous interview preparation and direct placements. If you are looking for a mobile app development course with placement in Coimbatore, AI Skill Up is the only place providing real-time industry projects and certified expertise."
+    ]
   },
   {
     heading: 'No-Code AI Automation Course in Coimbatore',
@@ -95,6 +304,44 @@ export const CourseData: CourseType[] = [
     price: 20,
     rating: 5.0,
     slug: '/courses/no-code-ai-automation-coimbatore',
+    description: 'Build professional apps and automate business workflows without writing a single line of code.',
+    aiPositioning: 'The future of development is no-code. Learn to ship products 10x faster with AI.',
+    placementPromise: 'Prepare for Automation Consultant and Low-code Developer roles.',
+    whyChoose: {
+      marketDemand: 'Companies are feverishly hiring for automation to reduce costs.',
+      salaryInsights: 'Automation specialists earn 5-11 LPA.',
+      careerRoles: ['No-Code Developer', 'Automation Lead', 'Product Manager', 'Workflow Architect']
+    },
+    syllabus: [
+      {
+        tabName: 'Automation',
+        sections: [
+          { title: 'No-Code Platforms', modules: ['Bubble Fundamentals', 'Webflow for Design', 'Automation with Zapier', 'API Connectors'] },
+          { title: 'AI & Business Logic', modules: ['LLM Integration', 'Database Design', 'Responsive Web Apps', 'Launching MVPs'] }
+        ]
+      }
+    ],
+    tools: [
+      { name: 'Bubble', icon: 'logos:bubble' },
+      { name: 'Zapier', icon: 'logos:zapier-icon' },
+      { name: 'Webflow', icon: 'logos:webflow' }
+    ],
+    projects: [
+      { title: 'Custom CRM', description: 'End-to-end CRM system built entirely with No-Code.' },
+      { title: 'Helpdesk AI', description: 'Automated customer support system using AI bots.' }
+    ],
+    faqs: [
+      { q: 'Can I really build apps without coding?', a: 'Yes! Modern platforms like Bubble and Webflow allow you to build complex, professional-grade applications using visual logic.' },
+      { q: 'Who is this course for?', a: 'Entrepreneurs, Product Managers, and anyone looking to ship products fast without learning complex programming.' },
+      { q: 'Will I learn to use LLMs like ChatGPT?', a: 'Yes, we focus heavily on integrating AI models into your no-code apps to make them "smart".' },
+      { q: 'Is No-Code the future of development?', a: 'It is a significant part of it. No-Code allows for much faster prototyping and internal tool development.' },
+      { q: 'What kind of jobs can I get after this?', a: 'Roles like No-Code Developer, Automation Consultant, and Product Operations are in high demand.' }
+    ],
+    longFormContent: [
+      "Believe you can build software without being a coder? Our No-Code AI Automation Course in Coimbatore makes it a reality. As a leading software training center in Coimbatore focused on efficiency, we teach you to build full-scale apps and automate complex workflows using visual development platforms.",
+      "We are the only AI-based software training institute in Coimbatore that specializes in hyper-automation. You will learn to use ChatGPT APIs and Zapier to create 'intelligent' business systems that work automatically. This makes you the perfect candidate for high-growth roles in operations and product management.",
+      "Located in the heart of Coimbatore at Ram Nagar, we provide placement pathways to modern startups that value speed and innovation. If you want to master the future of development, our no-code course with placement support is your gateway to the 2025 tech industry."
+    ]
   },
   {
     heading: 'Digital Marketing Course in Coimbatore',
@@ -105,6 +352,44 @@ export const CourseData: CourseType[] = [
     price: 20,
     rating: 5.0,
     slug: '/courses/digital-marketing-course-coimbatore',
+    description: 'Become an AI-powered Digital Marketer. Master SEO, SEM, and Content Strategy using AI tools.',
+    aiPositioning: 'Dominate the market with AI content generation, automated ad optimization, and predictive analytics.',
+    placementPromise: '100% Placement Support in top digital agencies and corporate brands.',
+    whyChoose: {
+      marketDemand: 'Traditional marketing is dead. AI-driven marketing is the now.',
+      salaryInsights: 'Digital Marketers earn 3-8 LPA with massive growth potential.',
+      careerRoles: ['SEO Specialist', 'Performance Marketer', 'Content Strategist', 'Growth Lead']
+    },
+    syllabus: [
+      {
+        tabName: 'Marketing AI',
+        sections: [
+          { title: 'Core Marketing', modules: ['SEO Mastery', 'Social Media Ads', 'Email Automation', 'Content Strategy'] },
+          { title: 'AI & Analytics', modules: ['AI Content Creators', 'Google Ads with AI', 'Data Analysis', 'Conversion Optimization'] }
+        ]
+      }
+    ],
+    tools: [
+      { name: 'Google Ads', icon: 'logos:google-ads' },
+      { name: 'Meta Ads', icon: 'logos:facebook' },
+      { name: 'Semrush', icon: 'logos:semrush' }
+    ],
+    projects: [
+      { title: 'Global SEO Project', description: 'Rank a website for high-intent keywords globally.' },
+      { title: 'Ad Campaign AI', description: 'Run and optimize multi-channel ad campaigns using AI.' }
+    ],
+    faqs: [
+      { q: 'Why is AI important for Digital Marketing?', a: 'AI helps in generating high-quality content at scale, optimizing ad spend in real-time, and predicting customer behavior.' },
+      { q: 'Do I need to be a technical person?', a: 'No, this course is designed for people from all backgrounds, including non-tech and creative individuals.' },
+      { q: 'Which certifications will I receive?', a: 'In addition to our academy certificate, we help you earn certifications from Google, Meta, and HubSpot.' },
+      { q: 'Is freelance coaching included?', a: 'Yes, we have a dedicated module on how to find international clients and start your own digital agency.' },
+      { q: 'What tools will I master?', a: 'You will learn Google Ads, Meta Ads Masterclass, Semrush, Canva AI, and ChatGPT for marketing.' }
+    ],
+    longFormContent: [
+      "Traditional marketing is no longer enough. Our Digital Marketing Course in Coimbatore turns you into an AI-powered growth engine. As the best digital marketing training institute in Coimbatore, we cover everything from technical SEO and performance marketing to data-driven content strategy.",
+      "What sets us apart is our focus on AI-based software training for marketers. You'll learn to use AI for high-velocity content creation and automated ad optimization, positioning us as the top AI-centric marketing academy in Coimbatore. You'll master the strategies that global brands use to dominate search results.",
+      "With 100% placement support in Ram Nagar, Coimbatore, AI Skill Up bridges the gap between you and the world's leading agencies. Whether you want to start a freelance business or join a global brand, our digital marketing course is designed for high-impact career transformation."
+    ]
   },
 ]
 

@@ -16,7 +16,7 @@ const AllCoursesPage = () => {
         <>
             <HeroSub
                 title="Best Software Training Courses in Coimbatore with Placement"
-                subtitle="Join the only AI-native training academy in Coimbatore. Our expert-led courses use real AI tools to prepare you for the high-paying IT jobs of tomorrow."
+                subtitle="Join the only AI-native training academy in Coimbatore. Our expert-led courses use real AI tools to prepare you for tomorrow's high-paying IT jobs."
                 breadcrumbs={[{ label: 'Courses', href: '/courses' }]}
             />
             

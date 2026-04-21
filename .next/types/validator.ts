@@ -128,118 +128,10 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../src/app/courses/ai-based-mobile-app-development/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/ai-based-mobile-app-development">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/ai-based-mobile-app-development/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/data-science-course-coimbatore/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/data-science-course-coimbatore">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/data-science-course-coimbatore/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/digital-marketing-course-coimbatore/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/digital-marketing-course-coimbatore">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/digital-marketing-course-coimbatore/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/digital-marketing-course-using-ai/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/digital-marketing-course-using-ai">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/digital-marketing-course-using-ai/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/full-stack-development-course-coimbatore/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/full-stack-development-course-coimbatore">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/full-stack-development-course-coimbatore/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/full-stack-development-using-ai/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/full-stack-development-using-ai">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/full-stack-development-using-ai/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/mobile-app-development-course-coimbatore/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/mobile-app-development-course-coimbatore">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/mobile-app-development-course-coimbatore/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/no-code-ai-automation-coimbatore/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/no-code-ai-automation-coimbatore">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/no-code-ai-automation-coimbatore/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/no-code-development-course/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/no-code-development-course">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/no-code-development-course/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
 // Validate ../../src/app/courses/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/courses">> = Specific
   const handler = {} as typeof import("../../src/app/courses/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/python-course-coimbatore/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/python-course-coimbatore">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/python-course-coimbatore/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/ui-and-ux-design-course-using-ai/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/ui-and-ux-design-course-using-ai">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/ui-and-ux-design-course-using-ai/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/ui-ux-design-course-coimbatore/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/courses/ui-ux-design-course-coimbatore">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/ui-ux-design-course-coimbatore/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -293,24 +185,6 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 
 
 
-
-// Validate ../../src/app/courses/full-stack-development-course-coimbatore/layout.tsx
-{
-  type __IsExpected<Specific extends LayoutConfig<"/courses/full-stack-development-course-coimbatore">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/full-stack-development-course-coimbatore/layout.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/courses/full-stack-development-using-ai/layout.tsx
-{
-  type __IsExpected<Specific extends LayoutConfig<"/courses/full-stack-development-using-ai">> = Specific
-  const handler = {} as typeof import("../../src/app/courses/full-stack-development-using-ai/layout.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
 
 // Validate ../../src/app/layout.tsx
 {

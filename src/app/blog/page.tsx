@@ -1,27 +1,19 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { blogs } from '@/data/blogs'
+import HeroSub from "@/app/components/SharedComponent/HeroSub"
 
 const BlogPage = () => {
   return (
-    <main className="min-h-screen bg-[#F6FAFF] pt-32 pb-24">
-      {/* Header Section */}
-      <section className="container mb-16 text-center">
-        <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest mb-6 inline-block">
-          Academy Insights
-        </span>
-        <h1 className="text-4xl md:text-6xl font-black text-midnight_text mb-6">
-          Latest from <span className="text-primary italic">AI SKILL UP</span> Blog
-        </h1>
-        <p className="text-lg text-black/60 max-w-2xl mx-auto leading-relaxed">
-          Stay ahead of the curve with our weekly insights on AI, No-Code development, 
-          and modern software engineering trends in Coimbatore.
-        </p>
-      </section>
+    <main className="min-h-screen bg-[#F6FAFF] pb-24">
+      <HeroSub 
+        title="Latest from AI SKILL UP Blog"
+        subtitle="Stay ahead of the curve with our weekly insights on AI, No-Code development, and modern software engineering trends in Coimbatore."
+        breadcrumbs={[{ label: 'Blog', href: '/blog' }]}
+      />
+
 
       {/* Blog Feed */}
       <section className="container">

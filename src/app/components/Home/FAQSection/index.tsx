@@ -30,8 +30,18 @@ const faqs = [
   }
 ]
 
-const FAQSection = () => {
+interface FAQItem {
+  q: string
+  a: string
+}
+
+interface FAQSectionProps {
+  items?: FAQItem[]
+}
+
+const FAQSection = ({ items }: FAQSectionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const displayFaqs = items || faqs
 
   return (
     <section className="py-24 bg-slate-50 border-t border-gray-100" id="faq">
@@ -46,7 +56,7 @@ const FAQSection = () => {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, idx) => (
+          {displayFaqs.map((faq, idx) => (
             <div 
               key={idx} 
               className="bg-white border border-gray-200 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
