@@ -6,10 +6,12 @@ import Logo from '../Header/Logo'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { FooterLinkType } from '@/app/types/footerlink'
 
-const Footer = () => {
-  const [footerlink, SetFooterlink] = useState<FooterLinkType[]>([])
+const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
+  const [footerlink, SetFooterlink] = useState<FooterLinkType[]>(initialData || [])
 
   useEffect(() => {
+    if (initialData) return
+
     const fetchData = async () => {
       try {
         const res = await fetch('/api/data')
@@ -21,7 +23,7 @@ const Footer = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [initialData])
 
   return (
     <footer className='bg-[#D5EFFA] pt-16 pb-8'>

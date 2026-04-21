@@ -1,75 +1,87 @@
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@iconify/react/dist/iconify.js'
 
 const Hero = () => {
   return (
-    <section id='home-section' className='bg-slate-gray'>
-      <div className='container pt-16'>
-        <div className='grid grid-cols-1 lg:grid-cols-12 lg:gap-1 gap-10 items-center'>
-          <div className='col-span-6 flex flex-col gap-8'>
-            <div className='flex gap-2 mx-auto lg:mx-0 items-center'>
-              <div className="bg-success/15 p-1 rounded-full">
-                <Icon
-                  icon='tabler:check'
-                  className='text-success text-sm font-bold'
-                />
+    <section id='home-section' className='bg-slate-gray relative overflow-hidden'>
+      {/* Background Graphic Elements */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -mr-64 -mt-64 z-0"></div>
+      
+      <div className='container pt-20 lg:pt-32 pb-20 relative z-10'>
+        <div className='grid grid-cols-1 lg:grid-cols-12 gap-16 items-center'>
+          <div className='col-span-12 lg:col-span-7 flex flex-col gap-8'>
+            <div className='flex gap-2 items-center bg-primary/5 w-fit px-4 py-2 rounded-full border border-primary/10'>
+              <div className="bg-primary/20 p-1 rounded-full">
+                <Icon icon='tabler:star-filled' className='text-primary text-xs' />
               </div>
-              <p className='text-success text-sm font-semibold uppercase tracking-wider'>
-                Get 30% off on first enroll
+              <p className='text-primary text-xs font-black uppercase tracking-[0.2em]'>
+                Coimbatore's #1 AI Native Academy
               </p>
             </div>
-            <h1 className='text-[#0F172A] lg:text-start text-center font-bold'>
-              Top AI-Based Software Training Institute in Coimbatore
+
+            <h1 className='text-4xl md:text-6xl font-black text-midnight_text leading-[1.1]'>
+              Top <span className="text-primary">AI-Based</span> Software Training Institute in <span className="italic">Coimbatore</span>
             </h1>
-            <p className='text-black/70 text-lg lg:text-start text-center max-w-xl'>
-              Build skills with our courses and mentor from world-class
-              companies.
-            </p>
-            <div className='flex gap-4 lg:justify-start justify-center mt-4'>
-              <Link href='/courses' className='bg-primary text-white hover:bg-primary/90 py-3 px-8 rounded-full text-lg font-semibold transition-all shadow-md active:scale-95 flex items-center gap-2'>
+
+            <h2 className='text-xl md:text-2xl font-bold text-black/80 leading-relaxed max-w-2xl'>
+              Learn Full Stack Development, UI/UX Design, Digital Marketing & No-Code AI Automation with Real AI Tools — 100% Placement Support
+            </h2>
+
+            <div className='text-lg text-black/60 leading-relaxed max-w-2xl'>
+              <p>
+                In today's fast-evolving IT landscape, traditional skills are no longer enough. 
+                As the <strong>best software training institute Coimbatore with placement</strong> providers, we bridge this gap by integrating artificial intelligence into every module. 
+                Our <strong>AI-based software training institute in Coimbatore</strong> prepares you for the high-demand jobs of 2025. 
+                Whether you're looking for a <strong>full stack development course Coimbatore</strong>, an industry-leading <strong>UI UX design course Coimbatore</strong>, 
+                or a future-proof <strong>no code development course Coimbatore</strong>, our academy at Ram Nagar provides the hands-on expertise you need. 
+                We also offer a specialized <strong>digital marketing course using AI Coimbatore</strong> to help you master modern growth strategies. 
+                Join the most trusted <strong>IT training institute Ram Nagar Coimbatore</strong> and launch your career with confidence.
+              </p>
+            </div>
+
+            <div className='flex flex-wrap gap-5 mt-4'>
+              <Link href='/courses' className='bg-primary text-white hover:bg-primary/90 py-4 px-10 rounded-full text-lg font-black transition-all shadow-xl shadow-primary/20 hover:-translate-y-1 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
                 Explore Courses
-                <Icon icon='solar:arrow-right-linear' width={22} height={22} />
+                <Icon icon='solar:arrow-right-up-bold' width={22} height={22} />
               </Link>
-              <Link href='tel:+919655422511' className='bg-secondary text-white hover:bg-secondary/90 py-3 px-8 rounded-full text-lg font-semibold transition-all shadow-md active:scale-95 flex items-center gap-2'>
+              <Link href='tel:+919655422511' className='bg-white text-midnight_text hover:bg-gray-50 py-4 px-10 rounded-full text-lg font-black transition-all shadow-lg border border-gray-100 hover:-translate-y-1 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
                 <Icon icon='solar:phone-bold' width={22} height={22} />
                 CALL NOW
               </Link>
             </div>
-            <div className='flex items-center gap-10 pt-10 lg:pt-4 flex-wrap'>
-              <div className='flex items-center gap-3'>
-                <div className="bg-primary/10 p-1.5 rounded-full">
-                  <Icon icon="tabler:check" className="text-primary text-xl" />
-                </div>
-                <p className='text-lg font-semibold text-black/80'>
-                  Flexible
-                </p>
+
+            {/* Stat Bar SSR Rendered */}
+            <div className='grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-black/5 mt-4'>
+              <div>
+                <p className="text-3xl font-black text-midnight_text">9K+</p>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Students Trained</p>
               </div>
-              <div className='flex items-center gap-3'>
-                <div className="bg-primary/10 p-1.5 rounded-full">
-                  <Icon icon="tabler:check" className="text-primary text-xl" />
-                </div>
-                <p className='text-lg font-semibold text-black/80'>
-                  Learning path
-                </p>
+              <div>
+                <p className="text-3xl font-black text-midnight_text">5.0</p>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Google Rating</p>
               </div>
-              <div className='flex items-center gap-3'>
-                <div className="bg-primary/10 p-1.5 rounded-full">
-                  <Icon icon="tabler:check" className="text-primary text-xl" />
-                </div>
-                <p className='text-lg font-semibold text-black/80'>
-                  Community
-                </p>
+              <div>
+                <p className="text-3xl font-black text-midnight_text">100%</p>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Placement</p>
+              </div>
+              <div>
+                <p className="text-3xl font-black text-midnight_text">7+</p>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">AI Courses</p>
               </div>
             </div>
-
           </div>
-          <div className='col-span-6 flex justify-center'>
-            <Image
+
+          <div className='col-span-12 lg:col-span-5 relative flex justify-center'>
+             <div className="absolute inset-0 bg-primary/10 rounded-[4rem] rotate-6 scale-90 -z-10"></div>
+             <Image
               src='/images/banner/mahila.webp'
-              alt='nothing'
-              width={1000}
-              height={805}
+              alt='AI-Based Software Training Institute in Coimbatore'
+              width={600}
+              height={500}
+              priority
+              className="rounded-[3rem] object-cover shadow-2xl"
             />
           </div>
         </div>

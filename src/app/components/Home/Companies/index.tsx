@@ -7,10 +7,12 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 // CAROUSEL SETTINGS
-const Companies = () => {
-  const [techGaint, setTechGaint] = useState<{ imgSrc: string }[]>([])
+const Companies = ({ initialData }: { initialData?: { imgSrc: string }[] }) => {
+  const [techGaint, setTechGaint] = useState<{ imgSrc: string }[]>(initialData || [])
 
   useEffect(() => {
+    if (initialData) return
+
     const fetchData = async () => {
       try {
         const res = await fetch('/api/data')
@@ -22,7 +24,7 @@ const Companies = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [initialData])
 
   const settings = {
     dots: false,

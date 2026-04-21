@@ -8,14 +8,16 @@ import MobileHeaderLink from '../Header/Navigation/MobileHeaderLink'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { HeaderType } from '@/app/types/menu'
 
-const Header: React.FC = () => {
+const Header = ({ initialData }: { initialData?: HeaderType[] }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
   const [sticky, setSticky] = useState(false)
-  const [navLink, setNavLink] = useState<HeaderType[]>([])
+  const [navLink, setNavLink] = useState<HeaderType[]>(initialData || [])
 
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (initialData) return
+
     const fetchData = async () => {
       try {
         const res = await fetch('/api/data')
@@ -27,7 +29,7 @@ const Header: React.FC = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [initialData])
 
   const handleScroll = () => {
     setSticky(window.scrollY >= 80)

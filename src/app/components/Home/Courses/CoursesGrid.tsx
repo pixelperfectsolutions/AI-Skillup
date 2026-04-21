@@ -7,11 +7,13 @@ import { Icon } from '@iconify/react'
 import { CourseType } from '@/app/types/course'
 import CourseSkeleton from '../../Skeleton/Course'
 
-const CoursesGrid = () => {
-  const [courses, setCourses] = useState<CourseType[]>([])
-  const [loading, setLoading] = useState(true)
+const CoursesGrid = ({ initialData }: { initialData?: CourseType[] }) => {
+  const [courses, setCourses] = useState<CourseType[]>(initialData || [])
+  const [loading, setLoading] = useState(!initialData)
 
   useEffect(() => {
+    if (initialData) return
+
     const fetchData = async () => {
       try {
         const res = await fetch('/api/data')
@@ -25,7 +27,7 @@ const CoursesGrid = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [initialData])
 
   const renderStars = (rating: number) => {
     const fullStars = Math.floor(rating)

@@ -9,11 +9,13 @@ import 'slick-carousel/slick/slick-theme.css'
 import { TestimonialType } from '@/app/types/testimonial'
 import TestimonialSkeleton from '../../Skeleton/Testimonial'
 
-const Testimonial = () => {
-  const [testimonial, setTestimonial] = useState<TestimonialType[]>([])
-  const [loading, setLoading] = useState(true)
+const Testimonial = ({ initialData }: { initialData?: TestimonialType[] }) => {
+  const [testimonial, setTestimonial] = useState<TestimonialType[]>(initialData || [])
+  const [loading, setLoading] = useState(!initialData)
 
   useEffect(() => {
+    if (initialData) return
+
     const fetchData = async () => {
       try {
         const res = await fetch('/api/data')
@@ -27,7 +29,7 @@ const Testimonial = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [initialData])
 
   const settings = {
     dots: true,

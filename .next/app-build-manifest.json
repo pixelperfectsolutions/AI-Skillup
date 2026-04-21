@@ -1,104 +1,320 @@
 {
   "pages": {
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/app/_not-found/page-384b61101395d751.js"
     ],
     "/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/app/not-found-dd06a116bc94026a.js"
     ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
+    "/layout": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/2361fdc1ec50e7cb.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/layout-c770b3d658f8e894.js"
+    ],
+    "/robots.txt/route": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/app/robots.txt/route-384b61101395d751.js"
+    ],
+    "/sitemap.xml/route": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/app/sitemap.xml/route-384b61101395d751.js"
     ],
     "/api/data/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/data/route.js"
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/app/api/data/route-384b61101395d751.js"
     ],
-    "/courses/full-stack-development-using-ai/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/courses/full-stack-development-using-ai/layout.js"
+    "/blog/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/blog/page-dffd170bf1aade18.js"
     ],
-    "/courses/full-stack-development-using-ai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/full-stack-development-using-ai/page.css",
-      "static/chunks/app/courses/full-stack-development-using-ai/page.js"
-    ],
-    "/courses/ui-and-ux-design-course-using-ai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/ui-and-ux-design-course-using-ai/page.css",
-      "static/chunks/app/courses/ui-and-ux-design-course-using-ai/page.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
-    ],
-    "/courses/python-course-coimbatore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/python-course-coimbatore/page.css",
-      "static/chunks/app/courses/python-course-coimbatore/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
-    "/courses/data-science-course-coimbatore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/data-science-course-coimbatore/page.css",
-      "static/chunks/app/courses/data-science-course-coimbatore/page.js"
-    ],
-    "/courses/full-stack-development-course-coimbatore/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/courses/full-stack-development-course-coimbatore/layout.js"
-    ],
-    "/courses/full-stack-development-course-coimbatore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/full-stack-development-course-coimbatore/page.css",
-      "static/chunks/app/courses/full-stack-development-course-coimbatore/page.js"
-    ],
-    "/courses/ui-ux-design-course-coimbatore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/ui-ux-design-course-coimbatore/page.css",
-      "static/chunks/app/courses/ui-ux-design-course-coimbatore/page.js"
-    ],
-    "/courses/no-code-ai-automation-coimbatore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/no-code-ai-automation-coimbatore/page.css",
-      "static/chunks/app/courses/no-code-ai-automation-coimbatore/page.js"
-    ],
-    "/courses/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/courses/page.js"
-    ],
-    "/courses/digital-marketing-course-coimbatore/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/courses/digital-marketing-course-coimbatore/page.css",
-      "static/chunks/app/courses/digital-marketing-course-coimbatore/page.js"
+    "/courses/[slug]/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/942-8c68d02dbe53dd58.js",
+      "static/chunks/app/courses/[slug]/page-d2decd3f877373ac.js"
     ],
     "/corporate-training/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/corporate-training/page.js"
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/corporate-training/page-36f7526991768960.js"
+    ],
+    "/courses/data-science-course-coimbatore/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/data-science-course-coimbatore/page-b23eb6b12f299521.js"
+    ],
+    "/courses/ai-based-mobile-app-development/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/ai-based-mobile-app-development/page-042215dae8290a25.js"
+    ],
+    "/courses/digital-marketing-course-coimbatore/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/digital-marketing-course-coimbatore/page-5dd56e71124b8003.js"
+    ],
+    "/courses/digital-marketing-course-using-ai/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/digital-marketing-course-using-ai/page-d8fd09c92b7a0a0e.js"
+    ],
+    "/courses/mobile-app-development-course-coimbatore/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/mobile-app-development-course-coimbatore/page-dc518bd81519b54e.js"
+    ],
+    "/courses/no-code-ai-automation-coimbatore/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/no-code-ai-automation-coimbatore/page-6f32c8709a9cee48.js"
+    ],
+    "/courses/no-code-development-course/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/no-code-development-course/page-6fc1460e0705da23.js"
+    ],
+    "/courses/python-course-coimbatore/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/python-course-coimbatore/page-dcd52c70311bc9c0.js"
+    ],
+    "/courses/ui-ux-design-course-coimbatore/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/ui-ux-design-course-coimbatore/page-8598497b14137eaa.js"
+    ],
+    "/courses/ui-and-ux-design-course-using-ai/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/ui-and-ux-design-course-using-ai/page-20a9b7865fc52529.js"
+    ],
+    "/(site)/documentation/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/(site)/documentation/page-ecb4f50fab298ed9.js"
+    ],
+    "/(site)/(auth)/signup/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/app/(site)/(auth)/signup/page-0df2e05dcb263508.js"
+    ],
+    "/(site)/(auth)/signin/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/app/(site)/(auth)/signin/page-98611d766021c91e.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/contact/page-cd0a412c9c9541ea.js"
+    ],
+    "/blog/[slug]/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/blog/[slug]/page-1c9277167a109f68.js"
+    ],
+    "/about/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/app/about/page-dd06a116bc94026a.js"
+    ],
+    "/courses/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/942-8c68d02dbe53dd58.js",
+      "static/chunks/app/courses/page-3e02077735a79abc.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/page-3e4e0fde14b08560.js"
+    ],
+    "/privacy/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/app/privacy/page-e9cf849db0ba0f05.js"
+    ],
+    "/terms/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/app/terms/page-e9cf849db0ba0f05.js"
+    ],
+    "/seo-strategy/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/app/seo-strategy/page-2e29d22baff182a5.js"
+    ],
+    "/courses/full-stack-development-using-ai/layout": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/app/courses/full-stack-development-using-ai/layout-384b61101395d751.js"
+    ],
+    "/courses/full-stack-development-using-ai/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/full-stack-development-using-ai/page-376f5ea184cd6b9c.js"
+    ],
+    "/courses/full-stack-development-course-coimbatore/layout": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/chunks/app/courses/full-stack-development-course-coimbatore/layout-384b61101395d751.js"
+    ],
+    "/courses/full-stack-development-course-coimbatore/page": [
+      "static/chunks/webpack-aea5de21e9fb3536.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ebd51be49873d76c.js",
+      "static/chunks/main-app-66f5231102c067b4.js",
+      "static/css/63c7182515913e2f.css",
+      "static/chunks/850-c487466e99d5bc98.js",
+      "static/chunks/262-937d2708a372fb11.js",
+      "static/chunks/573-8cae87dee8c1508d.js",
+      "static/chunks/app/courses/full-stack-development-course-coimbatore/page-967f67a7ef277f05.js"
     ]
   }
 }

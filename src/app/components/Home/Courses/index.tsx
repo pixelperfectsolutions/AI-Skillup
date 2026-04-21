@@ -10,34 +10,19 @@ import 'slick-carousel/slick/slick-theme.css'
 import { CourseType } from '@/app/types/course'
 import CourseSkeleton from '../../Skeleton/Course'
 
-const Courses = () => {
-  const [course, setCourse] = useState<CourseType[]>([])
-  const [loading, setLoading] = useState(true)
+const Courses = ({ initialData }: { initialData?: CourseType[] }) => {
+  const [course, setCourse] = useState<CourseType[]>(initialData || [])
+  const [loading, setLoading] = useState(!initialData)
 
   useEffect(() => {
+    if (initialData) return
+
     const fetchData = async () => {
       try {
         const res = await fetch('/api/data')
         if (!res.ok) throw new Error('Failed to fetch')
         const data = await res.json()
-        // Exclude Python and Data Science – they have dedicated hero pages
-        // Also restore original images for Home Page slider as requested
-        const filtered = (data.CourseData as CourseType[])
-          .filter(
-            (c) =>
-              !c.slug?.includes('python-course') &&
-              !c.slug?.includes('data-science-course')
-          )
-          .map((c) => {
-            let originalImg = c.imgSrc;
-            if (c.slug?.includes('full-stack')) originalImg = '/images/course-1.png';
-            if (c.slug?.includes('ui-ux')) originalImg = '/images/course-2.png';
-            if (c.slug?.includes('mobile-app')) originalImg = '/images/course-3.png';
-            if (c.slug?.includes('no-code')) originalImg = '/images/course-4.png';
-            if (c.slug?.includes('digital-marketing')) originalImg = '/images/course-5.png';
-            return { ...c, imgSrc: originalImg };
-          });
-        setCourse(filtered)
+        setCourse(data.CourseData)
       } catch (error) {
         console.error('Error fetching service:', error)
       } finally {
@@ -45,7 +30,7 @@ const Courses = () => {
       }
     }
     fetchData()
-  }, [])
+  }, [initialData])
 
   const settings = {
     dots: true,

@@ -5,9 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const stats = [
-    { value: 100, suffix: '%', label: 'Placement Support' },
+    { value: 9000, suffix: '+', label: 'Students Trained' },
     { value: 500, suffix: '+', label: 'Companies Visited' },
-    { value: 5000, suffix: '+', label: 'Students Placed' },
+    { value: 100, suffix: '%', label: 'Placement Support' },
     { value: 200, suffix: '+', label: 'Hiring Partners' },
     { value: 50, suffix: '+', label: 'Mock Interviews' },
 ]
@@ -53,11 +53,16 @@ const whatYouGet = [
 ]
 
 const Placement = () => {
-    const [counters, setCounters] = useState(stats.map(() => 0))
+    // Correct SEO approach: Start with final values so SSR has them.
+    // Client-side effect will reset them to 0 and trigger animation on mount/intersection.
+    const [counters, setCounters] = useState(stats.map(s => s.value))
     const sectionRef = useRef<HTMLElement>(null)
     const animatedRef = useRef(false)
 
     useEffect(() => {
+        // Reset counters to 0 to prepare for animation on client side
+        setCounters(stats.map(() => 0))
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !animatedRef.current) {
