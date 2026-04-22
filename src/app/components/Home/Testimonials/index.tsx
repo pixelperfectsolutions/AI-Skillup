@@ -93,10 +93,12 @@ const Testimonial = ({ initialData }: { initialData?: TestimonialType[] }) => {
   return (
     <section id='testimonial' className="pb-16 pt-8">
       <div className='container'>
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-xl">
-            <h2 className='text-midnight_text mb-4'>What Our Learners Say</h2>
-            <p className="text-black/60 text-lg">Real stories from our students about their journey with AI Skill Up.</p>
+            <h2 className='mb-6'>
+              What Our <span className="text-primary">Learners</span> Say
+            </h2>
+            <p>Real stories from our students about their transformative journey with AI Skill Up Academy.</p>
           </div>
 
           {/* Google Review Card Summary */}
@@ -106,18 +108,18 @@ const Testimonial = ({ initialData }: { initialData?: TestimonialType[] }) => {
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-2xl font-bold text-black">5.0</span>
+                <h3 className="text-midnight_text">5.0</h3>
                 <div className="flex text-yellow-500 text-sm">
                   {[...Array(5)].map((_, i) => <Icon key={i} icon="tabler:star-filled" />)}
                 </div>
               </div>
-              <p className="text-sm text-black/50 font-medium">Based on 83 Google Reviews</p>
+              <p className="text-sm text-black/50">Based on 83 Google Reviews</p>
             </div>
             <a
               href="https://www.google.com/maps/place/Graphic,+UI+UX,+AI+Design+Academy/@11.0148355,76.9638168,17z/data=!4m18!1m9!3m8!1s0x3ba8594767deeaf7:0x578b90b22a69fb4c!2sGraphic,+UI+UX,+AI+Design+Academy!8m2!3d11.0148355!4d76.9638168!9m1!1b1!16s%2Fg%2F11xrc58944!3m7!1s0x3ba8594767deeaf7:0x578b90b22a69fb4c!8m2!3d11.0148355!4d76.9638168!9m1!1b1!16s%2Fg%2F11xrc58944?entry=ttu"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-auto bg-black text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-black/80 transition-all active:scale-95"
+              className="ml-auto bg-black text-white px-4 py-2 rounded-xl text-[15px] font-semibold hover:bg-black/80 transition-all active:scale-95 uppercase"
             >
               Review
             </a>
@@ -145,17 +147,17 @@ const Testimonial = ({ initialData }: { initialData?: TestimonialType[] }) => {
                       <Icon icon="logos:google-icon" className="text-xl" />
                     </div>
 
-                    <p className='text-base font-normal text-black/70 italic leading-relaxed mb-6 flex-grow'>
+                    <p className='mb-6 flex-grow'>
                       "{truncate(items.comment, MAX_CHAR)}"
                     </p>
 
                     <div className='border-t border-gray-50 pt-4'>
-                      <p className='text-lg font-bold text-midnight_text group-hover:text-primary transition-colors'>
+                      <h4 className='group-hover:text-primary transition-colors'>
                         {items.name}
-                      </p>
-                      <p className='text-sm font-medium text-black/40'>
+                      </h4>
+                      <h5 className='text-black/40'>
                         {items.profession}
-                      </p>
+                      </h5>
                     </div>
                   </div>
                 </a>

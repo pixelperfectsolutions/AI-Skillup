@@ -14,7 +14,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderType; closeNavbar: () => void }> 
         <Link
           href={item.href}
           onClick={() => closeNavbar()}
-          className="flex-grow py-3 text-lg font-semibold text-black hover:text-primary"
+          className="flex-grow py-3 text-[16px] font-medium text-black hover:text-primary"
         >
           {item.label}
         </Link>
@@ -37,7 +37,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderType; closeNavbar: () => void }> 
               key={index}
               href={subItem.href}
               onClick={closeNavbar}
-              className="block py-3 text-base font-medium text-gray-600 hover:text-primary transition-colors"
+              className="block py-3 text-[16px] font-medium text-gray-600 hover:text-primary transition-colors"
             >
               {subItem.label}
             </Link>

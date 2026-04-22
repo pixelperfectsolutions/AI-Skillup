@@ -122,7 +122,7 @@ const Placement = () => {
                         {stats.map((stat, i) => (
                             <div
                                 key={i}
-                                className="text-center rounded-2xl px-8 py-7 transition-all duration-300 hover:-translate-y-2 bg-slate-gray border border-gray-100 shadow-sm"
+                                className="text-center rounded-2xl px-8 py-7 transition-all duration-300 hover:-translate-y-2 bg-white border border-gray-100 shadow-sm"
                                 style={{ minWidth: 160, flex: '1 1 150px', maxWidth: 200 }}
                             >
                                 <div className="block text-4xl font-black mb-2 text-primary">
@@ -171,7 +171,7 @@ const Placement = () => {
             </section>
 
             {/* ===== What You Get Section ===== */}
-            <section className="py-20 bg-slate-gray">
+            <section className="py-20 bg-white">
                 <div className="container">
                     {/* Section Header */}
                     <div className="text-center max-w-2xl mx-auto mb-14">

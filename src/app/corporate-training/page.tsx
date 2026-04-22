@@ -100,9 +100,9 @@ export default function CorporateTraining() {
                             </button>
 
                             <div className="mb-8">
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest mb-4">Inquiry</span>
-                                <h2 className="text-3xl font-black text-gray-900 mb-2">Partner With Us</h2>
-                                <p className="text-gray-500 font-bold">Fill in the details to customize your training program.</p>
+                                <h6 className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary mb-4">Inquiry</h6>
+                                <h2 className="mb-2">Partner With <span className="text-primary">Us</span></h2>
+                                <p className="font-bold">Fill in the details to customize your training program.</p>
                             </div>
 
                             <form className="space-y-4" onSubmit={(e) => {
@@ -115,14 +115,14 @@ export default function CorporateTraining() {
                                 setShowPopup(false);
                             }}>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Company Name</label>
+                                    <h6 className="ml-1 text-gray-400">Company Name</h6>
                                     <input type="text" name="company" placeholder="e.g. Google India" required className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-100 focus:border-primary focus:bg-white outline-none font-bold transition-all" />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Approx. Team Size</label>
+                                    <h6 className="ml-1 text-gray-400">Approx. Team Size</h6>
                                     <input type="number" name="employees" placeholder="e.g. 50" required className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-100 focus:border-primary focus:bg-white outline-none font-bold transition-all" />
                                 </div>
-                                <button type="submit" className="w-full bg-primary hover:bg-secondary py-5 rounded-xl text-white font-black text-lg shadow-xl transition-all flex items-center justify-center gap-3 mt-6">
+                                <button type="submit" className="w-full bg-primary hover:bg-secondary py-5 rounded-xl text-white font-semibold text-[15px] shadow-xl transition-all flex items-center justify-center gap-3 mt-6 uppercase tracking-widest">
                                     <Icon icon="solar:letter-bold" width={24} />
                                     GET A QUOTE
                                 </button>
@@ -133,7 +133,7 @@ export default function CorporateTraining() {
             )}
 
             {/* Hero Section */}
-            <section className="relative pt-24 pb-20 lg:pt-36 lg:pb-32 bg-slate-gray overflow-hidden">
+            <section className="relative pt-24 pb-20 lg:pt-36 lg:pb-32 bg-white overflow-hidden">
                 <div className="absolute inset-0 z-0 opacity-40"
                     style={{
                         backgroundImage: 'radial-gradient(#cbd5e1 1.5px, transparent 1.5px)',
@@ -146,23 +146,23 @@ export default function CorporateTraining() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="max-w-2xl text-center lg:text-left">
                             <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20 mb-6">
-                                <span className="text-primary font-bold text-sm uppercase tracking-[0.2em]">Enterprise Excellence</span>
+                                <h6 className="text-primary">Enterprise Excellence</h6>
                             </div>
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-midnight_text leading-[1.1] mb-6">
-                                Transform Your Team with <span className="text-primary italic">AI-Powered</span> Corporate Training
+                            <h1>
+                                Transform Your Team with <span className="text-primary">AI-Powered</span> Corporate Training
                             </h1>
-                            <p className="text-lg md:text-xl text-black/70 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0 font-medium">
+                            <p className="mb-8 max-w-xl mx-auto lg:mx-0 font-medium">
                                 Future-proof your workforce with customized, industry-standard training in AI, Design, and Development. Empower your team to deliver world-class results.
                             </p>
                             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                                 <button
                                     onClick={() => setShowPopup(true)}
-                                    className='bg-primary text-white hover:bg-secondary py-5 px-10 rounded-full text-lg font-black transition-all shadow-2xl hover:-translate-y-1 active:scale-95 flex items-center gap-3'
+                                    className='bg-primary text-white hover:bg-secondary py-5 px-10 rounded-full text-[15px] font-semibold transition-all shadow-2xl hover:-translate-y-1 active:scale-95 flex items-center gap-3 uppercase tracking-widest'
                                 >
                                     Get Custom Quote
                                     <Icon icon='solar:arrow-right-up-bold' width={22} height={22} />
                                 </button>
-                                <Link href='/courses' className='bg-white text-midnight_text hover:bg-gray-50 py-5 px-10 rounded-full text-lg font-black transition-all shadow-lg border border-gray-100 flex items-center gap-3'>
+                                <Link href='/courses' className='bg-white text-midnight_text hover:bg-gray-50 py-5 px-10 rounded-full text-[15px] font-semibold transition-all shadow-lg border border-gray-100 flex items-center gap-3 uppercase tracking-widest'>
                                     Explore Courses
                                     <Icon icon='solar:list-bold' width={22} height={22} />
                                 </Link>
@@ -187,8 +187,8 @@ export default function CorporateTraining() {
                                             <Icon icon="solar:verified-check-bold" className="w-5 h-5 md:w-7 md:h-7" />
                                         </div>
                                         <div>
-                                            <p className="text-[8px] md:text-[10px] text-gray-500 font-bold uppercase tracking-wider">Trusted by</p>
-                                            <p className="text-sm md:text-lg font-black text-gray-900 leading-none md:leading-normal">5+ MNCs</p>
+                                            <h6 className="text-gray-500">Trusted by</h6>
+                                            <h3 className="leading-none md:leading-normal">5+ MNCs</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -203,12 +203,12 @@ export default function CorporateTraining() {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {stats.map((stat, idx) => (
-                            <div key={idx} className="bg-slate-gray p-8 rounded-[2rem] text-center hover:bg-primary hover:text-white transition-all group duration-300">
+                            <div key={idx} className="bg-white p-8 rounded-[2rem] text-center hover:bg-primary hover:text-white transition-all group duration-300">
                                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-primary shadow-sm group-hover:rotate-12 transition-transform">
                                     <Icon icon={stat.icon} width={28} />
                                 </div>
-                                <h3 className="text-4xl font-black mb-2 group-hover:text-white">{stat.value}</h3>
-                                <p className="text-xs font-black uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100">{stat.label}</p>
+                                <h3 className="mb-2 group-hover:text-white">{stat.value}</h3>
+                                <h6 className="opacity-60 group-hover:opacity-100">{stat.label}</h6>
                             </div>
                         ))}
                     </div>
@@ -218,7 +218,7 @@ export default function CorporateTraining() {
             {/* Client Logos / Partnerships */}
             <section className="py-16 bg-white overflow-hidden">
                 <div className="container mx-auto px-4">
-                    <p className="text-center text-gray-400 text-xs font-black uppercase tracking-[0.3em] mb-12">Empowering Teams at Industry Leaders</p>
+                    <h6 className="text-center text-gray-400 mb-12">Empowering Teams at Industry Leaders</h6>
                     <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 hover:grayscale-0 transition-all duration-500">
                         <Image src="/images/ai logo.webp" alt="Partner" width={120} height={40} className="h-8 object-contain opacity-80 hover:opacity-100 transition-all" />
                         <Image src="/images/cadd bim.png" alt="Partner" width={120} height={40} className="h-8 object-contain opacity-80 hover:opacity-100 transition-all" />
@@ -229,13 +229,13 @@ export default function CorporateTraining() {
             </section>
 
             {/* Why Choose Our Corporate Training */}
-            <section className="py-24 bg-slate-gray relative overflow-hidden">
+            <section className="py-24 bg-white relative overflow-hidden">
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-20">
-                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 italic">
-                            Why Choose <span className="text-primary not-italic border-b-8 border-primary/20">AI-Skillup</span> For Your Team?
+                        <h2 className="mb-6">
+                            Why Choose <span className="text-primary">AI Skill Up</span> For Your Team?
                         </h2>
-                        <p className="text-gray-600 text-lg max-w-2xl mx-auto font-medium">We don't just teach tools; we build capabilities that drive business impact.</p>
+                        <p className="max-w-2xl mx-auto">We don't just teach tools; we build capabilities that drive business impact in Coimbatore.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -244,8 +244,8 @@ export default function CorporateTraining() {
                                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-all">
                                     <Icon icon={item.icon} width={32} />
                                 </div>
-                                <h3 className="text-2xl font-black text-gray-900 mb-4">{item.title}</h3>
-                                <p className="text-gray-600 leading-relaxed font-medium">{item.desc}</p>
+                                <h3 className="mb-4">{item.title}</h3>
+                                <p className="font-medium">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -257,18 +257,18 @@ export default function CorporateTraining() {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="lg:w-1/2">
-                            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 leading-tight italic">
-                                Specialised <span className="text-primary not-italic">Corporate</span> Modules
+                             <h2 className="mb-8 leading-tight">
+                                Specialised <span className="text-primary">Corporate</span> Modules
                             </h2>
                             <div className="space-y-6">
                                 {trainingPrograms.map((program, idx) => (
-                                    <div key={idx} className="flex gap-6 p-6 rounded-3xl border border-gray-100 hover:border-primary/30 transition-all bg-slate-gray/50">
+                                    <div key={idx} className="flex gap-6 p-6 rounded-3xl border border-gray-100 hover:border-primary/30 transition-all bg-white">
                                         <div className="w-14 h-14 rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-primary shrink-0 shadow-sm">
                                             <Icon icon={program.icon} width={28} />
                                         </div>
                                         <div>
-                                            <h4 className="text-xl font-black text-gray-900 mb-2">{program.title}</h4>
-                                            <p className="text-gray-600 font-medium">{program.desc}</p>
+                                            <h4 className="mb-2">{program.title}</h4>
+                                            <p className="font-medium">{program.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -289,25 +289,25 @@ export default function CorporateTraining() {
             </section>
 
             {/* Testimonials Section */}
-            <section className="py-24 bg-slate-gray relative overflow-hidden">
+            <section className="py-24 bg-white relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,_rgba(37,99,235,0.05),transparent)]"></div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-16">
                         <Icon icon="tabler:quote" width={60} className="text-primary mx-auto mb-6 opacity-20" />
-                        <h2 className="text-3xl md:text-5xl font-black text-black italic">Trusted by <span className="text-primary not-italic">Industry Leaders</span></h2>
+                        <h2 className="">Trusted by <span className="text-primary">Industry Leaders</span></h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {corporateTestimonials.map((t, idx) => (
-                            <Link 
-                                href={t.link} 
-                                key={idx} 
+                            <Link
+                                href={t.link}
+                                key={idx}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block h-full group"
                             >
                                 <div className="bg-white border border-gray-100 p-10 rounded-[2.5rem] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
-                                    <p className="text-lg text-black/70 mb-10 leading-relaxed italic font-medium flex-grow">
+                                    <p className="mb-10 flex-grow font-medium">
                                         "{t.quote}"
                                     </p>
                                     <div className="flex items-center gap-4 border-t border-gray-100 pt-8 mt-auto">
@@ -315,8 +315,8 @@ export default function CorporateTraining() {
                                             {t.initials}
                                         </div>
                                         <div>
-                                            <h4 className="text-black font-black text-lg">{t.name}</h4>
-                                            <p className="text-primary font-black uppercase tracking-widest text-[10px]">{t.role}, {t.company}</p>
+                                            <h4 className="">{t.name}</h4>
+                                            <h6 className="text-primary">{t.role}, {t.company}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -330,17 +330,17 @@ export default function CorporateTraining() {
             <section className="py-32 bg-white relative border-t border-gray-100">
                 <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -mr-48 -mb-48"></div>
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <h2 className="text-4xl md:text-6xl font-black text-black mb-8 italic">Ready to Upskill Your <span className="text-primary not-italic underline decoration-success decoration-8 underline-offset-12">Team?</span></h2>
-                    <p className="text-black/60 text-2xl mb-12 max-w-2xl mx-auto font-bold">Let's discuss how we can tailor our programs for your organizational success.</p>
+                    <h2 className="mb-8">Ready to Upskill Your <span className="text-primary underline decoration-success/20 decoration-8 underline-offset-12">Team?</span></h2>
+                    <p className="mb-12 max-w-2xl mx-auto font-bold">Let's discuss how we can tailor our programs for your organizational success.</p>
                     <div className="flex flex-wrap justify-center gap-6">
                         <button
                             onClick={() => setShowPopup(true)}
-                            className='bg-primary text-white hover:bg-primary/90 py-6 px-16 rounded-full text-xl font-black transition-all shadow-xl shadow-primary/20 hover:-translate-y-2 active:scale-95 flex items-center gap-3 uppercase tracking-widest'
+                            className='bg-primary text-white hover:bg-primary/90 py-6 px-16 rounded-full text-[15px] font-semibold transition-all shadow-xl shadow-primary/20 hover:-translate-y-2 active:scale-95 flex items-center gap-3 uppercase tracking-widest'
                         >
                             Get Started
                             <Icon icon='solar:heart-bold' width={24} height={24} />
                         </button>
-                        <Link href='tel:+919655422511' className='bg-success text-white hover:bg-success/90 py-6 px-16 rounded-full text-xl font-black transition-all shadow-xl shadow-success/20 hover:-translate-y-2 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
+                        <Link href='tel:+919655422511' className='bg-success text-white hover:bg-success/90 py-6 px-16 rounded-full text-[15px] font-semibold transition-all shadow-xl shadow-success/20 hover:-translate-y-2 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
                             Call Expert
                             <Icon icon='solar:phone-bold' width={24} height={24} />
                         </Link>

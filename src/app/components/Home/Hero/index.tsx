@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react/dist/iconify.js'
 
 const Hero = () => {
   return (
-    <section id='home-section' className='bg-slate-gray relative overflow-hidden'>
+    <section id='home-section' className='bg-white relative overflow-hidden'>
       {/* Background Graphic Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -mr-64 -mt-64 z-0"></div>
 
@@ -13,76 +13,74 @@ const Hero = () => {
         <div className="mb-12 text-center lg:text-left flex flex-col gap-6">
           <div className='flex gap-2 items-center bg-primary/5 w-fit px-4 py-2 rounded-full border border-primary/10 mx-auto lg:mx-0'>
             <div className="bg-primary/20 p-1 rounded-full">
-              <Icon icon='tabler:star-filled' className='text-primary text-xs' />
+              <Icon icon='tabler:star-filled' className='text-primary text-[10px]' />
             </div>
-            <p className='text-primary text-xs font-black uppercase tracking-[0.2em]'>
+            <h6 className='text-primary'>
               Coimbatore's #1 AI Native Academy
-            </p>
+            </h6>
           </div>
-          <h1 className='text-4xl md:text-7xl font-black text-midnight_text leading-[1.1] w-full'>
+          <h1 className='w-full'>
             Top <span className="text-primary">AI-Based</span> Software Training Institute in <span className="text-success">Coimbatore</span>
           </h1>
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-12 gap-16 items-start'>
           <div className='col-span-12 lg:col-span-7 flex flex-col gap-8'>
-            <h2 className='text-xl md:text-2xl font-bold text-black/80 leading-relaxed max-w-2xl'>
+            <h5 className='font-bold text-black/80 leading-relaxed max-w-2xl text-center lg:text-left'>
               Learn Full Stack Development, UI/UX Design, Digital Marketing & No-Code AI Automation with Real AI Tools 100% Placement Support
-            </h2>
+            </h5>
 
-            <div className='text-lg text-black/60 leading-relaxed max-w-2xl'>
+            <div className='max-w-2xl text-center lg:text-left'>
               <p>
                 In today's fast-evolving IT landscape, traditional skills are no longer enough.
-                As the <strong>best software training institute Coimbatore with placement</strong> providers, we bridge this gap by integrating artificial intelligence into every module.
-                Our <strong>AI-based software training institute in Coimbatore</strong> prepares you for the high-demand jobs of 2025.
-                Whether you're looking for a <strong>full stack development course Coimbatore</strong>, an industry-leading <strong>UI UX design course Coimbatore</strong>,
-                or a future-proof <strong>no code development course Coimbatore</strong>, our academy at Ram Nagar provides the hands-on expertise you need.
-                We also offer a specialized <strong>digital marketing course using AI Coimbatore</strong> to help you master modern growth strategies.
-                Join the most trusted <strong>IT training institute Ram Nagar Coimbatore</strong> and launch your career with confidence.
+                As the best software training institute Coimbatore with placement providers, we bridge this gap by integrating artificial intelligence into every module.
+                Our AI-based software training institute in Coimbatore prepares you for the high-demand jobs of 2025.
+                Whether you're looking for a full stack development course Coimbatore, an industry-leading UI UX design course Coimbatore,
+                or a future-proof no code development course Coimbatore, our academy at Ram Nagar provides the hands-on expertise you need.
               </p>
             </div>
 
-            <div className='flex flex-wrap gap-5 mt-4'>
-              <Link href='/courses' className='bg-primary text-white hover:bg-primary/90 py-4 px-10 rounded-full text-lg font-black transition-all shadow-xl shadow-primary/20 hover:-translate-y-1 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
+            <div className='flex flex-wrap gap-5 mt-4 justify-center lg:justify-start'>
+              <Link href='/courses' className='bg-primary text-white hover:bg-primary/90 py-4 px-10 rounded-full text-[15px] font-semibold transition-all shadow-xl shadow-primary/20 hover:-translate-y-1 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
                 Explore Courses
                 <Icon icon='solar:arrow-right-up-bold' width={22} height={22} />
               </Link>
-              <Link href='tel:+919655422511' className='bg-white text-midnight_text hover:bg-gray-50 py-4 px-10 rounded-full text-lg font-black transition-all shadow-lg border border-gray-100 hover:-translate-y-1 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
+              <Link href='tel:+919655422511' className='bg-white text-midnight_text hover:bg-gray-50 py-4 px-10 rounded-full text-[15px] font-semibold transition-all shadow-lg border border-gray-100 hover:-translate-y-1 active:scale-95 flex items-center gap-3 uppercase tracking-widest'>
                 <Icon icon='solar:phone-bold' width={22} height={22} />
                 CALL NOW
               </Link>
             </div>
 
             {/* Stat Bar SSR Rendered */}
-            <div className='grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-black/5 mt-4'>
+            <div className='grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-black/5 mt-8'>
               <div>
-                <p className="text-3xl font-black text-midnight_text">9K+</p>
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Students Trained</p>
+                <h3 className="mb-1 text-center lg:text-left">9K+</h3>
+                <h6 className="text-gray-400 text-center lg:text-left">Students Trained</h6>
               </div>
               <div>
-                <p className="text-3xl font-black text-midnight_text">5.0</p>
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Google Rating</p>
+                <h3 className="mb-1 text-center lg:text-left">5.0</h3>
+                <h6 className="text-gray-400 text-center lg:text-left">Google Rating</h6>
               </div>
               <div>
-                <p className="text-3xl font-black text-midnight_text">100%</p>
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Placement</p>
+                <h3 className="mb-1 text-center lg:text-left">100%</h3>
+                <h6 className="text-gray-400 text-center lg:text-left">Placement</h6>
               </div>
               <div>
-                <p className="text-3xl font-black text-midnight_text">7+</p>
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">AI Courses</p>
+                <h3 className="mb-1 text-center lg:text-left">7+</h3>
+                <h6 className="text-gray-400 text-center lg:text-left">AI Courses</h6>
               </div>
             </div>
           </div>
 
-          <div className='col-span-12 lg:col-span-5 relative flex justify-center'>
-            <div className="absolute inset-0 bg-primary/10 rounded-[4rem] rotate-6 scale-90 -z-10 -translate-y-2 lg:-translate-y-6"></div>
+          <div className='col-span-12 lg:col-span-5 relative flex justify-center lg:justify-end'>
+            <div className="absolute inset-0 bg-primary/10 rounded-[4rem] rotate-6 scale-95 -z-10 -translate-y-6"></div>
             <Image
               src='/images/aiskillup-banner1.jpeg'
               alt='AI Skillup Academy - Best AI Software Training in Coimbatore'
               width={600}
               height={500}
               priority
-              className="rounded-[3rem] object-cover shadow-2xl -translate-y-2 lg:-translate-y-6"
+              className="rounded-[3rem] object-cover shadow-2xl -translate-y-6"
             />
           </div>
         </div>

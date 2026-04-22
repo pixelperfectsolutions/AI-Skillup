@@ -77,9 +77,9 @@ const CoursesGrid = ({ initialData }: { initialData?: CourseType[] }) => {
                   {/* Content */}
                   <div className='p-5 flex flex-col flex-1'>
                     <Link href={item.slug ?? '/courses'}>
-                      <h6 className='text-black font-semibold text-base hover:text-primary transition-colors leading-snug mb-4 capitalize'>
+                      <h3 className='hover:text-primary transition-colors mb-4 capitalize'>
                         {item.heading}
-                      </h6>
+                      </h3>
                     </Link>
 
                     <Link
@@ -88,11 +88,11 @@ const CoursesGrid = ({ initialData }: { initialData?: CourseType[] }) => {
                       className='flex items-center gap-3 pb-4 border-b border-gray-100 group/rate'>
                       <div className='flex items-center gap-2'>
                         <Icon icon='logos:google-icon' width={18} />
-                        <p className='text-red-600 text-xl font-bold'>{item.rating.toFixed(1)}</p>
+                        <p className='text-red-600 text-2xl font-bold'>{item.rating.toFixed(1)}</p>
                       </div>
                       <div className='flex flex-col'>
                         {renderStars(item.rating)}
-                        <p className='text-[9px] text-gray-400 font-bold uppercase tracking-widest group-hover/rate:text-primary transition-colors'>Google Rating</p>
+                        <h6 className='text-gray-400 group-hover/rate:text-primary transition-colors'>Google Rating</h6>
                       </div>
                     </Link>
 

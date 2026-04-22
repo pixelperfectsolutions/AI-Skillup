@@ -44,13 +44,13 @@ const FAQSection = ({ items }: FAQSectionProps) => {
   const displayFaqs = items || faqs
 
   return (
-    <section className="py-24 bg-slate-50 border-t border-gray-100" id="faq">
+    <section className="py-24 bg-white border-t border-gray-100" id="faq">
       <div className="container max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black text-midnight_text mb-6">
-            Frequently Asked <span className="text-primary italic">Questions</span>
+          <h2 className="mb-6">
+            Frequently Asked <span className="text-primary">Questions</span>
           </h2>
-          <p className="text-lg text-black/60 font-medium">
+          <p>
             Everything you need to know about AI software training in Coimbatore.
           </p>
         </div>
@@ -65,9 +65,9 @@ const FAQSection = ({ items }: FAQSectionProps) => {
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="w-full text-left px-8 py-6 flex items-center justify-between"
               >
-                <span className="text-xl font-bold text-midnight_text leading-tight">
+                <h4 className="leading-tight">
                   {faq.q}
-                </span>
+                </h4>
                 <span className={`transition-transform duration-500 ${openIndex === idx ? 'rotate-180' : ''}`}>
                   <Icon icon="solar:alt-arrow-down-bold" className="text-primary text-2xl" />
                 </span>
@@ -77,8 +77,10 @@ const FAQSection = ({ items }: FAQSectionProps) => {
                   openIndex === idx ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-8 pb-8 text-black/70 text-lg leading-relaxed border-t border-gray-50 pt-6">
-                  {faq.a}
+                <div className="px-8 pb-8 border-t border-gray-50 pt-6">
+                  <p>
+                    {faq.a}
+                  </p>
                 </div>
               </div>
             </div>

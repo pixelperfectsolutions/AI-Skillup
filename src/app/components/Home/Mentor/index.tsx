@@ -51,14 +51,14 @@ const WorkshopShowcase = () => {
   }
 
   return (
-    <section className='bg-[#F8FBFF] pt-20 pb-24 scroll-mt-12' id='mentor'>
+    <section className='bg-white pt-20 pb-24 scroll-mt-12' id='mentor'>
       <div className='container'>
         <div className="max-w-4xl mx-auto text-center mb-16 px-4">
-          <h2 className='text-3xl lg:text-4xl font-extrabold text-midnight_text mb-6 leading-tight'>
-            Using AI to make PowerPoint & Excel work easy for the Railway Department, Coimbatore
+          <h2 className='mb-6'>
+            Railway Department <span className="text-primary">Workshop</span>
           </h2>
-          <p className='text-lg lg:text-xl font-medium text-black/60 leading-relaxed'>
-            One streamlined showcase of how AI tools helped the railway team prepare decks and trackers faster.
+          <p>
+            A streamlined showcase of how AI tools helped the railway team prepare decks and trackers faster, making PowerPoint & Excel work easy in Coimbatore.
           </p>
         </div>
 

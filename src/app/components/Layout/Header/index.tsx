@@ -79,7 +79,7 @@ const Header = ({ initialData }: { initialData?: HeaderType[] }) => {
           <div className='flex items-center gap-4'>
             <Link
               href='tel:+919655422511'
-              className='hidden lg:flex items-center gap-2 bg-primary text-white hover:bg-primary/90 py-2 px-8 rounded-full text-lg font-semibold transition-all shadow-md active:scale-95 whitespace-nowrap'
+              className='hidden lg:flex items-center gap-2 bg-primary text-white hover:bg-primary/90 py-2 px-8 rounded-full text-[15px] font-semibold transition-all shadow-md active:scale-95 whitespace-nowrap uppercase'
             >
               <Icon icon="solar:phone-bold" width={22} height={22} />
               CALL NOW
@@ -129,7 +129,7 @@ const Header = ({ initialData }: { initialData?: HeaderType[] }) => {
             <div className='mt-8 w-full'>
               <Link
                 href='tel:+919655422511'
-                className='flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-bold text-xl w-full active:scale-95 transition-all shadow-lg'
+                className='flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-semibold text-[15px] w-full active:scale-95 transition-all shadow-lg uppercase'
                 onClick={() => setNavbarOpen(false)}
               >
                 <Icon icon="solar:phone-bold" width={24} height={24} />

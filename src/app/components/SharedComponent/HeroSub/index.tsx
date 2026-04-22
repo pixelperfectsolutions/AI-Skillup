@@ -44,9 +44,9 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs, whiteTheme = 
                 <div className="container relative z-10 py-16">
                     {/* Breadcrumb */}
                     {breadcrumbs && breadcrumbs.length > 0 && (
-                        <nav
+                        <h6
                             aria-label="breadcrumb"
-                            className="flex items-center gap-2 mb-6 text-xs font-black flex-wrap uppercase tracking-widest"
+                            className="flex items-center gap-2 mb-6 flex-wrap"
                         >
                             <Link
                                 href="/"
@@ -78,19 +78,19 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs, whiteTheme = 
                                     )}
                                 </React.Fragment>
                             ))}
-                        </nav>
+                        </h6>
                     )}
 
                     {/* Title */}
-                    <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-tight mb-6 text-black">
+                    <h1 className="mb-6 text-black">
                         {title}
                     </h1>
 
                     {/* Subtitle */}
                     {subtitle && (
-                        <p className="text-xl max-w-3xl text-black/60 font-medium leading-relaxed border-l-4 border-success pl-6">
+                        <h5 className="max-w-3xl text-black/60 leading-relaxed border-l-4 border-success pl-6">
                             {subtitle}
-                        </p>
+                        </h5>
                     )}
 
                     {/* Decorative line */}
@@ -146,9 +146,9 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs, whiteTheme = 
             <div className="container relative z-10 py-20">
                 {/* Breadcrumb */}
                 {breadcrumbs && breadcrumbs.length > 0 && (
-                    <nav
+                    <h6
                         aria-label="breadcrumb"
-                        className="flex items-center gap-2 mb-5 text-sm font-medium flex-wrap"
+                        className="flex items-center gap-2 mb-5 flex-wrap"
                     >
                         <Link
                             href="/"
@@ -182,12 +182,12 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs, whiteTheme = 
                                 )}
                             </React.Fragment>
                         ))}
-                    </nav>
+                    </h6>
                 )}
 
                 {/* Title */}
                 <h1
-                    className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4"
+                    className="mb-4"
                     style={{
                         background: 'linear-gradient(135deg, #ffffff 30%, #a8c8ff 100%)',
                         WebkitBackgroundClip: 'text',
@@ -199,9 +199,9 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs, whiteTheme = 
 
                 {/* Subtitle */}
                 {subtitle && (
-                    <p className="text-lg max-w-2xl" style={{ color: '#b8c9e8' }}>
+                    <h5 className="max-w-2xl" style={{ color: '#b8c9e8' }}>
                         {subtitle}
-                    </p>
+                    </h5>
                 )}
 
                 {/* Decorative line */}

@@ -41,8 +41,8 @@ const VideoGallery = () => {
         <section className="py-24 bg-white overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 italic underline decoration-primary decoration-4 underline-offset-8">Academy <span className="text-primary not-italic text-not-italic">Video Library</span></h2>
-                    <p className="text-gray-500 text-lg max-w-2xl mx-auto">Explore our training atmosphere, student success stories, and expert insights.</p>
+                    <h2 className="mb-6">Academy <span className="text-primary">Video Library</span></h2>
+                    <p className="max-w-2xl mx-auto">Explore our training atmosphere, student success stories, and expert insights in Coimbatore.</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">

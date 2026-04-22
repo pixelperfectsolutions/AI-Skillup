@@ -30,7 +30,7 @@ const HeaderLink: React.FC<{ item: HeaderType }> = ({ item }) => {
     >
       <Link
         href={item.href}
-        className={`text-lg flex text-black hover:text-primary relative group ${isActive ? 'text-primary' : ''}`}
+        className={`text-[17px] font-medium flex text-black hover:text-primary relative group ${isActive ? 'text-primary' : ''}`}
       >
         {item.label}
         <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -67,7 +67,7 @@ const HeaderLink: React.FC<{ item: HeaderType }> = ({ item }) => {
               <Link
                 key={index}
                 href={subItem.href}
-                className={`block px-5 py-2.5 text-[14px] font-semibold transition-all duration-200 ${
+                className={`block px-5 py-2.5 text-[15px] font-medium transition-all duration-200 ${
                   isSubItemActive
                     ? "bg-primary text-white"
                     : "text-gray-700 hover:bg-primary/10 hover:text-primary"

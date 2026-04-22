@@ -11,21 +11,21 @@ const Newsletter = () => {
 
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10'>
             <div>
-              <h2 className='text-3xl lg:text-4xl font-bold text-midnight_text mb-6 lg:text-start text-center'>
+              <h2 className='mb-6 lg:text-start text-center'>
                 Experience the AI Skill Up Lifestyle
               </h2>
-              <p className='text-lg font-medium text-black/60 mb-8 lg:text-start text-center leading-relaxed'>
+              <p className='lg:text-start text-center'>
                 Step into a world where creativity meets cutting-edge technology. Our academy is more than just a training center—it's a vibrant hub for innovators. From hands-on workshops to collaborative design sessions, every moment at AI SKILL UP Academy is designed to inspire your best work and prepare you for a high-performance career in the modern industry.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
                   <Icon icon="solar:users-group-rounded-bold" className="text-primary text-xl" />
-                  <span className="text-sm font-bold text-midnight_text">9K+ Students</span>
+                  <h6 className="text-midnight_text">9K+ Students</h6>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
                   <Icon icon="solar:check-circle-bold" className="text-secondary text-xl" />
-                  <span className="text-sm font-bold text-midnight_text">Live Projects</span>
+                  <h6 className="text-midnight_text">Live Projects</h6>
                 </div>
               </div>
             </div>

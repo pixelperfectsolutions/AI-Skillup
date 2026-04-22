@@ -21,8 +21,8 @@ const AllCoursesPage = () => {
             />
             
             <div className="container py-12">
-                <h2 className="text-3xl font-black text-midnight_text mb-6">Expert-Led IT Training in Coimbatore</h2>
-                <p className="text-lg text-black/60 leading-relaxed mb-8 max-w-4xl">
+                <h2 className="mb-6">Expert-Led IT Training in Coimbatore</h2>
+                <p className="max-w-4xl">
                     Discover the most industry-relevant <strong>software training courses in Coimbatore</strong> at AI Skill Up Academy. 
                     From <strong>full stack development course Coimbatore</strong> to specialized <strong>UI UX design course Coimbatore</strong>, 
                     we offer comprehensive programs designed to bridge the skill gap. 
@@ -32,7 +32,7 @@ const AllCoursesPage = () => {
                 
                 <div className="flex flex-wrap gap-4 mb-10">
                     {['Full Stack', 'UI/UX', 'No-Code', 'Digital Marketing', 'Data Science'].map((cat) => (
-                        <button key={cat} className="px-6 py-2 rounded-full border border-gray-200 font-bold hover:bg-primary hover:text-white transition-all">
+                        <button key={cat} className="px-6 py-2 rounded-full border border-gray-200 text-[15px] font-semibold hover:bg-primary hover:text-white transition-all uppercase tracking-widest">
                             {cat}
                         </button>
                     ))}

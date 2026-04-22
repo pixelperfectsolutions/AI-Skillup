@@ -73,9 +73,11 @@ const TrainingGallery = () => {
         <>
             <section className='pb-24 pt-8' id='gallery'>
                 <div className='container'>
-                    <div className="text-center mb-12">
-                        <h2 className='text-midnight_text mb-4'>Our Training Gallery</h2>
-                        <p className="text-black/60 text-lg max-w-2xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className='mb-6'>
+                            Our Training <span className="text-primary">Gallery</span>
+                        </h2>
+                        <p className="max-w-2xl mx-auto">
                             A glimpse into our vibrant learning ecosystem, featuring hands-on training sessions and remarkable student achievements.
                         </p>
                     </div>

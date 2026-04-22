@@ -1,16 +1,10 @@
 import './globals.css'
-import { Poppins } from 'next/font/google'
 import Header from './components/Layout/Header'
 import Footer from './components/Layout/Footer'
 import { HeaderData, FooterLinkData } from '@/data/siteData'
 import SchemaOrg from './components/Common/SchemaOrg'
 import { Metadata } from 'next'
 import GlobalPopup from './components/SharedComponent/GlobalPopup'
-
-const font = Poppins({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'] 
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aiskillup.in'),
@@ -52,7 +46,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <SchemaOrg />
       </head>
-      <body className={`${font.className} antialiased`}>
+      <body className="antialiased">
         <Header initialData={HeaderData} />
         {children}
         <Footer initialData={FooterLinkData} />

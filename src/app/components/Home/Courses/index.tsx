@@ -98,15 +98,18 @@ const Courses = ({ initialData }: { initialData?: CourseType[] }) => {
   return (
     <section id='courses' className='scroll-mt-12 pb-20'>
       <div className='container'>
-        <div className='sm:flex justify-between items-center mb-10'>
-          <h2 className='text-midnight_text mb-5 sm:mb-0 capitalize'>
-            Popular courses
+        <div className='text-center mb-16'>
+          <h2 className='mb-6'>
+            Our Popular <span className="text-primary">Courses</span>
           </h2>
-          <Link
-            href={'/courses'}
-            className='text-primary text-lg font-medium hover:underline duration-500'>
-            Explore all courses&nbsp;&gt;
-          </Link>
+          <p className='max-w-2xl mx-auto'>Master future-ready skills with our expert-led, AI-native curriculum in Coimbatore.</p>
+          <div className='mt-8'>
+            <Link
+              href={'/courses'}
+              className='text-primary text-[15px] font-semibold uppercase tracking-widest hover:underline flex items-center justify-center gap-2'>
+              Explore all courses <Icon icon="solar:alt-arrow-right-bold" />
+            </Link>
+          </div>
         </div>
         <Slider {...settings}>
           {loading
@@ -139,9 +142,9 @@ const Courses = ({ initialData }: { initialData?: CourseType[] }) => {
 
                   <div className='px-3 pt-6'>
                     <Link href='#'>
-                      <h6 className='text-black max-w-75% inline-block hover:text-primary'>
+                      <h3 className='text-[22px] leading-tight line-clamp-2 min-h-[3.5rem] inline-block hover:text-primary transition-colors'>
                         {items.heading}
-                      </h6>
+                      </h3>
                     </Link>
                     <Link
                       href='https://www.google.com/search?q=AI+SKILL+UP+Academy+Coimbatore#lrd=0x3ba8594767deeaf7:0x578b90b22a69fb4c,1'
@@ -158,9 +161,9 @@ const Courses = ({ initialData }: { initialData?: CourseType[] }) => {
                           <div className='flex'>
                             {renderStars(items.rating)}
                           </div>
-                          <p className='text-[10px] text-gray-400 font-bold uppercase tracking-wider group-hover/rating:text-primary transition-colors'>
+                          <h6 className='text-gray-400 group-hover/rating:text-primary transition-colors'>
                             Google Rating
-                          </p>
+                          </h6>
                         </div>
                       </div>
                     </Link>

@@ -55,15 +55,15 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
           <div>
             {footerlink.map((product, i) => (
               <div key={i}>
-                <h4 className='mb-6 font-bold text-[#000000] opacity-80 uppercase tracking-widest text-sm'>
+                <h6 className='mb-6'>
                   {product.section === 'Quick Links' ? 'Quick Links' : product.section}
-                </h4>
+                </h6>
                 <ul className="space-y-3">
                   {product.links.map((item, j) => (
                     <li key={j}>
                       <Link
                         href={item.href}
-                        className='text-black/60 hover:text-primary text-sm font-medium transition-colors'>
+                        className='text-black/60 hover:text-primary text-[15px] font-medium transition-colors'>
                         {item.label}
                       </Link>
                     </li>
@@ -75,9 +75,9 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
 
           {/* Courses Column */}
           <div>
-            <h4 className='mb-6 font-bold text-[#000000] opacity-80 uppercase tracking-widest text-sm'>
+            <h6 className='mb-6'>
               Our Courses
-            </h4>
+            </h6>
             <ul className="space-y-3">
               {[
                 { label: 'Python Programming in Coimbatore', href: '/courses/python-course-coimbatore' },
@@ -91,7 +91,7 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
                 <li key={i}>
                   <Link
                     href={course.href}
-                    className='text-black/60 hover:text-primary text-sm font-medium transition-colors leading-snug'>
+                    className='text-black/60 hover:text-primary text-[15px] font-medium transition-colors leading-snug'>
                     {course.label}
                   </Link>
                 </li>
@@ -101,15 +101,15 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
 
           {/* Reach Us */}
           <div>
-            <h4 className='mb-6 font-bold text-[#000000] opacity-80 uppercase tracking-widest text-sm'>
+            <h6 className='mb-6'>
               Reach Us
-            </h4>
+            </h6>
             <div className='flex flex-col gap-5'>
               <div className='flex items-start gap-4'>
                 <div className='bg-white p-2 rounded-lg shadow-sm text-primary shrink-0'>
                   <Icon icon='solar:point-on-map-perspective-bold' width={24} height={24} />
                 </div>
-                <p className='text-black/80 text-sm font-medium leading-relaxed pt-1'>
+                <p className='text-black/80 text-[15px] font-medium leading-relaxed pt-1'>
                   45, Gokhale Street, Ram Nagar, Near MK Residency, Coimbatore, TN 641009.
                 </p>
               </div>
@@ -117,7 +117,7 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
                 <div className='bg-white p-2 rounded-lg shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0'>
                   <Icon icon='solar:phone-bold' width={24} height={24} />
                 </div>
-                <p className='text-black/60 group-hover:text-primary text-sm font-bold transition-colors'>
+                <p className='text-black/60 group-hover:text-primary text-[15px] font-bold transition-colors'>
                   +91 96554 22511
                 </p>
               </Link>
@@ -125,7 +125,7 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
                 <div className='bg-white p-2 rounded-lg shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0'>
                   <Icon icon='solar:mailbox-bold' width={24} height={24} />
                 </div>
-                <p className='text-black/60 group-hover:text-primary text-sm font-bold transition-colors'>
+                <p className='text-black/60 group-hover:text-primary text-[15px] font-bold transition-colors'>
                   info@aiskillup.example
                 </p>
               </Link>

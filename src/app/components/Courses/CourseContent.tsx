@@ -61,9 +61,9 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
               </button>
 
               <div className="mb-10">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest mb-4">Enrollment Open</span>
-                <h2 className="text-3xl font-black text-black mb-2">Book Your Slot</h2>
-                <p className="text-black/50 font-bold">Interested in {course.heading}? Leave your details and get instant counseling.</p>
+                <h6 className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary mb-4">Enrollment Open</h6>
+                <h2 className="mb-2">Book Your Slot</h2>
+                <p className="font-bold">Interested in {course.heading}? Leave your details and get instant counseling.</p>
               </div>
 
               <form className="space-y-4" onSubmit={(e) => {
@@ -77,15 +77,15 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                 setIsPopupOpen(false);
               }}>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">Full Name</label>
+                  <h6 className="ml-1 text-gray-400">Full Name</h6>
                   <input type="text" name="name" placeholder="John Doe" required className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-100 focus:border-primary focus:bg-white outline-none font-bold transition-all" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">Phone Number</label>
+                  <h6 className="ml-1 text-gray-400">Phone Number</h6>
                   <input type="tel" name="phone" placeholder="+91 00000 00000" required className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-100 focus:border-primary focus:bg-white outline-none font-bold transition-all" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">Confirm Course</label>
+                  <h6 className="ml-1 text-gray-400">Confirm Course</h6>
                   <select 
                     name="course" 
                     required 
@@ -97,7 +97,7 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                     ))}
                   </select>
                 </div>
-                <button type="submit" className="w-full bg-primary hover:bg-primary/90 py-5 rounded-xl text-white font-black text-lg shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3 mt-6">
+                <button type="submit" className="w-full bg-primary hover:bg-primary/90 py-5 rounded-xl text-white font-semibold text-[15px] shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3 mt-6 uppercase tracking-widest">
                   <Icon icon="logos:whatsapp-icon" width={24} className="brightness-0 invert" />
                   CONFIRM ON WHATSAPP
                 </button>
@@ -114,39 +114,47 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
         
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-               <div className="flex flex-wrap gap-3 mb-8">
+            <div className="text-center lg:text-left">
+               <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
                  <div className="flex gap-2 items-center bg-primary/5 px-4 py-2 rounded-full border border-primary/10">
                     <Icon icon='tabler:star-filled' className='text-primary text-xs' />
-                    <p className="text-primary text-xs font-black uppercase tracking-widest">
+                    <h6 className="text-primary">
                       {course.aiPositioning || "AI-Powered Training"}
-                    </p>
+                    </h6>
                  </div>
-                 <div className="flex gap-2 items-center bg-success/5 px-4 py-2 rounded-full border border-success/10">
-                    <Icon icon='solar:star-bold' className='text-success text-xs' />
-                    <p className="text-success text-xs font-black uppercase tracking-widest">
-                      Google Rating 5.0
-                    </p>
-                 </div>
+                 <Link 
+                   href="https://www.google.com/search?q=AI+SKILL+UP+Academy+Coimbatore#lrd=0x3ba8594767deeaf7:0x578b90b22a69fb4c,1"
+                   target="_blank"
+                   className="flex gap-2 items-center bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm hover:shadow-md transition-all group"
+                 >
+                    <Icon icon='logos:google-icon' width={16} />
+                    <div className="flex items-center gap-1.5">
+                      <h6 className="text-midnight_text font-bold lowercase tracking-normal">Google Rating</h6>
+                      <div className="flex gap-0.5">
+                        {[1,2,3,4,5].map(i => <Icon key={i} icon='tabler:star-filled' className='text-yellow-500 text-[10px]' />)}
+                      </div>
+                      <h6 className="text-midnight_text font-bold">5.0</h6>
+                    </div>
+                 </Link>
                </div>
                
-               <h1 className="text-4xl lg:text-7xl font-black mb-8 leading-tight text-black">
+               <h1 className="mb-6">
                  {course.heading}
                </h1>
-               <p className="text-xl lg:text-2xl text-black/70 font-bold mb-10 max-w-2xl border-l-4 border-success pl-6">
+               <p className="max-w-2xl mx-auto lg:mx-0 mb-10 font-bold border-l-4 border-success lg:pl-6 pl-0">
                  {course.placementPromise || "Master industry-standard tools with 100% placement support in Coimbatore."}
                </p>
-               <div className="flex flex-wrap gap-5">
+               <div className="flex flex-wrap gap-5 justify-center lg:justify-start">
                   <button 
                     onClick={() => setIsPopupOpen(true)}
-                    className="bg-primary text-white hover:bg-primary/90 py-5 px-10 rounded-full text-lg font-black transition-all flex items-center gap-3 uppercase tracking-widest shadow-xl shadow-primary/20"
+                    className="bg-primary text-white hover:bg-primary/90 py-5 px-10 rounded-full text-[15px] font-semibold transition-all flex items-center gap-3 uppercase tracking-widest shadow-xl shadow-primary/20"
                   >
                      Enroll Now
                      <Icon icon="solar:arrow-right-up-bold" width={22} />
                   </button>
                   <button 
                     onClick={() => setIsPopupOpen(true)}
-                    className="bg-success text-white hover:bg-success/90 py-5 px-10 rounded-full text-lg font-black transition-all flex items-center gap-3 uppercase tracking-widest shadow-xl shadow-success/20"
+                    className="bg-success text-white hover:bg-success/90 py-5 px-10 rounded-full text-[15px] font-semibold transition-all flex items-center gap-3 uppercase tracking-widest shadow-xl shadow-success/20"
                   >
                      Book Free Demo
                   </button>
@@ -164,10 +172,10 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
       <section className="py-24 bg-white">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl lg:text-5xl font-black text-black mb-6 leading-tight">
-              Why Choose AI Skill Up for <span className="text-primary italic">{course.heading}</span>?
+            <h2 className="mb-6">
+              Why Choose AI Skill Up for <span className="text-primary">{course.heading}</span>?
             </h2>
-            <p className="text-black/60 font-bold max-w-xl mx-auto text-lg underline decoration-success decoration-2 underline-offset-4 italic">Gain a competitive edge in Coimbatore's booming tech landscape with our 100% placement-oriented training.</p>
+            <p className="max-w-xl mx-auto">Gain a competitive edge in Coimbatore's booming tech landscape with our 100% placement-oriented training.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -180,13 +188,13 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                   <div className={`w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all shadow-sm`}>
                     <Icon icon={item.icon} width={28} />
                   </div>
-                  <h3 className="text-2xl font-black mb-4 text-black">{item.title}</h3>
+                  <h3 className="mb-4">{item.title}</h3>
                   {item.desc ? (
-                    <p className="text-black/70 font-bold leading-relaxed">{item.desc}</p>
+                    <p className="font-bold">{item.desc}</p>
                   ) : (
                     <div className="flex flex-wrap gap-2">
                        {item.roles?.map((role, j) => (
-                         <span key={j} className="text-[10px] font-black bg-success/10 text-success px-4 py-1.5 rounded-full border border-success/10 uppercase tracking-widest">{role}</span>
+                         <h6 key={j} className="bg-success/10 text-success px-4 py-1.5 rounded-full border border-success/10">{role}</h6>
                        ))}
                     </div>
                   )}
@@ -198,15 +206,15 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
 
       {/* 2.5 Detailed Course Overview (SEO SECTION) */}
       {course.longFormContent && course.longFormContent.length > 0 && (
-        <section className="py-24 bg-slate-50/50 border-t border-gray-100">
+        <section className="py-24 bg-white border-t border-gray-100">
           <div className="container max-w-5xl">
             <div className="text-left mb-16">
-               <h2 className="text-3xl lg:text-4xl font-black text-black mb-6 uppercase tracking-wider">Expert Guide to Mastering <span className="text-primary italic">{course.name}</span></h2>
+               <h2 className="mb-6">Expert Guide to Mastering <span className="text-primary">{course.name}</span></h2>
                <div className="h-2 w-24 bg-success rounded-full mb-8"></div>
             </div>
             <div className="space-y-8">
                {course.longFormContent.map((para, i) => (
-                 <p key={i} className="text-lg md:text-xl text-black/70 leading-relaxed font-bold border-l-4 border-primary/20 pl-8">
+                 <p key={i} className="font-bold border-l-4 border-primary/20 pl-8">
                    {para}
                  </p>
                ))}
@@ -216,11 +224,11 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
       )}
 
       {/* 3. Course Syllabus */}
-      <section className="py-24 bg-slate-50 border-y border-gray-100">
+      <section className="py-24 bg-white border-y border-gray-100">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-             <h2 className="text-4xl lg:text-5xl font-black mb-6 italic underline decoration-success decoration-4 underline-offset-8 uppercase leading-tight text-black">Expert-Led <span className="text-primary not-italic">Curriculum</span></h2>
-             <p className="text-lg text-black/60 font-medium italic underline decoration-success decoration-2 underline-offset-4">Comprehensive industry-aligned content covering everything from scratch to AI integration.</p>
+             <h2 className="mb-6 underline decoration-success/20 decoration-4 underline-offset-8">Expert-Led <span className="text-primary">Curriculum</span></h2>
+             <p className="max-w-2xl mx-auto">Comprehensive industry-aligned content covering everything from scratch to AI integration.</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
@@ -230,7 +238,7 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                  <button 
                    key={i}
                    onClick={() => { setActiveTab(i); setActiveSyllabusSection(0); }}
-                   className={`px-8 py-4 rounded-2xl font-black text-lg transition-all ${activeTab === i ? 'bg-primary text-white shadow-xl shadow-primary/20 scale-105' : 'bg-white text-gray-400 hover:bg-gray-100 border border-gray-100'}`}
+                   className={`px-8 py-4 rounded-2xl font-semibold text-[15px] transition-all uppercase tracking-widest ${activeTab === i ? 'bg-primary text-white shadow-xl shadow-primary/20 scale-105' : 'bg-white text-gray-400 hover:bg-gray-100 border border-gray-100'}`}
                  >
                    {tab.tabName}
                  </button>
@@ -245,7 +253,7 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                       onClick={() => setActiveSyllabusSection(activeSyllabusSection === i ? -1 : i)}
                       className={`w-full text-left px-8 py-6 flex items-center justify-between transition-colors ${activeSyllabusSection === i ? 'bg-primary/5 text-primary' : 'hover:bg-gray-50'}`}
                     >
-                       <h4 className="text-xl font-black flex items-center gap-4 text-black">
+                        <h4 className="flex items-center gap-4">
                          <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm ${activeSyllabusSection === i ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}>{i+1}</span>
                          {section.title}
                        </h4>
@@ -255,7 +263,7 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                       <div className="p-8 bg-white border-t border-gray-50 animate-in fade-in slide-in-from-top-4 duration-300">
                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {section.modules.map((module, j) => (
-                              <li key={j} className="flex items-center gap-4 text-black/70 font-bold group">
+                              <li key={j} className="flex items-center gap-4 font-bold group">
                                  <Icon icon="solar:check-circle-bold" className="text-success group-hover:scale-125 transition-transform shrink-0" />
                                  {module}
                               </li>
@@ -270,7 +278,7 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
             <div className="mt-12 text-center">
               <button 
                 onClick={() => setIsPopupOpen(true)}
-                className="inline-flex items-center gap-3 bg-primary text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-primary/90 transition-all shadow-2xl shadow-primary/20"
+                className="inline-flex items-center gap-3 bg-primary text-white px-10 py-5 rounded-2xl font-semibold text-[15px] hover:bg-primary/90 transition-all shadow-2xl shadow-primary/20 uppercase tracking-widest"
               >
                  <Icon icon="solar:file-download-bold" width={24} />
                  DOWNLOAD FULL SYLLABUS
@@ -284,8 +292,8 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
       <section className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-20">
-             <h2 className="text-3xl lg:text-4xl font-black text-black mb-6 uppercase tracking-wider">The Professional <span className="text-primary italic">Tool Stack</span></h2>
-             <p className="text-black/50 font-bold max-w-2xl mx-auto text-lg underline decoration-success decoration-2 underline-offset-4">We don't just teach the software; we master the ecosystem used by industry leaders in Coimbatore.</p>
+             <h2 className="mb-6">The Professional <span className="text-primary">Tool Stack</span></h2>
+             <p className="max-w-2xl mx-auto">We don't just teach the software; we master the ecosystem used by industry leaders in Coimbatore.</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 lg:gap-16 mb-24">
@@ -294,21 +302,21 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                { name: 'VS Code', icon: 'logos:visual-studio-code' },
                { name: 'Figma', icon: 'logos:figma' }
              ]).map((tool, i) => (
-               <div key={i} className="flex flex-col items-center gap-4 group bg-slate-50 p-8 rounded-3xl border border-gray-100 hover:border-primary/20 hover:bg-white hover:shadow-xl transition-all w-32 md:w-40">
+               <div key={i} className="flex flex-col items-center gap-4 group bg-white p-8 rounded-3xl border border-gray-100 hover:border-primary/20 hover:bg-white hover:shadow-xl transition-all w-32 md:w-40">
                   <Icon icon={tool.icon} className="w-12 h-12 transition-transform group-hover:scale-125" />
-                  <p className="font-black text-[10px] uppercase tracking-widest text-black/60 group-hover:text-primary">{tool.name}</p>
+                  <h6 className="group-hover:text-primary">{tool.name}</h6>
                </div>
              ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
              {(course.tools || []).map((tool, i) => (
-               <div key={i} className="bg-slate-50/50 p-10 rounded-[2.5rem] border border-gray-100 flex flex-col gap-4">
+               <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-gray-100 flex flex-col gap-4">
                   <div className="flex items-center gap-4 mb-4">
                     <Icon icon={tool.icon} className="w-8 h-8" />
-                    <h4 className="text-xl font-black text-black">{tool.name} in {course.heading}</h4>
+                    <h4>{tool.name} in {course.heading}</h4>
                   </div>
-                  <p className="text-black/60 font-bold leading-relaxed italic border-l-4 border-success pl-4">
+                  <p className="font-bold border-l-4 border-success pl-4">
                     Mastering {tool.name} is essential for {course.heading}. At AI Skill Up, we focus on hands-on practicals ensuring you can build industry-grade projects with high efficiency and collaborative workflows.
                   </p>
                </div>
@@ -324,8 +332,8 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
         <div className="container relative z-10">
            <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
               <div className="max-w-2xl text-white">
-                 <h2 className="text-4xl lg:text-5xl font-black mb-6 italic underline decoration-white decoration-4 underline-offset-8 text-white uppercase leading-tight">Build a Killer <span className="text-white not-italic underline-none">Portfolio</span></h2>
-                 <p className="text-lg text-white font-bold leading-relaxed italic">
+                 <h2 className="mb-6 underline decoration-white/20 decoration-4 underline-offset-8 text-white">Build a Killer <span className="text-white">Portfolio</span></h2>
+                 <p className="text-white">
                    Work on real-world industry use cases specifically designed for Coimbatore's competitive software market.
                  </p>
               </div>
@@ -339,8 +347,8 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                    <div className="w-16 h-16 bg-primary/10 text-primary rounded-[20px] flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
                       <Icon icon="solar:folder-path-connect-bold" width={32} />
                    </div>
-                   <h3 className="text-2xl font-black mb-4 text-black">{proj.title}</h3>
-                   <p className="text-black/60 leading-relaxed font-black">
+                   <h3 className="mb-4">{proj.title}</h3>
+                   <p className="font-black">
                      {proj.description}
                    </p>
                 </div>
@@ -353,11 +361,11 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
       <Placement />
 
       {/* 7. Pricing / Combos Section */}
-      <section className="py-24 bg-slate-50 border-t border-gray-100">
+      <section className="py-24 bg-white border-t border-gray-100">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black mb-6 italic underline decoration-primary decoration-4 underline-offset-8 uppercase leading-tight text-black">Master <span className="text-success not-italic">Combos</span></h2>
-            <p className="text-lg text-black/60 font-medium italic underline decoration-success decoration-2 underline-offset-4">Accelerate your career growth with our special dual-certification tracks.</p>
+            <h2 className="mb-6 underline decoration-primary/20 decoration-4 underline-offset-8">Master <span className="text-success">Combos</span></h2>
+            <p className="max-w-2xl mx-auto">Accelerate your career growth with our special dual-certification tracks.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              {(course.combos || [
@@ -369,22 +377,22 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
                   <div className="absolute top-0 right-0 p-8 opacity-5 -mr-8 -mt-8 rotate-12 group-hover:rotate-0 transition-transform">
                      <Icon icon="solar:star-shine-bold" width={100} className="text-success" />
                   </div>
-                  <div className="text-[10px] font-black bg-success/10 text-success px-4 py-1.5 rounded-full w-fit mb-8 uppercase tracking-widest border border-success/10">{combo.level}</div>
-                  <h3 className="text-2xl font-black text-black mb-6">{combo.title}</h3>
+                  <h6 className="bg-success/10 text-success px-4 py-1.5 rounded-full w-fit mb-8">{combo.level}</h6>
+                  <h3 className="mb-6">{combo.title}</h3>
                   <div className="flex items-center gap-6 text-gray-400 mb-10 border-b border-gray-50 pb-8 mt-auto">
-                      <div className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest">
+                      <h6 className="flex items-center gap-2">
                         <Icon icon="solar:clock-circle-bold" width={18} className="text-primary/40" />
                         {combo.duration}
-                      </div>
-                      <div className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest">
+                      </h6>
+                      <h6 className="flex items-center gap-2">
                         <Icon icon="solar:users-group-rounded-bold" width={18} className="text-primary/40" />
                         {combo.learners}
-                      </div>
+                      </h6>
                   </div>
                   <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-1">Fee Starts From</p>
-                        <p className="text-3xl font-black text-black leading-none">₹{combo.price}</p>
+                        <h6 className="text-gray-400 mb-1">Fee Starts From</h6>
+                        <h3 className="leading-none">₹{combo.price}</h3>
                       </div>
                       <button 
                         onClick={() => setIsPopupOpen(true)}
@@ -408,9 +416,9 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
       {/* Related AI Courses */}
       <section className="py-24 bg-white border-t border-gray-100">
         <div className="container">
-           <div className="flex justify-between items-center mb-16 text-black">
-              <h2 className="text-3xl lg:text-4xl font-black leading-tight">Related AI <span className="text-primary italic underline decoration-success decoration-4 underline-offset-8">Courses</span></h2>
-              <Link href="/courses" className="text-primary font-black uppercase tracking-widest text-sm hover:underline flex items-center gap-2">
+           <div className="text-center mb-16 text-black">
+              <h2 className="leading-tight mb-6">Related AI <span className="text-primary">Courses</span></h2>
+              <Link href="/courses" className="text-primary font-semibold uppercase tracking-widest text-[13px] hover:underline flex items-center justify-center gap-2">
                 View All <Icon icon="solar:alt-arrow-right-bold" />
               </Link>
            </div>
@@ -423,11 +431,11 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
         <div className="container">
           <div className="bg-primary p-12 lg:p-20 rounded-[4rem] text-white text-center relative overflow-hidden shadow-2xl shadow-primary/30">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,_rgba(255,255,255,0.1),transparent)]"></div>
-            <h2 className="text-4xl lg:text-6xl font-black mb-8 relative z-10 italic">Ready to transform your <span className="text-white not-italic border-b-8 border-white underline-offset-12">career?</span></h2>
-            <p className="text-xl lg:text-2xl text-white/80 mb-12 relative z-10 font-bold">Join Coimbatore's leading AI-Native academy today and bridge the gap to success.</p>
+            <h2 className="mb-8 relative z-10">Ready to transform your <span className="text-white border-b-8 border-white/20 underline-offset-12">career?</span></h2>
+            <p className="relative z-10">Join Coimbatore's leading AI-Native academy today and bridge the gap to success.</p>
             <button 
               onClick={() => setIsPopupOpen(true)}
-              className="bg-white text-primary py-6 px-16 rounded-full text-xl font-black uppercase tracking-widest hover:bg-gray-100 transition-all shadow-xl hover:-translate-y-2 relative z-10"
+              className="bg-white text-primary py-6 px-16 rounded-full text-[15px] font-semibold uppercase tracking-widest hover:bg-gray-100 transition-all shadow-xl hover:-translate-y-2 relative z-10"
             >
               Get Started Now
             </button>

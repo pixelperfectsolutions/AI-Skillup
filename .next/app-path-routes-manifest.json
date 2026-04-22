@@ -1,20 +1,20 @@
 {
-  "/robots.txt/route": "/robots.txt",
   "/sitemap.xml/route": "/sitemap.xml",
+  "/robots.txt/route": "/robots.txt",
   "/api/data/route": "/api/data",
   "/_not-found/page": "/_not-found",
   "/blog/page": "/blog",
   "/corporate-training/page": "/corporate-training",
   "/courses/[slug]/page": "/courses/[slug]",
-  "/(site)/documentation/page": "/documentation",
   "/(site)/(auth)/signin/page": "/signin",
   "/(site)/(auth)/signup/page": "/signup",
+  "/(site)/documentation/page": "/documentation",
   "/contact/page": "/contact",
-  "/about/page": "/about",
   "/blog/[slug]/page": "/blog/[slug]",
-  "/page": "/",
   "/courses/page": "/courses",
+  "/about/page": "/about",
   "/privacy/page": "/privacy",
+  "/terms/page": "/terms",
   "/seo-strategy/page": "/seo-strategy",
-  "/terms/page": "/terms"
+  "/page": "/"
 }

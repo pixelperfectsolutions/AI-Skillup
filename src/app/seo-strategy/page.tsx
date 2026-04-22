@@ -24,20 +24,20 @@ const SEOStrategyDashboard = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-24 pb-20">
+    <div className="min-h-screen bg-white pt-24 pb-20">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-2">
-            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold uppercase tracking-wider">
+            <h6 className="bg-primary/10 text-primary px-3 py-1 rounded-full">
               Growth Strategy
-            </span>
+            </h6>
             <span className="text-gray-400 text-sm">Last Updated: April 2026</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-midnight_text mb-4">
-            AI Skill Up <span className="text-primary text-65">SEO & Content Strategy</span>
+          <h1>
+            AI Skill Up <span className="text-primary">SEO & Content Strategy</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl">
+          <p className="max-w-3xl">
             Complete analysis and roadmap to dominate the AI training market in Coimbatore. 
             Transition from client-side rendering to SSR/SSG to unlock Google visibility.
           </p>
@@ -47,12 +47,12 @@ const SEOStrategyDashboard = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
           {metrics.map((m, i) => (
             <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transition-hover hover:shadow-md">
-              <p className="text-sm font-medium text-gray-500 mb-1">{m.label}</p>
+              <h6 className="text-gray-500 mb-1">{m.label}</h6>
               <div className="flex items-end justify-between">
-                <h3 className={`text-3xl font-bold ${m.color}`}>{m.value}</h3>
-                <span className={`text-xs font-bold uppercase ${m.color} bg-opacity-10 px-2 py-0.5 rounded`}>
+                <h3 className={`${m.color}`}>{m.value}</h3>
+                <h6 className={`${m.color} bg-opacity-10 px-2 py-0.5 rounded`}>
                   {m.trend}
-                </span>
+                </h6>
               </div>
             </div>
           ))}
@@ -98,7 +98,7 @@ const SEOStrategyDashboard = () => {
 
 const WhyNotRanking = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <h2 className="text-3xl font-bold mb-8">7 Critical Ranking Gaps</h2>
+    <h2 className="mb-8">7 Critical Ranking Gaps</h2>
     <div className="space-y-6">
       {[
         { 
@@ -135,8 +135,8 @@ const WhyNotRanking = () => (
             {i + 1}
           </div>
           <div>
-            <h4 className="font-bold text-midnight_text mb-1">{item.title}</h4>
-            <p className="text-gray-600">{item.desc}</p>
+            <h4 className="mb-1">{item.title}</h4>
+            <p>{item.desc}</p>
           </div>
         </div>
       ))}
@@ -146,10 +146,10 @@ const WhyNotRanking = () => (
 
 const KeywordStrategy = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <h2 className="text-3xl font-bold mb-8">18 Long-Tail Keywords (3 Tiers)</h2>
+    <h2 className="mb-8">18 Long-Tail Keywords (3 Tiers)</h2>
     <div className="grid md:grid-cols-3 gap-6">
       <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100">
-        <h4 className="text-blue-700 font-bold mb-4 flex items-center gap-2">
+        <h4 className="text-blue-700 mb-4 flex items-center gap-2">
           <Icon icon="solar:star-fall-minimalistic-linear" /> Tier 1: High Intent
         </h4>
         <ul className="space-y-2 text-sm text-blue-900/80 font-medium">
@@ -162,7 +162,7 @@ const KeywordStrategy = () => (
         </ul>
       </div>
       <div className="bg-purple-50 p-6 rounded-2xl border border-purple-100">
-        <h4 className="text-purple-700 font-bold mb-4 flex items-center gap-2">
+        <h4 className="text-purple-700 mb-4 flex items-center gap-2">
           <Icon icon="solar:rocket-linear" /> Tier 2: Niche Growth
         </h4>
         <ul className="space-y-2 text-sm text-purple-900/80 font-medium">
@@ -175,7 +175,7 @@ const KeywordStrategy = () => (
         </ul>
       </div>
       <div className="bg-emerald-50 p-6 rounded-2xl border border-emerald-100">
-        <h4 className="text-emerald-700 font-bold mb-4 flex items-center gap-2">
+        <h4 className="text-emerald-700 mb-4 flex items-center gap-2">
           <Icon icon="solar:target-linear" /> Tier 3: Local Dominance
         </h4>
         <ul className="space-y-2 text-sm text-emerald-900/80 font-medium">
@@ -189,8 +189,8 @@ const KeywordStrategy = () => (
       </div>
     </div>
     <div className="mt-8 p-6 bg-amber-50 rounded-2xl border border-amber-200">
-      <h5 className="font-bold text-amber-800 mb-2">🔥 Blue Ocean Opportunity</h5>
-      <p className="text-amber-900/70">
+      <h5 className="text-amber-800 mb-2">🔥 Blue Ocean Opportunity</h5>
+      <p className="">
         "AI-based software training Coimbatore" and "No-Code development course Coimbatore" have ZERO competitors targeting them explicitly. These should be your primary H1/H2 focuses.
       </p>
     </div>
@@ -199,16 +199,16 @@ const KeywordStrategy = () => (
 
 const CompetitorAnalysis = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <h2 className="text-3xl font-bold mb-8">Head-to-Head Comparison</h2>
+    <h2 className="mb-8">Head-to-Head Comparison</h2>
     <div className="overflow-x-auto">
       <table className="w-full text-left border-collapse">
         <thead>
           <tr className="border-b-2 border-gray-100">
-            <th className="py-4 px-4 font-bold text-gray-400 uppercase text-xs">Institute</th>
-            <th className="py-4 px-4 font-bold text-gray-400 uppercase text-xs">AI Courses</th>
-            <th className="py-4 px-4 font-bold text-gray-400 uppercase text-xs">No-Code</th>
-            <th className="py-4 px-4 font-bold text-gray-400 uppercase text-xs">Reviews</th>
-            <th className="py-4 px-4 font-bold text-gray-400 uppercase text-xs">Unique Selling Point</th>
+            <th className="py-4 px-4"><h6 className="text-gray-400">Institute</h6></th>
+            <th className="py-4 px-4"><h6 className="text-gray-400">AI Courses</h6></th>
+            <th className="py-4 px-4"><h6 className="text-gray-400">No-Code</h6></th>
+            <th className="py-4 px-4"><h6 className="text-gray-400">Reviews</h6></th>
+            <th className="py-4 px-4"><h6 className="text-gray-400">Unique Selling Point</h6></th>
           </tr>
         </thead>
         <tbody>
@@ -248,11 +248,11 @@ const CompetitorAnalysis = () => (
 
 const PageContent = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <h2 className="text-3xl font-bold mb-8">Ready-to-Paste SEO Copy</h2>
+    <h2 className="mb-8">Ready-to-Paste SEO Copy</h2>
     <div className="space-y-8">
       <div className="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-        <h5 className="font-bold mb-4 text-primary uppercase text-xs tracking-widest">Homepage Hero H1</h5>
-        <code className="block text-lg font-bold text-midnight_text mb-4">
+        <h5 className="mb-4 text-primary">Homepage Hero H1</h5>
+        <code className="block mb-4">
           #1 AI-Based Software Training Institute in Coimbatore — Master Future-Ready Skills
         </code>
         <p className="text-gray-600 text-sm italic">
@@ -286,7 +286,7 @@ const PageContent = () => (
 
 const SchemaMeta = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <h2 className="text-3xl font-bold mb-8">Schema & Rich Snippets</h2>
+    <h2 className="mb-8">Schema & Rich Snippets</h2>
     <div className="grid gap-6">
       <div className="p-6 bg-zinc-900 rounded-2xl overflow-hidden">
         <div className="flex justify-between items-center mb-4">
@@ -338,7 +338,7 @@ const SchemaMeta = () => (
 
 const NextJsCode = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <h2 className="text-3xl font-bold mb-8">Production-Ready Code</h2>
+    <h2 className="mb-8">Production-Ready Code</h2>
     <div className="space-y-6">
       <div>
         <h5 className="font-bold mb-3 text-gray-700">1. Server-Side Data Fetching (Fixing "Loading...")</h5>
@@ -374,13 +374,13 @@ export async function generateStaticParams() {
 
 const Diagnosis = () => (
   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <h2 className="text-3xl font-bold mb-8">Health Report</h2>
+    <h2 className="mb-8">Health Report</h2>
     <div className="bg-red-50 p-8 rounded-3xl border border-red-100 flex flex-col md:flex-row gap-8 items-center">
       <div className="w-24 h-24 rounded-full bg-red-500/10 flex items-center justify-center text-red-500">
         <Icon icon="solar:shield-warning-bold" className="text-6xl" />
       </div>
       <div>
-        <h3 className="text-red-700 font-extrabold mb-2 underline decoration-4 decoration-red-200">Critical Priority: JS Rendering</h3>
+        <h3 className="text-red-700 mb-2 underline decoration-4 decoration-red-200">Critical Priority: JS Rendering</h3>
         <p className="text-red-900/70 text-lg leading-relaxed mb-4">
           Your homepage content is hidden behind a Client-Side <code className="bg-red-100 px-1 rounded text-red-700">useEffect</code>. 
           Google's crawler often gives up before your API data loads. 
