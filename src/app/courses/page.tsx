@@ -6,9 +6,15 @@ import VideoGallery from "../components/SharedComponent/VideoGallery";
 import { CourseData } from "@/data/siteData";
 
 export const metadata: Metadata = {
-    title: "Best Software Training Courses in Coimbatore | AI Skill Up Academy",
-    description: "Explore Coimbatore's best software training courses with placement at AI Skill Up Academy. Join our Full Stack, UI/UX, and AI development programs today.",
-    alternates: { canonical: 'https://aiskillup.in/courses' }
+    title: "AI & Software Courses in Coimbatore with Placement | AI Skill Up Academy",
+    description: "Explore 7 AI-powered courses in Full Stack Development, UI/UX Design, No-Code Automation, Digital Marketing & more. 100% placement support in Coimbatore.",
+    alternates: { canonical: 'https://www.aiskillup.in/courses' },
+    openGraph: {
+        title: "AI & Software Courses in Coimbatore with Placement | AI Skill Up Academy",
+        description: "Explore 7 AI-powered courses in Full Stack Development, UI/UX Design, No-Code Automation, Digital Marketing & more. 100% placement support in Coimbatore.",
+        url: 'https://www.aiskillup.in/courses',
+        images: [{ url: 'https://www.aiskillup.in/images/aiskillup-banner1.jpeg' }],
+    },
 };
 
 const AllCoursesPage = () => {

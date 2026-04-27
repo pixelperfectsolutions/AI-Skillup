@@ -4,8 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "About Us | AI SKILL UP",
-    description: "Learn about AI SKILL UP — one of the leading software training institutes in Coimbatore. Discover our mission, vision, team, and values.",
+    title: "About AI Skill Up Academy — AI Training Institute Coimbatore",
+    description: "Meet the team behind Coimbatore's #1 AI-native training institute. 9,000+ students trained, 100% placement support, industry-expert mentors at Ram Nagar.",
+    alternates: { canonical: 'https://www.aiskillup.in/about' },
+    openGraph: {
+        title: "About AI Skill Up Academy — AI Training Institute Coimbatore",
+        description: "Meet the team behind Coimbatore's #1 AI-native training institute. 9,000+ students trained, 100% placement support, industry-expert mentors at Ram Nagar.",
+        url: 'https://www.aiskillup.in/about',
+        images: [{ url: 'https://www.aiskillup.in/images/aiskillup-banner1.jpeg' }],
+    },
 };
 
 const stats = [
@@ -66,15 +73,34 @@ const AboutPage = () => {
                             <h2 className="mb-6">
                                 Who We Are
                             </h2>
-                            <p className="mb-8">
+                            <p className="mb-4">
                                 AI SKILL UP is one of the leading software training institutes in Coimbatore, which focuses on industry-applicable skills and knowledge for the people. Our courses are prepared in such a way that each student gets hands-on experiences and practical skills to work from day one. We provide the newest facilities, trained mentors, and student-centered methodologies to uphold excellence in education while creating a nurturing and innovative learning environment for all.
                             </p>
+                            <p className="mb-8 text-black/70 text-sm leading-relaxed">
+                                Follow our{' '}
+                                <a href="https://aiskillup.wordpress.com" rel="me" title="AI Skill Up Academy Blog" className="text-primary hover:underline font-semibold" target="_blank">AI training blog</a>{' '}
+                                for course updates, student stories, and the latest in AI education from Coimbatore.
+                            </p>
+                            <div className="flex flex-wrap gap-3">
                             <Link
                                 href="/courses"
                                 className="inline-block px-8 py-4 rounded-full font-semibold text-white text-[15px] transition-all duration-300 hover:-translate-y-1 bg-primary hover:bg-primary/90 shadow-lg uppercase tracking-widest"
                             >
-                                Learn More →
+                                Our Courses →
                             </Link>
+                            <Link
+                                href="/corporate-training"
+                                className="inline-block px-8 py-4 rounded-full font-semibold text-[15px] transition-all duration-300 hover:-translate-y-1 bg-white border border-gray-200 hover:border-primary shadow-sm uppercase tracking-widest"
+                            >
+                                Corporate Training
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className="inline-block px-8 py-4 rounded-full font-semibold text-[15px] transition-all duration-300 hover:-translate-y-1 bg-white border border-gray-200 hover:border-primary shadow-sm uppercase tracking-widest"
+                            >
+                                Contact Us
+                            </Link>
+                            </div>
                         </div>
 
                         {/* Image */}

@@ -100,7 +100,7 @@ const Courses = ({ initialData }: { initialData?: CourseType[] }) => {
       <div className='container'>
         <div className='text-center mb-16'>
           <h2 className='mb-6'>
-            Our Popular <span className="text-primary">Courses</span>
+            AI-Powered <span className="text-primary">Courses</span> in Coimbatore
           </h2>
           <p className='max-w-2xl mx-auto'>Master future-ready skills with our expert-led, AI-native curriculum in Coimbatore.</p>
           <div className='mt-8'>
@@ -123,9 +123,10 @@ const Courses = ({ initialData }: { initialData?: CourseType[] }) => {
                     <div className='rounded-2xl'>
                       <Image
                         src={items.imgSrc}
-                        alt='course-image'
+                        alt={`${items.heading} — AI Skill Up Academy Coimbatore`}
                         width={389}
                         height={262}
+                        loading="lazy"
                         className='w-full rounded-2xl'
                       />
                     </div>

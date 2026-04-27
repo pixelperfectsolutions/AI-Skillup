@@ -39,13 +39,13 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
               AI SKILL UP Academy is a leading provider of AI-powered courses in Coimbatore, dedicated to preparing students for the future of technology.
             </p>
             <div className='flex items-center gap-5'>
-              <Link href='https://www.facebook.com/AISKILLUP6/' target='_blank' className='text-black hover:text-primary text-2xl transition-all'>
+              <Link href='https://www.facebook.com/AISKILLUP6/' target='_blank' rel='noopener noreferrer' className='text-black hover:text-primary text-2xl transition-all'>
                 <Icon icon='tabler:brand-facebook' />
               </Link>
-              <Link href='https://wa.me/919655422511' target='_blank' className='text-black hover:text-primary text-2xl transition-all'>
+              <Link href='https://wa.me/919655422511' target='_blank' rel='noopener noreferrer' className='text-black hover:text-primary text-2xl transition-all'>
                 <Icon icon='tabler:brand-whatsapp' />
               </Link>
-              <Link href='https://www.instagram.com/academyaiskillup/' target='_blank' className='text-black hover:text-primary text-2xl transition-all'>
+              <Link href='https://www.instagram.com/academyaiskillup/' target='_blank' rel='noopener noreferrer' className='text-black hover:text-primary text-2xl transition-all'>
                 <Icon icon='tabler:brand-instagram' />
               </Link>
             </div>
@@ -121,12 +121,12 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
                   +91 96554 22511
                 </p>
               </Link>
-              <Link href='mailto:info@aiskillup.example' className='flex items-center gap-4 group'>
+              <Link href='mailto:info@aiskillup.in' className='flex items-center gap-4 group'>
                 <div className='bg-white p-2 rounded-lg shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0'>
                   <Icon icon='solar:mailbox-bold' width={24} height={24} />
                 </div>
                 <p className='text-black/60 group-hover:text-primary text-[15px] font-bold transition-colors'>
-                  info@aiskillup.example
+                  info@aiskillup.in
                 </p>
               </Link>
               <div className='mt-1 rounded-xl overflow-hidden shadow-sm border border-white/20 h-32 w-full'>
@@ -144,12 +144,57 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
           </div>
         </div>
 
-        <div className='pt-8 border-t border-black/10 flex flex-col lg:flex-row items-center justify-between gap-4'>
+        {/* Popular Searches — Internal SEO links */}
+        <div className='pb-10 border-b border-black/10'>
+          <p className='text-black/40 text-xs font-semibold uppercase tracking-widest mb-4'>Popular Searches</p>
+          <div className='flex flex-wrap gap-2'>
+            {[
+              { label: 'AI Course Coimbatore', href: '/' },
+              { label: 'Full Stack Course Coimbatore', href: '/courses/full-stack-development-course-coimbatore' },
+              { label: 'UI UX Design Course Coimbatore', href: '/courses/ui-ux-design-course-coimbatore' },
+              { label: 'No-Code AI Course Coimbatore', href: '/courses/no-code-ai-automation-coimbatore' },
+              { label: 'Digital Marketing Course Coimbatore', href: '/courses/digital-marketing-course-coimbatore' },
+              { label: 'Python Course Coimbatore', href: '/courses/python-course-coimbatore' },
+              { label: 'Data Science Course Coimbatore', href: '/courses/data-science-course-coimbatore' },
+              { label: 'Mobile App Development Coimbatore', href: '/courses/mobile-app-development-course-coimbatore' },
+            ].map((item, i) => (
+              <Link
+                key={i}
+                href={item.href}
+                className='text-black/50 hover:text-primary text-[12px] font-medium border border-black/10 rounded-full px-3 py-1 hover:border-primary/30 transition-colors'
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* SEO-rich footer paragraph */}
+        <div className='py-6 border-b border-black/10'>
+          <p style={{ fontSize: '13px', color: 'rgba(0,0,0,0.4)', lineHeight: '1.7', maxWidth: '680px' }}>
+            AI Skill Up Academy is a leading AI-based software training institute in Coimbatore, Tamil Nadu.
+            We offer industry-aligned courses in{' '}
+            <Link href='/courses/full-stack-development-course-coimbatore' className='hover:text-primary transition-colors'>Full Stack Development</Link>,{' '}
+            <Link href='/courses/ui-ux-design-course-coimbatore' className='hover:text-primary transition-colors'>UI/UX Design</Link>,{' '}
+            <Link href='/courses/no-code-ai-automation-coimbatore' className='hover:text-primary transition-colors'>No-Code AI Automation</Link>,{' '}
+            <Link href='/courses/digital-marketing-course-coimbatore' className='hover:text-primary transition-colors'>Digital Marketing</Link>,{' '}
+            <Link href='/courses/mobile-app-development-course-coimbatore' className='hover:text-primary transition-colors'>Mobile App Development</Link>,{' '}
+            <Link href='/courses/python-course-coimbatore' className='hover:text-primary transition-colors'>Python Programming</Link>, and{' '}
+            <Link href='/courses/data-science-course-coimbatore' className='hover:text-primary transition-colors'>Data Science</Link>{' '}
+            — all taught with modern AI tools and real-world projects. Located at Ram Nagar, Coimbatore, we serve students,
+            freshers, working professionals, and corporate teams across Tamil Nadu.{' '}
+            Read our{' '}
+            <a href='https://aiskillup.wordpress.com' rel='me' title='AI Skill Up Academy — AI Training Blog Coimbatore' className='hover:text-primary transition-colors'>AI training blog</a>{' '}
+            for course updates, student stories, and the latest in AI education.
+          </p>
+        </div>
+
+        <div className='pt-8 flex flex-col lg:flex-row items-center justify-between gap-4'>
           <p className='text-black/40 text-sm font-medium'>
-            © {new Date().getFullYear()} AI SKILL UP Academy. All rights reserved.
+            &copy; {new Date().getFullYear()} AI SKILL UP Academy. All rights reserved.
             <span className="mx-2 hidden lg:inline">|</span>
             <span className="block lg:inline mt-2 lg:mt-0">
-              Designed by <Link href='https://pixelperfectsolutions.in' target='_blank' className='hover:text-primary underline decoration-primary/30'>Pixel Perfect Software Solutions</Link>
+              Designed by <Link href='https://pixelperfectsolutions.in' target='_blank' rel='noopener noreferrer' className='hover:text-primary underline decoration-primary/30'>Pixel Perfect Software Solutions</Link>
             </span>
           </p>
         </div>

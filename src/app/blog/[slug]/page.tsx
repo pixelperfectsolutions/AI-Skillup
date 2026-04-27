@@ -21,13 +21,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${post.title} | AI SKILL UP Academy Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://www.aiskillup.in/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],
-    }
+      url: `https://www.aiskillup.in/blog/${slug}`,
+      images: [{ url: post.image || 'https://www.aiskillup.in/images/aiskillup-banner1.jpeg' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image || 'https://www.aiskillup.in/images/aiskillup-banner1.jpeg'],
+    },
   }
 }
 
@@ -49,6 +60,46 @@ const BlogDetail = async ({ params }: PageProps) => {
 
   return (
     <article className="min-h-screen pb-24 bg-white">
+      {/* Article + BreadcrumbList JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.excerpt,
+            "image": post.image || "https://www.aiskillup.in/images/aiskillup-banner1.jpeg",
+            "datePublished": post.date,
+            "author": {
+              "@type": "Person",
+              "name": post.author
+            },
+            "publisher": {
+              "@type": "EducationalOrganization",
+              "name": "AI Skill Up Academy",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.aiskillup.in/images/logo/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://www.aiskillup.in/blog/${post.slug}`
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aiskillup.in" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.aiskillup.in/blog" },
+              { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://www.aiskillup.in/blog/${post.slug}` }
+            ]
+          }
+        ]) }}
+      />
+
       <HeroSub 
         title={post.title}
         subtitle={`${post.author} • ${post.date} • ${post.readingTime}`}

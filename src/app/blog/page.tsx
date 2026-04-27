@@ -4,12 +4,25 @@ import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { blogs } from '@/data/blogs'
 import HeroSub from "@/app/components/SharedComponent/HeroSub"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "AI & Tech Training Blog — AI Skill Up Academy Coimbatore",
+  description: "Expert articles on AI tools, career tips, course guides, and tech trends from Coimbatore's leading AI training institute.",
+  alternates: { canonical: 'https://www.aiskillup.in/blog' },
+  openGraph: {
+    title: "AI & Tech Training Blog — AI Skill Up Academy Coimbatore",
+    description: "Expert articles on AI tools, career tips, course guides, and tech trends from Coimbatore's leading AI training institute.",
+    url: 'https://www.aiskillup.in/blog',
+    images: [{ url: 'https://www.aiskillup.in/images/aiskillup-banner1.jpeg' }],
+  },
+}
 
 const BlogPage = () => {
   return (
     <main className="min-h-screen bg-white pb-24">
       <HeroSub 
-        title="Latest from AI SKILL UP Blog"
+        title="AI & Software Training Blog — Coimbatore"
         subtitle="Stay ahead of the curve with our weekly insights on AI, No-Code development, and modern software engineering trends in Coimbatore."
         breadcrumbs={[{ label: 'Blog', href: '/blog' }]}
       />

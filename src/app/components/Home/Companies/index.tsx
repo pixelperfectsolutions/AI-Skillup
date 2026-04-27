@@ -77,9 +77,10 @@ const Companies = ({ initialData }: { initialData?: { imgSrc: string }[] }) => {
               <div key={i} className='px-4 outline-none'>
                 <Image
                   src={item.imgSrc}
-                  alt={item.imgSrc}
+                  alt={`Hiring partner of AI Skill Up Academy Coimbatore`}
                   width={90}
                   height={30}
+                  loading="lazy"
                   className='mx-auto max-h-[35px] w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300'
                 />
               </div>
@@ -97,9 +98,10 @@ const Companies = ({ initialData }: { initialData?: { imgSrc: string }[] }) => {
               <div className='absolute inset-0 bg-primary/5 rounded-[2rem] transform -rotate-3 scale-105 z-0'></div>
               <Image
                 src='/images/geo tag/g12.jpeg'
-                alt='AI Skill Up Learning'
+                alt='AI Skill Up Academy training facility Coimbatore — session 12'
                 width={600}
                 height={500}
+                loading="lazy"
                 className='rounded-2xl relative z-10 shadow-lg object-cover max-h-[350px] w-full'
               />
             </div>
@@ -122,18 +124,20 @@ const Companies = ({ initialData }: { initialData?: { imgSrc: string }[] }) => {
                 <a href='https://1dot.ai/' target='_blank' rel='noopener noreferrer' className='flex items-center justify-center hover:opacity-80 transition-opacity duration-300'>
                   <Image
                     src='/images/ai logo.webp'
-                    alt='AI Skill Up'
+                    alt='1dot.ai — hiring partner of AI Skill Up Academy Coimbatore'
                     width={140}
                     height={50}
+                    loading="lazy"
                     className='object-contain max-h-[45px] w-auto'
                   />
                 </a>
                 <a href='https://caddbimtechnologies.com/' target='_blank' rel='noopener noreferrer' className='flex items-center justify-center hover:opacity-80 transition-opacity duration-300'>
                   <Image
                     src='/images/cadd bim.png'
-                    alt='CADD BIM'
+                    alt='CADD BIM Technologies — hiring partner of AI Skill Up Academy Coimbatore'
                     width={140}
                     height={50}
+                    loading="lazy"
                     className='object-contain max-h-[45px] w-auto'
                   />
                 </a>

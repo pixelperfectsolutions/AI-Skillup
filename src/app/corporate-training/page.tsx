@@ -6,6 +6,11 @@ import Link from 'next/link'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
 
+// Note: metadata cannot be exported from 'use client' components.
+// The page title/description is set via the parent layout for this route.
+// To add metadata, a wrapper server component would be needed.
+// For now, the meta is handled at layout.tsx level with the template.
+
 const corporateHighlights = [
     { title: "Customized Curriculum", desc: "Tailored training modules designed to meet your specific business objectives and technology stack.", icon: "solar:settings-bold" },
     { title: "Expert Practitioners", desc: "Learn from industry veterans who bring real-world experience and case studies to your team.", icon: "solar:users-group-rounded-bold" },

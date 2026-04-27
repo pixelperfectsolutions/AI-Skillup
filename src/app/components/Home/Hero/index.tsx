@@ -27,15 +27,20 @@ const Hero = () => {
         <div className='grid grid-cols-1 lg:grid-cols-12 gap-16 items-start'>
           <div className='col-span-12 lg:col-span-7 flex flex-col gap-8'>
             <h5 className='font-bold text-black/80 leading-relaxed max-w-2xl text-center lg:text-left'>
-              Learn Full Stack Development, UI/UX Design, Digital Marketing & No-Code AI Automation with Real AI Tools 100% Placement Support
+              Learn{' '}
+              <a href="/courses/full-stack-development-course-coimbatore" className="text-primary hover:underline">Full Stack Development</a>,{' '}
+              <a href="/courses/ui-ux-design-course-coimbatore" className="text-primary hover:underline">UI/UX Design</a>,{' '}
+              <a href="/courses/digital-marketing-course-coimbatore" className="text-primary hover:underline">Digital Marketing</a>{' '}{'&'}{' '}
+              <a href="/courses/no-code-ai-automation-coimbatore" className="text-primary hover:underline">No-Code AI Automation</a>{' '}
+              with Real AI Tools — 100% Placement Support
             </h5>
 
             <div className='max-w-2xl text-center lg:text-left'>
               <p>
-                In today's fast-evolving IT landscape, traditional skills are no longer enough.
+                In today&apos;s fast-evolving IT landscape, traditional skills are no longer enough.
                 As the best software training institute Coimbatore with placement providers, we bridge this gap by integrating artificial intelligence into every module.
                 Our AI-based software training institute in Coimbatore prepares you for the high-demand jobs of 2025.
-                Whether you're looking for a full stack development course Coimbatore, an industry-leading UI UX design course Coimbatore,
+                Whether you&apos;re looking for a full stack development course Coimbatore, an industry-leading UI UX design course Coimbatore,
                 or a future-proof no code development course Coimbatore, our academy at Ram Nagar provides the hands-on expertise you need.
               </p>
             </div>
@@ -76,10 +81,11 @@ const Hero = () => {
             <div className="absolute inset-0 bg-primary/10 rounded-[4rem] rotate-6 scale-95 -z-10 -translate-y-6"></div>
             <Image
               src='/images/aiskillup-banner1.jpeg'
-              alt='AI Skillup Academy - Best AI Software Training in Coimbatore'
+              alt='AI Skill Up Academy classroom training session in Coimbatore'
               width={600}
               height={500}
               priority
+              fetchPriority="high"
               className="rounded-[3rem] object-cover shadow-2xl -translate-y-6"
             />
           </div>
