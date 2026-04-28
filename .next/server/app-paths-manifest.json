@@ -1,7 +1,20 @@
 {
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/api/data/route": "app/api/data/route.js",
   "/courses/[slug]/page": "app/courses/[slug]/page.js",
-  "/page": "app/page.js",
+  "/(site)/documentation/page": "app/(site)/documentation/page.js",
+  "/(site)/(auth)/signin/page": "app/(site)/(auth)/signin/page.js",
+  "/(site)/(auth)/signup/page": "app/(site)/(auth)/signup/page.js",
   "/blog/page": "app/blog/page.js",
   "/contact/page": "app/contact/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/about/page": "app/about/page.js",
+  "/courses/page": "app/courses/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/page": "app/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/seo-strategy/page": "app/seo-strategy/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/corporate-training/page": "app/corporate-training/page.js"
 }

@@ -1,0 +1,20 @@
+{
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/robots.txt/route": "/robots.txt",
+  "/api/data/route": "/api/data",
+  "/courses/[slug]/page": "/courses/[slug]",
+  "/(site)/documentation/page": "/documentation",
+  "/(site)/(auth)/signin/page": "/signin",
+  "/(site)/(auth)/signup/page": "/signup",
+  "/blog/page": "/blog",
+  "/contact/page": "/contact",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/about/page": "/about",
+  "/courses/page": "/courses",
+  "/privacy/page": "/privacy",
+  "/page": "/",
+  "/terms/page": "/terms",
+  "/seo-strategy/page": "/seo-strategy",
+  "/_not-found/page": "/_not-found",
+  "/corporate-training/page": "/corporate-training"
+}

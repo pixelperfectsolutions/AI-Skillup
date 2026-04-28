@@ -110,7 +110,7 @@ const Footer = ({ initialData }: { initialData?: FooterLinkType[] }) => {
                   <Icon icon='solar:point-on-map-perspective-bold' width={24} height={24} />
                 </div>
                 <p className='text-black/80 text-[15px] font-medium leading-relaxed pt-1'>
-                  45, Gokhale Street, Ram Nagar, Near MK Residency, Coimbatore, TN 641009.
+                  45/2, Gokhale St, opposite to Senthil kumaran theatre, Ram Nagar, Coimbatore, TN 641009.
                 </p>
               </div>
               <Link href='tel:+919655422511' className='flex items-center gap-4 group'>

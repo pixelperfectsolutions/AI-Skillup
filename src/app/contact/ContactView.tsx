@@ -65,8 +65,8 @@ const ContactView = () => {
                             </div>
                             <h4 className="text-xl font-bold mb-4">Our Location</h4>
                             <p className="text-black/60 leading-relaxed">
-                                45, Gokhale Street, Ram Nagar,<br />
-                                Near MK Residency, Coimbatore,<br />
+                                45/2, Gokhale St, opposite to Senthil kumaran theatre,
+                                Ram Nagar, Coimbatore,<br />
                                 Tamil Nadu 641009
                             </p>
                         </div>
