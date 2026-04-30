@@ -39,6 +39,10 @@
     @apply text-midnight_text;
   }
 
+  body {
+    @apply overflow-x-hidden;
+  }
+
   *,
   ::after,
   ::before,
@@ -56,7 +60,7 @@
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -1px;
-    @apply lg:text-[56px] text-[34px] text-midnight_text;
+    @apply lg:text-[56px] text-[32px] text-midnight_text;
   }
 
   h2 {

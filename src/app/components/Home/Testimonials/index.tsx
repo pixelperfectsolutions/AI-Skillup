@@ -93,8 +93,8 @@ const Testimonial = ({ initialData }: { initialData?: TestimonialType[] }) => {
   return (
     <section id='testimonial' className="pb-16 pt-8">
       <div className='container'>
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
-          <div className="max-w-xl">
+        <div className="flex flex-col lg:flex-row lg:items-end items-center lg:justify-between mb-16 gap-6 text-center lg:text-left">
+          <div className="max-w-xl mx-auto lg:mx-0">
             <h2 className='mb-6'>
               What Our <span className="text-primary">Learners</span> Say
             </h2>
@@ -102,11 +102,11 @@ const Testimonial = ({ initialData }: { initialData?: TestimonialType[] }) => {
           </div>
 
           {/* Google Review Card Summary */}
-          <div className="bg-white border border-gray-100 shadow-sm rounded-2xl p-4 flex items-center gap-6 min-w-[320px]">
+          <div className="bg-white border border-gray-100 shadow-sm rounded-2xl p-4 flex items-center gap-6 min-w-[320px] mx-auto lg:mx-0">
             <div className="bg-[#4285F4]/10 p-3 rounded-xl">
               <Icon icon="logos:google-icon" className="text-3xl" />
             </div>
-            <div>
+            <div className="text-left">
               <div className="flex items-center gap-2 mb-1">
                 <h3 className="text-midnight_text">5.0</h3>
                 <div className="flex text-yellow-500 text-sm">
