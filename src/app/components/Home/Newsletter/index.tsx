@@ -30,7 +30,30 @@ const Newsletter = () => {
               </div>
             </div>
 
-            <div className='grid grid-cols-2 gap-4'>
+            {/* Mobile: horizontal image slider */}
+            <div className='flex lg:hidden gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'>
+              {[
+                '/images/Aiskillup-welcomepost.jpeg',
+                '/images/Aiskillup-welcomepost1.jpeg',
+                '/images/Aiskillup-welcomepost2.jpeg',
+              ].map((src, i) => (
+                <div
+                  key={i}
+                  className='basis-[75%] shrink-0 snap-center rounded-2xl overflow-hidden shadow-xl'
+                >
+                  <Image
+                    src={src}
+                    alt='AI Skill Up Academy lifestyle'
+                    width={400}
+                    height={500}
+                    className='w-full h-auto object-cover'
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop: image collage */}
+            <div className='hidden lg:grid grid-cols-2 gap-4'>
               <div className='space-y-4 pt-12'>
                 <div className='rounded-2xl overflow-hidden shadow-xl transform hover:-rotate-2 transition-all duration-500'>
                   <Image

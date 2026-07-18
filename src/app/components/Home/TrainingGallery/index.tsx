@@ -104,13 +104,13 @@ const TrainingGallery = () => {
                         </button>
                     </div>
 
-                    {/* Gallery Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fadeIn">
+                    {/* Gallery — horizontal slider on mobile, grid on larger screens */}
+                    <div className="flex sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-4 sm:pb-0 gallery-scroll animate-fadeIn">
                         {activeImages.map((img, i) => (
                             <button
                                 key={i}
                                 onClick={() => openLightbox(i)}
-                                className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-zoom-in w-full"
+                                className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-zoom-in basis-[85%] shrink-0 snap-center sm:basis-auto sm:shrink sm:w-full"
                             >
                                 <Image
                                     src={img}
@@ -140,6 +140,13 @@ const TrainingGallery = () => {
           }
           .animate-fadeIn {
             animation: fadeIn 0.5s ease-out forwards;
+          }
+          .gallery-scroll {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+          .gallery-scroll::-webkit-scrollbar {
+            display: none;
           }
         `}</style>
             </section>

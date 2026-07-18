@@ -1,7 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /privacy
-Disallow: /terms
-Disallow: /api/
-
-Sitemap: https://www.aiskillup.in/sitemap.xml

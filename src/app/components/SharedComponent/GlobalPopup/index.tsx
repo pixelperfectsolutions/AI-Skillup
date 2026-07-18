@@ -6,20 +6,26 @@ import { CourseData } from '@/data/siteData'
 
 export default function GlobalPopup() {
   const [isOpen, setIsOpen] = useState(false)
-  const [hasShown, setHasShown] = useState(false)
 
   useEffect(() => {
-    // Check if it's already been shown in this session
+    // Auto-open once per session
     const shown = sessionStorage.getItem('popup_shown')
-    
+
+    let timer: ReturnType<typeof setTimeout> | undefined
     if (!shown) {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         setIsOpen(true)
-        setHasShown(true)
         sessionStorage.setItem('popup_shown', 'true')
       }, 7000) // 7 seconds
+    }
 
-      return () => clearTimeout(timer)
+    // Allow any "Enquiry" button on the site to open this popup on demand
+    const openOnDemand = () => setIsOpen(true)
+    window.addEventListener('open-enquiry-popup', openOnDemand)
+
+    return () => {
+      if (timer) clearTimeout(timer)
+      window.removeEventListener('open-enquiry-popup', openOnDemand)
     }
   }, [])
 

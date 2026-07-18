@@ -71,7 +71,7 @@ const Companies = ({ initialData }: { initialData?: { imgSrc: string }[] }) => {
   return (
     <section className='text-center'>
       <div className='container'>
-        <div className='py-7 border-b border-t border-black/5 mt-10'>
+        <div className='py-7 border-b border-t border-black/5 mt-2'>
           <Slider {...settings}>
             {techGaint.map((item, i) => (
               <div key={i} className='px-4 outline-none'>

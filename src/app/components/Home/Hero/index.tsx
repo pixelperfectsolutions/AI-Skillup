@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background Graphic Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -mr-64 -mt-64 z-0"></div>
 
-      <div className='container pt-20 lg:pt-32 pb-20 relative z-10'>
+      <div className='container pt-28 lg:pt-32 pb-8 relative z-10'>
         <div className="mb-12 flex flex-col gap-6 items-center lg:items-start text-center lg:text-left w-full">
           <div className='flex gap-2 items-center bg-primary/5 w-fit px-4 py-2 rounded-full border border-primary/10 mx-auto lg:mx-0'>
             <div className="bg-primary/20 p-1 rounded-full">

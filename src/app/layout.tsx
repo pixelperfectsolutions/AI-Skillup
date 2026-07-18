@@ -5,6 +5,7 @@ import { HeaderData, FooterLinkData } from '@/data/siteData'
 import SchemaOrg from './components/Common/SchemaOrg'
 import { Metadata } from 'next'
 import GlobalPopup from './components/SharedComponent/GlobalPopup'
+import FloatingActions from './components/SharedComponent/FloatingActions'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.aiskillup.in'),
@@ -89,6 +90,7 @@ export default function RootLayout({
         {children}
         <Footer initialData={FooterLinkData} />
         <GlobalPopup />
+        <FloatingActions />
       </body>
     </html>
   )

@@ -7,6 +7,7 @@ import HeaderLink from '../Header/Navigation/HeaderLink'
 import MobileHeaderLink from '../Header/Navigation/MobileHeaderLink'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { HeaderType } from '@/app/types/menu'
+import { openEnquiryPopup } from '../../SharedComponent/FloatingActions'
 
 const Header = ({ initialData }: { initialData?: HeaderType[] }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -66,10 +67,53 @@ const Header = ({ initialData }: { initialData?: HeaderType[] }) => {
 
   return (
     <header
-      className={`fixed top-0 z-40 w-full transition-all duration-300 bg-transparent ${sticky ? 'bg-white shadow-lg py-2' : 'shadow-none py-4'
+      className={`fixed top-0 z-40 w-full transition-all duration-300 bg-transparent ${sticky ? 'bg-white shadow-lg' : 'shadow-none'
         }`}>
       <div>
-        <div className='container flex items-center justify-between'>
+        {/* Top utility bar: phone number + social media */}
+        {!sticky && (
+          <div className='bg-primary text-white'>
+            <div className='container flex items-center justify-between h-9 text-[13px]'>
+              <Link
+                href='tel:+919655422511'
+                className='flex items-center gap-1.5 font-medium hover:opacity-90 transition-opacity whitespace-nowrap'
+              >
+                <Icon icon='solar:phone-bold' width={15} height={15} />
+                +91 96554 22511
+              </Link>
+              <div className='flex items-center gap-3'>
+                <Link
+                  href='https://www.facebook.com/AISKILLUP6/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Facebook'
+                  className='hover:opacity-80 transition-opacity'
+                >
+                  <Icon icon='tabler:brand-facebook' width={17} height={17} />
+                </Link>
+                <Link
+                  href='https://www.instagram.com/academyaiskillup/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Instagram'
+                  className='hover:opacity-80 transition-opacity'
+                >
+                  <Icon icon='tabler:brand-instagram' width={17} height={17} />
+                </Link>
+                <Link
+                  href='https://wa.me/919655422511'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='WhatsApp'
+                  className='hover:opacity-80 transition-opacity'
+                >
+                  <Icon icon='tabler:brand-whatsapp' width={17} height={17} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className={`container flex items-center justify-between ${sticky ? 'py-2' : 'py-4'}`}>
           <Logo />
           <nav className='hidden lg:flex grow items-center lg:gap-5 xl:gap-8 justify-center'>
             {navLink.map((item, index) => (
@@ -86,6 +130,14 @@ const Header = ({ initialData }: { initialData?: HeaderType[] }) => {
             </Link>
 
             <button
+              onClick={openEnquiryPopup}
+              className='flex lg:hidden items-center gap-1.5 bg-primary text-white py-2 px-4 rounded-full text-[13px] font-semibold shadow-md active:scale-95 transition-all whitespace-nowrap uppercase'
+              aria-label='Open enquiry form'>
+              <Icon icon='solar:chat-round-dots-bold' width={16} height={16} />
+              Enquiry
+            </button>
+
+            <button
               onClick={() => setNavbarOpen(!navbarOpen)}
               className='block lg:hidden p-2 rounded-lg hover:cursor-pointer'
               aria-label='Toggle mobile menu'>
@@ -100,9 +152,9 @@ const Header = ({ initialData }: { initialData?: HeaderType[] }) => {
         )}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white shadow-lg transform transition-transform duration-300 max-w-xs ${navbarOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white shadow-lg transform transition-transform duration-300 max-w-xs flex flex-col ${navbarOpen ? 'translate-x-0' : 'translate-x-full'
             } z-50`}>
-          <div className='flex items-center justify-between gap-2 p-6 border-b'>
+          <div className='flex items-center justify-between gap-2 p-6 border-b shrink-0'>
             <div>
               <Logo />
             </div>
@@ -118,7 +170,7 @@ const Header = ({ initialData }: { initialData?: HeaderType[] }) => {
               />
             </button>
           </div>
-          <nav className='flex flex-col items-start p-6'>
+          <nav className='flex flex-col items-start p-6 flex-1 overflow-y-auto'>
             {navLink.map((item, index) => (
               <MobileHeaderLink
                 key={index}
