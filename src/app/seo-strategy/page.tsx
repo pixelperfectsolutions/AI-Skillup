@@ -24,7 +24,7 @@ const SEOStrategyDashboard = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-20">
+    <div className="min-h-screen bg-white pt-32 pb-20">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="mb-12">

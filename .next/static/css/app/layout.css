@@ -1964,11 +1964,11 @@
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
   }
-  .pt-24 {
-    padding-top: calc(var(--spacing) * 24);
-  }
   .pt-28 {
     padding-top: calc(var(--spacing) * 28);
+  }
+  .pt-32 {
+    padding-top: calc(var(--spacing) * 32);
   }
   .pt-\[120px\] {
     padding-top: 120px;
@@ -3453,9 +3453,9 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
-  .sm\:mt-24 {
+  .sm\:mt-28 {
     @media (width >= 40rem) {
-      margin-top: calc(var(--spacing) * 24);
+      margin-top: calc(var(--spacing) * 28);
     }
   }
   .sm\:flex {
@@ -3778,9 +3778,9 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
-  .lg\:mt-24 {
+  .lg\:mt-32 {
     @media (width >= 64rem) {
-      margin-top: calc(var(--spacing) * 24);
+      margin-top: calc(var(--spacing) * 32);
     }
   }
   .lg\:block {
@@ -3956,11 +3956,6 @@
       padding: calc(var(--spacing) * 20);
     }
   }
-  .lg\:py-24 {
-    @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 24);
-    }
-  }
   .lg\:pt-32 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 32);
@@ -3979,6 +3974,11 @@
   .lg\:pt-\[160px\] {
     @media (width >= 64rem) {
       padding-top: 160px;
+    }
+  }
+  .lg\:pb-24 {
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 24);
     }
   }
   .lg\:pb-32 {

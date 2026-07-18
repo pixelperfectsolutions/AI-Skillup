@@ -21,7 +21,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs, whiteTheme = 
     if (whiteTheme) {
         return (
             <section
-                className="relative flex items-center overflow-hidden lg:mt-24 sm:mt-24 mt-20 bg-white border-b border-gray-100"
+                className="relative flex items-center overflow-hidden lg:mt-32 sm:mt-28 mt-28 bg-white border-b border-gray-100"
                 style={{ minHeight: 300 }}
             >
                 {/* Decorative shining blobs */}
@@ -106,7 +106,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, subtitle, breadcrumbs, whiteTheme = 
 
     return (
         <section
-            className="relative flex items-center overflow-hidden lg:mt-24 sm:mt-24 mt-20"
+            className="relative flex items-center overflow-hidden lg:mt-32 sm:mt-28 mt-28"
             style={{ minHeight: 400 }}
         >
             {/* Background Image */}

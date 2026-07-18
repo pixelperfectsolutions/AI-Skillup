@@ -108,7 +108,7 @@ export default function CourseContent({ course, allCourses, testimonialData }: P
       )}
 
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden bg-white text-black py-20 lg:py-24 border-b border-gray-100">
+      <section className="relative overflow-hidden bg-white text-black pt-32 pb-20 lg:pt-36 lg:pb-24 border-b border-gray-100">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -mr-48 -mt-48"></div>
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-success/10 rounded-full blur-[100px] -ml-24 -mb-24"></div>
         

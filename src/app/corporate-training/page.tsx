@@ -138,7 +138,7 @@ export default function CorporateTraining() {
             )}
 
             {/* Hero Section */}
-            <section className="relative pt-24 pb-20 lg:pt-36 lg:pb-32 bg-white overflow-hidden">
+            <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-32 bg-white overflow-hidden">
                 <div className="absolute inset-0 z-0 opacity-40"
                     style={{
                         backgroundImage: 'radial-gradient(#cbd5e1 1.5px, transparent 1.5px)',
