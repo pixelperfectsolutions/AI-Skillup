@@ -77,7 +77,7 @@ const ContactView = () => {
                                 <Icon icon="solar:mailbox-bold" className="text-3xl" />
                             </div>
                             <h4 className="text-xl font-bold mb-4">Email Us</h4>
-                            <a href="mailto:info@aiskillup.com" className="text-black/60 hover:text-primary transition-colors block mb-1 font-medium">info@aiskillup.com</a>
+                            <a href="mailto:info@aiskillup.in" className="text-black/60 hover:text-primary transition-colors block mb-1 font-medium">info@aiskillup.in</a>
                             <p className="text-sm text-black/40">Drop us a line anytime!</p>
                         </div>
 
