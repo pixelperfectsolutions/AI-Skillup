@@ -67,6 +67,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/vite.png',
   },
+  verification: {
+    google: 'vWWzrbhY1hnlpXOpR-ESKddK06dKjRtDmHj2qeXLdpw',
+  },
 }
 
 export default function RootLayout({
